@@ -1,0 +1,126 @@
+.hederImgBlockCarved{
+	display: flex;
+	width: 100%;
+	height: 350px;
+}
+.hederImgBlockCarved img{
+	width: 100%;
+	height: 100%;
+	/*height: 350px;*/
+	object-fit: cover;
+}
+.hederVertBlockCarved{
+	display: flex;
+}
+.hederVertBlockCarved{
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	height: 100%;
+}
+.hederVertBlockCarved picture{
+	padding: 2px;
+	height: 50%;
+}
+.hederGorizBlockCarver{
+	padding: 2px;
+	width: 50%;
+	height: 100%;
+}
+.hederTextCarved{
+	margin-top: 30px;
+	padding: 0 20px;
+	font-size: 17px;
+	color: rgb(0 0 0/70%);
+}
+.carvedGrid{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 5px;
+	grid-row-gap: 5px;
+	margin-top: 20px;
+}
+.carvedGrid img{
+	width: 100%;
+	vertical-align: bottom;
+}
+
+
+.wrappPresentCarved{
+	padding: 30px;
+}
+.contImgCarved{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 80px;
+	border-radius: 80px;
+	background-color: var(--main-col-1);
+}
+.contImgCarved img{
+	width: 60%;
+}
+.presItemCarved{
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	background-color: var(--main-col-3);
+	padding: 30px;
+
+}
+.presText{
+	font-size: 18px;
+	font-weight: 600;
+	color: rgb(0 0 0 / 60%);
+	margin-left: 20px;
+	width: calc(100% - 100px);
+}
+
+
+@media(min-width: 650px){
+	.carvedGrid{
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+@media(min-width: 900px){
+	.hederTopWrappCarved{
+		display: flex;
+		align-items: center;
+		padding: 0 10%;
+	}
+	.hederTopWrappCarved > div:first-child{
+		width: 60%;
+	}
+	.hederTopWrappCarved > div:last-child{
+		width: 40%;
+	}
+	.hederTextCarved{
+		margin-top: unset;
+		font-size: 20px;
+	}
+	.flex-revers-carved{
+		flex-direction: row-reverse;
+	}
+	.carvedGrid{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		padding: 0 10%;
+	}
+	.variCarvedText{
+		padding: 0 10%;
+	}
+	.arrWrappCarved{
+		padding: 0 10%;
+	}
+	.wrappPresentCarved{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.wrappPresentCarved div:nth-child(even){
+		margin-left: 20px;
+	}
+	.presItemCarved{
+		width: calc((100% - 20px) / 2);
+	}
+}

@@ -1,0 +1,80 @@
+.vari_gard_item{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 50px;
+}
+.vari_gard_item p{
+	font-size: 20px;
+}
+
+.big_green_defice{
+	width: 20px;
+	height: 4px;
+	border-radius: 3px;
+	background-color: var(--main-col-1);
+	position: absolute;
+	right: calc(100% + 10px);
+	top: 6px;
+
+}
+.vari_item_fexbox{
+	display: flex;
+	flex-direction: column;
+	/*align-items: flex-start;*/
+	align-self: start;
+	margin-left: 70px;
+}
+.vari_item_fexbox > span{
+	position: relative;
+	margin-top: 20px;
+}
+.vari_cont_picture{
+	width: 100%;
+	height: 300px;
+}
+.vari_cont_picture img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.illuminGardCont picture{
+	width: 100%;
+	height: 300px;
+}
+.illuminGardCont img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.illuminGardCont > div{
+	padding: 20px 30px;
+}
+
+@media(min-width: 800px){
+	.vari_gard_cont{
+		display: flex;
+	}
+	.vari_gard_item{
+		width: 50%;
+	}
+	.vari_gard_cont > div:last-child{
+		margin-left: 10px;
+	}
+	.illuminGardCont{
+		display: flex;
+	}
+	.illuminGardCont picture{
+		width: 50%;
+		height: 350px;
+	}
+	.illuminGardItem{
+		width: 50%;
+	}
+	.illuminGardCont > div{
+		padding: 0 20px;
+	}
+	.illuminGardItem p{
+		margin-top: 0;
+	}
+}

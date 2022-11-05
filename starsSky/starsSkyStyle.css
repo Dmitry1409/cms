@@ -1,0 +1,97 @@
+.starsVideoHederWrapp video{
+	width: 100%;
+}
+.starsHederTextblock{
+	padding: 0 20px;
+	font-size: 17px;
+	color: rgb(0 0 0/70%);
+}
+.starNote{
+	display: flex;
+	align-items: center;
+}
+.green_defice_star{
+	width: 20px;
+	height: 5px;
+	background-color: var(--main-col-1);
+	border-radius: 5px;
+}
+.starNote div:last-child{
+	width: calc(100% - 20px);
+	padding: 0 20px;
+}
+.starsHederTextblock > div >div:last-child{
+	margin-top: 20px;
+}
+.variExecBlockStars{
+	padding: 0 20px;
+	font-size: 17px;
+	color: rgb(0 0 0/70%);
+}
+.variExecBlockStars > div{
+	margin-top: 20px;
+}
+.variExecutStarsparag{
+	padding: 0 20px;
+	font-size: 17px;
+	color: rgb(0 0 0/70%);
+}
+
+.vatiImagesLink{
+	padding: 10px;
+	color: white;
+	background-color: var(--main-col-1);
+	border-radius: 5px;
+	max-height: 50px;
+	font-size: 13px;
+}
+.ofertBlockStarrysky{
+	padding: 0 20px;
+	margin-top: 50px;
+}
+.ofertBlockStarrysky > div:last-child{
+	/*margin-top: 70px;*/
+}
+/*.ofertBlockStarrysky > div:last-child h4{
+	text-align: center;
+	color: rgb(0 0 0/70%);
+}*/
+
+@media(min-width: 700px){
+	.ofertBlockStarrysky{
+		/*padding: 0 100px;*/
+	}
+}
+
+@media(min-width: 900px){
+	.starsVideoHederWrapp{
+		display: flex;
+	}
+	.starsVideoHederWrapp video{
+		width: 50%;
+	}
+	.variExecBlockStars{
+		padding: 0 100px;
+	}
+	.variExecutStarsparag{
+		padding: 0 100px;
+	}
+	.ofertBlockStarrysky{
+		display: flex;
+		align-items: center;
+		/*padding: 0 100px;*/
+	}
+	.ofertBlockStarrysky > div{
+		width: 50%;
+	}
+	.ofertBlockStarrysky > div:last-child{
+		margin-top: unset;
+		margin-left: 20px;
+	}
+	.price_table{
+		padding: unset;
+	}
+	.margin_top_unset{
+		margin-top: unset;
+	}
+}

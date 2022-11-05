@@ -1,0 +1,103 @@
+.grid_ware{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 3px;
+	grid-row-gap: 3px;
+}
+.item_ware{
+	padding: 20px;
+}
+.contImgWare{
+	padding: 10px;
+}
+.contImgWare img{
+	width: 100%;
+}
+.brand-cont-ware{
+	display: flex;
+	justify-content: space-between;
+}
+.descriptContWare{
+	margin-top: 30px;
+}
+.basket-cont{
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.sum-ware span:first-child{
+	font-size: 23px;
+	font-weight: 700;
+	color: rgba(0 0 0 / 70%);
+}
+h2{
+	text-align: center;
+	color: rgba(0 0 0 / 50%);
+}
+
+.ware-foto{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.ware-foto img{
+	width: 100%;
+	object-fit: cover;
+}
+.examp_action{
+	z-index: 10;
+}
+.example_img_cont picture{
+	z-index: 2;
+}
+.req_price_left_action{
+	left: 10px;
+}
+.delProdSvgBtn{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+}
+.zakazWrapp{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 20px 0;
+}
+.zakazWrapp h3{
+	color: rgb(0 0 0/65%);
+	text-align: center;
+}
+.zakazWrapp > div:last-child{
+	padding: 10px;
+	width: 150px;
+	max-height: 40px;
+}
+.btn_animate{
+	left: -30%;
+}
+.zakazCont{
+	border: 1px solid #8ad4118a;
+	margin-top: 30px;
+}
+@media(min-width: 600px){
+	.grid_ware{
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+
+@media(min-width: 940px){
+	.req_price_left_action{
+		left: 12%;
+	}
+	.grid_ware{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		padding: 0 13%;
+	}
+	.zakazWrapp{
+		width: 74%;
+		justify-content: space-around;
+		margin-left: 13%;
+	}
+}

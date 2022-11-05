@@ -1,0 +1,6 @@
+config_cms.php root_dir = "/"
+main.js root_path_name = "/"
+
+send_mail.php Расккоментировать отправку
+
+addFeedBack -- Расккоментиировать autoRotate() 

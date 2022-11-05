@@ -1,0 +1,76 @@
+
+.slott_cont{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.slott_item{
+	width: 100%;
+}
+.slott_item img{
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+}
+.slott_cont picture:first-child{
+	margin-bottom: 20px;
+}
+
+.intro_slott_text{
+	color: var(--color-title);
+	font-size: 18px;
+	padding: 0 20px;
+}
+
+.veri_pict{
+	width: 100%;
+}
+.veri_item{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: solid 1px rgba( 0 0 0/ 60%);
+	border-radius: 5px;
+}
+.veri_item h3{
+	color: var(--color-title);
+}
+.veri_pict img{
+	width: 100%;
+	height: 300px;
+	object-fit: contain;
+}
+.veri_exe_cont div:nth-child(1n+1){
+	margin-top: 30px;
+}
+.veri_exe_cont{
+	padding: 0 10%;
+}
+
+@media(min-width: 650px){
+	.slott_item{
+		width: 80%;
+	}
+	.intro_slott_text{
+		padding: 0 10%;
+	}
+} 
+
+@media(min-width: 900px){
+	.slott_cont{
+		flex-direction: row;
+	}
+	.slott_item{
+		width: 50%;
+	}
+	.slott_cont picture:first-child{
+		margin-bottom: 0;
+	}
+	.veri_exe_cont{
+		display: flex;
+		justify-content: space-between;
+	}
+	.veri_item{
+		width: 30%;
+	}
+}
