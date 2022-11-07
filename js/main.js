@@ -20,7 +20,6 @@ let time_main_menu = Date.now()
 let clientData = {}
 
 const root_dir = "/cms/"
-console.log("тест изменения")
 
 window.addEventListener('DOMContentLoaded', ()=>{
 

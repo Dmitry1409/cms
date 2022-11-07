@@ -667,66 +667,66 @@
 	</div>
 
 	<div class="dopWrapFeedback">
-	<div class="add_feedback_section">
-		<div style="display: flex; justify-content: center; position: relative;">
-			<div class="vert_line"></div>
-		</div>
-		<div class="heder_present" style="position: relative; z-index: 2; margin-bottom: unset;">
-			<span>Оставить отзыв</span>
-		</div>
-
-		<form>
-			<input type="text" name="name_client" placeholder="Ваше имя">
-			<textarea type="text" name="feedback_text" placeholder="Отзыв"></textarea>
-			<div>
-				<div class="scope_cont">
-					<span>Оценка: </span>
-					<div>
-						<svg class="feedback_scope_item" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-							 viewBox="0 0 426.667 426.667" xml:space="preserve">
-						<polygon class="polygon_scope" points="213.333,10.441 279.249,144.017 426.667,165.436 320,269.41 345.173,416.226 213.333,346.91 
-							81.485,416.226 106.667,269.41 0,165.436 147.409,144.017 "/>
-						</svg>
-						<svg class="feedback_scope_item" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-							 viewBox="0 0 426.667 426.667" xml:space="preserve">
-						<polygon class="polygon_scope" points="213.333,10.441 279.249,144.017 426.667,165.436 320,269.41 345.173,416.226 213.333,346.91 
-							81.485,416.226 106.667,269.41 0,165.436 147.409,144.017 "/>
-						</svg>
-						<svg class="feedback_scope_item" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-							 viewBox="0 0 426.667 426.667" xml:space="preserve">
-						<polygon class="polygon_scope" points="213.333,10.441 279.249,144.017 426.667,165.436 320,269.41 345.173,416.226 213.333,346.91 
-							81.485,416.226 106.667,269.41 0,165.436 147.409,144.017 "/>
-						</svg>
-						<svg class="feedback_scope_item" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-							 viewBox="0 0 426.667 426.667" xml:space="preserve">
-						<polygon class="polygon_scope" points="213.333,10.441 279.249,144.017 426.667,165.436 320,269.41 345.173,416.226 213.333,346.91 
-							81.485,416.226 106.667,269.41 0,165.436 147.409,144.017 "/>
-						</svg>
-						<svg class="feedback_scope_item" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-							 viewBox="0 0 426.667 426.667" xml:space="preserve">
-						<polygon class="polygon_scope" points="213.333,10.441 279.249,144.017 426.667,165.436 320,269.41 345.173,416.226 213.333,346.91 
-							81.485,416.226 106.667,269.41 0,165.436 147.409,144.017 "/>
-				
-						</svg>
-					</div>
-				</div>
-				<div class="inputs_file_cont">				
-					<label>Аватарка</label> 
-					<input type="file" accept="image/*" name="image_avatar">
-				</div>
-				<div class="inputs_file_cont">					
-					<label>Фотографии</label>
-					<input type="file" accept="image/*" multiple="multiple" name="image_review">
-				</div>		
+		<div class="add_feedback_section">
+			<div style="display: flex; justify-content: center; position: relative;">
+				<div class="vert_line"></div>
 			</div>
-		</form>
-		<div class="calc_btn">
-			<div class="btn_animate"></div>
-			<div class="call_me_load_anim display_none"></div>
-			<div class="call_me_load_anim call_me_load_anim2 display_none"></div>
-		Отправить</div>
-		<!-- <div class="add_feedback_btn">Отправить</div> -->
-	</div>
+			<div class="heder_present" style="position: relative; z-index: 2; margin-bottom: unset;">
+				<span>Оставить отзыв</span>
+			</div>
+
+			<form>
+				<input type="text" name="name_client" placeholder="Ваше имя">
+				<textarea type="text" name="feedback_text" placeholder="Отзыв"></textarea>
+				<div>
+					<div class="scope_cont">
+						<span>Оценка: </span>
+						<div>
+							<svg class="feedback_scope_item" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 viewBox="0 0 426.667 426.667" xml:space="preserve">
+							<polygon class="polygon_scope" points="213.333,10.441 279.249,144.017 426.667,165.436 320,269.41 345.173,416.226 213.333,346.91 
+								81.485,416.226 106.667,269.41 0,165.436 147.409,144.017 "/>
+							</svg>
+							<svg class="feedback_scope_item" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 viewBox="0 0 426.667 426.667" xml:space="preserve">
+							<polygon class="polygon_scope" points="213.333,10.441 279.249,144.017 426.667,165.436 320,269.41 345.173,416.226 213.333,346.91 
+								81.485,416.226 106.667,269.41 0,165.436 147.409,144.017 "/>
+							</svg>
+							<svg class="feedback_scope_item" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 viewBox="0 0 426.667 426.667" xml:space="preserve">
+							<polygon class="polygon_scope" points="213.333,10.441 279.249,144.017 426.667,165.436 320,269.41 345.173,416.226 213.333,346.91 
+								81.485,416.226 106.667,269.41 0,165.436 147.409,144.017 "/>
+							</svg>
+							<svg class="feedback_scope_item" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 viewBox="0 0 426.667 426.667" xml:space="preserve">
+							<polygon class="polygon_scope" points="213.333,10.441 279.249,144.017 426.667,165.436 320,269.41 345.173,416.226 213.333,346.91 
+								81.485,416.226 106.667,269.41 0,165.436 147.409,144.017 "/>
+							</svg>
+							<svg class="feedback_scope_item" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 viewBox="0 0 426.667 426.667" xml:space="preserve">
+							<polygon class="polygon_scope" points="213.333,10.441 279.249,144.017 426.667,165.436 320,269.41 345.173,416.226 213.333,346.91 
+								81.485,416.226 106.667,269.41 0,165.436 147.409,144.017 "/>
+					
+							</svg>
+						</div>
+					</div>
+					<div class="inputs_file_cont">				
+						<label>Аватарка</label> 
+						<input type="file" accept="image/*" name="image_avatar">
+					</div>
+					<div class="inputs_file_cont">					
+						<label>Фотографии</label>
+						<input type="file" accept="image/*" multiple="multiple" name="image_review">
+					</div>		
+				</div>
+			</form>
+			<div class="calc_btn">
+				<div class="btn_animate"></div>
+				<div class="call_me_load_anim display_none"></div>
+				<div class="call_me_load_anim call_me_load_anim2 display_none"></div>
+			Отправить</div>
+			<!-- <div class="add_feedback_btn">Отправить</div> -->
+		</div>
 	</div>
 
 	<div class="add_feedback_btn_open_cont">
@@ -735,5 +735,3 @@
 			<div></div>
 		</div>
 	</div>
-
-	

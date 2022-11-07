@@ -230,6 +230,33 @@
 				</div>
 			</div>
 		</div>
+		<div class="footer_locations">
+			<h4>CELLINGS в Нижегородской области</h4>
+			<div>
+				<ul>
+					<li><a href=<?php echo $root_dir?>><span>Нижний Новгород</span></a></li>
+					<li><a href=<?php echo $root_dir?>><span>Дзержинск</span></a></li>
+					<li><a href=<?php echo $root_dir?>><span>Кстово</span></a></li>
+					<li><a href=<?php echo $root_dir?>><span>Бор</span></a></li>
+					<li><a href=<?php echo $root_dir?>><span>Балахна</span></a></li>
+					<li><a href=<?php echo $root_dir?>><span>Богородск</span></a></li>
+					<li><a href=<?php echo $root_dir?>><span>Городец</span></a></li>
+					<li><a href=<?php echo $root_dir?>><span>Заволжье</span></a></li>
+					<li><a href=<?php echo $root_dir?>><span>Павлово</span></a></li>
+				</ul>
+				<ul>
+					<li><a href=<?php echo $root_dir.'textureColor'?>><span>Матовые натяжные потолки</span></a></li>
+					<li><a href=<?php echo $root_dir.'textureColor'?>><span>Глянцевые натяжные потолки</span></a></li>
+					<li><a href=<?php echo $root_dir.'textureColor'?>><span>Сатиновые натяжные потолки</span></a></li>
+					<li><a href=<?php echo $root_dir.'textureColor'?>><span>Свето-пропускные натяжные потолки</span></a></li>
+					<li><a href=<?php echo $root_dir.'multiLevel'?>><span>Двухуровные натяжные потолки</span></a></li>
+					<li><a href=<?php echo $root_dir.'shadowProfil'?>><span>Парящие натяжные потолки</span></a></li>
+					<li><a href=<?php echo $root_dir.'shadowProfil'?>><span>Теневые натяжные потолки</span></a></li>
+					<li><a href=<?php echo $root_dir.'shadowProfil'?>><span>Натяжные потолки с подсветкой</span></a></li>
+					<li><a href=<?php echo $root_dir.'dubleVisionPrint'?>><span>Натяжные потолки с фотопечатью</span></a></li>
+				</ul>
+			</div>
+		</div>
 		<div class="copy_cont">
 			<span>Copyright &copy; 2020 - 2023<br> Celings</span>
 			<span>Поддержка.&nbsp; &nbsp;<a href="#">Разработка сайтов</a></span>
