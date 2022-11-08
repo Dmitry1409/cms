@@ -95,11 +95,8 @@ for($i=0; $i<count($arr); $i++){
 			</g>
 			</svg>
 		</div>
-		<div role="button" class="request_price_wrapp req_price_left">
-			<span>Отправить на просчет</span>
-		</div>
-		<div role="button" class="request_price_wrapp req_price_right">
-			<span>Отправить на просчет</span>
+		<div role="button" class="request_price_wrapp req_price_left req_price_left_action">
+			<span>Отправить на расчет</span>
 		</div>
 	</div>
 	

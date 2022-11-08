@@ -80,6 +80,7 @@ h2{
 	border: 1px solid #8ad4118a;
 	margin-top: 30px;
 }
+
 @media(min-width: 600px){
 	.grid_ware{
 		grid-template-columns: 1fr 1fr 1fr;
@@ -88,7 +89,7 @@ h2{
 
 
 @media(min-width: 940px){
-	.req_price_left_action{
+	.shell_examp .req_price_left_action{
 		left: 12%;
 	}
 	.grid_ware{

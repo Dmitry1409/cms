@@ -412,9 +412,17 @@ window.addEventListener('DOMContentLoaded',()=>{
 
 			changeHashViewMode('a')
 
-			let req_left = document.querySelector('.req_price_left')
-			req_left.classList.add('req_price_left_action')
-
+			let pics = document.querySelectorAll('.example_img_cont picture')
+			if(pics.length == 2){
+				if(!this.classList.contains("examp_action")){
+					if(pics[0] == this){
+						pics[1].classList = "examp_right" 
+					}else{
+						pics[0].classList = "examp_right"
+					}
+					this.classList = "examp_action"
+				}
+			}
 		}
 	}
 	function close_img_show(){
@@ -430,7 +438,10 @@ window.addEventListener('DOMContentLoaded',()=>{
 		let btns = document.querySelector('.examp_btns')
 		btns.classList.remove('exapm_view')
 
-		document.querySelector('.like_cont_940').style.display = ""
+		let cont940 = document.querySelector('.like_cont_940')
+		if(cont940){
+			cont940.style.display = ""
+		}
 
 		let close = document.querySelector('.close_btn_examp')
 		let cont = document.querySelector('.example_img_cont')
@@ -449,9 +460,6 @@ window.addEventListener('DOMContentLoaded',()=>{
 		changeHashViewMode('d')
 		let svg = document.querySelector('.examp_btns div:first-child svg')
 		svg.classList.remove('svg_like_show')
-
-		let req_left = document.querySelector('.req_price_left')
-		req_left.classList.remove('req_price_left_action')
 
 	}
 	function changeHashViewMode(com){
