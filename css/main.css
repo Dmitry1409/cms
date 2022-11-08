@@ -1449,6 +1449,11 @@ textarea.invalidValueCalculate{
 	.sub_menu{
 		position: absolute;
 		z-index: 20;
+		
+	}
+	.open_sub_menu{
+		-webkit-box-shadow: 5px 5px 15px 5px #000000; 
+		box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 60%);
 	}
 	.header_lozung{
 		padding-left: 80px;

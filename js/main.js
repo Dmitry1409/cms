@@ -21,6 +21,8 @@ let clientData = {}
 
 const root_dir = "/cms/"
 
+let id_timeout_subMenu
+
 window.addEventListener('DOMContentLoaded', ()=>{
 
 
@@ -256,12 +258,14 @@ function close_modal_action(e){
 	}, 1300)
 
 	let picture = document.querySelector('.call_me_cont picture')
+	console.log(clientData)
 	if(picture){
 		setTimeout(()=>{
 			picture.remove()
 		}, 1400)
 	}
 	reset_call_me_box()
+	clientData = {}
 }
 async function sendMailWithData(){
 	if(isValidClientFields()){
@@ -310,7 +314,6 @@ async function sendMailWithData(){
 		clientData = {}
 	}	
 }
-
 function isValidClientFields(){
 	let fl = true
 	let rexName = /^[a-zа-яё .]{3,50}$/i
@@ -408,6 +411,18 @@ function order_a_call(){
 	clientData.text_header = "Перезвоните мне"
 	call_me_view()
 }
+function subMenuMouseLeave(e){
+	this.removeEventListener('mouseleave', subMenuMouseLeave)	
+	setTimeout(()=>{
+		this.classList.remove('open_sub_menu')
+	}, 100)
+	this.style.height = 0
+}
+function subMenuMouseEnter(){
+	this.removeEventListener('mouseenter', subMenuMouseEnter)
+	clearTimeout(id_timeout_subMenu)
+	this.addEventListener('mouseleave', subMenuMouseLeave)	
+}
 function sub_menu_action(){
 	let subMenu = this.nextElementSibling
 	let mainMenu = document.getElementsByClassName('menu_flex_wrap')[0]
@@ -415,17 +430,25 @@ function sub_menu_action(){
 		if(clientWidth < 940){
 			mainMenu.style.height = (mainMenu.scrollHeight - subMenu.scrollHeight) + "px"
 		}
-		setTimeout(()=>{
-		subMenu.classList.remove('open_sub_menu')
-	},100)
-		subMenu.style.height = 0
+		closeSubMenu()
 	}else{
 		checkAndCloseSubMenu()
 		if(clientWidth < 940){
 			mainMenu.style.height = (mainMenu.scrollHeight + subMenu.scrollHeight) + "px"
+		}else{
+			id_timeout_subMenu = setTimeout(()=>{
+				closeSubMenu()
+			},3000)
+			subMenu.addEventListener('mouseenter', subMenuMouseEnter)
 		}
 		subMenu.classList.add('open_sub_menu')
 		subMenu.style.height = subMenu.scrollHeight + "px"
+	}
+	function closeSubMenu(){
+		setTimeout(()=>{
+			subMenu.classList.remove('open_sub_menu')
+		},100)
+		subMenu.style.height = 0
 	}
 }
 function checkAndCloseSubMenu(){

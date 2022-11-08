@@ -104,6 +104,8 @@
 					</div>
 				</div>
 				<div class="line_butt"></div>
+				<a class="menu_item" href=<?php echo $root_dir."lighting" ?> >Освещение</a>			
+				<div class="line_butt"></div>
 				<div class="cont_940">
 					<div class="menu_item sub_menu_btn">Производители ПВХ</div>
 					<div role="menu" class="sub_menu">
@@ -112,9 +114,7 @@
 						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/Pongs"?>>Pongs</a>
 						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/Teqtum"?>>Teqtum</a>
 					</div>
-				</div>
-				<div class="line_butt"></div>
-				<a class="menu_item" href=<?php echo $root_dir."lighting" ?> >Освещение</a>
+				</div>	
 				<div class="line_butt"></div>
 				<div id="expressCalcBtnId" class="menu_item">Экспресс расчет</div>
 				<div class="line_butt"></div>
