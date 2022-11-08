@@ -53,23 +53,23 @@
 </div>
 
 <div class="FPControlPanel">
-	<div class="FPActiv">все</div>
-	<div>абстракции</div>
-	<div>животные</div>
-	<div>архитектура</div>
-	<div>исскуство</div>
-	<div>детское</div>
-	<div>подводный мир</div>
-	<div>цветы</div>
-	<div>еда</div>
-	<div>картины</div>
-	<div>природа</div>
-	<div>орнаменты</div>
-	<div>небо</div>
-	<div>космос</div>
-	<div>стерео-эффект</div>
-	<div>текстуры</div>
-	<div>транспорт</div>
+	<div role="button" class="FPActiv">все</div>
+	<div role="button">абстракции</div>
+	<div role="button">животные</div>
+	<div role="button">архитектура</div>
+	<div role="button">исскуство</div>
+	<div role="button">детское</div>
+	<div role="button">подводный мир</div>
+	<div role="button">цветы</div>
+	<div role="button">еда</div>
+	<div role="button">картины</div>
+	<div role="button">природа</div>
+	<div role="button">орнаменты</div>
+	<div role="button">небо</div>
+	<div role="button">космос</div>
+	<div role="button">стерео-эффект</div>
+	<div role="button">текстуры</div>
+	<div role="button">транспорт</div>
 
 </div>
 
@@ -112,7 +112,7 @@
 <div class="FPcountCont">
 	<span><span>12</span> из <span><?php echo count($allImg); ?></span></span>
 </div>
-<div class="FPcontArrow">
+<div role="button" class="FPcontArrow">
 	<div class="arrow-8"></div>
 </div>
 
@@ -196,7 +196,7 @@
 		<h4>Оформите заявку прямо сейчас и получи скидку в 200 руб с кв. метра.</h4>
 		<span>Акция действует до <?php echo $tar_date; ?></span>
 		<span>Подробности по телефону 8(831)-413-53-94</span>
-		<div class="aferta_btn">Оформить</div>
+		<div role="button" class="aferta_btn">Оформить</div>
 	</div>
 
 </div>
@@ -248,7 +248,7 @@
 				<input type="number" name="perimetr" placeholder="Площадь печати м2">
 				<input type="number" name="light_points" placeholder="Точек освещения">
 			</form>
-			<div class="calc_btn expresCalculBtn">
+			<div role="button" class="calc_btn expresCalculBtn">
 				<div class="btn_animate"></div>
 				<div class="call_me_load_anim display_none"></div>
 				<div class="call_me_load_anim call_me_load_anim2 display_none"></div>

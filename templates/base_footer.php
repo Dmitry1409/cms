@@ -5,9 +5,9 @@
 	<div class="heder_present" style="position: relative; z-index: 2; margin-bottom: 20px;">
 		<span>Ответы на вопросы</span>
 	</div>
-	<div class="answerToQuestSection">
+	<div role="note" class="answerToQuestSection">
 		<div>
-			<div class="questBlock">
+			<div role="button" class="questBlock">
 				<span>Сколько точечных светильников надо в комнату 12м2?</span>
 				<div class="answerIconCont">
 					<div></div>
@@ -17,7 +17,7 @@
 			<div class="answerBlock">
 				<div>Обычно рассчитывают 1 светильник на площадь 1,5-2 м.кв., в зависимости от мощности ламп. Так же следует учесть, что световосприятие у каждого человека своё, поэтому можно установить блок управления светотехникой с пультом, чтобы можно было регулировать уровень освещения в помещении.</div>
 			</div>
-			<div class="questBlock">
+			<div role="button" class="questBlock">
 				<span>Как сильно опуститься потолок?</span>
 				<div class="answerIconCont">
 					<div></div>
@@ -28,7 +28,7 @@
 				<div>Потолок опустится незначительно. Натяжные потолки монтируются в среднем на расстоянии 7 см от существующего потолка, если у него нет сильных перепадов.</div>
 			</div>
 
-			<div class="questBlock">
+			<div role="button" class="questBlock">
 				<span>Что случится с потолком, если нас затопят?</span>
 				<div class="answerIconCont">
 					<div></div>
@@ -39,7 +39,7 @@
 				<div>Натяжные потолки выдерживают до 100 л воды на квадратный метр.
 					Это спасёт ваш ремонт в случае затопления сверху. Если это произойдёт, просто позвоните нам. Бригада оперативно приедет и сольёт воду, сохранив целостность полотна.</div>
 			</div>
-			<div class="questBlock">
+			<div role="button" class="questBlock">
 				<span>Какой срок изготовления и установки?</span>
 				<div class="answerIconCont">
 					<div></div>
@@ -51,7 +51,7 @@
 			</div>
 		</div>
 		<div>
-			<div class="questBlock">
+			<div role="button" class="questBlock">
 				<span>Портится ли мебель и обои при монтаже?</span>
 				<div class="answerIconCont">
 					<div></div>
@@ -62,7 +62,7 @@
 				<div>При монтаже температура в помещении доводится до 60 градусов.
 					Мебель и другие предметы интерьера при этом не портятся. Однако мы рекомендуем особенно ценные предметы и комнатные растения вынести из помещения.</div>
 			</div>
-			<div class="questBlock">
+			<div role="button" class="questBlock">
 				<span>Нужно выносить мебель из помещения?</span>
 				<div class="answerIconCont">
 					<div></div>
@@ -72,7 +72,7 @@
 			<div class="answerBlock">
 				<div>В принципе не высокую мебель можно оставить в помещении при возможности сдвинув ее в центр. А такую мебель как диваны, кресла и кровати лучше предварительно накрыть,что бы защитить ее от попадания пыли.</div>
 			</div>
-			<div class="questBlock">
+			<div role="button" class="questBlock">
 				<span>С начала устанавливают потолок или клеят обои?</span>
 				<div class="answerIconCont">
 					<div></div>
@@ -82,7 +82,7 @@
 			<div class="answerBlock">
 				<div>Потолок можно устанавливать как до, так и после поклейки обоев. Но, есть некоторые нюансы, например, когда материал стен красный кирпич. В этом случае лучше сначала сделать потолок. Несмотря на то, что монтажниками используется специальный перфоратор с пылесборником, струйки красной пыли всё таки могут попасть на обои. В остальных случаях чаще сначала наклеивают обои, так как с готовым потолком приходится более аккуратно подгонять обои, да и цвет потолка удобней подбирать, когда обои уже на стене.</div>
 			</div>
-			<div class="questBlock">
+			<div role="button" class="questBlock">
 				<span>Устанавливают ли натяжные потолки на балконах?</span>
 				<div class="answerIconCont">
 					<div></div>
@@ -97,7 +97,7 @@
 
 	
 
-	<div class="about_section">
+	<div role="note" class="about_section">
 		<div style="display: flex; justify-content: center; position: relative;">
 			<div class="vert_line"></div>
 		</div>
@@ -121,7 +121,7 @@
 	</div>
 
 
-	<div class="footer_section">
+	<div role="contentinfo" class="footer_section">
 		<div class="footer_cont_940">
 			<div class="footer_cont_main_1">
 				<div class="footer_cont_1">

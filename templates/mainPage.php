@@ -318,7 +318,7 @@
 				<input type="number" autocomplete="off" name="count_svet" placeholder="Точек освещения">
 				<input type="number" autocomplete="off" name="count_square" placeholder="Общая площадь м2">
 			</form>
-			<div class="calc_btn expresCalculBtn">
+			<div role="button" class="calc_btn expresCalculBtn">
 				<div class="btn_animate"></div>
 				<div class="call_me_load_anim display_none"></div>
 				<div class="call_me_load_anim call_me_load_anim2 display_none"></div>
@@ -464,7 +464,7 @@
 					<h4>Оформите заявку на сайте и получите доп. скидку 1000 руб.</h4>
 					<span>Акция действует до <?php echo $tar_date;?></span>
 					<span>Подробности по телефону 8(831)-413-53-94</span>
-					<div class="aferta_btn">Оформить</div>
+					<div role="button" class="aferta_btn">Оформить</div>
 				</div>
 			</div>
 			<div class="certif_doc">
@@ -495,7 +495,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="cert_btn_cont">
+				<div role="button" class="cert_btn_cont">
 					<div class="all_doc_btn">Все документы</div>
 					<div class="prise_btn"><div class="btn_animate"></div>Получить прайс лист</div>
 				</div>
@@ -642,7 +642,7 @@
 				<span><span>1</span> из <span><?php echo count($arr)?></span></span>
 			</div>
 			<div class="cont_left_right">				
-				<div class="feed_left">
+				<div role="button" class="feed_left">
 					<svg version="1.1" id="Capa_1" width="20px" style="transform: rotateZ(180deg);" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						 viewBox="0 0 16.9 16.9" style="enable-background:new 0 0 16.9 16.9;" xml:space="preserve">
 					<g>
@@ -652,7 +652,7 @@
 					</g>
 					</svg>
 				</div>
-				<div class="feed_right">
+				<div role="button" class="feed_right">
 					<svg version="1.1" id="Capa_1" width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						 viewBox="0 0 16.9 16.9" style="enable-background:new 0 0 16.9 16.9;" xml:space="preserve">
 					<g>
@@ -720,16 +720,15 @@
 					</div>		
 				</div>
 			</form>
-			<div class="calc_btn">
+			<div role="button" class="calc_btn">
 				<div class="btn_animate"></div>
 				<div class="call_me_load_anim display_none"></div>
 				<div class="call_me_load_anim call_me_load_anim2 display_none"></div>
 			Отправить</div>
-			<!-- <div class="add_feedback_btn">Отправить</div> -->
 		</div>
 	</div>
 
-	<div class="add_feedback_btn_open_cont">
+	<div role="button" class="add_feedback_btn_open_cont">
 		<div>
 			<span>Оставить отзыв</span>
 			<div></div>

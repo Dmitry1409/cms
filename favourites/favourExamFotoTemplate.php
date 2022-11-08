@@ -95,22 +95,22 @@ for($i=0; $i<count($arr); $i++){
 			</g>
 			</svg>
 		</div>
-		<div class="request_price_wrapp req_price_left">
+		<div role="button" class="request_price_wrapp req_price_left">
 			<span>Отправить на просчет</span>
 		</div>
-		<div class="request_price_wrapp req_price_right">
+		<div role="button" class="request_price_wrapp req_price_right">
 			<span>Отправить на просчет</span>
 		</div>
 	</div>
 	
 	<div class="examp_btns">
-		<div class="img_like_cont">
+		<div role="button" class="img_like_cont">
 			<svg height="30px" class="svg_like" style="enable-background:new 0 0 140 130;" version="1.1" viewBox="0 0 140 130" width="30px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 			<path d="M72.2,122.6C86.3,99.2,97,93.9,118.9,77.9c19.2-14.2,19.2-36.9,8.1-50.5C112.6,10.1,84,11.3,72.2,33.2  c-11.8-21.9-40.3-23.2-54.7-5.8C6.4,41,6.4,63.7,25.6,77.9C47.5,93.9,58.2,99.2,72.2,122.6L72.2,122.6L72.2,122.6z"/>
 			</svg>
 			<span>Убрать из<br>коллекции</span>
 		</div>
-		<div class="img_like_cont like_cont_940">
+		<div role="button" class="img_like_cont like_cont_940">
 			<svg height="30px" class="svg_like" style="enable-background:new 0 0 140 130;" version="1.1" viewBox="0 0 140 130" width="30px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 			<path d="M72.2,122.6C86.3,99.2,97,93.9,118.9,77.9c19.2-14.2,19.2-36.9,8.1-50.5C112.6,10.1,84,11.3,72.2,33.2  c-11.8-21.9-40.3-23.2-54.7-5.8C6.4,41,6.4,63.7,25.6,77.9C47.5,93.9,58.2,99.2,72.2,122.6L72.2,122.6L72.2,122.6z"/>
 			</svg>

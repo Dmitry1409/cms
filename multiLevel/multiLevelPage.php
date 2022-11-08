@@ -983,7 +983,7 @@
 			<h4>При заказе потолка дизайн потолка в подарок</h4>
 			<span>Акция действует до 18 ноября 2022г.</span>
 			<span>Подробности по телефону 8(831)-413-53-94</span>
-			<div class="aferta_btn">Отправить</div>
+			<div role="button" class="aferta_btn">Отправить</div>
 		</div>
 	</div>
 	<div class="calculate_cont">
@@ -1013,7 +1013,7 @@
 				<input type="number" name="perimetr" placeholder="Периметр перехода м.п.">
 				<input type="number" name="light_points" placeholder="Точек освещения">
 			</form>
-			<div class="calc_btn expresCalculBtn">
+			<div role="button" class="calc_btn expresCalculBtn">
 				<div class="btn_animate"></div>
 				<div class="call_me_load_anim display_none"></div>
 				<div class="call_me_load_anim call_me_load_anim2 display_none"></div>

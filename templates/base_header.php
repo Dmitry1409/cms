@@ -14,7 +14,7 @@
 					<span>Ознакомлен с <a href="#">ползовательским соглашением</a></span>
 				</div>
 			</form>
-			<div class="call_me_btn_cont">
+			<div role="button" class="call_me_btn_cont">
 				<div class="call_me_send">
 					<div class="btn_animate"></div>
 					<div class="display_none call_me_load_anim"></div>
@@ -35,9 +35,9 @@
 		<div class="btn_line"></div>
 		<div class="btn_line"></div>
 	</div>
-	<div class="virt_btn_menu">
+	<div role="button" class="virt_btn_menu">
 	</div>
-	<div class="header_wrapp">
+	<div role="banner" class="header_wrapp">
 		<div class="cap_container">
 			<div class="combo_header">
 				<a class="logo_header" href=<?php echo $root_dir?>>
@@ -86,12 +86,12 @@
 			</div>
 		</div>
 		<div class="container_menu">
-			<div class="menu_flex_wrap">
+			<div role ="navigation" class="menu_flex_wrap">
 				<a class="menu_item" href=<?php echo $root_dir?> >Главная</a>
 				<div class="line_butt"></div>
 				<div class="cont_940">
 					<div class="menu_item sub_menu_btn">Технологии</div>
-					<div class="sub_menu">
+					<div role="menu" class="sub_menu">
 						<a class="menu_item" href=<?php echo $root_dir."lightLines"?>>Световые линии</a>
 						<a class="menu_item" href=<?php echo $root_dir."multiLevel"?> >Многоуровневые</a>
 						<a class="menu_item" href=<?php echo $root_dir."dubleVisionPrint"?>>DubleVision & Фотопечать</a>
@@ -106,7 +106,7 @@
 				<div class="line_butt"></div>
 				<div class="cont_940">
 					<div class="menu_item sub_menu_btn">Производители ПВХ</div>
-					<div class="sub_menu">
+					<div role="menu" class="sub_menu">
 						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/MSD"?>>MSD</a>
 						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/BAUF"?> >BAUF</a>
 						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/Pongs"?>>Pongs</a>
@@ -130,7 +130,7 @@
 		<div class="header_lozung">
 			<span>Качественная установка натяжных потолков за 3 дня</span>
 			<span>при заказе на сайте скидка 1000 руб</span>
-			<a><div class="btn_animate"></div>Оставить заявку</a>
+			<a role="button"><div class="btn_animate"></div>Оставить заявку</a>
 		</div>
 		<div class="svg_triangle">
 			<svg width="100%" height="100%" viewBox="0 0 100 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">

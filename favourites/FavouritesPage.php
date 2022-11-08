@@ -90,7 +90,7 @@ if(array_key_exists('buyProducts', $_SESSION)){
 	echo "</div>";
 
 	echo "<div class=zakazCont>";
-		echo "<div class=zakazWrapp>";
+		echo "<div role='button' class=zakazWrapp>";
 			echo "<h3>Заказать все товары</h3>";
 			echo "<div class=calc_btn><div class=btn_animate></div>Отправить</div>";
 		echo "</div>";

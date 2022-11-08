@@ -154,7 +154,7 @@
 <div class="FPcountCont">
 	<span><span>12</span> из <span><?php echo count($arr)?></span></span>
 </div>
-<div class="arrWrappCarved">
+<div role="button" class="arrWrappCarved">
 	<div class="FPcontArrow">
 		<div class="arrow-8"></div>
 	</div>

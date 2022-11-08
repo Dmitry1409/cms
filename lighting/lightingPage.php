@@ -12,23 +12,23 @@
 
 
 <div class="contrBtnContLight">
-	<div class="btnLighting btnActivLighting" id="BtnAll" data-category="все">все</div>
-	<div class="btnLighting" data-category="споты">споты</div>
-	<div class="btnLighting" data-category="споты с подсветкой">споты + подсветка</div>
-	<div class="btnLighting" data-category="споты влагозащищенные">споты + влагозащита</div>
-	<div class="btnLighting" data-category="лампы">лампы</div>
-	<div class="btnLighting" data-category="светильники">светильники</div>
-	<div class="btnLighting" data-category="светильники с датчиками">светильники + датчики</div>
-	<div class="btnLighting" data-category="влагозащитные светильники">светильники + влагозащита</div>
-	<div class="btnLighting" data-category="трековые светильники">трековые светильники</div>
-	<div class="btnLighting" data-category="лента">светодиодная лента</div>
-	<div class="btnLighting" data-category="питание 12v">питание 12v</div>
-	<div class="btnLighting" data-category="контроллеры">контроллеры</div>
+	<div role="button" class="btnLighting btnActivLighting" id="BtnAll" data-category="все">все</div>
+	<div role="button" class="btnLighting" data-category="споты">споты</div>
+	<div role="button" class="btnLighting" data-category="споты с подсветкой">споты + подсветка</div>
+	<div role="button" class="btnLighting" data-category="споты влагозащищенные">споты + влагозащита</div>
+	<div role="button" class="btnLighting" data-category="лампы">лампы</div>
+	<div role="button" class="btnLighting" data-category="светильники">светильники</div>
+	<div role="button" class="btnLighting" data-category="светильники с датчиками">светильники + датчики</div>
+	<div role="button" class="btnLighting" data-category="влагозащитные светильники">светильники + влагозащита</div>
+	<div role="button" class="btnLighting" data-category="трековые светильники">трековые светильники</div>
+	<div role="button" class="btnLighting" data-category="лента">светодиодная лента</div>
+	<div role="button" class="btnLighting" data-category="питание 12v">питание 12v</div>
+	<div role="button" class="btnLighting" data-category="контроллеры">контроллеры</div>
 </div>
 
 <div class="sortCont">
-	<div class="sortItem">цены по возрастанию</div>
-	<div class="sortItem">цены по убыванию</div>
+	<div role="button" class="sortItem">цены по возрастанию</div>
+	<div role="button" class="sortItem">цены по убыванию</div>
 </div>
 
 
@@ -71,11 +71,11 @@
 					echo "</div>";
 					echo "<div class='basket-cont'>";
 						echo "<div class='count-cont'>";
-							echo "<span>&ndash;</span>";
+							echo "<span role='button'>&ndash;</span>";
 							echo "<input type='text' maxlength='4' value=1>";
-							echo "<span>+</span>";
+							echo "<span role='button'>+</span>";
 						echo "</div>";
-						echo "<div class='btn-basket'>В избранное</div>";
+						echo "<div role='button' class='btn-basket'>В избранное</div>";
 					echo "</div>";
 				echo "</div>";
 			echo "</div>";
@@ -87,7 +87,7 @@
 	<span><span>12</span> из <span><?php echo count($arr)?></span></span>
 </div>
 
-<div class="arrow-wrapp">	
+<div role="button" class="arrow-wrapp">	
 	<div class="FPcontArrow">
 		<div class="arrow-8"></div>
 	</div>
