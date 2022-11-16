@@ -3,14 +3,15 @@
 
 	// resize_img_in_dir('img', 0, 50);
 
-	$dirNameSource = 'upload_img';
-	$dirNameSave = "upload_img";
+	$dirNameSource = 'test';
+	$dirNameSave = "processed";
 	
 	// convert_to_webp();
 
 	function convert_to_webp($dir){
 		global $dirNameSource, $dirNameSave;
 		$paths = getImages($dirNameSource);
+		echo var_dump($paths);
 		for($i=0; $i<count($paths); $i++){
 			$full_parth = $dirNameSource."/".$paths[$i];
 			webpImage($full_parth);
@@ -21,7 +22,7 @@
 
 
 
-	function webpImage($source, $quality = 90)
+	function webpImage($source, $quality = 50)
 	    {
 	    	global $dirNameSource, $dirNameSave;
 	        $dir = pathinfo($source, PATHINFO_DIRNAME);
@@ -57,10 +58,6 @@
 
 	        // return $destination;
 	    }
-
-
-
-
 
 	function resize_img_in_dir($dir, $w, $h){
 		$ar = getImages($dir);

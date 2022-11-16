@@ -20,8 +20,8 @@
 	<div class="noChelCont">
 		<div class="NoChelRow">
 			<picture>
-				<source srcset="imgMultiLev/beshel.webp" type="image/webp">
-				<img src="imgMultiLev/beshel.jpg" alt="Без щелевой профиль">
+				<source srcset='<?php echo $root_dir."img/rendered/webp/jsjjwjldvnvnsnl.webp" ?>' type="image/webp">
+				<img src='<?php echo $root_dir."img/rendered/jpg/jsjjwjldvnvnsnl.jpg"?>' alt="Без щелевой профиль">
 			</picture>
 		</div>
 		<div class="NoChelRow">
@@ -49,8 +49,8 @@
 	<div class="noChelCont row-rewers">
 		<div class="NoChelRow">
 			<picture>
-				<source srcset="imgMultiLev/4a86a0928f465dd6533b64e81542b0f0.webp" type="image/webp">
-				<img src="imgMultiLev/4a86a0928f465dd6533b64e81542b0f0.jpg" alt="Без щелевой профиль">
+				<source srcset='<?php echo $root_dir."img/rendered/webp/vnwowonb.webp" ?>' type="image/webp">
+				<img src='<?php echo $root_dir."img/rendered/jpg/vnwowonb.jpg" ?>' alt="Без щелевой профиль">
 			</picture>
 		</div>
 		<div class="NoChelRow">
@@ -78,8 +78,8 @@
 	<div class="noChelCont">
 		<div class="NoChelRow">
 			<picture>
-				<source srcset="imgMultiLev/image_05_12_19_12_53.webp" type="image/webp">
-				<img src="imgMultiLev/image_05_12_19_12_53.jpg" alt="Без щелевой профиль">
+				
+				<img src='<?php echo $root_dir."img/rendered/jpg/gfdgdfdg.jpg" ?>' alt="Без щелевой профиль">
 			</picture>
 		</div>
 		<div class="NoChelRow">

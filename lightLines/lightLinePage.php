@@ -48,8 +48,8 @@
 	<div class="device_cont">
 		<div class="device_img_cont">
 			<picture>
-				<source srcset="img/SP5-svetovaya-liniya_.webp" type="image/webp">
-				<img src="img/SP5-svetovaya-liniya_.jpg" alt="Устройство световых линий">
+				<source srcset='<?php echo $root_dir."img/rendered/webp/fsdfsf3reb3b.webp"?>' type="image/webp">
+				<img src='<?php echo $root_dir."img/rendered/jpg/fsdfsf3reb3b.jpg"?>' alt="Устройство световых линий">
 			</picture>
 		</div>
 		<div class="lights_text device_text">

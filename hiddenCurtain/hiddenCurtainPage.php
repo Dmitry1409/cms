@@ -11,8 +11,8 @@
 	<div class="vari_gard_item">
 		<p class="parag_color_text">С Профилем ПК-5</p>
 		<picture class="vari_cont_picture">
-			<source srcset="img/webp/3089970.webp" type="image/webp">
-			<img src="img/jpg/3089970.jpg"  alt="Скрытая гардина с профилем ПК-5">
+			<source srcset='<?php echo $root_dir."img/rendered/webp/nvowofbwbwb.webp"?>' type="image/webp">
+			<img src='<?php echo $root_dir."img/rendered/jpg/nvowofbwbwb.jpg"?>'  alt="Скрытая гардина с профилем ПК-5">
 		</picture>
 		<div class="vari_item_fexbox parag_color_text">
 			<span>
@@ -30,8 +30,8 @@
 	<div class="vari_gard_item">
 		<p class="parag_color_text">Имитация стены</p>
 		<picture class="vari_cont_picture">
-			<source srcset="img/webp/05_standartnii_skritii_karniz_1.webp" type="image/webp">
-			<img src="img/jpg/05_standartnii_skritii_karniz_1.jpg"  alt="Скрытая гардина с профилем ПК-5">
+			<source srcset='<?php echo $root_dir."img/rendered/webp/nnkdnwnkvwiiv.webp"?>' type="image/webp">
+			<img src='<?php echo $root_dir."img/rendered/jpg/nnkdnwnkvwiiv.jpg"?>'  alt="Скрытая гардина с профилем ПК-5">
 		</picture>
 		<div class="vari_item_fexbox parag_color_text">
 			<span>
