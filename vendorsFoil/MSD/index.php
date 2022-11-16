@@ -1,6 +1,5 @@
 <?php 
 	require "../../config_cms.php";
-
 	require "../../session_handlers.php";
 	session_start();
 	collect_data();

@@ -1449,7 +1449,6 @@ textarea.invalidValueCalculate{
 	.sub_menu{
 		position: absolute;
 		z-index: 20;
-		
 	}
 	.open_sub_menu{
 		-webkit-box-shadow: 5px 5px 15px 5px #000000; 

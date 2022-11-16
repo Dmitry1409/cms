@@ -94,7 +94,7 @@
 					<div role="menu" class="sub_menu">
 						<a class="menu_item" href=<?php echo $root_dir."lightLines"?>>Световые линии</a>
 						<a class="menu_item" href=<?php echo $root_dir."multiLevel"?> >Многоуровневые</a>
-						<a class="menu_item" href=<?php echo $root_dir."dubleVisionPrint"?>>DubleVision & Фотопечать</a>
+						<a class="menu_item" href=<?php echo $root_dir."dubleVisionPrint"?>>Double Vision & Фотопечать</a>
 						<a class="menu_item" href=<?php echo $root_dir."carvedCelling"?>>Резные</a>
 						<a class="menu_item" href=<?php echo $root_dir."shadowProfil"?>>Парящие & Теневые & Подсветка</a>
 						<a class="menu_item" href=<?php echo $root_dir."ligthNiches"?>>Световые ниши</a>

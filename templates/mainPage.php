@@ -153,7 +153,7 @@
 				<img src="img/3d_print.jpg" class="img_skew">
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
-					<h3 class="tech_header">DubleVision<br>Фотопечать</h3>
+					<h3 class="tech_header">Double Vision<br>Фотопечать</h3>
 					<a href="dubleVisionPrint" class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
@@ -456,7 +456,7 @@
 				</div>
 				<div class="heder_present" style="position: relative; z-index: 2;">
 					<span>Спецпредложения</span>
-					<span>акции и скидки компаниии</span>
+					<span>акции и скидки компании</span>
 				</div>
 				<div class="aferta_block">
 					<div class="sale_flag">1000 руб.</div>

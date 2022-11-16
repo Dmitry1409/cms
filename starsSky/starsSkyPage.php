@@ -43,7 +43,7 @@
 	</div>
 	<div class="starNote"><div class="green_defice_star"></div><div>Выбор контроллера с монохромным свечением или же мультиколор с мерцанием и с эффектом падающих комет.</div></div>
 	<div class="starNote"><div class="green_defice_star"></div><div>Размещение дополнительный областей засветки с возможностью регулировки свечения. Например светящиеся планета или полумесяц.</div></div>
-	<div class="starNote"><div class="green_defice_star"></div><div>Колличество звезд.</div></div>
+	<div class="starNote"><div class="green_defice_star"></div><div>Количество звезд.</div></div>
 	<div class="starNote"><div class="green_defice_star"></div><div>Случайное расположение звезд или вымеренное.</div></div>
 </div>
 

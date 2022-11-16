@@ -258,7 +258,6 @@ function close_modal_action(e){
 	}, 1300)
 
 	let picture = document.querySelector('.call_me_cont picture')
-	console.log(clientData)
 	if(picture){
 		setTimeout(()=>{
 			picture.remove()
