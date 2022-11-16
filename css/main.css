@@ -343,7 +343,7 @@ a.menu_item{
 .header_wrapp{
 	position: relative;
 	width: 100%;
-	background: url("../img/Gradient_blue.png") left 50% top 0px / auto auto no-repeat ,url("../img/image_header.jpg") right -97px bottom 0px / auto auto no-repeat;
+	background: url("../img/mainPage/Gradient_blue.png") left 50% top 0px / auto auto no-repeat ,url("../img/mainPage/image_header.jpg") right -97px bottom 0px / auto auto no-repeat;
 	padding-left: 20px;
 	padding-right: 20px;
 }

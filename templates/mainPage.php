@@ -129,7 +129,7 @@
 		<div class="tech_grid">
 			<div class="tech_elem">
 				<picture class="tech_picture">
-					<source srcset="img/mainPage//webp/svetovie_line.webp" type="image/webp">
+					<source srcset="img/mainPage/webp/svetovie_line.webp" type="image/webp">
 					<img class="img_skew" src="img/mainPage/jpg/svetovie_line.jpg" alt="Световые линии">
 				</picture>				
 				<div class="tech_mask"></div>
@@ -140,7 +140,7 @@
 			</div>
 			<div class="tech_elem">				
 				<picture class="tech_picture">
-					<source srcset="img/mainPage//webp/two_level.webp" type="image/webp">
+					<source srcset="img/mainPage/webp/two_level.webp" type="image/webp">
 					<img class="img_skew" src="img/mainPage/jpg/two_level.jpg" alt="Многоуровневые конструкции">
 				</picture>
 				<div class="tech_mask"></div>
@@ -149,16 +149,22 @@
 					<a href="multiLevel" class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
-			<div class="tech_elem">				
-				<img src="img/3d_print.jpg" class="img_skew">
+			<div class="tech_elem">
+				<picture class="tech_picture">
+					<source srcset="img/mainPage/webp/3d_print.webp" type="image/webp">
+					<img class="img_skew" src="img/mainPage/jpg/3d_print.jpg" alt="Фотопечать на полотне">
+				</picture>			
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Double Vision<br>Фотопечать</h3>
 					<a href="dubleVisionPrint" class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
-			<div class="tech_elem">				
-				<img src="img/reznie.webp" class="img_skew">
+			<div class="tech_elem">
+				<picture class="tech_picture">
+					<source srcset="img/mainPage/webp/reznie.webp" type="image/webp">
+					<img class="img_skew" src="img/mainPage/jpg/reznie.jpg" alt="Резные полотна">
+				</picture>			
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Резные</h3>
@@ -167,7 +173,7 @@
 			</div>
 			<div class="tech_elem">				
 				<picture class="tech_picture">
-					<source srcset="img/mainPage//webp/svet_line.webp" type="image/webp">
+					<source srcset="img/mainPage/webp/svet_line.webp" type="image/webp">
 					<img class="img_skew" src="img/mainPage/jpg/svet_line.jpg" alt="Парящие теневые потолки">
 				</picture>	
 				<div class="tech_mask"></div>
@@ -181,7 +187,7 @@
 					<source srcset="img/mainPage/webp/6064505d189c41d3b73f639711059891.webp" type="image/webp">
 					<img class="img_skew" src="img/mainPage/jpg/6064505d189c41d3b73f639711059891.jpg" alt="Световые ниши">
 				</picture>				
-				<div class="tech_mask" style></div>
+				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Световые ниши</h3>
 					<a href="ligthNiches" class="btn_tech">Узнать подробнее</a>
@@ -190,18 +196,21 @@
 
 			<div class="tech_elem">
 				<picture class="tech_picture">
-					<source srcset="img/mainPage//webp/gardin.webp" type="image/webp">
-					<img class="img_skew" src="img/mainPage/jpg/gardin.jpeg" alt="Световые ниши">
+					<source srcset="img/mainPage/webp/gardin.webp" type="image/webp">
+					<img class="img_skew" src="img/mainPage/jpg/gardin.jpeg" alt="Ниша в потолке">
 				</picture>				
-				<div class="tech_mask" style></div>
+				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Ниши<br>Гардины</h3>
 					<a href="hiddenCurtain" class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 
-			<div class="tech_elem">				
-				<img src="img/glyanc2.webp" class="img_skew">
+			<div class="tech_elem">
+				<picture class="tech_picture">
+					<source srcset="img/mainPage/webp/glyanc2.webp" type="image/webp">
+					<img class="img_skew" src="img/mainPage/jpg/glyanc2.jpg" alt="Глянцевый вместе с матовым полотном">
+				</picture>				
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Фактура<br>Цвет</h3>
@@ -209,16 +218,22 @@
 				</div>
 			</div>
 
-			<div class="tech_elem">				
-				<img src="img/night_sky.jpg" class="img_skew">
+			<div class="tech_elem">
+				<picture class="tech_picture">
+					<source srcset="img/mainPage/webp/night_sky.webp" type="image/webp">
+					<img class="img_skew" src="img/mainPage/jpg/night_sky.jpg" alt="Звезды в потолке">
+				</picture>				
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Звездное небо</h3>
 					<a href="starsSky" class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
-			<div class="tech_elem">				
-				<img src="img/light.jpg" class="img_skew">
+			<div class="tech_elem">
+				<picture class="tech_picture">
+					<source srcset="img/mainPage/webp/light.webp" type="image/webp">
+					<img class="img_skew" src="img/mainPage/jpg/light.jpg" alt="Светильники">
+				</picture>				
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Освещение</h3>
@@ -345,7 +360,7 @@
 		<div>
 			<div class="vendorItem">
 				<div>
-					<img src="img/msdvendorskkgwgkw.jpg" alt="logo-msd">
+					<img src="img/mainPage/msdvendorskkgwgkw.jpg" alt="logo-msd">
 				</div>
 				<div class="vendorDescriptCont">
 					<div>MSD-premium-classic</div>
@@ -359,7 +374,7 @@
 
 			<div class="vendorItem">
 				<div>
-					<img src="img/bauffwmw02fggs.jpg" alt="logo-BAUF">
+					<img src="img/mainPage/bauffwmw02fggs.jpg" alt="logo-BAUF">
 				</div>
 				<div class="vendorDescriptCont">
 					<div>BAUF</div>
@@ -374,7 +389,7 @@
 		<div>
 			<div class="vendorItem">
 				<div>
-					<img src="img/pongskwpmmpwv.jpg" alt="logo-Pongs">
+					<img src="img/mainPage/pongskwpmmpwv.jpg" alt="logo-Pongs">
 				</div>
 				<div class="vendorDescriptCont">
 					<div>Pongs</div>
@@ -388,7 +403,7 @@
 
 			<div class="vendorItem">
 				<div>
-					<img src="img/teqtum-logomwpmmwf.jpg" alt="logo-Teqtum">
+					<img src="img/mainPage/teqtum-logomwpmmwf.jpg" alt="logo-Teqtum">
 				</div>
 				<div class="vendorDescriptCont">
 					<div>Teqtum</div>
@@ -480,18 +495,18 @@
 				<div class="img_container">
 					<div class="img_row_cont">
 						<div class="img_border">
-							<img src="img/certif1.webp">
+							<img src="img/mainPage/certif1.webp">
 						</div>
 						<div class="img_border">
-							<img src="img/certif2.webp">
+							<img src="img/mainPage/certif2.webp">
 						</div>
 					</div>
 					<div class="img_row_cont">
 						<div class="img_border">
-							<img src="img/certif3.webp">
+							<img src="img/mainPage/certif3.webp">
 						</div>
 						<div class="img_border">
-							<img src="img/certif4.webp">
+							<img src="img/mainPage/certif4.webp">
 						</div>
 					</div>
 				</div>
@@ -558,7 +573,7 @@
 					$arr[] = $r;
 				}
 
-				// shuffle($arr);
+				shuffle($arr);
 				$_SESSION['allComents'] = $arr;
 
 				for($i=0; $i<15; $i++){
