@@ -982,7 +982,7 @@
 			<img src="imgMultiLev/gde-najti-indiv.jpg" alt="Наш дизайн">
 			<h4>При заказе потолка дизайн потолка в подарок</h4>
 			<span>Акция действует до 18 ноября 2022г.</span>
-			<span>Подробности по телефону 8(831)-413-53-94</span>
+			<span>Подробности по телефону <?php echo $comp_telef1?></span>
 			<div role="button" class="aferta_btn">Отправить</div>
 		</div>
 	</div>

@@ -195,7 +195,7 @@
 		<img style="border-radius: 4px;" src="../img/people.webp">
 		<h4>Оформите заявку прямо сейчас и получи скидку в 200 руб с кв. метра.</h4>
 		<span>Акция действует до <?php echo $tar_date; ?></span>
-		<span>Подробности по телефону 8(831)-413-53-94</span>
+		<span>Подробности по телефону <?php echo $comp_telef1 ?></span>
 		<div role="button" class="aferta_btn">Оформить</div>
 	</div>
 

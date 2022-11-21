@@ -129,15 +129,15 @@
 						<div class="footer_icon">
 							<img src=<?php echo $root_dir."img/location.png"?>>
 						</div>
-						<span>г. Нижний Новгород Московское шоссе 105</span>
+						<span><?php echo $addres_comp?></span>
 					</div>
 					<div class="footer_icon_text">
 						<div class="footer_icon">
 							<img src=<?php echo $root_dir."img/phone.png"?>>
 						</div>
 						<div class="footer_inf_cont">						
-							<a href="tel:88314135394">8(831)413-53-94</a>
-							<a href="tel:+79202929892">+7 920 292 98 92</a>
+							<a href='<?php echo "tel:$comp_telef1"?>'><?php echo $comp_telef1?></a>
+							<a href='<?php echo "tel:$comp_telef2"?>'><?php echo $comp_telef2?></a>
 						</div>
 					</div>
 				</div>
@@ -148,7 +148,7 @@
 						</div>
 						<div class="footer_inf_cont">
 							<span class="footer_email">Email:</span>
-							<span class="">aladdin-nn@mail.ru</span>
+							<span class=""><?php echo $email_comp?></span>
 						</div>
 					</div>
 					<div class="footer_icon_text">
@@ -231,7 +231,7 @@
 			</div>
 		</div>
 		<div class="footer_locations">
-			<h4>CELLINGS в Нижегородской области</h4>
+			<h4><?php echo $COMPANY_NAME?> в Нижегородской области</h4>
 			<div>
 				<ul>
 					<li><a href=<?php echo $root_dir?>><span>Нижний Новгород</span></a></li>
@@ -258,7 +258,7 @@
 			</div>
 		</div>
 		<div class="copy_cont">
-			<span>Copyright &copy; 2020 - 2023<br> Celings</span>
+			<span>Copyright &copy; 2020 - 2023<br> <?php echo $COMPANY_NAME?></span>
 			<span>Поддержка.&nbsp; &nbsp;<a href="#">Разработка сайтов</a></span>
 		</div>
 	</div>

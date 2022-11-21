@@ -44,7 +44,7 @@
 					<img src=<?php echo $root_dir."img/img_logo.webp"?>>
 				</a>
 				<div class="name_company">
-					<a href=<?php echo $root_dir?>>CEILINGS</a>
+					<a href=<?php echo $root_dir?>><?php echo $COMPANY_NAME?></a>
 					<span>Производство и установка натяжных потолков</span>
 				</div>
 			</div>
@@ -79,8 +79,8 @@
 						</svg>
 					</div>
 					<div class="container_tel">
-						<a href="tel:88314135394">8(831)413-53-94</a>
-						<a href="tel:+79202929892">+7 920 292 98 92</a>
+						<a href='<?php echo "tel:$comp_telef1"?>'><?php echo $comp_telef1?></a>
+						<a href='<?php echo "tel:$comp_telef2"?>'><?php echo $comp_telef2?></a>
 					</div>
 				</div>
 			</div>
