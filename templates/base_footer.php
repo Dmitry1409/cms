@@ -262,5 +262,6 @@
 			<span>Поддержка.&nbsp; &nbsp;<a href="#">Разработка сайтов</a></span>
 		</div>
 	</div>
+</div>
 </body>
 </html>

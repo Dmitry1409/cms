@@ -92,15 +92,15 @@
 				<div class="cont_940">
 					<div class="menu_item sub_menu_btn">Технологии</div>
 					<div role="menu" class="sub_menu">
-						<a class="menu_item" href=<?php echo $root_dir."lightLines"?>>Световые линии</a>
-						<a class="menu_item" href=<?php echo $root_dir."multiLevel"?> >Многоуровневые</a>
-						<a class="menu_item" href=<?php echo $root_dir."dubleVisionPrint"?>>Double Vision & Фотопечать</a>
-						<a class="menu_item" href=<?php echo $root_dir."carvedCelling"?>>Резные</a>
-						<a class="menu_item" href=<?php echo $root_dir."shadowProfil"?>>Парящие & Теневые & Подсветка</a>
-						<a class="menu_item" href=<?php echo $root_dir."ligthNiches"?>>Световые ниши</a>
-						<a class="menu_item" href=<?php echo $root_dir."hiddenCurtain"?>>Ниши & Гардины</a>
-						<a class="menu_item" href=<?php echo $root_dir."textureColor"?>>Фактура & Цвет</a>
-						<a class="menu_item" href=<?php echo $root_dir."starsSky"?>>Звездное небо</a>
+						<a class="menu_item" href=<?php echo $root_dir."lightLines#main_section_id"?>>Световые линии</a>
+						<a class="menu_item" href=<?php echo $root_dir."multiLevel#main_section_id"?> >Многоуровневые</a>
+						<a class="menu_item" href=<?php echo $root_dir."dubleVisionPrint#main_section_id"?>>Double Vision & Фотопечать</a>
+						<a class="menu_item" href=<?php echo $root_dir."carvedCelling#main_section_id"?>>Резные</a>
+						<a class="menu_item" href=<?php echo $root_dir."shadowProfil#main_section_id"?>>Парящие & Теневые & Подсветка</a>
+						<a class="menu_item" href=<?php echo $root_dir."ligthNiches#main_section_id"?>>Световые ниши</a>
+						<a class="menu_item" href=<?php echo $root_dir."hiddenCurtain#main_section_id"?>>Ниши & Гардины</a>
+						<a class="menu_item" href=<?php echo $root_dir."textureColor#main_section_id"?>>Фактура & Цвет</a>
+						<a class="menu_item" href=<?php echo $root_dir."starsSky#main_section_id"?>>Звездное небо</a>
 					</div>
 				</div>
 				<div class="line_butt"></div>
@@ -109,10 +109,10 @@
 				<div class="cont_940">
 					<div class="menu_item sub_menu_btn">Производители ПВХ</div>
 					<div role="menu" class="sub_menu">
-						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/MSD"?>>MSD</a>
-						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/BAUF"?> >BAUF</a>
-						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/Pongs"?>>Pongs</a>
-						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/Teqtum"?>>Teqtum</a>
+						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/MSD#main_section_id"?>>MSD</a>
+						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/BAUF#main_section_id"?> >BAUF</a>
+						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/Pongs#main_section_id"?>>Pongs</a>
+						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/Teqtum#main_section_id"?>>Teqtum</a>
 					</div>
 				</div>	
 				<div class="line_butt"></div>
@@ -139,5 +139,5 @@
 		</div>
 	</div>
 
-	
+	<div role="main" id="main_section_id">
 	
