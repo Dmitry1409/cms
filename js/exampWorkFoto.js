@@ -1,6 +1,13 @@
 
 window.addEventListener('DOMContentLoaded', ()=>{
 
+	document.addEventListener('scroll', scrollAction)
+	let slidFlag = false
+	let id_inter_slid
+	let id_timeOut
+	let timeOutVal = 7000
+	let intervalVal = 3000
+
 	let time_protect = Date.now()
 
 	let current_img
@@ -64,10 +71,31 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
 		let res = await fetch(`${root_dir}scripts_php/fotoExampHasTagAction.php?hashTags=${JSON.stringify(arr)}`)
 		if(res.ok){
+			clearInterval(id_inter_slid)
+			clearTimeout(id_timeOut)
+			id_timeOut = setTimeout(()=>{
+				id_inter_slid = setInterval(()=>{
+					examp_right_action(null, true , true)
+				}, intervalVal)
+			}, timeOutVal)
 			let val = await res.json()
 			insertImgHashTagAct(val)
 		}else{
 			alert('Не удалось получить изображения от сервера, сообщите пожалуйста администратору сайта. Код ошибки: '+res.status)
+		}
+	}
+
+	function scrollAction(){
+		if(!id_inter_slid){
+			let hashCont = document.querySelector('.controlHashTagCont')
+			rectHash = hashCont.getBoundingClientRect()
+			if(rectHash.y < 200){
+				slidFlag = true
+				examp_right_action(null, true , true)
+				id_inter_slid = setInterval(()=>{
+					examp_right_action(null, true , true)
+				}, intervalVal)
+			}
 		}
 	}
 	function insertImgHashTagAct(val){
@@ -414,8 +442,17 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			like_text.innerHTML = "Добавить<br>в избранное"
 		}
 	}
-	function examp_right_action( e, chan_like = true){
+	function examp_right_action(e, chan_like = true, flInterval){
 		if(Date.now() > time_protect){
+			if(!flInterval){
+				clearInterval(id_inter_slid)
+				clearTimeout(id_timeOut)
+				id_timeOut = setTimeout(()=>{
+					id_inter_slid = setInterval(()=>{
+						examp_right_action(null, true , true)
+					}, intervalVal)
+				}, timeOutVal)
+			}
 			time_protect = Date.now() + 500
 
 			let left = document.querySelector('.examp_left')
@@ -482,6 +519,15 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	}
 	function examp_left_action(e, chan_like = true){
 		if(Date.now()>time_protect){
+
+			clearInterval(id_inter_slid)
+			clearTimeout(id_timeOut)
+			id_timeOut = setTimeout(()=>{
+				id_inter_slid = setInterval(()=>{
+					examp_right_action(null, true , true)
+				}, intervalVal)
+			}, timeOutVal)
+			
 			time_protect = Date.now() + 500
 
 

@@ -104,7 +104,7 @@
 					</div>
 				</div>
 				<div class="line_butt"></div>
-				<a class="menu_item" href=<?php echo $root_dir."lighting" ?> >Освещение</a>			
+				<a class="menu_item" href=<?php echo $root_dir."lighting#main_section_id" ?> >Освещение</a>			
 				<div class="line_butt"></div>
 				<div class="cont_940">
 					<div class="menu_item sub_menu_btn">Производители ПВХ</div>
@@ -124,7 +124,7 @@
 				<div class="line_butt"></div>
 				<div id="questAnswerBtnId" class="menu_item">Ответы на вопросы</div>
 				<div class="line_butt"></div>
-				<a class="menu_item" href=<?php echo $root_dir.'favourites'?>>Избранное</a>
+				<a class="menu_item" href=<?php echo $root_dir.'favourites#main_section_id'?>>Избранное</a>
 			</div>
 		</div>
 		<div class="header_lozung">
