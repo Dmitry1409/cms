@@ -13,7 +13,7 @@
 	<p>MSD-Premium – ПВХ-пленка для натяжных потолков от одного из крупнейших производителей натяжных полотен – MSD. Завод-изготовитель расположен в Китае и оснащен современным европейским и японским оборудованием. Однако производство сырья для потолочной пленки МСД линейки Премиум организовано в Тайвани, что обусловлено повышенными требованиями к экологичности полотна.</p>
 </div>
 <div class="img_cont">
-	<img src="msdPremium.jpg">
+	<img src="../../img/vendorsFoilPage/msdPremium.jpg">
 </div>
 <div class="text_cont">
 	<h2>О заводе MSD</h2>
@@ -82,7 +82,7 @@
 
 	<h2>Сертификат соответствия</h2>
 	<div class="img_cont">
-		<img src="sertifikat-eckologia-msd-fsmmw.jpg">
+		<img src="../../img/vendorsFoilPage/sertifikat-eckologia-msd-fsmmw.jpg">
 	</div>
 
 	<h2>Отличия Premium от Classic</h2>

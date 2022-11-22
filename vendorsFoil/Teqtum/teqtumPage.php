@@ -21,7 +21,7 @@
 
 	<h2>Скрытая маркировка на полотне</h2>
 	<div class="img_cont">
-		<img src="fwefgbqqbqb.png">
+		<img src="../../img/vendorsFoilPage/fwefgbqqbqb.png">
 	</div>
 
 	<h2>О производителе Teqtum</h2>

@@ -25,7 +25,7 @@
 	</div>
 </div>
 <div class="img_cont">
-	<img src="BAUF.jpg">
+	<img src="../../img/vendorsFoilPage/BAUF.jpg">
 </div>
 <div class="text_cont">
 	<h2>О бренде BAUF</h2>
