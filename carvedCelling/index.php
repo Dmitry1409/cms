@@ -9,6 +9,7 @@
 	require "headCarvedCelling.php";
 	require "../templates/base_header.php";
 	require "carvedCellingPage.php";
+	require "../templates/clientFeedBack.php";
 	require "../templates/base_footer.php";
 
 ?>

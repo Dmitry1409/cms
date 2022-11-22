@@ -8,6 +8,7 @@
 	require "templates/headMainPage.php";
 	require "templates/base_header.php";
 	require "templates/mainPage.php";
+	require "templates/clientFeedBack.php";
 	require "templates/base_footer.php";
 
 ?>

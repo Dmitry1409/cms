@@ -9,6 +9,7 @@
 	require "headDubleVis.php";
 	require "../templates/base_header.php";
 	require "dubleVisPage.php";
+	require "../templates/clientFeedBack.php";
 	require "../templates/base_footer.php";
 
 ?>

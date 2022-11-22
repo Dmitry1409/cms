@@ -9,6 +9,7 @@
 	require "headFavourites.php";
 	require "../templates/base_header.php";
 	require "FavouritesPage.php";
+	require "../templates/clientFeedBack.php";
 	require "../templates/base_footer.php";
 
 ?>

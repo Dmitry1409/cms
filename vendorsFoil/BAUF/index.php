@@ -9,6 +9,7 @@
 	require "headBauf.php";
 	require "../../templates/base_header.php";
 	require "baufPage.php";
+	require "../../templates/clientFeedBack.php";
 	require "../../templates/base_footer.php";
 
 ?>

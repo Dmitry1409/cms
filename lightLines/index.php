@@ -9,6 +9,7 @@
 	require "headLines.php";
 	require "../templates/base_header.php";
 	require "lightLinePage.php";
+	require "../templates/clientFeedBack.php";
 	require "../templates/base_footer.php";
 
 ?>

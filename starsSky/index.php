@@ -9,6 +9,7 @@
 	require "headStarsSky.php";
 	require "../templates/base_header.php";
 	require "starsSkyPage.php";
+	require "../templates/clientFeedBack.php";
 	require "../templates/base_footer.php";
 
 ?>

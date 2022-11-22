@@ -201,14 +201,6 @@
 
 </div>
 
-<div style="display: flex; justify-content: center; margin-top: 50px;">
-	<div class="vert_line"></div>
-</div>
-<div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Примеры работ</span>
-</div>
-
-
 <?php
 	$query = "SELECT id_img FROM hashTags WHERE name = 'фотопечать'";
 	$key_session = 'fotoPrint';

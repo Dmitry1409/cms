@@ -8,6 +8,7 @@
 	require "headMSD.php";
 	require "../../templates/base_header.php";
 	require "msdPage.php";
+	require "../../templates/clientFeedBack.php";
 	require "../../templates/base_footer.php";
 
 ?>

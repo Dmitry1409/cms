@@ -3,6 +3,7 @@
 	<link rel="stylesheet" type="text/css" href="multiLevelStyle.css">
 	<script type="text/javascript" src="../js/exampWorkFoto.js"></script>
 	<script type="text/javascript" src="multiLev_script.js"></script>
+	<script type="text/javascript" src="../js/feedBackClient.js"></script>
 	<?php 
 		$price_work = $db->querySingle("SELECT price FROM priceForCalcult WHERE id = 8");
 	?>

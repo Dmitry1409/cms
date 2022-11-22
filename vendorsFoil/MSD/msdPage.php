@@ -119,3 +119,9 @@
 		</table>
 	</div>
 </div>
+
+<?php
+	$query = "все";
+	$hashsSelect = ['#все'];
+	include "../../templates/exampWorkFoto.php";
+?>

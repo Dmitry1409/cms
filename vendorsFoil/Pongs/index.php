@@ -9,6 +9,7 @@
 	require "headPongs.php";
 	require "../../templates/base_header.php";
 	require "pongsPage.php";
+	require "../../templates/clientFeedBack.php";
 	require "../../templates/base_footer.php";
 
 ?>

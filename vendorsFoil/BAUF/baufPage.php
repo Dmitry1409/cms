@@ -98,72 +98,78 @@
 
 	<h2>Таблица показателей пленки BAUF</h2>
 </div>
-	<div class="price_table">
-		<table>
-			<thead>
-				<tr>
-					<td></td>
-					<td>Bauf 230 (мат)</td>
-					<td>Bauf 230 (глянец)</td>
-					<td>Bauf 230 (сатин)</td>
-					<td>Bauf 270 (мат)</td>
-					<td>Bauf 270 (глянец)</td>
-					<td>Bauf 270 (сатин)</td>
-					<td>Другие производители</td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Плотность пленки, гр/кв.м</td>
-					<td>250</td>
-					<td>250</td>
-					<td>250</td>
-					<td>300</td>
-					<td>300</td>
-					<td>300</td>
-					<td>200-230</td>
-				</tr>
-				<tr>
-					<td>Прозрачность пленки</td>
-					<td>102</td>
-					<td>102</td>
-					<td>102</td>
-					<td>106</td>
-					<td>106</td>
-					<td>106</td>
-					<td>87</td>
-				</tr>
-				<tr>
-					<td>Отражение пленки (только глянца)</td>
-					<td></td>
-					<td>110</td>
-					<td></td>
-					<td></td>
-					<td>110</td>
-					<td></td>
-					<td>95</td>
-				</tr>
-				<tr>
-					<td>Толщина пленки (микрон)</td>
-					<td>230</td>
-					<td>195</td>
-					<td>200</td>
-					<td>270</td>
-					<td>230</td>
-					<td>240</td>
-					<td>185-215</td>
-				</tr>
-				<tr>
-					<td>Прочность на разрыв, Н</td>
-					<td>23/30</td>
-					<td>23/30</td>
-					<td>23/30</td>
-					<td>25/35</td>
-					<td>25/35</td>
-					<td></td>
-					<td></td>
-				</tr>
-			</tbody>
-		</table>
+<div class="price_table">
+	<table>
+		<thead>
+			<tr>
+				<td></td>
+				<td>Bauf 230 (мат)</td>
+				<td>Bauf 230 (глянец)</td>
+				<td>Bauf 230 (сатин)</td>
+				<td>Bauf 270 (мат)</td>
+				<td>Bauf 270 (глянец)</td>
+				<td>Bauf 270 (сатин)</td>
+				<td>Другие производители</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Плотность пленки, гр/кв.м</td>
+				<td>250</td>
+				<td>250</td>
+				<td>250</td>
+				<td>300</td>
+				<td>300</td>
+				<td>300</td>
+				<td>200-230</td>
+			</tr>
+			<tr>
+				<td>Прозрачность пленки</td>
+				<td>102</td>
+				<td>102</td>
+				<td>102</td>
+				<td>106</td>
+				<td>106</td>
+				<td>106</td>
+				<td>87</td>
+			</tr>
+			<tr>
+				<td>Отражение пленки (только глянца)</td>
+				<td></td>
+				<td>110</td>
+				<td></td>
+				<td></td>
+				<td>110</td>
+				<td></td>
+				<td>95</td>
+			</tr>
+			<tr>
+				<td>Толщина пленки (микрон)</td>
+				<td>230</td>
+				<td>195</td>
+				<td>200</td>
+				<td>270</td>
+				<td>230</td>
+				<td>240</td>
+				<td>185-215</td>
+			</tr>
+			<tr>
+				<td>Прочность на разрыв, Н</td>
+				<td>23/30</td>
+				<td>23/30</td>
+				<td>23/30</td>
+				<td>25/35</td>
+				<td>25/35</td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 
-	</div>
+
+<?php
+	$query = "все";
+	$hashsSelect = ['#все'];
+	include "../../templates/exampWorkFoto.php";
+?>

@@ -9,6 +9,7 @@
 	require "headTextureColor.php";
 	require "../templates/base_header.php";
 	require "textureColorPage.php";
+	require "../templates/clientFeedBack.php";
 	require "../templates/base_footer.php";
 
 ?>

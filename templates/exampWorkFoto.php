@@ -1,3 +1,10 @@
+<div id=exampWork style="display: flex; justify-content: center; margin-top: 50px;">
+	<div class="vert_line"></div>
+</div>
+<div class="heder_present" style="position: relative; z-index: 2;">
+	<span>Примеры работ</span>
+</div>
+
 <?php
 	$arr = [];
 	if($query != "все"){
@@ -54,7 +61,6 @@
 
 	$_SESSION["fotoWorkExamp"] = $arr;
 
-	// echo var_dump(array_keys($_SESSION));
 
 
 	$hashTagName = [];
@@ -63,7 +69,6 @@
 		$hashTagName[] = "#".$r["name"];
 	}
 
-	// unset($_SESSION[$key_session]);
 ?>
 
 <div class="controlHashTagCont">

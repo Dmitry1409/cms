@@ -9,6 +9,7 @@
 	require "headLighting.php";
 	require "../templates/base_header.php";
 	require "lightingPage.php";
+	require "../templates/clientFeedBack.php";
 	require "../templates/base_footer.php";
 
 ?>

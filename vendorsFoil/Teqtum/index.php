@@ -9,6 +9,7 @@
 	require "headTeqtum.php";
 	require "../../templates/base_header.php";
 	require "teqtumPage.php";
+	require "../../templates/clientFeedBack.php";
 	require "../../templates/base_footer.php";
 
 ?>

@@ -9,6 +9,7 @@
 	require "headHiddenCurtain.php";
 	require "../templates/base_header.php";
 	require "hiddenCurtainPage.php";
+	require "../templates/clientFeedBack.php";
 	require "../templates/base_footer.php";
 
 ?>

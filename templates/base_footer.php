@@ -1,4 +1,3 @@
-	
 	<div id="questAnswer" style="display: flex; justify-content: center; margin-top: 50px;">
 		<div class="vert_line"></div>
 	</div>

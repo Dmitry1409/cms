@@ -9,6 +9,7 @@
 	require "headLightNiches.php";
 	require "../templates/base_header.php";
 	require "lightNichesPage.php";
+	require "../templates/clientFeedBack.php";
 	require "../templates/base_footer.php";
 
 ?>

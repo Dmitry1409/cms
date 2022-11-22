@@ -9,6 +9,7 @@
 	require "headShadow.php";
 	require "../templates/base_header.php";
 	require "shadowPage.php";
+	require "../templates/clientFeedBack.php";
 	require "../templates/base_footer.php";
 
 ?>

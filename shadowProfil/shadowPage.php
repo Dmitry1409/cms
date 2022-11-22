@@ -110,16 +110,8 @@
 	</div>
 </div>
 
-<div class="vert_line_cont device_vert">
-	<div class="vert_line"></div>
-</div>
-<div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Примеры работ</span>
-</div>
-
 <?php
 	$query = "SELECT id_img FROM hashTags WHERE name in ('теневой','контурная подсветка','парящий')";
-	$key_session = 'shadowProfImg';
 	$hashsSelect = ['#теневой', '#контурная подсветка', '#парящий'];
 	include "../templates/exampWorkFoto.php";
 ?>

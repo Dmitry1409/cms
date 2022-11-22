@@ -1,4 +1,3 @@
-
 <div class="vert_line_cont device_vert">
 	<div class="vert_line"></div>
 </div>
@@ -48,13 +47,6 @@
 			<img src="img/slot-white-black-1.jpg" alt="Темно-белый профиль световые ниши">
 		</picture>
 	</div>
-</div>
-
-<div class="vert_line_cont device_vert">
-	<div class="vert_line"></div>
-</div>
-<div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Примеры работ</span>
 </div>
 
 <?php
