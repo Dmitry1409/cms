@@ -5,11 +5,10 @@
 
 	if($d=='all'){
 		$res = [];
-		$folders = scandir('imgFantes');
+		$folders = scandir('../img/imgFantes');
 		$folders = array_diff($folders, array('..', '.'));
-		// echo var_dump($folders);
 		for($i=2; $i<count($folders)+2; $i++){
-			$p = "imgFantes/".$folders[$i];
+			$p = "../img/imgFantes/".$folders[$i];
 			$names = getImages($p);
 			$ar = cookArr($names, $p);
 			$res = array_merge($res, $ar);
@@ -22,8 +21,8 @@
 		echo json_encode($arr);
 		return;
 	}
-	$a = getImages("imgFantes/$d");
-	$c = cookArr($a, "imgFantes/$d");
+	$a = getImages("../img/imgFantes/$d");
+	$c = cookArr($a, "../img/imgFantes/$d");
 	$_SESSION['FPImgArr'] = $c;
 	$res = [];
 	$res['len'] = count($c);

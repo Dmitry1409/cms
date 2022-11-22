@@ -10,7 +10,7 @@
 		<div class="cont_grid_pres">
 			<div class="grid_item_pres">
 				<div class="present_icon">
-					<img src="img/piggy.webp">
+					<img src="img/mainPage/piggy.webp">
 				</div>
 				<div class="present_text_block">
 					<div class="pres_hed">В среднем дешевле на 20%</div>
@@ -19,7 +19,7 @@
 			</div>
 			<div class="grid_item_pres">
 				<div class="present_icon">
-					<img src="img/guarante.webp">
+					<img src="img/mainPage/guarante.webp">
 				</div>
 				<div class="present_text_block">
 					<div class="pres_hed">100%</div>
@@ -28,7 +28,7 @@
 			</div>
 			<div class="grid_item_pres">
 				<div class="present_icon">
-					<img src="img/service.webp">
+					<img src="img/mainPage/service.webp">
 				</div>
 				<div class="present_text_block">
 					<div class="pres_hed">10 лет</div>
@@ -37,7 +37,7 @@
 			</div>
 			<div class="grid_item_pres">
 				<div class="present_icon">
-					<img src="img/production.webp">
+					<img src="img/mainPage/production.webp">
 				</div>
 				<div class="present_text_block">
 					<div class="pres_hed">Свое производство</div>
@@ -46,7 +46,7 @@
 			</div>
 			<div class="grid_item_pres">
 				<div class="present_icon">
-					<img src="img/zamer.webp">
+					<img src="img/mainPage/zamer.webp">
 				</div>
 				<div class="present_text_block">
 					<div class="pres_hed">Бесплатный замер</div>
@@ -55,7 +55,7 @@
 			</div>
 			<div class="grid_item_pres">
 				<div class="present_icon">
-					<img src="img/timer.webp">
+					<img src="img/mainPage/timer.webp">
 				</div>
 				<div class="present_text_block">
 					<div class="pres_hed">48 часов</div>
@@ -202,7 +202,7 @@
 	<div class="cont_grid_pres">
 		<div class="grid_item_pres dop_style_6_step">
 			<div  style="margin-right: 20px;" class="present_icon">
-				<img src="img/w_mail.webp">
+				<img src="img/mainPage/w_mail.webp">
 			</div>
 			<div class="present_text_block" style="margin-left: unset;">
 				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Оформляем заявку</div>
@@ -211,7 +211,7 @@
 		</div>
 		<div class="grid_item_pres dop_style_6_step">
 			<div  style="margin-right: 20px;" class="present_icon">
-				<img src="img/w_ruletka.webp">
+				<img src="img/mainPage/w_ruletka.webp">
 			</div>
 			<div class="present_text_block" style="margin-left: unset;">
 				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Выезд замерщика</div>
@@ -220,7 +220,7 @@
 		</div>
 		<div class="grid_item_pres dop_style_6_step">
 			<div  style="margin-right: 20px;" class="present_icon">
-				<img src="img/w_servise.webp">
+				<img src="img/mainPage/w_servise.webp">
 			</div>
 			<div class="present_text_block" style="margin-left: unset;">
 				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Подбор материала и цвета</div>
@@ -229,7 +229,7 @@
 		</div>
 		<div class="grid_item_pres dop_style_6_step">
 			<div  style="margin-right: 20px;" class="present_icon">
-				<img src="img/w_dogovor.webp">
+				<img src="img/mainPage/w_dogovor.webp">
 			</div>
 			<div class="present_text_block" style="margin-left: unset;">
 				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Подписываем договор</div>
@@ -238,7 +238,7 @@
 		</div>
 		<div class="grid_item_pres dop_style_6_step">
 			<div  style="margin-right: 20px;" class="present_icon">
-				<img src="img/w_delivery.webp">
+				<img src="img/mainPage/w_delivery.webp">
 			</div>
 			<div class="present_text_block" style="margin-left: unset;">
 				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Производство и доставка</div>
@@ -247,7 +247,7 @@
 		</div>
 		<div class="grid_item_pres dop_style_6_step">
 			<div  style="margin-right: 20px;" class="present_icon">
-				<img src="img/w_setting.webp">
+				<img src="img/mainPage/w_setting.webp">
 			</div>
 			<div class="present_text_block" style="margin-left: unset;">
 				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Производим установку</div>
@@ -424,7 +424,7 @@
 				</div>
 				<div class="aferta_block">
 					<div class="sale_flag">1000 руб.</div>
-					<img style="border-radius: 4px;" src="img/people.webp">
+					<img style="border-radius: 4px;" src="img/mainPage/people.webp">
 					<h4>Оформите заявку на сайте и получите доп. скидку 1000 руб.</h4>
 					<span>Акция действует до <?php echo $tar_date;?></span>
 					<span>Подробности по телефону <?php echo $comp_telef1?></span>

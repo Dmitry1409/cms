@@ -39,7 +39,6 @@
 		while($r = $res->fetchArray(SQLITE3_ASSOC)){
 			$arr[] = $r;
 		}
-
 		shuffle($arr);
 		$_SESSION['toledoAllprod'] = $arr;
 
@@ -47,7 +46,7 @@
 			echo "<div class='catalogProdItem'>";
 				echo "<div>";
 					echo "<div class='catalogImgCont'>";
-						$p = 'img/product/'.$arr[$i]['src'];
+						$p = '../img/lightingPage/product/'.$arr[$i]['src'];
 						echo "<img src=$p>";
 					echo "</div>";
 					echo "<div class='catalDescriptCont'>";

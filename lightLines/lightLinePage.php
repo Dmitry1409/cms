@@ -10,8 +10,8 @@
 	<div class="lightsLines_flex">
 		<div class="lights_img_cont">
 			<picture>
-				<source srcset="img/fe0wj0.webp" type="image/webp">
-				<img src="img/fe0wj0.jpeg" alt="Световые линии это круто">
+				<source srcset="../img/fe0wj0.webp" type="image/webp">
+				<img src="../img/fe0wj0.jpeg" alt="Световые линии это круто">
 			</picture>
 		</div>
 		<div class="lights_text">

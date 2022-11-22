@@ -148,7 +148,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 			html = `<div class="catalogProdItem">
 						<div>
 							<div class="catalogImgCont">
-								<img src="img/product/${val[i]['src']}">
+								<img src="../img/lightingPage/product/${val[i]['src']}">
 							</div>
 							<div class="catalDescriptCont">
 								<div class="brand-cont">

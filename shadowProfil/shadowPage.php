@@ -11,8 +11,8 @@
 <div class="lightsLines_flex">
 	<div class="lights_img_cont">
 		<picture>
-			<source srcset="img/a9e89e81-915e-4292-a88a-069c649eaa7b.webp" type="image/webp">
-			<img src="img/a9e89e81-915e-4292-a88a-069c649eaa7b.jpg" alt="Парящие и теневые потолки">
+			<source srcset="../img/a9e89e81-915e-4292-a88a-069c649eaa7b.webp" type="image/webp">
+			<img src="../img/a9e89e81-915e-4292-a88a-069c649eaa7b.jpg" alt="Парящие и теневые потолки">
 		</picture>
 	</div>
 	<div class="lights_text">

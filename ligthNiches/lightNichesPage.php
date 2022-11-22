@@ -7,12 +7,12 @@
 </div>
 <div class="slott_cont">
 	<picture class="slott_item">
-		<source srcset="img/tild3538-3932-4331-a231-636536356563__photo.webp" type="image/webp">
-		<img src="img/tild3538-3932-4331-a231-636536356563__photo.jpg" alt="Световые ниши">
+		<source srcset="../img/lightNichesPage/tild3538-3932-4331-a231-636536356563__photo.webp" type="image/webp">
+		<img src="../img/lightNichesPage/tild3538-3932-4331-a231-636536356563__photo.jpg" alt="Световые ниши">
 	</picture>
 	<picture class="slott_item">
-		<source srcset="img/profili-slott-1024x768.webp" type="image/webp">
-		<img src="img/profili-slott-1024x768.jpg" alt="Световые ниши черно белый пофиль">
+		<source srcset="../img/lightNichesPage/profili-slott-1024x768.webp" type="image/webp">
+		<img src="../img/lightNichesPage/profili-slott-1024x768.jpg" alt="Световые ниши черно белый пофиль">
 	</picture>
 </div>
 
@@ -29,22 +29,22 @@
 	<div class="veri_item">
 		<h3>Белый</h3>
 		<picture class="veri_pict">
-			<source srcset="img/slot-white-1.webp" type="image/webp">
-			<img src="img/slot-white-1.jpg" alt="Белый профиль световые ниши">
+			<source srcset="../img/lightNichesPage/slot-white-1.webp" type="image/webp">
+			<img src="../img/lightNichesPage/slot-white-1.jpg" alt="Белый профиль световые ниши">
 		</picture>
 	</div>
 	<div class="veri_item">
 		<h3>Темный</h3>
 		<picture class="veri_pict">
-			<source srcset="img/slot-black-1.webp" type="image/webp">
-			<img src="img/slot-black-1.jpg" alt="Черный профиль световые ниши">
+			<source srcset="../img/lightNichesPage/slot-black-1.webp" type="image/webp">
+			<img src="../img/lightNichesPage/slot-black-1.jpg" alt="Черный профиль световые ниши">
 		</picture>
 	</div>
 	<div class="veri_item">
 		<h3>Тёмно-белый</h3>
 		<picture class="veri_pict">
-			<source srcset="img/slot-white-black-1.webp" type="image/webp">
-			<img src="img/slot-white-black-1.jpg" alt="Темно-белый профиль световые ниши">
+			<source srcset="../img/lightNichesPage/slot-white-black-1.webp" type="image/webp">
+			<img src="../img/lightNichesPage/slot-white-black-1.jpg" alt="Темно-белый профиль световые ниши">
 		</picture>
 	</div>
 </div>
@@ -52,7 +52,6 @@
 <?php
 
 	$query = "SELECT id_img FROM hashTags WHERE name = 'световые ниши'";
-	$key_session = 'lightNichesImg';
 	$hashsSelect = ['#световые ниши'];
 	include "../templates/exampWorkFoto.php";
 ?>

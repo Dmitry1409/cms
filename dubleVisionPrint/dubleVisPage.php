@@ -7,7 +7,7 @@
 	<span>новые возможности</span>
 </div>
 <div class="dubleVideo_wrapp">
-	<video poster="img/posterVid.webp" autoplay muted loop>
+	<video poster="../img/imgDublImgPage/posterVid.webp" autoplay muted loop>
 	  <source src="short.mp4" type='video/mp4' />
 	  <source src="otherFormat.webm" type='video/webm' />
 	</video>
@@ -26,19 +26,19 @@
 
 <div class="presentContFP">
 	<div class="presentFP">
-		<div class="presentImgContFp"><img src="img/images_icon-icons.com_76712.png"></div>
+		<div class="presentImgContFp"><img src="../img/imgDublImgPage/images_icon-icons.com_76712.png"></div>
 		<div class="presentTextFP">Высокое качество изображения на полотне</div>
 	</div>
 	<div class="presentFP">
-		<div class="presentImgContFp"><img src="img/globe_internet_planet_globo_10812.png"></div>
+		<div class="presentImgContFp"><img src="../img/imgDublImgPage/globe_internet_planet_globo_10812.png"></div>
 		<div class="presentTextFP">Можно подобрать любое изображение в интернете или заказать у дизайнера</div>
 	</div>
 	<div class="presentFP">
-		<div class="presentImgContFp"><img src="img/photo_picture_photo_184.png"></div>
+		<div class="presentImgContFp"><img src="../img/imgDublImgPage/photo_picture_photo_184.png"></div>
 		<div class="presentTextFP">Огромный каталог изображений совершенно бесплатно</div>
 	</div>
 	<div class="presentFP">
-		<div class="presentImgContFp"><img src="img/gift-icon_34411.png"></div>
+		<div class="presentImgContFp"><img src="../img/imgDublImgPage/gift-icon_34411.png"></div>
 		<div class="presentTextFP">Дарим вам дизайн макета в подарок</div>
 	</div>
 </div>
@@ -80,10 +80,10 @@
 
 		$allImg = [];
 		include "../scripts_php/collectImage.php";
-		$imgDir = scandir('imgFantes');
+		$imgDir = scandir('../img/imgFantes');
 		$imgDir = array_diff($imgDir, array('..', '.'));
 		for($i=2; $i<count($imgDir)+2; $i++){
-			$d = 'imgFantes/'.$imgDir[$i];
+			$d = '../img/imgFantes/'.$imgDir[$i];
 			$a = getImages($d);
 			for($j=0; $j<count($a); $j++){
 				$r = [];
@@ -94,7 +94,6 @@
 				$r[] = $finfo[1];
 				$allImg[] = $r;
 			}
-			// break;
 		}
 		shuffle($allImg);
 		$_SESSION['FPImgArr'] = $allImg;
@@ -127,7 +126,7 @@
 <div class="euipWrapp">
 	<div>
 		<div class="equipImgCont">
-			<img src="img/nsldfiojw.jpg">
+			<img src="../img/imgDublImgPage/nsldfiojw.jpg">
 		</div>
 		<div class="equipText">
 			<span>	
@@ -203,7 +202,6 @@
 
 <?php
 	$query = "SELECT id_img FROM hashTags WHERE name = 'фотопечать'";
-	$key_session = 'fotoPrint';
 	$hashsSelect = ['#фотопечать'];
 	include "../templates/exampWorkFoto.php";
 ?>

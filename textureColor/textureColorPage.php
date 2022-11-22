@@ -62,17 +62,17 @@
 	<div class="factur_img_cont">
 		<div class="vertic_cont_img">
 			<picture class="fotoGalIndex" fotoGalTitle = "Глянцевый">
-				<source srcset="img/webp/3545.webp" type="image/webp">
-				<img src="img/jpg/3545.jpg"  alt="Фактура глянцевого полотна">
+				<source srcset="../img/textureColorPage/webp/3545.webp" type="image/webp">
+				<img src="../img/textureColorPage/jpg/3545.jpg"  alt="Фактура глянцевого полотна">
 			</picture>
 			<picture class="fotoGalIndex" fotoGalTitle = "Глянцевый">
-				<source srcset="img/webp/1511280196687.webp" type="image/webp">
-				<img src="img/jpg/1511280196687.jpg"  alt="Фактура глянцевого полотна">
+				<source srcset="../img/textureColorPage/webp/1511280196687.webp" type="image/webp">
+				<img src="../img/textureColorPage/jpg/1511280196687.jpg"  alt="Фактура глянцевого полотна">
 			</picture>
 		</div>
 		<picture class="horiz_cont_img fotoGalIndex" fotoGalTitle = "Глянцевый">
-			<source srcset="img/webp/goluboy.webp" type="image/webp">
-			<img src="img/jpg/goluboy.jpg"  alt="Фактура глянцевого полотна">
+			<source srcset="../img/textureColorPage/webp/goluboy.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/goluboy.jpg"  alt="Фактура глянцевого полотна">
 		</picture>
 	</div>
 </div>
@@ -90,17 +90,17 @@
 	<div class="factur_img_cont">
 		<div class="vertic_cont_img">
 			<picture class="fotoGalIndex" fotoGalTitle = "Матовый">
-				<source srcset="img/webp/pic-production2-5.webp" type="image/webp">
-				<img src="img/jpg/pic-production2-5.jpg"  alt="Фактура матового полотна">
+				<source srcset="../img/textureColorPage/webp/pic-production2-5.webp" type="image/webp">
+				<img src="../img/textureColorPage/jpg/pic-production2-5.jpg"  alt="Фактура матового полотна">
 			</picture>
 			<picture class="fotoGalIndex" fotoGalTitle = "Матовый">
-				<source srcset="img/webp/varianty-cvetnyx-natyazhnyx-potolkov-v-interere-kvartiry-3.webp" type="image/webp">
-				<img src="img/jpg/varianty-cvetnyx-natyazhnyx-potolkov-v-interere-kvartiry-3.jpg"  alt="Фактура матового полотна">
+				<source srcset="../img/textureColorPage/webp/varianty-cvetnyx-natyazhnyx-potolkov-v-interere-kvartiry-3.webp" type="image/webp">
+				<img src="../img/textureColorPage/jpg/varianty-cvetnyx-natyazhnyx-potolkov-v-interere-kvartiry-3.jpg"  alt="Фактура матового полотна">
 			</picture>
 		</div>
 		<picture class="horiz_cont_img fotoGalIndex" fotoGalTitle = "Матовый">
-			<source srcset="img/webp/vybor-podvesnogo-potilka-6-1.webp" type="image/webp">
-			<img src="img/jpg/vybor-podvesnogo-potilka-6-1.jpg"  alt="Фактура матового полотна">
+			<source srcset="../img/textureColorPage/webp/vybor-podvesnogo-potilka-6-1.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/vybor-podvesnogo-potilka-6-1.jpg"  alt="Фактура матового полотна">
 		</picture>
 	</div>
 </div>
@@ -118,17 +118,17 @@
 	<div class="factur_img_cont">
 		<div class="vertic_cont_img">
 			<picture class="fotoGalIndex" fotoGalTitle = "Сатиновый">
-				<source srcset="img/webp/sldfsdlfjsdlfjls.webp" type="image/webp">
-				<img src="img/jpg/sldfsdlfjsdlfjls.jpg"  alt="Фактура сатинового полотна">
+				<source srcset="../img/textureColorPage/webp/sldfsdlfjsdlfjls.webp" type="image/webp">
+				<img src="../img/textureColorPage/jpg/sldfsdlfjsdlfjls.jpg"  alt="Фактура сатинового полотна">
 			</picture>
 			<picture class="fotoGalIndex" fotoGalTitle = "Сатиновый">
-				<source srcset="img/webp/sdf;skf00kksdfks.webp" type="image/webp">
-				<img src="img/jpg/sdf;skf00kksdfks.jpg"  alt="Фактура сатинового полотна">
+				<source srcset="../img/textureColorPage/webp/sdf;skf00kksdfks.webp" type="image/webp">
+				<img src="../img/textureColorPage/jpg/sdf;skf00kksdfks.jpg"  alt="Фактура сатинового полотна">
 			</picture>
 		</div>
 		<picture class="horiz_cont_img fotoGalIndex" fotoGalTitle = "Сатиновый">
-			<source srcset="img/webp/sfpsfpojpjfjtjy75.webp" type="image/webp">
-			<img src="img/jpg/sfpsfpojpjfjtjy75.jpg"  alt="Фактура сатинового полотна">
+			<source srcset="../img/textureColorPage/webp/sfpsfpojpjfjtjy75.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/sfpsfpojpjfjtjy75.jpg"  alt="Фактура сатинового полотна">
 		</picture>
 	</div>
 </div>
@@ -146,17 +146,17 @@
 	<div class="factur_img_cont">
 		<div class="vertic_cont_img">
 			<picture class="fotoGalIndex" fotoGalTitle = "Свето-пропускная">
-				<source srcset="img/webp/ji2332o0jnowr23.webp" type="image/webp">
-				<img src="img/jpg/ji2332o0jnowr23.jpg"  alt="Люминисцетное полотно">
+				<source srcset="../img/textureColorPage/webp/ji2332o0jnowr23.webp" type="image/webp">
+				<img src="../img/textureColorPage/jpg/ji2332o0jnowr23.jpg"  alt="Люминисцетное полотно">
 			</picture>
 			<picture class="fotoGalIndex" fotoGalTitle = "Свето-пропускная">
-				<source srcset="img/webp/sdfj9j9jwje9vw.webp" type="image/webp">
-				<img src="img/jpg/sdfj9j9jwje9vw.jpg"  alt="Люминисцетное полотно">
+				<source srcset="../img/textureColorPage/webp/sdfj9j9jwje9vw.webp" type="image/webp">
+				<img src="../img/textureColorPage/jpg/sdfj9j9jwje9vw.jpg"  alt="Люминисцетное полотно">
 			</picture>
 		</div>
 		<picture class="horiz_cont_img fotoGalIndex" fotoGalTitle = "Свето-пропускная">
-			<source srcset="img/webp/msfj9jwpep.webp" type="image/webp">
-			<img src="img/jpg/msfj9jwpep.jpeg"  alt="Люминисцетное полотно">
+			<source srcset="../img/textureColorPage/webp/msfj9jwpep.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/msfj9jwpep.jpeg"  alt="Люминисцетное полотно">
 		</picture>
 	</div>
 </div>
@@ -174,17 +174,17 @@
 	<div class="factur_img_cont">
 		<div class="vertic_cont_img">
 			<picture class="fotoGalIndex" fotoGalTitle = "Узорчатый">
-				<source srcset="img/webp/sdfo8fwo.webp" type="image/webp">
-				<img src="img/jpg/sdfo8fwo.jpg"  alt="Полотно с узорами">
+				<source srcset="../img/textureColorPage/webp/sdfo8fwo.webp" type="image/webp">
+				<img src="../img/textureColorPage/jpg/sdfo8fwo.jpg"  alt="Полотно с узорами">
 			</picture>
 			<picture class="fotoGalIndex" fotoGalTitle = "Узорчатый">
-				<source srcset="img/webp/jsfwfwojmpmofw.webp" type="image/webp">
-				<img src="img/jpg/jsfwfwojmpmofw.jpg"  alt="Полотно с узорами">
+				<source srcset="../img/textureColorPage/webp/jsfwfwojmpmofw.webp" type="image/webp">
+				<img src="../img/textureColorPage/jpg/jsfwfwojmpmofw.jpg"  alt="Полотно с узорами">
 			</picture>
 		</div>
 		<picture class="horiz_cont_img fotoGalIndex" fotoGalTitle = "Узорчатый">
-			<source srcset="img/webp/nufwo8efwo.webp" type="image/webp">
-			<img src="img/jpg/nufwo8efwo.jpg"  alt="Полотно с узорами">
+			<source srcset="../img/textureColorPage/webp/nufwo8efwo.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/nufwo8efwo.jpg"  alt="Полотно с узорами">
 		</picture>
 	</div>
 </div>
@@ -202,17 +202,17 @@
 	<div class="factur_img_cont">
 		<div class="vertic_cont_img">
 			<picture class="fotoGalIndex" fotoGalTitle = "Металлик">
-				<source srcset="img/webp/lisfw8jwjwo.webp" type="image/webp">
-				<img src="img/jpg/lisfw8jwjwo.jpg"  alt="Полотно с эффектом металла">
+				<source srcset="../img/textureColorPage/webp/lisfw8jwjwo.webp" type="image/webp">
+				<img src="../img/textureColorPage/jpg/lisfw8jwjwo.jpg"  alt="Полотно с эффектом металла">
 			</picture>
 			<picture class="fotoGalIndex" fotoGalTitle = "Металлик">
-				<source srcset="img/webp/nsfwie8ew9.webp" type="image/webp">
-				<img src="img/jpg/nsfwie8ew9.jpg"  alt="Полотно с эффектом металла">
+				<source srcset="../img/textureColorPage/webp/nsfwie8ew9.webp" type="image/webp">
+				<img src="../img/textureColorPage/jpg/nsfwie8ew9.jpg"  alt="Полотно с эффектом металла">
 			</picture>
 		</div>
 		<picture class="horiz_cont_img fotoGalIndex" fotoGalTitle = "Металлик">
-			<source srcset="img/webp/nisgisigh8jj9s9fp.webp" type="image/webp">
-			<img src="img/jpg/nisgisigh8jj9s9fp.jpg"  alt="Полотно с эффектом металла">
+			<source srcset="../img/textureColorPage/webp/nisgisigh8jj9s9fp.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/nisgisigh8jj9s9fp.jpg"  alt="Полотно с эффектом металла">
 		</picture>
 	</div>
 </div>
@@ -1476,8 +1476,8 @@
 <div class="color_yzory_grid">
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/parcha-perl-1.webp" type="image/webp">
-			<img src="img/jpg/parcha-perl-1.jpg" alt="Полотно с узором парча">
+			<source srcset="../img/textureColorPage/webp/parcha-perl-1.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/parcha-perl-1.jpg" alt="Полотно с узором парча">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Parcha</span>
@@ -1486,8 +1486,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/parcha-006.webp" type="image/webp">
-			<img src="img/jpg/parcha-006.jpg" alt="Полотно с узором парча">
+			<source srcset="../img/textureColorPage/webp/parcha-006.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/parcha-006.jpg" alt="Полотно с узором парча">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Parcha</span>
@@ -1496,8 +1496,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/parcha-008.webp" type="image/webp">
-			<img src="img/jpg/parcha-008.jpg" alt="Полотно с узором парча">
+			<source srcset="../img/textureColorPage/webp/parcha-008.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/parcha-008.jpg" alt="Полотно с узором парча">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Parcha</span>
@@ -1506,8 +1506,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/parcha-010.webp" type="image/webp">
-			<img src="img/jpg/parcha-010.jpg" alt="Полотно с узором парча">
+			<source srcset="../img/textureColorPage/webp/parcha-010.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/parcha-010.jpg" alt="Полотно с узором парча">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Parcha</span>
@@ -1516,8 +1516,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/parcha-303.webp" type="image/webp">
-			<img src="img/jpg/parcha-303.jpg" alt="Полотно с узором парча">
+			<source srcset="../img/textureColorPage/webp/parcha-303.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/parcha-303.jpg" alt="Полотно с узором парча">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Parcha</span>
@@ -1526,8 +1526,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/modern-225.webp" type="image/webp">
-			<img src="img/jpg/modern-225.jpg" alt="Полотно с узором в современном стиле">
+			<source srcset="../img/textureColorPage/webp/modern-225.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/modern-225.jpg" alt="Полотно с узором в современном стиле">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Modern</span>
@@ -1536,8 +1536,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/modern-303.webp" type="image/webp">
-			<img src="img/jpg/modern-303.jpg" alt="Полотно с узором в современном стиле">
+			<source srcset="../img/textureColorPage/webp/modern-303.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/modern-303.jpg" alt="Полотно с узором в современном стиле">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Modern</span>
@@ -1546,8 +1546,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/modern-404.webp" type="image/webp">
-			<img src="img/jpg/modern-404.jpg" alt="Полотно с узором в современном стиле">
+			<source srcset="../img/textureColorPage/webp/modern-404.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/modern-404.jpg" alt="Полотно с узором в современном стиле">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Modern</span>
@@ -1556,8 +1556,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/modern-501.webp" type="image/webp">
-			<img src="img/jpg/modern-501.jpg" alt="Полотно с узором в современном стиле">
+			<source srcset="../img/textureColorPage/webp/modern-501.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/modern-501.jpg" alt="Полотно с узором в современном стиле">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Modern</span>
@@ -1566,8 +1566,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/modern-507.webp" type="image/webp">
-			<img src="img/jpg/modern-507.jpg" alt="Полотно с узором в современном стиле">
+			<source srcset="../img/textureColorPage/webp/modern-507.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/modern-507.jpg" alt="Полотно с узором в современном стиле">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Modern</span>
@@ -1576,8 +1576,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/modern-511.webp" type="image/webp">
-			<img src="img/jpg/modern-511.jpg" alt="Полотно с узором в современном стиле">
+			<source srcset="../img/textureColorPage/webp/modern-511.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/modern-511.jpg" alt="Полотно с узором в современном стиле">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Modern</span>
@@ -1586,8 +1586,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/clouds.webp" type="image/webp">
-			<img src="img/jpg/clouds.jpg" alt="Полотно с рисунком облаков">
+			<source srcset="../img/textureColorPage/webp/clouds.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/clouds.jpg" alt="Полотно с рисунком облаков">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Clouds</span>
@@ -1596,8 +1596,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/lines.webp" type="image/webp">
-			<img src="img/jpg/lines.jpg"  alt="Полотно с линиями">
+			<source srcset="../img/textureColorPage/webp/lines.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/lines.jpg"  alt="Полотно с линиями">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Lines</span>
@@ -1606,8 +1606,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/drops.webp" type="image/webp">
-			<img src="img/jpg/drops.jpg"  alt="Полотно с каплями">
+			<source srcset="../img/textureColorPage/webp/drops.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/drops.jpg"  alt="Полотно с каплями">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Drops</span>
@@ -1616,8 +1616,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/leather-303.webp" type="image/webp">
-			<img src="img/jpg/leather-303.jpg" alt="Полотно с эффектом кожи">
+			<source srcset="../img/textureColorPage/webp/leather-303.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/leather-303.jpg" alt="Полотно с эффектом кожи">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Leather</span>
@@ -1626,8 +1626,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/circles-perl.webp" type="image/webp">
-			<img src="img/jpg/circles-perl.jpg" alt="Полотно с кругами">
+			<source srcset="../img/textureColorPage/webp/circles-perl.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/circles-perl.jpg" alt="Полотно с кругами">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Circles</span>
@@ -1636,8 +1636,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/303-circles.webp" type="image/webp">
-			<img src="img/jpg/303-circles.jpg" alt="Полотно с кругами">
+			<source srcset="../img/textureColorPage/webp/303-circles.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/303-circles.jpg" alt="Полотно с кругами">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Circles</span>
@@ -1646,8 +1646,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/circles-307.webp" type="image/webp">
-			<img src="img/jpg/circles-307.jpg" alt="Полотно с кругами">
+			<source srcset="../img/textureColorPage/webp/circles-307.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/circles-307.jpg" alt="Полотно с кругами">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Circles</span>
@@ -1656,8 +1656,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/circles-501.webp" type="image/webp">
-			<img src="img/jpg/circles-501.jpg" alt="Полотно с кругами">
+			<source srcset="../img/textureColorPage/webp/circles-501.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/circles-501.jpg" alt="Полотно с кругами">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Circles</span>
@@ -1666,8 +1666,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/mosaic-perl.webp" type="image/webp">
-			<img src="img/jpg/mosaic-perl.jpg" alt="Полотно с эффектом мозайки">
+			<source srcset="../img/textureColorPage/webp/mosaic-perl.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/mosaic-perl.jpg" alt="Полотно с эффектом мозайки">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Mosaic</span>
@@ -1676,8 +1676,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/mosaic-009.webp" type="image/webp">
-			<img src="img/jpg/mosaic-009.jpg" alt="Полотно с эффектом мозайки">
+			<source srcset="../img/textureColorPage/webp/mosaic-009.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/mosaic-009.jpg" alt="Полотно с эффектом мозайки">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Mosaic</span>
@@ -1686,8 +1686,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/mosaic-303.webp" type="image/webp">
-			<img src="img/jpg/mosaic-303.jpg" alt="Полотно с эффектом мозайки">
+			<source srcset="../img/textureColorPage/webp/mosaic-303.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/mosaic-303.jpg" alt="Полотно с эффектом мозайки">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Mosaic</span>
@@ -1696,8 +1696,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/mosaic-501.webp" type="image/webp">
-			<img src="img/jpg/mosaic-501.jpg" alt="Полотно с эффектом мозайки">
+			<source srcset="../img/textureColorPage/webp/mosaic-501.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/mosaic-501.jpg" alt="Полотно с эффектом мозайки">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Mosaic</span>
@@ -1706,8 +1706,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/spring-perl.webp" type="image/webp">
-			<img src="img/jpg/spring-perl.jpg" alt="Потолно с полсками">
+			<source srcset="../img/textureColorPage/webp/spring-perl.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/spring-perl.jpg" alt="Потолно с полсками">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Spring</span>
@@ -1716,8 +1716,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/spring-303.webp" type="image/webp">
-			<img src="img/jpg/spring-303.jpg" alt="Потолно с полсками">
+			<source srcset="../img/textureColorPage/webp/spring-303.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/spring-303.jpg" alt="Потолно с полсками">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Spring</span>
@@ -1726,8 +1726,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/se-004.webp" type="image/webp">
-			<img src="img/jpg/se-004.jpg" alt="Полотно текстурированное">
+			<source srcset="../img/textureColorPage/webp/se-004.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/se-004.jpg" alt="Полотно текстурированное">
 		</picture>
 		<div class="gamma_name_block">
 			<span>SE</span>
@@ -1736,8 +1736,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/se-005.webp" type="image/webp">
-			<img src="img/jpg/se-005.jpg" alt="Полотно текстурированное">
+			<source srcset="../img/textureColorPage/webp/se-005.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/se-005.jpg" alt="Полотно текстурированное">
 		</picture>
 		<div class="gamma_name_block">
 			<span>SE</span>
@@ -1746,8 +1746,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/se-006.webp" type="image/webp">
-			<img src="img/jpg/se-006.jpg">
+			<source srcset="../img/textureColorPage/webp/se-006.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/se-006.jpg">
 		</picture>
 		<div class="gamma_name_block" alt="Полотно текстурированное">
 			<span>SE</span>
@@ -1756,8 +1756,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/se-007.webp" type="image/webp">
-			<img src="img/jpg/se-007.jpg">
+			<source srcset="../img/textureColorPage/webp/se-007.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/se-007.jpg">
 		</picture>
 		<div class="gamma_name_block" alt="Полотно текстурированное">
 			<span>SE</span>
@@ -1766,8 +1766,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/se-008.webp" type="image/webp">
-			<img src="img/jpg/se-008.jpg">
+			<source srcset="../img/textureColorPage/webp/se-008.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/se-008.jpg">
 		</picture>
 		<div class="gamma_name_block" alt="Полотно текстурированное">
 			<span>SE</span>
@@ -1776,8 +1776,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/se-010.webp" type="image/webp">
-			<img src="img/jpg/se-010.jpg">
+			<source srcset="../img/textureColorPage/webp/se-010.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/se-010.jpg">
 		</picture>
 		<div class="gamma_name_block" alt="Полотно текстурированное">
 			<span>SE</span>
@@ -1786,8 +1786,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/leaves-008.webp" type="image/webp">
-			<img src="img/jpg/leaves-008.jpg" alt="Полотно с рисунком листьев">
+			<source srcset="../img/textureColorPage/webp/leaves-008.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/leaves-008.jpg" alt="Полотно с рисунком листьев">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Leaves</span>
@@ -1796,8 +1796,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/leaves-009.webp" type="image/webp">
-			<img src="img/jpg/leaves-009.jpg" alt="Полотно с рисунком листьев">
+			<source srcset="../img/textureColorPage/webp/leaves-009.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/leaves-009.jpg" alt="Полотно с рисунком листьев">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Leaves</span>
@@ -1806,8 +1806,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/leaves-010.webp" type="image/webp">
-			<img src="img/jpg/leaves-010.jpg">
+			<source srcset="../img/textureColorPage/webp/leaves-010.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/leaves-010.jpg">
 		</picture>
 		<div class="gamma_name_block" alt="Полотно с рисунком листьев">
 			<span>Leaves</span>
@@ -1816,8 +1816,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/leaves-110.webp" type="image/webp">
-			<img src="img/jpg/leaves-110.jpg" alt="Полотно с рисунком листьев">
+			<source srcset="../img/textureColorPage/webp/leaves-110.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/leaves-110.jpg" alt="Полотно с рисунком листьев">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Leaves</span>
@@ -1826,8 +1826,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/leaves-303.webp" type="image/webp">
-			<img src="img/jpg/leaves-303.jpg" alt="Полотно с рисунком листьев">
+			<source srcset="../img/textureColorPage/webp/leaves-303.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/leaves-303.jpg" alt="Полотно с рисунком листьев">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Leaves</span>
@@ -1836,8 +1836,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/leaves-307.webp" type="image/webp">
-			<img src="img/jpg/leaves-307.jpg" alt="Полотно с рисунком листьев">
+			<source srcset="../img/textureColorPage/webp/leaves-307.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/leaves-307.jpg" alt="Полотно с рисунком листьев">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Leaves</span>
@@ -1846,8 +1846,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/leaves-406.webp" type="image/webp">
-			<img src="img/jpg/leaves-406.jpg" alt="Полотно с рисунком листьев">
+			<source srcset="../img/textureColorPage/webp/leaves-406.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/leaves-406.jpg" alt="Полотно с рисунком листьев">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Leaves</span>
@@ -1856,8 +1856,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/leaves-501.webp" type="image/webp">
-			<img src="img/jpg/leaves-501.jpg" alt="Полотно с рисунком листьев">
+			<source srcset="../img/textureColorPage/webp/leaves-501.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/leaves-501.jpg" alt="Полотно с рисунком листьев">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Leaves</span>
@@ -1866,8 +1866,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/leaves-507.webp" type="image/webp">
-			<img src="img/jpg/leaves-507.jpg" alt="Полотно с рисунком листьев">
+			<source srcset="../img/textureColorPage/webp/leaves-507.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/leaves-507.jpg" alt="Полотно с рисунком листьев">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Leaves</span>
@@ -1876,8 +1876,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/butterflies-303.webp" type="image/webp">
-			<img src="img/jpg/butterflies-303.jpg" alt="Полотно с рисунком бабочек">
+			<source srcset="../img/textureColorPage/webp/butterflies-303.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/butterflies-303.jpg" alt="Полотно с рисунком бабочек">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Butterflies</span>
@@ -1886,8 +1886,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/matt010-303.webp" type="image/webp">
-			<img src="img/jpg/matt010-303.jpg" alt="Полотно текстурированное">
+			<source srcset="../img/textureColorPage/webp/matt010-303.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/matt010-303.jpg" alt="Полотно текстурированное">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Matt</span>
@@ -1896,8 +1896,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/matt010-006.webp" type="image/webp">
-			<img src="img/jpg/matt010-006.jpg" alt="Полотно текстурированное">
+			<source srcset="../img/textureColorPage/webp/matt010-006.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/matt010-006.jpg" alt="Полотно текстурированное">
 		</picture>
 		<div class="gamma_name_block">
 			<span>Matt</span>
@@ -1906,8 +1906,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/pe902.webp" type="image/webp">
-			<img src="img/jpg/pe902.jpg" alt="Полотно текстурированное">
+			<source srcset="../img/textureColorPage/webp/pe902.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/pe902.jpg" alt="Полотно текстурированное">
 		</picture>
 		<div class="gamma_name_block">
 			<span>PE902</span>
@@ -1915,8 +1915,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/l903.webp" type="image/webp">
-			<img src="img/jpg/l903.jpg" alt="Полотно с эффектом металла">
+			<source srcset="../img/textureColorPage/webp/l903.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/l903.jpg" alt="Полотно с эффектом металла">
 		</picture>
 		<div class="gamma_name_block">
 			<span>L903</span>
@@ -1924,8 +1924,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/l943.webp" type="image/webp">
-			<img src="img/jpg/l943.jpg" alt="Полотно с эффектом металла">
+			<source srcset="../img/textureColorPage/webp/l943.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/l943.jpg" alt="Полотно с эффектом металла">
 		</picture>
 		<div class="gamma_name_block" alt="Полотно с эффектом металла">
 			<span>L943</span>
@@ -1933,8 +1933,8 @@
 	</div>
 	<div class="yzory_grid_item">
 		<picture>
-			<source srcset="img/webp/st81.webp" type="image/webp">
-			<img src="img/jpg/st81.jpg" alt="Полотно с эффектом сатина">
+			<source srcset="../img/textureColorPage/webp/st81.webp" type="image/webp">
+			<img src="../img/textureColorPage/jpg/st81.jpg" alt="Полотно с эффектом сатина">
 		</picture>
 		<div class="gamma_name_block">
 			<span>ST81</span>

@@ -52,8 +52,8 @@
 	<div class="vari_gard_item">
 		<p class="parag_color_text">С перегибом полотна</p>
 		<picture class="vari_cont_picture">
-			<source srcset="img/webp/df9bd9b6-b7b3-0f8d-7a91-ba4ca4d509c5.webp" type="image/webp">
-			<img src="img/jpg/df9bd9b6-b7b3-0f8d-7a91-ba4ca4d509c5.jpg"  alt="Скрытая гардина с профилем ПК-5">
+			<source srcset="../img/hiddenCurtainPage/webp/df9bd9b6-b7b3-0f8d-7a91-ba4ca4d509c5.webp" type="image/webp">
+			<img src="../img/hiddenCurtainPage/jpg/df9bd9b6-b7b3-0f8d-7a91-ba4ca4d509c5.jpg"  alt="Скрытая гардина с профилем ПК-5">
 		</picture>
 		<div class="vari_item_fexbox parag_color_text">
 			<span>
@@ -71,8 +71,8 @@
 	<div class="vari_gard_item">
 		<p class="parag_color_text">Накладной монтаж</p>
 		<picture class="vari_cont_picture">
-			<source srcset="img/webp/01ffwefw.webp" type="image/webp">
-			<img src="img/jpg/01ffwefw.jpg"  alt="Скрытая гардина с профилем ПК-5">
+			<source srcset="../img/hiddenCurtainPage/webp/01ffwefw.webp" type="image/webp">
+			<img src="../img/hiddenCurtainPage/jpg/01ffwefw.jpg"  alt="Скрытая гардина с профилем ПК-5">
 		</picture>
 		<div class="vari_item_fexbox parag_color_text">
 			<span>
@@ -99,8 +99,8 @@
 
 <div class="illuminGardCont">
 	<picture class="illuminGardItem">
-		<source srcset="img/webp/image-179200.webp" type="image/webp">
-		<img src="img/jpg/image-179200.jpg"  alt="Скрытая гардина с подсветкой">
+		<source srcset="../img/hiddenCurtainPage/webp/image-179200.webp" type="image/webp">
+		<img src="../img/hiddenCurtainPage/jpg/image-179200.jpg"  alt="Скрытая гардина с подсветкой">
 	</picture>
 	<div class="illuminGardItem parag_color_text">
 		<p>Подсветка скрытой гардины это хороший вариант приукрасить интерьер вашего дома относительно малыми средствами. При правильном подборе цветового свечения она хорошо впишется в вашу обстановку. При использовании многоцветной ленты с пультом управления вы можете настаивать цветовое свечение и мощность под конкретные задачи, а также использовать динамические сцены . </p>

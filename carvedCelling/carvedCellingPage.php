@@ -61,18 +61,18 @@
 	<div class="hederImgBlockCarved">
 		<div class="hederVertBlockCarved">
 			<picture class="fotoGalIndex" fotoGalTitle = "Резной">
-				<source srcset="img/efsefwef.webp" type="image/webp">
-				<img src="img/efsefwef.jpg" alt="Резной потолок">
+				<source srcset="../img/carvedImgPage/efsefwef.webp" type="image/webp">
+				<img src="../img/carvedImgPage/efsefwef.jpg" alt="Резной потолок">
 			</picture>
 			<picture class="fotoGalIndex" fotoGalTitle = "Резной">
-				<source srcset="img/sgseg33.webp" type="image/webp">
-				<img src="img/sgseg33.jpg" alt="Резной потолок">
+				<source srcset="../img/carvedImgPage/sgseg33.webp" type="image/webp">
+				<img src="../img/carvedImgPage/sgseg33.jpg" alt="Резной потолок">
 			</picture>
 		</div>
 		<div class="hederGorizBlockCarver">
 			<picture class="fotoGalIndex" fotoGalTitle = "Резной">
-				<source srcset="img/hrdh43g34h.webp" type="image/webp">
-				<img src="img/hrdh43g34h.jpg" alt="Резной потолок">
+				<source srcset="../img/carvedImgPage/hrdh43g34h.webp" type="image/webp">
+				<img src="../img/carvedImgPage/hrdh43g34h.jpg" alt="Резной потолок">
 			</picture>
 		</div>
 		
@@ -94,18 +94,18 @@
 	<div class="hederImgBlockCarved">
 		<div class="hederGorizBlockCarver">
 			<picture class="fotoGalIndex" fotoGalTitle = "Резной с подсветкой">
-				<source srcset="img/nleip29kfg2f.webp" type="image/webp">
-				<img src="img/nleip29kfg2f.jpg" alt="Резной потолок c подсветкой">
+				<source srcset="../img/carvedImgPage/nleip29kfg2f.webp" type="image/webp">
+				<img src="../img/carvedImgPage/nleip29kfg2f.jpg" alt="Резной потолок c подсветкой">
 			</picture>
 		</div>
 		<div class="hederVertBlockCarved">
 			<picture class="fotoGalIndex" fotoGalTitle = "Резной с подсветкой">
-				<source srcset="img/srhrhe5e5ee.webp" type="image/webp">
-				<img src="img/srhrhe5e5ee.jpg" alt="Резной потолок c подсветкой">
+				<source srcset="../img/carvedImgPage/srhrhe5e5ee.webp" type="image/webp">
+				<img src="../img/carvedImgPage/srhrhe5e5ee.jpg" alt="Резной потолок c подсветкой">
 			</picture>
 			<picture class="fotoGalIndex" fotoGalTitle = "Резной с подсветкой">
-				<source srcset="img/sgerhe545hh4.webp" type="image/webp">
-				<img src="img/sgerhe545hh4.jpg" alt="Резной потолок c подсветкой">
+				<source srcset="../img/carvedImgPage/sgerhe545hh4.webp" type="image/webp">
+				<img src="../img/carvedImgPage/sgerhe545hh4.jpg" alt="Резной потолок c подсветкой">
 			</picture>
 		</div>
 		
@@ -132,10 +132,10 @@
 		include "../scripts_php/collectImage.php";
 		$arr = [];
 		if(!array_key_exists('applyImg', $_SESSION)){
-			$path = getImages('apply');
+			$path = getImages('../img/apply');
 			$arr = [];
 			for($i=0; $i<count($path); $i++){
-				$arr[] = 'apply/'.$path[$i];
+				$arr[] = '../img/apply/'.$path[$i];
 			}
 		}else{
 			$arr = $_SESSION['applyImg'];
@@ -165,37 +165,37 @@
 <div class="wrappPresentCarved">
 	<div class="presItemCarved">
 		<div class="contImgCarved">
-			<img src="img/fsfge34h3h3.png">
+			<img src="../img/carvedImgPage/fsfge34h3h3.png">
 		</div>
 		<div class="presText">Доп. звукоизоляция</div>
 	</div>
 	<div class="presItemCarved">
 		<div class="contImgCarved">
-			<img src="img/sgdh45h4.png">
+			<img src="../img/carvedImgPage/sgdh45h4.png">
 		</div>
 		<div class="presText">Придаёт объем</div>
 	</div>
 	<div class="presItemCarved">
 		<div class="contImgCarved">
-			<img src="img/gsrgg34g3g.png">
+			<img src="../img/carvedImgPage/gsrgg34g3g.png">
 		</div>
 		<div class="presText">Дешевле чем двухуровневые потолки</div>
 	</div>
 	<div class="presItemCarved">
 		<div class="contImgCarved">
-			<img src="img/sfewfw3223r.png">
+			<img src="../img/carvedImgPage/sfewfw3223r.png">
 		</div>
 		<div class="presText">Большой выбор сочетаний фактур и цветов</div>
 	</div>
 	<div class="presItemCarved">
 		<div class="contImgCarved">
-			<img src="../dubleVisionPrint/img/images_icon-icons.com_76712.png">
+			<img src="../img/imgDublImgPage/images_icon-icons.com_76712.png">
 		</div>
 		<div class="presText">Индивидуальный рисунок реза</div>
 	</div>
 	<div class="presItemCarved">
 		<div class="contImgCarved">
-			<img src="img/sgrhrtr4h4j.png">
+			<img src="../img/carvedImgPage/sgrhrtr4h4j.png">
 		</div>
 		<div class="presText">Комбинирование с другими видами потолков</div>
 	</div>
@@ -203,7 +203,6 @@
 
 <?php
 	$query = "SELECT id_img FROM hashTags WHERE name = 'резной'";
-	$key_session = 'carvedImg';
 	$hashsSelect = ['#резной'];
 	include "../templates/exampWorkFoto.php";
 ?>
