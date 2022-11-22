@@ -437,7 +437,7 @@ function order_a_call(){
 	call_me_view()
 }
 function subMenuMouseLeave(e){
-	clearTimeout(id_timeout_subMenu2sss)
+	clearTimeout(id_timeout_subMenu2)
 	id_timeout_subMenu2 = setTimeout(()=>{	
 		setTimeout(()=>{
 			this.removeEventListener('mouseleave', subMenuMouseLeave)	
@@ -486,9 +486,6 @@ function sub_menu_action(){
 		},100)
 		subMenu.style.height = 0
 	}
-}
-function rorateArrowSubMenu(){
-
 }
 function checkAndCloseSubMenu(){
 	let allSubMenu = document.querySelectorAll('.sub_menu')
