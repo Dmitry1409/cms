@@ -340,6 +340,22 @@ a.menu_item{
 .sub_menu a{
 	color: rgb(0 0 0 / 70%);
 }
+.sub_menu_btn{
+	display: flex;
+}
+.sub_menu_btn span:last-child{
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-bottom: 2px solid #ffffffb3;
+	border-right: 2px solid #ffffffb3;
+	transform: rotateZ(45deg);
+	margin-left: 8px;
+	margin-top: 2px;
+}
+.subMenuarrowOpen{
+	transform: rotateZ(-135deg)!important;
+}
 .header_wrapp{
 	position: relative;
 	width: 100%;

@@ -90,7 +90,7 @@
 				<a class="menu_item" href=<?php echo $root_dir?> >Главная</a>
 				<div class="line_butt"></div>
 				<div class="cont_940">
-					<div class="menu_item sub_menu_btn">Технологии</div>
+					<div class="menu_item sub_menu_btn"><span>Технологии</span><span></span></div>
 					<div role="menu" class="sub_menu">
 						<a class="menu_item" href=<?php echo $root_dir."lightLines#main_section_id"?>>Световые линии</a>
 						<a class="menu_item" href=<?php echo $root_dir."multiLevel#main_section_id"?> >Многоуровневые</a>
@@ -107,7 +107,7 @@
 				<a class="menu_item" href=<?php echo $root_dir."lighting#main_section_id" ?> >Освещение</a>			
 				<div class="line_butt"></div>
 				<div class="cont_940">
-					<div class="menu_item sub_menu_btn">Производители ПВХ</div>
+					<div class="menu_item sub_menu_btn"><span>Производители ПВХ</span><span></span></div>
 					<div role="menu" class="sub_menu">
 						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/MSD#main_section_id"?>>MSD</a>
 						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/BAUF#main_section_id"?> >BAUF</a>

@@ -21,7 +21,9 @@ let clientData = {}
 
 const root_dir = "/cms/"
 
-let id_timeout_subMenu
+let id_timeout_subMenu1
+let id_timeout_subMenu2
+
 
 window.addEventListener('DOMContentLoaded', ()=>{
 
@@ -101,6 +103,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
 	let idTimeOutAnswer
 
+	checkCurrentLocation()
+
 	function answerClickAction(){
 		let openAnswer = document.querySelector('.openAnswer')
 		let nextElem  = this.nextElementSibling
@@ -124,7 +128,29 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			this.querySelector('.answerIconCont div:last-child').style.opacity = 1
 		},20000)
 	}
+
 	
+	function checkCurrentLocation(){
+		let dirs = ['lightLines', 'multiLevel', 'dubleVisionPrint', 'carvedCelling', 'shadowProfil', 'ligthNiches', 'hiddenCurtain',
+					'textureColor', 'starsSky', 'lighting', 'MSD', 'BAUF', 'Pongs', 'Teqtum']
+		let href = window.location.href
+		let a = document.querySelectorAll('.menu_flex_wrap a')
+		for(let i = 0; i<dirs.length; i++){
+			if(href.indexOf(dirs[i]) > -1){
+				for(let k=0; k<a.length; k++){
+					if(a[k].href.indexOf(dirs[i]) > -1){
+						a[k].style.color = "var(--main-col-1)"
+						let p = a[k].parentNode.parentNode
+						if(p.classList.contains('cont_940')){
+							p.style.color = "var(--main-col-1)"
+						}
+						return
+					}
+				}
+			}
+		}
+		a[0].style.color = "var(--main-col-1)"
+	}
 })
 
 
@@ -411,44 +437,58 @@ function order_a_call(){
 	call_me_view()
 }
 function subMenuMouseLeave(e){
-	this.removeEventListener('mouseleave', subMenuMouseLeave)	
-	setTimeout(()=>{
-		this.classList.remove('open_sub_menu')
-	}, 100)
-	this.style.height = 0
+	clearTimeout(id_timeout_subMenu2sss)
+	id_timeout_subMenu2 = setTimeout(()=>{	
+		setTimeout(()=>{
+			this.removeEventListener('mouseleave', subMenuMouseLeave)	
+			this.removeEventListener('mouseenter', subMenuMouseEnter)
+			this.classList.remove('open_sub_menu')
+			let arrow = this.previousElementSibling
+			arrow.querySelector('span:last-child').classList.remove('subMenuarrowOpen')
+		}, 100)
+		this.style.height = 0
+	}, 3000)
 }
 function subMenuMouseEnter(){
-	this.removeEventListener('mouseenter', subMenuMouseEnter)
-	clearTimeout(id_timeout_subMenu)
+	clearTimeout(id_timeout_subMenu1)
+	clearTimeout(id_timeout_subMenu2)
 	this.addEventListener('mouseleave', subMenuMouseLeave)	
 }
 function sub_menu_action(){
 	let subMenu = this.nextElementSibling
 	let mainMenu = document.getElementsByClassName('menu_flex_wrap')[0]
+	let arrow = this.querySelector('.sub_menu_btn span:last-child')
 	if(subMenu.classList.contains('open_sub_menu')){
 		if(clientWidth < 940){
 			mainMenu.style.height = (mainMenu.scrollHeight - subMenu.scrollHeight) + "px"
 		}
 		closeSubMenu()
+		arrow.classList.remove('subMenuarrowOpen')
 	}else{
 		checkAndCloseSubMenu()
 		if(clientWidth < 940){
 			mainMenu.style.height = (mainMenu.scrollHeight + subMenu.scrollHeight) + "px"
 		}else{
-			id_timeout_subMenu = setTimeout(()=>{
+			id_timeout_subMenu1 = setTimeout(()=>{
 				closeSubMenu()
-			},3000)
+			},4000)
 			subMenu.addEventListener('mouseenter', subMenuMouseEnter)
 		}
 		subMenu.classList.add('open_sub_menu')
 		subMenu.style.height = subMenu.scrollHeight + "px"
+		
+		arrow.classList.add('subMenuarrowOpen')
 	}
 	function closeSubMenu(){
 		setTimeout(()=>{
 			subMenu.classList.remove('open_sub_menu')
+			arrow.classList.remove('subMenuarrowOpen')
 		},100)
 		subMenu.style.height = 0
 	}
+}
+function rorateArrowSubMenu(){
+
 }
 function checkAndCloseSubMenu(){
 	let allSubMenu = document.querySelectorAll('.sub_menu')
