@@ -1,14 +1,30 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .catalogProductGrid{
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: 1fr 3px 1fr;
 	grid-template-columns: 1fr 1fr;
 	grid-column-gap: 3px;
 	grid-row-gap: 3px;
 }
 .catalogProdItem{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 	position: relative;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	padding: 15px;
 	border: solid 1px #8ad4118a;
 	color: rgb(0 0 0 / 75%);
@@ -18,23 +34,38 @@
 }
 .catalogProdItem img{
 	width: 100%;
+	-webkit-transition: .4s;
+	-o-transition: .4s;
 	transition: .4s;
 }
 .img-scale-left{
-	transform: scale(1.7) translateX(30px);
-	box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.7);
+	-webkit-transform: scale(1.7) translateX(30px);
+	    -ms-transform: scale(1.7) translateX(30px);
+	        transform: scale(1.7) translateX(30px);
+	-webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.7);
+	        box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.7);
 }
 .img-scale-right{
-	transform: scale(1.7) translateX(-30px);
-	box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.7);
+	-webkit-transform: scale(1.7) translateX(-30px);
+	    -ms-transform: scale(1.7) translateX(-30px);
+	        transform: scale(1.7) translateX(-30px);
+	-webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.7);
+	        box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.7);
 }
 .img-scale-center{
-	transform: scale(1.7);
-	box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.7);
+	-webkit-transform: scale(1.7);
+	    -ms-transform: scale(1.7);
+	        transform: scale(1.7);
+	-webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.7);
+	        box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.7);
 }
 .brand-cont{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	color: rgb(0 0 0/60%);
 	font-size: 13px;
 }
@@ -45,9 +76,15 @@
 }
 .prise-cont{
 	margin-top: 10px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 .prise-cont > span{
 	font-size: 13px;
@@ -61,6 +98,8 @@
 	margin-left: 5px;
 }
 .count-cont{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	margin-top: 10px;
 }
@@ -89,15 +128,26 @@
 .basket-cont{
 	border-top: 1px solid #8ad4118a;
 	margin-top: 20px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 
 .contrBtnContLight{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
 	padding: 0 5px;
 }
 .btnLighting{
@@ -116,8 +166,11 @@
 	margin-top: 10px;
 }
 .sortCont{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-around;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
 	margin-bottom: 20px;
 
 }
@@ -157,6 +210,7 @@
 }
 @media(min-width: 600px){
 	.catalogProductGrid{
+		-ms-grid-columns: 1fr 1fr 1fr;
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 	.btnLighting{
@@ -169,6 +223,7 @@
 
 @media(min-width: 900px){
 	.catalogProductGrid{
+		-ms-grid-columns: 1fr 1fr 1fr 1fr;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 		padding: 0 13%;
 	}
@@ -176,7 +231,9 @@
 		padding: 0 20%;
 	}
 	.sortCont{
-		justify-content: space-between;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
 		padding: 0 20%;
 	}
 	.btnLighting{

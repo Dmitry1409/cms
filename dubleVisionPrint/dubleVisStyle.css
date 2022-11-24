@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .dubleVideo_wrapp video{
 	width: 100%;
 }
@@ -8,8 +15,12 @@
 }
 
 .presentFP{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	padding: 30px;
 	background-color: var(--main-col-3);
 	margin-bottom: 20px;
@@ -25,9 +36,15 @@
 	font-weight: 600;
 }
 .presentImgContFp{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	width: 80px;
 	height: 80px;
 	border-radius: 100px;
@@ -41,10 +58,15 @@
 
 
 .FPControlPanel{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
 	padding: 0 20px;
-	justify-content: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	margin-bottom: 30px;
 }
 
@@ -63,8 +85,11 @@
 .fotoPrintCont img{
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 	vertical-align: bottom;
+	-webkit-transition: .4s;
+	-o-transition: .4s;
 	transition: .4s;
 }
 .fotoPrintCont > div{
@@ -72,16 +97,25 @@
 	padding: 2px;
 }
 .scaleFP{
-	transform: scale(1.7);
-	box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.7);
+	-webkit-transform: scale(1.7);
+	    -ms-transform: scale(1.7);
+	        transform: scale(1.7);
+	-webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.7);
+	        box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.7);
 }
 .scaleRightFP{
-	transform: scale(1.7) translateX(40px);
-	box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.7);
+	-webkit-transform: scale(1.7) translateX(40px);
+	    -ms-transform: scale(1.7) translateX(40px);
+	        transform: scale(1.7) translateX(40px);
+	-webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.7);
+	        box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.7);
 }
 .scaleLeftFP{
-	transform: scale(1.7) translateX(-40px);
-	box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.7);
+	-webkit-transform: scale(1.7) translateX(-40px);
+	    -ms-transform: scale(1.7) translateX(-40px);
+	        transform: scale(1.7) translateX(-40px);
+	-webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.7);
+	        box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.7);
 }
 
 div.FPActiv{
@@ -109,8 +143,12 @@ div.FPActiv{
 	color: rgb(0 0 0 / 50%);
 }
 .equipText > span{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	margin-bottom: 20px;
 }
 .green_deficeFp{
@@ -131,8 +169,11 @@ div.FPActiv{
 		padding: unset;
 	}
 	.presentContFP{
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
 	}
 	.presentFP{
 		width: calc((100% - 20px)/2);
@@ -161,6 +202,8 @@ div.FPActiv{
 		font-size: 17px;
 	}
 	.euipWrapp{
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 	}
 	.euipWrapp > div{
@@ -176,6 +219,8 @@ div.FPActiv{
 
 @media(min-width: 950px){
 	.dubleVideo_wrapp{
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 		padding: unset;
 	}

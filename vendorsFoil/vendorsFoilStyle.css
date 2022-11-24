@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .text_cont{
 	padding: 0 20px;
 }
@@ -10,8 +17,12 @@
 	text-align: center;
 }
 .note_defise{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	font-style: italic;
 }
 .note_defise p{
@@ -45,7 +56,4 @@
 	.img_cont{
 		padding: 0 20%;
 	}
-/*	.text_cont{
-		padding: 0 20%;
-	}*/
 }

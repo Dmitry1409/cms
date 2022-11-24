@@ -1,5 +1,14 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .grid_ware{
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: 1fr 3px 1fr;
 	grid-template-columns: 1fr 1fr;
 	grid-column-gap: 3px;
 	grid-row-gap: 3px;
@@ -14,16 +23,27 @@
 	width: 100%;
 }
 .brand-cont-ware{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 .descriptContWare{
 	margin-top: 30px;
 }
 .basket-cont{
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 .sum-ware span:first-child{
 	font-size: 23px;
@@ -36,12 +56,15 @@ h2{
 }
 
 .ware-foto{
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: 1fr 1fr;
 	grid-template-columns: 1fr 1fr;
 }
 .ware-foto img{
 	width: 100%;
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 }
 .examp_action{
 	z-index: 10;
@@ -59,9 +82,14 @@ h2{
 	cursor: pointer;
 }
 .zakazWrapp{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-around;
-	align-items: center;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	padding: 20px 0;
 }
 .zakazWrapp h3{
@@ -83,6 +111,7 @@ h2{
 
 @media(min-width: 600px){
 	.grid_ware{
+		-ms-grid-columns: 1fr 1fr 1fr;
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
@@ -93,12 +122,14 @@ h2{
 		left: 12%;
 	}
 	.grid_ware{
+		-ms-grid-columns: 1fr 1fr 1fr 1fr;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 		padding: 0 13%;
 	}
 	.zakazWrapp{
 		width: 74%;
-		justify-content: space-around;
+		-ms-flex-pack: distribute;
+		    justify-content: space-around;
 		margin-left: 13%;
 	}
 }
