@@ -22,7 +22,7 @@ $params = array(
 
     "APIKey" => "fddc3897499b8e27a1c7142ae4bd164f",
 
-    "Filter" => '{"Products": ["619601", "91485"]}',
+    "Filter" => '{"Products": ["619601", "91485", "601356", "414258"]}',
 
     "PreviousProduct" => "",
 
@@ -41,7 +41,16 @@ echo "<pre>";
 // print_r($res);
 
 $r = json_decode($val);
-echo var_dump($r);
+$ar = $r->{'#value'}->Objects;
+echo var_dump($ar);
+for($i=0; $i<count($ar); $i++){
+	echo $ar[$i]->{"#value"}->Name." ";
+	echo "<br>";
+	echo $ar[$i]->{"#value"}->Price;
+	echo "<br>";
+	echo $ar[$i]->{"#value"}->Balance;
+	echo "<br>";
+}
 	
 // $js = json_decode($res->return);
 // $js2 = json_decode($res->return);

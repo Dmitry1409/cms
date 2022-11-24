@@ -354,7 +354,7 @@ a.menu_item{
 	margin-top: 2px;
 }
 .subMenuarrowOpen{
-	transform: rotateZ(-135deg)!important;
+	transform: rotateZ(-135deg) translateY(-2px) translateX(-3px) !important;
 }
 .header_wrapp{
 	position: relative;

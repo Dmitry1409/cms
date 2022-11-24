@@ -2,9 +2,11 @@
 	session_start();
 	$db = new SQLite3("../cms.db");
 
-	if($_GET['comand'] == "getAllProd"){
-		echo json_encode($_SESSION['toledoAllprod']);
-		exit;
+	if(array_key_exists('comand', $_GET)){	
+		if($_GET['comand'] == "getAllProd"){
+			echo json_encode($_SESSION['toledoAllprod']);
+			exit;
+		}
 	}
 
 	$cat = json_decode($_GET['category']);
@@ -23,13 +25,15 @@
 		}
 	}
 	$fl = true;
-	if($_GET['sortBy']=="ASC"){
-		$q = $q." ORDER BY prise";
-		$fl = false;
-	}
-	if($_GET['sortBy']=="DESC"){
-		$q = $q." ORDER BY prise DESC";
-		$fl = false;
+	if(array_key_exists('sortBy', $_GET)){	
+		if($_GET['sortBy']=="ASC"){
+			$q = $q." ORDER BY prise";
+			$fl = false;
+		}
+		if($_GET['sortBy']=="DESC"){
+			$q = $q." ORDER BY prise DESC";
+			$fl = false;
+		}
 	}
 
 	$res = $db->query($q);
