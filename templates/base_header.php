@@ -41,7 +41,7 @@
 		<div class="cap_container">
 			<div class="combo_header">
 				<a class="logo_header" href=<?php echo $root_dir?>>
-					<img src=<?php echo $root_dir."img/img_logo.webp"?>>
+					<img src=<?php echo $root_dir."img/0001-0250.gif"?>>
 				</a>
 				<div class="name_company">
 					<a href=<?php echo $root_dir?>><?php echo $COMPANY_NAME?></a>

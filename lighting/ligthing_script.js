@@ -145,6 +145,12 @@ window.addEventListener('DOMContentLoaded',()=>{
 	function inserAdjac(val){
 		let cont = document.querySelector('.catalogProductGrid')
 		for(let i =0 ; i<val.length; i++){
+			let bal
+			if(val[i]['наличие'] > 0 ){
+				bal = `В наличии<br>${val[i]['наличие']} шт.`
+			}else{
+				bal = "Под заказ"
+			}
 			html = `<div class="catalogProdItem">
 						<div>
 							<div class="catalogImgCont">
@@ -164,7 +170,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 									<span>${val[i]['prise']}</span>
 									<span>руб/${val[i]['ед_изм']}</span>
 								</div>
-								<span>${val[i]['наличие']}</span>
+								<span>${bal}</span>
 							</div>
 							<div class="basket-cont">
 								<div class="count-cont">

@@ -66,7 +66,11 @@
 							echo "<span>".$arr[$i]['prise']."</span>";
 							echo "<span>руб/".$arr[$i]['ед_изм']."</span>";
 						echo "</div>";
-						echo "<span>".$arr[$i]['наличие']."</span>";
+						if($arr[$i]['наличие'] > 0){
+							echo "<span>В наличии<br>".$arr[$i]['наличие']." шт.</span>";
+						}else{
+							echo "<span>Под заказ</span>";
+						}
 					echo "</div>";
 					echo "<div class='basket-cont'>";
 						echo "<div class='count-cont'>";

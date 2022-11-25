@@ -87,6 +87,7 @@
 	        align-items: center;
 }
 .prise-cont > span{
+	text-align: center;
 	font-size: 13px;
 }
 .prise-cont > div span:first-child{
