@@ -1,6 +1,7 @@
 img/
 Roboto/
 upload_img/
+cms.db
 *.jpeg
 *.jpg
 *.webp
