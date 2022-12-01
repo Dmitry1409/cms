@@ -1,4 +1,4 @@
-config_cms.php root_dir = "/"
+﻿config_cms.php root_dir = "/"
 
 main.js root_path_name = "/"
 
@@ -9,4 +9,6 @@ send_mail.php раскоментировать отправку
 addFeedBack.php -- раскоментировать 2 строки autoRotate()
 
 загрузить базу данных cms.db в корень сайта
+
+раскоментировать яндекс метрику mainHead.php
 

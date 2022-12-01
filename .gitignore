@@ -7,4 +7,5 @@ cms.db
 *.webp
 *.png
 *.svg
+*.ico
 test.php
