@@ -93,14 +93,14 @@
 					<div class="menu_item sub_menu_btn"><span>Технологии</span><span></span></div>
 					<div role="menu" class="sub_menu">
 						<a class="menu_item" href=<?php echo $root_dir."technology/lightLines#main_section_id"?>>Световые линии</a>
-						<a class="menu_item" href=<?php echo $root_dir."multiLevel#main_section_id"?> >Многоуровневые</a>
-						<a class="menu_item" href=<?php echo $root_dir."dubleVisionPrint#main_section_id"?>>Double Vision & Фотопечать</a>
-						<a class="menu_item" href=<?php echo $root_dir."carvedCelling#main_section_id"?>>Резные</a>
-						<a class="menu_item" href=<?php echo $root_dir."shadowProfil#main_section_id"?>>Парящие & Теневые & Подсветка</a>
-						<a class="menu_item" href=<?php echo $root_dir."ligthNiches#main_section_id"?>>Световые ниши</a>
-						<a class="menu_item" href=<?php echo $root_dir."hiddenCurtain#main_section_id"?>>Ниши & Гардины</a>
-						<a class="menu_item" href=<?php echo $root_dir."textureColor#main_section_id"?>>Фактура & Цвет</a>
-						<a class="menu_item" href=<?php echo $root_dir."starsSky#main_section_id"?>>Звездное небо</a>
+						<a class="menu_item" href=<?php echo $root_dir."technology/multiLevel#main_section_id"?> >Многоуровневые</a>
+						<a class="menu_item" href=<?php echo $root_dir."technology/dubleVisionPrint#main_section_id"?>>Double Vision & Фотопечать</a>
+						<a class="menu_item" href=<?php echo $root_dir."technology/carvedCelling#main_section_id"?>>Резные</a>
+						<a class="menu_item" href=<?php echo $root_dir."technology/shadowProfil#main_section_id"?>>Парящие & Теневые & Подсветка</a>
+						<a class="menu_item" href=<?php echo $root_dir."technology/ligthNiches#main_section_id"?>>Световые ниши</a>
+						<a class="menu_item" href=<?php echo $root_dir."technology/hiddenCurtain#main_section_id"?>>Ниши & Гардины</a>
+						<a class="menu_item" href=<?php echo $root_dir."technology/textureColor#main_section_id"?>>Фактура & Цвет</a>
+						<a class="menu_item" href=<?php echo $root_dir."technology/starsSky#main_section_id"?>>Звездное небо</a>
 					</div>
 				</div>
 				<div class="line_butt"></div>
