@@ -15,15 +15,15 @@
 	<div role="button" class="btnLighting btnActivLighting" id="BtnAll" data-category="все">все</div>
 	<div role="button" class="btnLighting" data-category="споты">споты</div>
 	<div role="button" class="btnLighting" data-category="споты с подсветкой">споты + подсветка</div>
-	<div role="button" class="btnLighting" data-category="споты влагозащищенные">споты + влагозащита</div>
-	<div role="button" class="btnLighting" data-category="лампы">лампы</div>
 	<div role="button" class="btnLighting" data-category="светильники">светильники</div>
+	<div role="button" class="btnLighting" data-category="споты влагозащищенные">споты + влагозащита</div>
 	<div role="button" class="btnLighting" data-category="светильники с датчиками">светильники + датчики</div>
-	<div role="button" class="btnLighting" data-category="влагозащитные светильники">светильники + влагозащита</div>
-	<div role="button" class="btnLighting" data-category="трековые светильники">трековые светильники</div>
-	<div role="button" class="btnLighting" data-category="лента">светодиодная лента</div>
 	<div role="button" class="btnLighting" data-category="питание 12v">питание 12v</div>
+	<div role="button" class="btnLighting" data-category="влагозащитные светильники">светильники + влагозащита</div>
+	<div role="button" class="btnLighting" data-category="лампы">лампы</div>
+	<div role="button" class="btnLighting" data-category="трековые светильники">трековые светильники</div>
 	<div role="button" class="btnLighting" data-category="контроллеры">контроллеры</div>
+	<div role="button" class="btnLighting" data-category="лента">светодиодная лента</div>
 </div>
 
 <div class="sortCont">
@@ -43,6 +43,10 @@
 		$_SESSION['toledoAllprod'] = $arr;
 
 		for($i=0; $i<12; $i++){
+			$pr = $arr[$i]['prise'];
+			if($arr[$i]['ratio_prise'][0]=="+"){
+				$pr = ceil($pr + substr($arr[$i]['ratio_prise'], 2));
+			}
 			echo "<div class='catalogProdItem'>";
 				echo "<div>";
 					echo "<div class='catalogImgCont'>";
@@ -63,7 +67,7 @@
 				echo "<div>";
 					echo "<div class='prise-cont'>";
 						echo "<div>";
-							echo "<span>".$arr[$i]['prise']."</span>";
+							echo "<span>$pr</span>";
 							echo "<span>руб/".$arr[$i]['ед_изм']."</span>";
 						echo "</div>";
 						if($arr[$i]['наличие'] > 0){
@@ -97,7 +101,7 @@
 </div>
 
 <div class="note_ware">
-	<h5>* Наличие и возможность заказа товара уточняйте у менеджера.<br>* Сроки поставки товара при заказе варьируется от 5 до 10 дней и могут быть увеличены.</h5>
+	<h5>* Наличие и возможность заказа товара уточняйте у менеджера.<br>* Срок поставки товара при заказе варьируется от 5 до 10 дней и могут быть увеличены.</h5>
 </div>
 
 <?php

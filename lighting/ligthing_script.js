@@ -29,7 +29,6 @@ window.addEventListener('DOMContentLoaded',()=>{
 		}
 	}
 
-
 	async function basketAction(){
 		let itemCont = this.parentNode.parentNode.parentNode
 		let code = itemCont.querySelector('.brand-cont span:first-child').innerText.slice(5)
@@ -45,8 +44,6 @@ window.addEventListener('DOMContentLoaded',()=>{
 		}else{
 			alert('Не удалось добавить товары в корзину. Сообщите пожалуйста об ошибке администратору сайта. Код ошибки: '+res.status)
 		}
-		
-
 	}
 
 	function sumOrSubProd(){
@@ -151,6 +148,12 @@ window.addEventListener('DOMContentLoaded',()=>{
 			}else{
 				bal = "Под заказ"
 			}
+			let pr = val[i]['prise']
+			let r = val[i]['ratio_prise']
+			if(r[0] == "+"){
+				pr = Math.ceil(Number(pr) + Number(r.slice(2)))
+			}
+
 			html = `<div class="catalogProdItem">
 						<div>
 							<div class="catalogImgCont">
@@ -167,7 +170,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 						<div>
 							<div class="prise-cont">
 								<div>
-									<span>${val[i]['prise']}</span>
+									<span>${pr}</span>
 									<span>руб/${val[i]['ед_изм']}</span>
 								</div>
 								<span>${bal}</span>

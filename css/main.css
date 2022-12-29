@@ -2780,6 +2780,7 @@ textarea.invalidValueCalculate{
 	font-family: "Roboto";
 	font-style: normal;
 	font-weight: 100;
+	font-display: swap;
 	src: local("Roboto-Thin"),
 		url("../Roboto/woff/Roboto-Thin.woff2") format("woff2"),
 		url("../Roboto/woff/Roboto-Thin.woff") format("woff"),
@@ -2789,6 +2790,7 @@ textarea.invalidValueCalculate{
 	font-family: "Roboto";
 	font-style: normal;
 	font-weight: 300;
+	font-display: swap;
 	src: local("Roboto-Light"),
 		url("../Roboto/woff/Roboto-Light.woff2") format("woff2"),
 		url("../Roboto/woff/Roboto-Light.woff") format("woff"),
@@ -2798,6 +2800,7 @@ textarea.invalidValueCalculate{
 	font-family: "Roboto";
 	font-style: normal;
 	font-weight: 400;
+	font-display: swap;
 	src: local("Roboto-Regular"),
 		url("../Roboto/woff/Roboto-Regular.woff2") format("woff2"),
 		url("../Roboto/woff/Roboto-Regular.woff") format("woff"),
@@ -2807,6 +2810,7 @@ textarea.invalidValueCalculate{
 	font-family: "Roboto";
 	font-style: normal;
 	font-weight: 500;
+	font-display: swap;
 	src: local("Roboto-Medium"),
 		url("../Roboto/woff/Roboto-Medium.woff2") format("woff2"),
 		url("../Roboto/woff/Roboto-Medium.woff") format("woff"),
@@ -2816,6 +2820,7 @@ textarea.invalidValueCalculate{
 	font-family: "Roboto";
 	font-style: italic;
 	font-weight: 500;
+	font-display: swap;
 	src: local("Roboto-MediumItalic"),
 		url("../Roboto/woff/Roboto-MediumItalic.woff2") format("woff2"),
 		url("../Roboto/woff/Roboto-MediumItalic.woff") format("woff"),
@@ -2825,6 +2830,7 @@ textarea.invalidValueCalculate{
 	font-family: "Roboto";
 	font-style: normal;
 	font-weight: 700;
+	font-display: swap;
 	src: local("Roboto-Bold"),
 		url("../Roboto/woff/Roboto-Bold.woff2") format("woff2"),
 		url("../Roboto/woff/Roboto-Bold.woff") format("woff"),
@@ -2834,6 +2840,7 @@ textarea.invalidValueCalculate{
 	font-family: "Roboto";
 	font-style: normal;
 	font-weight: 900;
+	font-display: swap;
 	src: local("Roboto-Black"),
 		url("../Roboto/woff/Roboto-Black.woff2") format("woff2"),
 		url("../Roboto/woff/Roboto-Black.woff") format("woff"),

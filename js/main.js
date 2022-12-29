@@ -25,6 +25,8 @@ let id_timeout_subMenu1
 let id_timeout_subMenu2
 
 
+
+
 window.addEventListener('DOMContentLoaded', ()=>{
 
 
@@ -132,7 +134,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	
 	function checkCurrentLocation(){
 		let dirs = ['lightLines', 'multiLevel', 'dubleVisionPrint', 'carvedCelling', 'shadowProfil', 'ligthNiches', 'hiddenCurtain',
-					'textureColor', 'starsSky', 'lighting', 'MSD', 'BAUF', 'Pongs', 'Teqtum']
+					'textureColor', 'starsSky', 'lighting', 'MSD', 'BAUF', 'Pongs', 'Teqtum', 'favourites']
 		let href = window.location.href
 		let a = document.querySelectorAll('.menu_flex_wrap a')
 		for(let i = 0; i<dirs.length; i++){

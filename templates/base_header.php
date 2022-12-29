@@ -92,7 +92,7 @@
 				<div class="cont_940">
 					<div class="menu_item sub_menu_btn"><span>Технологии</span><span></span></div>
 					<div role="menu" class="sub_menu">
-						<a class="menu_item" href=<?php echo $root_dir."lightLines#main_section_id"?>>Световые линии</a>
+						<a class="menu_item" href=<?php echo $root_dir."technology/lightLines#main_section_id"?>>Световые линии</a>
 						<a class="menu_item" href=<?php echo $root_dir."multiLevel#main_section_id"?> >Многоуровневые</a>
 						<a class="menu_item" href=<?php echo $root_dir."dubleVisionPrint#main_section_id"?>>Double Vision & Фотопечать</a>
 						<a class="menu_item" href=<?php echo $root_dir."carvedCelling#main_section_id"?>>Резные</a>

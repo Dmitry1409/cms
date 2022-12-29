@@ -84,7 +84,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Световые линии</h3>
-					<a href="lightLines" class="btn_tech">Узнать подробнее</a>
+					<a href="technology/lightLines" class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">				

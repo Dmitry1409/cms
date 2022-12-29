@@ -6,11 +6,12 @@
 	<body>
 <?php
 $db = new Sqlite3('../cms.db');
-$res = $db->query("SELECT code FROM ToledoProducts");
+$res = $db->query("SELECT code FROM ToledoProducts ORDER BY code");
 $arr = [];
 while($r = $res->fetchArray(SQLITE3_ASSOC)){
 	$arr[] = $r['code'];
 }
+echo count($arr), "<br><br>";
 $arr = json_encode($arr);
 
 $params = array(
@@ -29,34 +30,20 @@ $params = array(
 $client = new SoapClient("http://api-ka.toledo24.ru/ka/ws/api.1cws?wsdl");
 
 $res = $client->PriceList($params);
-// $res = $client->ProductsInfo($params);
 
 $val = $res->return;
-
-echo "<pre>";
-// echo var_dump($params)
-
-// print_r($val);
-//ProductId
 $val = json_decode($val);
 $val = $val->{'#value'}->Objects;
-for($i=0; $i<count($val); $i++){
-	$q = "UPDATE ToledoProducts SET prise = ".$val[$i]->{"#value"}->Price;
-	// echo $i, "<br>";
-	// echo $val[$i]->{"#value"}->Name." ";
-	// echo "<br>";
-	$q = $q.", наличие = ".$val[$i]->{"#value"}->Balance;
-	$q = $q." WHERE code = ".$val[$i]->{"#value"}->ProductId;
 
-	// echo $val[$i]->{"#value"}->ProductId,"<br>", $q, "<br>";
-	// echo $q;
+for($i=0; $i<count($val); $i++){
+	$id = $val[$i]->{"#value"}->ProductId;
+	$q = "UPDATE ToledoProducts SET prise = ".$val[$i]->{"#value"}->Price;
+	$q = $q.", наличие = ".$val[$i]->{"#value"}->Balance;
+	$q = $q." WHERE code = ".$id;
+
 	// echo $db->exec($q);
-	// break;
-	// echo "<br>";
-	// echo $val[$i]->{"#value"}->Balance;
-	// echo "<br>";
 }
-echo "succes";
+
 	
 ?>
 </body>
