@@ -30,6 +30,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 	}
 
 	async function basketAction(){
+		plusCountFavorMenu()
 		let itemCont = this.parentNode.parentNode.parentNode
 		let code = itemCont.querySelector('.brand-cont span:first-child').innerText.slice(5)
 		let amount = Number(itemCont.querySelector('input').value)

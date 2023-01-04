@@ -39,8 +39,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	if(btn_rgt){
 		btn_rgt.addEventListener('click', examp_right_action)
 	}
-	// document.querySelector('.examp_btn_left').addEventListener('click', examp_left_action)
-	// document.querySelector('.examp_btn_right').addEventListener('click', examp_right_action)
+
 
 	let pictures = document.querySelectorAll('.example_img_cont picture')
 	pictures.forEach((item)=>{
@@ -51,7 +50,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	if(cls_btn){
 		cls_btn.addEventListener('click', close_img_show)
 	}
-	// document.querySelector('.close_btn_examp').addEventListener('click', close_img_show)
 
 	let like_btns = document.querySelectorAll('.img_like_cont')
 	like_btns.forEach(function(item){
@@ -64,7 +62,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		request_price_wrapp[i].addEventListener('click', howPrice)
 	}
 
-	putLikePicture()
 
 	async function contrlHashAction(){
 		let arr = []
@@ -96,7 +93,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			alert('Не удалось получить изображения от сервера, сообщите пожалуйста администратору сайта. Код ошибки: '+res.status)
 		}
 	}
-
 	function scrollAction(){
 		if(!id_inter_slid){
 			let hashCont = document.querySelector('.controlHashTagCont')
@@ -165,7 +161,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		countImg.querySelector('span:last-child').innerText = val.length
 
 		removeReqPriceBlock()
-		putLikePicture()
 	}
 	function howPrice(){
 		let act_pic
@@ -191,6 +186,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		return [location.href+s.getAttribute('srcset'), location.href+i.getAttribute('src')]
 	}
 	function like_img_action(){
+		plusCountFavorMenu()
 		let target_img
 		if(this.classList.contains('like_cont_940')){
 			target_img = document.querySelector('.examp_right')
@@ -233,40 +229,16 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		if(target_img.like){
 			target_img.like = null
 			putOrRemoveLike(svg)
-			let arr = JSON.parse(localStorage.like_img)
-			let ind
-			for(let i in arr){
-				if(arr[i] == id_img){
-					ind = i
-				}
-			}
-			arr.splice(ind, 1)
-			if(arr.length == 0){
-				delete localStorage.like_img
-			}else{
-				localStorage.setItem('like_img', JSON.stringify(arr))
-			}
 
 		}else{
 			target_img.like = "yes"
 			putOrRemoveLike(svg)
-			let save_arr
-			if(localStorage.like_img){
-				save_arr = JSON.parse(localStorage.like_img)
-				save_arr.push(id_img)
-			}else{
-				save_arr = []
-				save_arr.push(id_img)
-			}
-
-			localStorage.setItem('like_img', JSON.stringify(save_arr))
 		}
-		// delete localStorage.like_img
 		
 		fotoLikePHPaction(id_img)	
 	}
 	async function fotoLikePHPaction(fotoId){
-		let res = await fetch(`${root_dir}scripts_php/fotoExampLikeAction.php?fotoId=${fotoId}`)
+		let res = await fetch(`${root_dir}scripts_php/fotoExampLikeAction.php?comand=addFoto&fotoId=${fotoId}`)
 	}
 	function putOrRemoveLike(svg){
 		let like_text = svg.nextElementSibling
@@ -287,56 +259,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 				svg.classList = "svg_like svg_like_cheked"
 				like_text.innerHTML = "В<br>избранном"
 			}
-		}
-	}
-	function putLikePicture(){
-		let arr_like = localStorage.like_img
-		let like_cont_940 = document.querySelector('.like_cont_940')
-		if(arr_like){
-			arr_like = JSON.parse(localStorage.like_img)
-			let pictures = document.querySelectorAll('.example_img_cont picture')
-			pictures.forEach((pic)=>{
-				let id_img = pic.querySelector('img').getAttribute('data-foto-id')
-				let fl = false
-				for(let i in arr_like){
-					if(arr_like[i] == id_img){
-						fl = true
-						pic.like = "yes"
-						if(pic.classList.contains('examp_action')){
-							let svg = document.querySelector('.img_like_cont svg')
-							if(!svg.classList.contains('svg_like_cheked')){	
-								putOrRemoveLike(svg)
-							}
-
-						}
-						if(pic.classList.contains('examp_right')){
-							if(getComputedStyle(like_cont_940).display != "none"){
-								let svg_940 = like_cont_940.querySelector('svg')
-								if(!svg_940.classList.contains('svg_like_cheked')){
-									putOrRemoveLike(like_cont_940.querySelector('svg'))
-								}
-							}
-						}
-						break
-					}
-				}
-				if(!fl){
-					if(pic.classList.contains('examp_action')){
-						let svg = document.querySelector('.img_like_cont svg')
-						if(svg.classList.contains('svg_like_cheked')){
-							putOrRemoveLike(svg)
-						}
-					}
-					if(pic.classList.contains('examp_right')){
-						let svg_940 = like_cont_940.querySelector('svg')
-						if(svg_940.classList.contains('svg_like_cheked')){
-							putOrRemoveLike(svg_940)
-						}
-					}
-
-				}
-			})
-
 		}
 	}
 	function show_img(){
@@ -646,7 +568,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		pic.forEach(function(item){
 			item.addEventListener('click', show_img)
 		})
-		putLikePicture()
 
 		if(img_cont.classList.contains('show_img_cont')){
 			changeHashViewMode('a')

@@ -96,6 +96,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 	}
 
 	async function delProdAction(){
+		minusCountFavorMenu()
 		let code = this.parentNode.querySelector('.brand-cont span:first-child')
 		code = code.innerText.slice(5)
 
@@ -127,7 +128,15 @@ window.addEventListener('DOMContentLoaded',()=>{
 		}, 400)
 	}
 
+	function minusCountFavorMenu(){
+		let s = document.querySelector('.favour_count_menu')
+		c = Number(s.innerText) - 1
+		s.innerText = c
+
+	}
+
 	function delFavourImg(){
+		minusCountFavorMenu()
 		let curPic 
 		if(this.classList.contains('like_cont_940')){
 			curPic = document.querySelector('.examp_right')
@@ -137,17 +146,6 @@ window.addEventListener('DOMContentLoaded',()=>{
 		let curImg = curPic.querySelector('img')
 		let fotoId = curImg.getAttribute('data-foto-id')
 		let allPic = document.querySelectorAll('.example_img_cont picture')
-
-		
-		let arr_id_img = JSON.parse(localStorage.like_img)
-		let ind 
-		for(let i in arr_id_img){
-			if(arr_id_img[i] == fotoId){
-				ind = i
-			}
-		}
-		arr_id_img.splice(ind,1)
-		localStorage.setItem('like_img', JSON.stringify(arr_id_img))
 
 		delPHPaction(fotoId)
 
@@ -235,7 +233,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 	}
 
 	async function delPHPaction(fotoId){
-		fetch(`${root_dir}scripts_php/fotoExampLikeAction.php?fotoId=${fotoId}`)
+		fetch(`${root_dir}scripts_php/fotoExampLikeAction.php?comand=delFoto&fotoId=${fotoId}`)
 	}
 
 	function btnLeftAct(){

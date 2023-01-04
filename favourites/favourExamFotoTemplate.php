@@ -13,7 +13,6 @@ for($i=0; $i<count($id_img); $i++){
 		$q = $q.',';
 	}
 }
-
 $res = $db->query($q);
 
 while ($r = $res->fetchArray(SQLITE3_ASSOC)){

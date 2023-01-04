@@ -377,6 +377,14 @@ a.menu_item{
 	color: rgb(255 255 255 /70%);
 	text-decoration: none;
 }
+.favour_count_menu{
+	padding: 2px;
+	background-color: white;
+	border-radius: 2px;
+	font-weight: 900;
+	color: #ff0000;
+	margin-left: 5px;
+}
 .dop_style_menu{
 	position: relative;
 	overflow: hidden;
@@ -467,8 +475,8 @@ a.menu_item{
 }
 .sub_menu_btn span:last-child{
 	display: inline-block;
-	width: 10px;
-	height: 10px;
+	width: 8px;
+	height: 8px;
 	border-bottom: 2px solid #ffffffb3;
 	border-right: 2px solid #ffffffb3;
 	-webkit-transform: rotateZ(45deg);

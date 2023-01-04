@@ -48,7 +48,7 @@ if(array_key_exists('buyProducts', $_SESSION)){
 					</svg>';
 				echo "<div>";
 					echo "<div class='catalogImgCont'>";
-						$p = '../lighting/img/product/'.$val[$i]['src'];
+						$p = '../img/lightingPage/product/'.$val[$i]['src'];
 						echo "<img src=$p>";
 					echo "</div>";
 					echo "<div class='catalDescriptCont'>";

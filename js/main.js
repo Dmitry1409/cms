@@ -156,6 +156,16 @@ window.addEventListener('DOMContentLoaded', ()=>{
 })
 
 
+function plusCountFavorMenu(){
+	let span = document.querySelector('.favourIndex span')
+	if(!span.innerText){
+		span.innerText = 1
+		span.classList.add("favour_count_menu")
+
+	}else{
+		span.innerText = Number(span.innerText) + 1
+	}
+}
 
 function delWarnigClassCalcult(){
 	let inpArr = document.querySelectorAll('.calcul_body input')

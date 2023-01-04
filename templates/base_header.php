@@ -124,7 +124,16 @@
 				<div class="line_butt"></div>
 				<div id="questAnswerBtnId" class="menu_item">Ответы на вопросы</div>
 				<div class="line_butt"></div>
-				<a class="menu_item" href=<?php echo $root_dir.'favourites#main_section_id'?>>Избранное</a>
+				<?php
+					if(array_key_exists("favourImg", $_SESSION) or array_key_exists('buyProducts', $_SESSION)){
+						$c = count($_SESSION['favourImg']) + count($_SESSION['buyProducts']);
+
+						echo "<a class='menu_item favourIndex' href=".$root_dir."favourites#main_section_id>Избранное<span class='favour_count_menu'>$c</span></a>";
+					}else{
+						echo "<a class='menu_item favourIndex' href=".$root_dir."favourites#main_section_id>Избранное<span></span></a>";
+					}
+				?>
+				
 			</div>
 		</div>
 		<div class="header_lozung">
