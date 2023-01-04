@@ -117,7 +117,7 @@ for($i=0; $i<count($arr); $i++){
 			<div class="count_img_cont">
 				<span><span>1</span> из <span><?php echo count($arr); ?></span></span>
 			</div>
-			<div class="btns_left_right examp_btn_left">
+			<div class="btns_left_right fav_lft_btn">
 				<svg version="1.1" id="Capa_1" width="20px"  height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 					 viewBox="0 0 16.9 16.9" style="enable-background:new 0 0 16.9 16.9;" xml:space="preserve">
 				<g>
@@ -127,7 +127,7 @@ for($i=0; $i<count($arr); $i++){
 				</g>
 				</svg>
 			</div>
-			<div class="btns_left_right examp_btn_right">
+			<div class="btns_left_right fav_rgt_btn">
 				<svg version="1.1" id="Capa_1" width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 					 viewBox="0 0 16.9 16.9" style="enable-background:new 0 0 16.9 16.9;" xml:space="preserve">
 				<g>

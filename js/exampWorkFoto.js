@@ -1,4 +1,3 @@
-
 window.addEventListener('DOMContentLoaded', ()=>{
 
 	document.addEventListener('scroll', scrollAction)
@@ -32,14 +31,27 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		contrlHash[i].addEventListener('click', contrlHashAction)
 	}
 
-	document.querySelector('.examp_btn_left').addEventListener('click', examp_left_action)
-	document.querySelector('.examp_btn_right').addEventListener('click', examp_right_action)
+	let btn_left = document.querySelector('.examp_btn_left')
+	let btn_rgt  = document.querySelector('.examp_btn_right')
+	if(btn_left){
+		btn_left.addEventListener('click', examp_left_action)
+	}
+	if(btn_rgt){
+		btn_rgt.addEventListener('click', examp_right_action)
+	}
+	// document.querySelector('.examp_btn_left').addEventListener('click', examp_left_action)
+	// document.querySelector('.examp_btn_right').addEventListener('click', examp_right_action)
 
 	let pictures = document.querySelectorAll('.example_img_cont picture')
 	pictures.forEach((item)=>{
 		item.addEventListener('click', show_img)
 	})
-	document.querySelector('.close_btn_examp').addEventListener('click', close_img_show)
+
+	let cls_btn = document.querySelector('.close_btn_examp')
+	if(cls_btn){
+		cls_btn.addEventListener('click', close_img_show)
+	}
+	// document.querySelector('.close_btn_examp').addEventListener('click', close_img_show)
 
 	let like_btns = document.querySelectorAll('.img_like_cont')
 	like_btns.forEach(function(item){
@@ -88,6 +100,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	function scrollAction(){
 		if(!id_inter_slid){
 			let hashCont = document.querySelector('.controlHashTagCont')
+			if(!hashCont) return
 			rectHash = hashCont.getBoundingClientRect()
 			if(rectHash.y < 200){
 				slidFlag = true

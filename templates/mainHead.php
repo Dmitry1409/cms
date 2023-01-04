@@ -8,6 +8,12 @@
 	<link rel="stylesheet" type="text/css" href=<?php echo $root_dir."css/main.css" ?>>
 	<link rel="stylesheet" type="text/css" href=<?php echo $root_dir."css/normalize.css" ?>>
 	<script defer type="text/javascript" src=<?php echo $root_dir."js/main.js"?>></script>
+	<script defer type="text/javascript" src=<?php echo $root_dir."js/feedBackClient.js"?>></script>
+	<?php
+		if(strpos($_SERVER['REQUEST_URI'], "favourites") == false){
+			echo "<script defer type='text/javascript' src=".$root_dir."js/exampWorkFoto.js></script>";
+		}
+	?>
 	<link rel="apple-touch-icon" sizes="180x180" href='<?php echo $root_dir."img/favicon_io/apple-touch-icon.png"?>'>
 	<link rel="icon" type="image/png" sizes="32x32" href='<?php echo $root_dir."img/favicon_io/favicon-32x32.png"?>'>
 	<link rel="icon" type="image/png" sizes="16x16" href='<?php echo $root_dir."img/favicon_io/favicon-16x16.png"?>'>

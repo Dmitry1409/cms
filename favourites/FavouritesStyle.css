@@ -109,6 +109,16 @@ h2{
 	margin-top: 30px;
 }
 
+.fav_lft_btn{
+	position: relative;
+	margin-right: 10px;
+	-webkit-transform: rotateZ(180deg);
+	    -ms-transform: rotate(180deg);
+	        transform: rotateZ(180deg);
+	z-index: 1;
+}
+
+
 @media(min-width: 600px){
 	.grid_ware{
 		-ms-grid-columns: 1fr 1fr 1fr;

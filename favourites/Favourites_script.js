@@ -32,8 +32,8 @@ window.addEventListener('DOMContentLoaded',()=>{
 		close_btn.addEventListener('click', close_img_show)
 	}
 
-	let l_btn = document.querySelector('.examp_btn_left')
-	let r_btn = document.querySelector('.examp_btn_right')
+	let l_btn = document.querySelector('.fav_lft_btn')
+	let r_btn = document.querySelector('.fav_rgt_btn')
 	if(l_btn){
 		l_btn.addEventListener('click', btnRightAct)
 	}

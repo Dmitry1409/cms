@@ -1,8 +1,6 @@
 
 	<title>Световые линии</title>
 	<link rel="stylesheet" type="text/css" href="lights.css">
-	<script type="text/javascript" src="../../js/exampWorkFoto.js"></script>
-	<script type="text/javascript" src=<?php echo $root_dir."js/feedBackClient.js"?>></script>
 	<?php 
 		$price_work = $db->querySingle("SELECT price FROM priceForCalcult WHERE id = 8");
 	?>
