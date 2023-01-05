@@ -104,7 +104,7 @@
 					</div>
 				</div>
 				<div class="line_butt"></div>
-				<a class="menu_item" href=<?php echo $root_dir."lighting#main_section_id" ?> >Освещение</a>			
+				<a class="menu_item" href=<?php echo $root_dir."lighting#main_section_id" ?>>Освещение</a>			
 				<div class="line_butt"></div>
 				<div class="cont_940">
 					<div class="menu_item sub_menu_btn"><span>Производители ПВХ</span><span></span></div>

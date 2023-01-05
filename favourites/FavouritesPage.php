@@ -68,7 +68,11 @@ if(array_key_exists('buyProducts', $_SESSION)){
 							echo "<span>".$val[$i]['prise']."</span>";
 							echo "<span>руб/".$val[$i]['ед_изм']."</span>";
 						echo "</div>";
-						echo "<span>".$val[$i]['наличие']."</span>";
+						if($val[$i]['наличие'] > 0){
+							echo "<span>В наличии<br>".$val[$i]['наличие']." шт.</span>";
+						}else{
+							echo "<span>Под заказ</span>";
+						}
 					echo "</div>";
 					echo "<div class='basket-cont'>";
 						echo "<div class='count-cont'>";

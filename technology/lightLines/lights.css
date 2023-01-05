@@ -34,9 +34,6 @@
 	-o-object-fit: cover;
 	   object-fit: cover;
 }
-.device_vert{
-	margin-top: 20px;
-}
 
 .request_price_shell{
 	position: relative;
@@ -47,10 +44,22 @@
 }
 
 
+@media(min-width: 650px){
+	.row_quadr{
+		flex-direction: row;
+	}
+	.row_quadr > div{
+		width: 50%;
+	}
+
+}
+
+
 @media(min-width: 940px){
 	.device_cont{
 		display: block;
 		width: 100%;
+		padding: 0 10%;
 	}
 	.device_img_cont{
 		width: 50%;
@@ -62,4 +71,15 @@
 		float: left;
 		margin-right: 20px;
 	}
+	.row-reverse{
+		flex-direction: row-reverse;
+	}
+	.row_quadr > div:first-child{
+		width: 45%;
+	}
+	.lightsLines_flex{
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+
 }

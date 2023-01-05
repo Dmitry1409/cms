@@ -10,8 +10,8 @@
 	<div class="lightsLines_flex">
 		<div class="lights_img_cont">
 			<picture>
-				<source srcset="../../img/fe0wj0.webp" type="image/webp">
-				<img src="../../img/fe0wj0.jpeg" alt="Световые линии это круто">
+				<source srcset="../../img/lightLines/fe0wj0.webp" type="image/webp">
+				<img src="../../img/lightLines/fe0wj0.jpeg" alt="Световые линии это круто">
 			</picture>
 		</div>
 		<div class="lights_text">
@@ -36,6 +36,67 @@
 			</div>
 		</div>
 	</div>
+
+	
+
+
+
+	<div class="vert_line_cont device_vert">
+		<div class="vert_line"></div>
+	</div>
+	<div class="heder_present" style="position: relative; z-index: 2;">
+		<span>Игра со стеной</span>
+	</div>
+
+	<div class="lightsLines_flex row-reverse">
+		<div class="lights_img_cont">
+			<picture>
+				<source srcset="../../img/lightLines/playWall.webp" type="image/webp">
+				<img src="../../img/lightLines/playWall.jpg" alt="Световые линии с отражением от стены">
+			</picture>
+		</div>
+		<div class="lights_text">
+			<span>Существует множество вариантов комбинаций световых линий в виде воображаемого отражение линий от стены или же наоборот распускания множества линий с одного места возле стены в разные стороны. Так же можно создать иллюзию перехода линии с потолка на стену и обратно при помощи обычной интерьерной краски. </span>
+			<p class="green_defice">Преимущества: </p>
+			<div class="advan_cont">
+				<span>
+					<span class="green_defice">&mdash;</span> <span>&nbsp;Создает засветку возле стены</span>
+				</span>
+				<span>
+					<span class="green_defice">&mdash;</span> <span>&nbsp;Равномерное распределение по всей комнате</span>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="vert_line_cont device_vert">
+		<div class="vert_line"></div>
+	</div>
+	<div class="heder_present" style="position: relative; z-index: 2;">
+		<span>Различные формы</span>
+	</div>
+
+	<div class="lightsLines_flex row_quadr">
+		<div class="lights_img_cont">
+			<picture>
+				<source srcset="../../img/lightLines/forms2.webp" type="image/webp">
+				<img src="../../img/lightLines/forms2.jpg" alt="Различные формы световых линий">
+			</picture>
+		</div>
+		<div class="lights_text">
+			<span>Большое количество геометрических форм, одиночных , параллельных и нет линий, их перекрестий между собой, отраженных от стен или собранных их в один пучок могут стать главным элементом вашего интерьера. При применении специального устройства разветвителя можно разбить помещение на множество зон освещения , а при применении диммера возможна регулировка яркости свечения или изменения световой температуры.</span>
+			<p class="green_defice">Преимущества: </p>
+			<div class="advan_cont">
+				<span>
+					<span class="green_defice">&mdash;</span> <span>&nbsp;Равномерная освещенность</span>
+				</span>
+				<span>
+					<span class="green_defice">&mdash;</span> <span>&nbsp;Возможность подстроиться под определенные элементы интерьера</span>
+				</span>
+			</div>
+		</div>
+	</div>
+
 
 	<div class="vert_line_cont device_vert">
 		<div class="vert_line"></div>
