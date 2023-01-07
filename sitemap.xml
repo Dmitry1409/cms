@@ -1,94 +1,100 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 		<!--	created with www.mysitemapgenerator.com	-->
-		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 	<loc>https://auroom-nn.ru/</loc>
-	<lastmod>2022-12-01T23:46:30+01:00</lastmod>
+	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://auroom-nn.ru/lightLines</loc>
-	<lastmod>2022-12-01T23:46:30+01:00</lastmod>
+	<loc>https://auroom-nn.ru/technology/lightLines</loc>
+	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
 	<changefreq>monthly</changefreq>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://auroom-nn.ru/multiLevel</loc>
-	<lastmod>2022-12-01T23:46:30+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://auroom-nn.ru/dubleVisionPrint</loc>
-	<changefreq>monthly</changefreq>
-	<lastmod>2022-12-01T23:46:30+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://auroom-nn.ru/carvedCelling</loc>
-	<changefreq>monthly</changefreq>
-	<lastmod>2022-12-01T23:46:30+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://auroom-nn.ru/ligthNiches</loc>
-	<changefreq>monthly</changefreq>
-	<lastmod>2022-12-01T23:46:30+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://auroom-nn.ru/hiddenCurtain</loc>
-	<changefreq>monthly</changefreq>
-	<lastmod>2022-12-01T23:46:30+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://auroom-nn.ru/textureColor</loc>
-	<changefreq>monthly</changefreq>
-	<lastmod>2022-12-01T23:46:30+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://auroom-nn.ru/starsSky</loc>
-	<changefreq>monthly</changefreq>
-	<lastmod>2022-12-01T23:46:30+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 <url>
 	<loc>https://auroom-nn.ru/lighting</loc>
+	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
 	<changefreq>monthly</changefreq>
-	<lastmod>2022-12-01T23:46:30+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 <url>
 	<loc>https://auroom-nn.ru/vendorsFoil/MSD</loc>
+	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
 	<changefreq>monthly</changefreq>
-	<lastmod>2022-12-01T23:46:30+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 <url>
 	<loc>https://auroom-nn.ru/vendorsFoil/BAUF</loc>
+	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
 	<changefreq>monthly</changefreq>
-	<lastmod>2022-12-01T23:46:30+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 <url>
 	<loc>https://auroom-nn.ru/vendorsFoil/Pongs</loc>
+	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
 	<changefreq>monthly</changefreq>
-	<lastmod>2022-12-01T23:46:30+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 <url>
 	<loc>https://auroom-nn.ru/vendorsFoil/Teqtum</loc>
+	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
 	<changefreq>monthly</changefreq>
-	<lastmod>2022-12-01T23:46:30+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://auroom-nn.ru/technology/multiLevel</loc>
+	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
+	<priority>0.8</priority>
+	<changefreq>monthly</changefreq>
+</url>
+<url>
+	<loc>https://auroom-nn.ru/technology/dubleVisionPrint</loc>
+	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://auroom-nn.ru/technology/carvedCelling</loc>
+	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://auroom-nn.ru/technology/shadowProfil</loc>
+	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://auroom-nn.ru/technology/ligthNiches</loc>
+	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://auroom-nn.ru/technology/hiddenCurtain</loc>
+	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://auroom-nn.ru/technology/textureColor</loc>
+	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://auroom-nn.ru/technology/starsSky</loc>
+	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
+	<changefreq>monthly</changefreq>
 	<priority>0.8</priority>
 </url>
 <url>
 	<loc>https://auroom-nn.ru/favourites</loc>
+	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
 	<changefreq>monthly</changefreq>
-	<lastmod>2022-12-01T23:46:30+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 </urlset>

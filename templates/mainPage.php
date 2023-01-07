@@ -95,7 +95,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Многоуровневые</h3>
-					<a href="multiLevel" class="btn_tech">Узнать подробнее</a>
+					<a href="technology/multiLevel" class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">
@@ -106,7 +106,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Double Vision<br>Фотопечать</h3>
-					<a href="dubleVisionPrint" class="btn_tech">Узнать подробнее</a>
+					<a href="technology/dubleVisionPrint" class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">
@@ -117,7 +117,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Резные</h3>
-					<a href="carvedCelling" class="btn_tech">Узнать подробнее</a>
+					<a href="technology/carvedCelling" class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">				
@@ -128,7 +128,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Парящие<br>Теневые<br>Подсветка</h3>
-					<a href="shadowProfil" class="btn_tech">Узнать подробнее</a>
+					<a href="technology/shadowProfil" class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">
@@ -139,7 +139,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Световые ниши</h3>
-					<a href="ligthNiches" class="btn_tech">Узнать подробнее</a>
+					<a href="technology/ligthNiches" class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 
@@ -151,7 +151,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Ниши<br>Гардины</h3>
-					<a href="hiddenCurtain" class="btn_tech">Узнать подробнее</a>
+					<a href="technology/hiddenCurtain" class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 
@@ -163,7 +163,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Фактура<br>Цвет</h3>
-					<a href="textureColor" class="btn_tech">Узнать подробнее</a>
+					<a href="technology/textureColor" class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 
@@ -175,7 +175,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Звездное небо</h3>
-					<a href="starsSky" class="btn_tech">Узнать подробнее</a>
+					<a href="technology/starsSky" class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">
