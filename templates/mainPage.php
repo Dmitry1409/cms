@@ -385,7 +385,7 @@
 			$m_text ="Апреля";
 			break;
 		case '05':
-			$m_text ="Майя";
+			$m_text ="Мая";
 			break;
 		case '06':
 			$m_text ="Июня";
@@ -438,30 +438,42 @@
 					</div>
 					<div class="heder_present" style="position: relative; z-index: 2;">
 						<span>Сертификаты</span>
-						<span>мы настоящая сертифицированная компания</span>
+						<span>экологические, противопожарные</span>
 					</div>
 				</div>
 				<div class="img_container">
 					<div class="img_row_cont">
 						<div class="img_border">
-							<img src="img/mainPage/certif1.webp">
+							<picture>
+								<source srcset="img/vendorsFoilPage/sertifikat-eckologia-msd-fsmmw.webp" type="image/webp">
+								<img src="img/vendorsFoilPage/sertifikat-eckologia-msd-fsmmw.jpg">
+							</picture>
 						</div>
 						<div class="img_border">
-							<img src="img/mainPage/certif2.webp">
+							<picture>
+								<source srcset="img/vendorsFoilPage/jfjsp9wrjgwjgjpwgjwg.webp" type="image/webp">
+								<img src="img/vendorsFoilPage/jfjsp9wrjgwjgjpwgjwg.jpg">
+							</picture>
 						</div>
 					</div>
 					<div class="img_row_cont">
 						<div class="img_border">
-							<img src="img/mainPage/certif3.webp">
+							<picture>
+								<source srcset="img/vendorsFoilPage/sfpwwpewimf.webp" type="image/webp">
+								<img src="img/vendorsFoilPage/sfpwwpewimf.jpg">
+							</picture>
 						</div>
 						<div class="img_border">
-							<img src="img/mainPage/certif4.webp">
+							<picture>
+								<source srcset="img/vendorsFoilPage/sgpwjwpwpfwf.webp" type="image/webp">
+								<img src="img/vendorsFoilPage/sgpwjwpwpfwf.jpg">
+							</picture>
 						</div>
 					</div>
 				</div>
 				<div role="button" class="cert_btn_cont">
-					<div class="all_doc_btn">Все документы</div>
-					<div class="prise_btn"><div class="btn_animate"></div>Получить прайс лист</div>
+					<a href="certificates" class="all_doc_btn">Все документы</a>
+					<!-- <div class="prise_btn"><div class="btn_animate"></div>Получить прайс лист</div> -->
 				</div>
 			</div>
 		</div>

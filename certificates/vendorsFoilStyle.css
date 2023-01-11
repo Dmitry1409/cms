@@ -1,0 +1,64 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.font-bold{
+	font-weight: 900;
+	color: #000000f0;
+}
+
+.text_cont{
+	padding: 0 20px;
+}
+.img_cont img{
+	width: 100%
+}
+.text_cont h2{
+	margin-top: 50px;
+	color: rgb(0 0 0 /70%);
+	text-align: center;
+}
+.note_defise{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	font-style: italic;
+}
+.note_defise p{
+	width: calc(100% - 45px);
+}
+.green_defise{
+	width: 20px;
+	height: 5px;
+	margin-right: 15px;
+	border-radius: 5px;
+	background-color: var(--main-col-1);
+}
+.price_table tr td:first-child{
+	text-align: unset;
+}
+.price_table{
+	width: 100%;
+	overflow: auto;
+}
+
+@media(min-width: 700px){
+	.img_cont{
+		padding: 0 10%;
+	}
+	.text_cont{
+		padding: 0 10%;
+	}
+}
+
+@media(min-width: 940px){
+	.img_cont{
+		padding: 0 20%;
+	}
+}

@@ -1,5 +1,6 @@
 
 window.addEventListener('DOMContentLoaded',()=>{
+
 	let startScrollFlag = true
 	let clientHeight = document.documentElement.clientHeight
 	let svg_cont = document.querySelectorAll('.cont_svg')

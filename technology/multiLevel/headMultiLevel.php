@@ -1,7 +1,7 @@
 
 	<title>Многоуровневые, двухуровневые натяжные потолки</title>
 	<link rel="stylesheet" type="text/css" href="multiLevelStyle.css">
-	<script defer type="text/javascrispt" src="multiLev_script.js"></script>
+	<script defer type="text/javascript" src="multiLev_script.js"></script>
 	<?php 
 		$price_work = $db->querySingle("SELECT price FROM priceForCalcult WHERE id = 8");
 	?>

@@ -1,4 +1,4 @@
-﻿config_cms.php root_dir = "/"
+﻿config_cms.php root_dir = "/", $domain
 
 main.js root_dir = "/"
 
