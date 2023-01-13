@@ -21,6 +21,11 @@ let clientData = {}
 
 const root_dir = "/cms/"
 
+let YDTargetFunc = function(){
+	ym(91462500,'reachGoal','323513')
+}
+
+
 let id_timeout_subMenu1
 let id_timeout_subMenu2
 
@@ -333,6 +338,7 @@ async function sendMailWithData(){
 				if(report == "success"){
 					reset_calcult()
 					open_report_modal()
+					checkedAndSendYandexDirect()
 				}else{
 					let m = "Ваше сообщение не доставлено!"
 					let b = `Сообщите пожалуйста администратору сайта об ошибке: ${report}`
@@ -350,6 +356,17 @@ async function sendMailWithData(){
 		
 		clientData = {}
 	}	
+}
+async function checkedAndSendYandexDirect(){
+	let ch = await fetch(`${root_dir}scripts_php/checkYDTarget.php`)
+	if(ch.ok){
+		let ch_ot = await ch.text()
+		if(ch_ot == "nosend"){
+			if(YDTargetFunc){
+				YDTargetFunc()
+			}
+		}
+	}
 }
 function isValidClientFields(){
 	let fl = true
