@@ -300,11 +300,14 @@
 }
 
 .borderEffect{
-	border-image: linear-gradient(to bottom, #1b40cb73 0%, #1b40cb73 100%);
+	-o-border-image: -o-linear-gradient(top, #1b40cb73 0%, #1b40cb73 100%);
+	   border-image: -webkit-gradient(linear, left top, left bottom, from(#1b40cb73), to(#1b40cb73));
+	   border-image: linear-gradient(to bottom, #1b40cb73 0%, #1b40cb73 100%);
 	border-image-slice: 1;
 }
 .boxShadEffect{
-	box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.35);
+	-webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.35);
+	        box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.35);
 }
 .howMuchDoneSection > div span:first-child span:first-child{
 	font-size: 60px;
