@@ -94,6 +94,70 @@
 		</div>
 	</div>
 
+	<div style="display: flex; position: relative; justify-content: center; margin-top: 50px; z-index: 2;">
+		<div class="vert_line"></div>
+	</div>
+	<div class="heder_present" style="position: relative; z-index: 2;">
+		<span>Шесть шагов</span>
+	</div>
+
+	<div class="cont_grid_pres">
+		<div class="grid_item_pres dop_style_6_step">
+			<div  style="margin-right: 20px;" class="present_icon">
+				<img src=<?php echo $root_dir."img/mainPage/w_mail.webp"?>>
+			</div>
+			<div class="present_text_block" style="margin-left: unset;">
+				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Оформляем заявку</div>
+				<div class="pres_desc dop_style_6_step">Оставляете заявку на сайте или по телефону</div>
+			</div>
+		</div>
+		<div class="grid_item_pres dop_style_6_step">
+			<div  style="margin-right: 20px;" class="present_icon">
+				<img src=<?php echo $root_dir."img/mainPage/w_ruletka.webp"?>>
+			</div>
+			<div class="present_text_block" style="margin-left: unset;">
+				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Выезд замерщика</div>
+				<div class="pres_desc dop_style_6_step">Выезжает специалист и замеряет потолки</div>
+			</div>
+		</div>
+		<div class="grid_item_pres dop_style_6_step">
+			<div  style="margin-right: 20px;" class="present_icon">
+				<img src=<?php echo $root_dir."img/mainPage/w_servise.webp"?>>
+			</div>
+			<div class="present_text_block" style="margin-left: unset;">
+				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Подбор материала и цвета</div>
+				<div class="pres_desc dop_style_6_step">Подбираем материал, цвет и определяем объём</div>
+			</div>
+		</div>
+		<div class="grid_item_pres dop_style_6_step">
+			<div  style="margin-right: 20px;" class="present_icon">
+				<img src= <?php echo $root_dir."img/mainPage/w_dogovor.webp"?>>
+			</div>
+			<div class="present_text_block" style="margin-left: unset;">
+				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Подписываем договор</div>
+				<div class="pres_desc dop_style_6_step">Заключаем и подписываем договор</div>
+			</div>
+		</div>
+		<div class="grid_item_pres dop_style_6_step">
+			<div  style="margin-right: 20px;" class="present_icon">
+				<img src=<?php echo $root_dir."img/mainPage/w_delivery.webp"?>>
+			</div>
+			<div class="present_text_block" style="margin-left: unset;">
+				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Производство и доставка</div>
+				<div class="pres_desc dop_style_6_step">Производство потолков занимает от 2-5 дней</div>
+			</div>
+		</div>
+		<div class="grid_item_pres dop_style_6_step">
+			<div  style="margin-right: 20px;" class="present_icon">
+				<img src=<?php echo $root_dir."img/mainPage/w_setting.webp"?>>
+			</div>
+			<div class="present_text_block" style="margin-left: unset;">
+				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Производим установку</div>
+				<div class="pres_desc dop_style_6_step">Монтаж потолков, уборка мусора, оплата</div>
+			</div>
+		</div>
+	</div>
+
 	
 
 	<div role="note" class="about_section">
@@ -244,15 +308,15 @@
 					<li><a href=<?php echo $root_dir?>><span>Павлово</span></a></li>
 				</ul>
 				<ul>
-					<li><a href=<?php echo $root_dir.'textureColor'?>><span>Матовые натяжные потолки</span></a></li>
-					<li><a href=<?php echo $root_dir.'textureColor'?>><span>Глянцевые натяжные потолки</span></a></li>
-					<li><a href=<?php echo $root_dir.'textureColor'?>><span>Сатиновые натяжные потолки</span></a></li>
-					<li><a href=<?php echo $root_dir.'textureColor'?>><span>Свето-пропускные натяжные потолки</span></a></li>
-					<li><a href=<?php echo $root_dir.'multiLevel'?>><span>Двухуровные натяжные потолки</span></a></li>
-					<li><a href=<?php echo $root_dir.'shadowProfil'?>><span>Парящие натяжные потолки</span></a></li>
-					<li><a href=<?php echo $root_dir.'shadowProfil'?>><span>Теневые натяжные потолки</span></a></li>
-					<li><a href=<?php echo $root_dir.'shadowProfil'?>><span>Натяжные потолки с подсветкой</span></a></li>
-					<li><a href=<?php echo $root_dir.'dubleVisionPrint'?>><span>Натяжные потолки с фотопечатью</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/textureColor'?>><span>Матовые натяжные потолки</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/textureColor'?>><span>Глянцевые натяжные потолки</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/textureColor'?>><span>Сатиновые натяжные потолки</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/textureColor'?>><span>Свето-пропускные натяжные потолки</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/multiLevel'?>><span>Двухуровные натяжные потолки</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/shadowProfil'?>><span>Парящие натяжные потолки</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/shadowProfil'?>><span>Теневые натяжные потолки</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/shadowProfil'?>><span>Натяжные потолки с подсветкой</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/dubleVisionPrint'?>><span>Натяжные потолки с фотопечатью</span></a></li>
 				</ul>
 			</div>
 		</div>

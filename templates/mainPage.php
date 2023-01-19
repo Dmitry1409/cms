@@ -1,78 +1,14 @@
+	<?php
+		include "templates/howMuchDone.php";
+	?>
 	
-	<div class="presents">
-		<div style="display: flex; justify-content: center;">
-			<div class="vert_line"></div>
-		</div>
-		<div class="heder_present">
-			<span>За что нас выбирают</span>
-			<span>Поcмотрите сами</span>
-		</div>
-		<div class="cont_grid_pres">
-			<div class="grid_item_pres">
-				<div class="present_icon">
-					<img src="img/mainPage/piggy.webp">
-				</div>
-				<div class="present_text_block">
-					<div class="pres_hed">В среднем дешевле на 20%</div>
-					<div class="pres_desc">у нас дешевле чем у других</div>
-				</div>
-			</div>
-			<div class="grid_item_pres">
-				<div class="present_icon">
-					<img src="img/mainPage/guarante.webp">
-				</div>
-				<div class="present_text_block">
-					<div class="pres_hed">100%</div>
-					<div class="pres_desc">гарантия на все выполнениые работы</div>
-				</div>
-			</div>
-			<div class="grid_item_pres">
-				<div class="present_icon">
-					<img src="img/mainPage/service.webp">
-				</div>
-				<div class="present_text_block">
-					<div class="pres_hed">10 лет</div>
-					<div class="pres_desc">гарантия на все полотна</div>
-				</div>
-			</div>
-			<div class="grid_item_pres">
-				<div class="present_icon">
-					<img src="img/mainPage/production.webp">
-				</div>
-				<div class="present_text_block">
-					<div class="pres_hed">Свое производство</div>
-					<div class="pres_desc">что позволяет делать всё в короткие сроки</div>
-				</div>
-			</div>
-			<div class="grid_item_pres">
-				<div class="present_icon">
-					<img src="img/mainPage/zamer.webp">
-				</div>
-				<div class="present_text_block">
-					<div class="pres_hed">Бесплатный замер</div>
-					<div class="pres_desc">по всей нижегородской области</div>
-				</div>
-			</div>
-			<div class="grid_item_pres">
-				<div class="present_icon">
-					<img src="img/mainPage/timer.webp">
-				</div>
-				<div class="present_text_block">
-					<div class="pres_hed">48 часов</div>
-					<div class="pres_desc">от выезда замерщика до монтажа</div>
-				</div>
-			</div>	
-		</div>
-	</div>
 
-	<div style="display: flex; justify-content: center; margin-top: 50px;">
+	<div style="display: flex; justify-content: center; margin-top: 100px;">
 		<div class="vert_line"></div>
 	</div>
 	<div class="heder_present" style="position: relative; z-index: 2;">
-		<span>Наши решения</span>
+		<span>Решения</span>
 	</div>
-
-
 	<div style="position: relative;">
 		<div class="padd_tech"></div>
 		<div class="tech_grid">
@@ -192,104 +128,77 @@
 		</div>
 	</div>
 
-	<div style="display: flex; justify-content: center; margin-top: 100px;">
-		<div class="vert_line"></div>
-	</div>
-	<div class="heder_present" style="position: relative; z-index: 2;">
-		<span>Шесть шагов</span>
-	</div>
+	<?php
+		$query = "все";
+		$hashsSelect = ['#все'];
+		include "templates/exampWorkFoto.php";
+	?>
 
-	<div class="cont_grid_pres">
-		<div class="grid_item_pres dop_style_6_step">
-			<div  style="margin-right: 20px;" class="present_icon">
-				<img src="img/mainPage/w_mail.webp">
-			</div>
-			<div class="present_text_block" style="margin-left: unset;">
-				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Оформляем заявку</div>
-				<div class="pres_desc dop_style_6_step">Оставляете заявку на сайте или по телефону</div>
-			</div>
-		</div>
-		<div class="grid_item_pres dop_style_6_step">
-			<div  style="margin-right: 20px;" class="present_icon">
-				<img src="img/mainPage/w_ruletka.webp">
-			</div>
-			<div class="present_text_block" style="margin-left: unset;">
-				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Выезд замерщика</div>
-				<div class="pres_desc dop_style_6_step">Выезжает специалист и замеряет потолки</div>
-			</div>
-		</div>
-		<div class="grid_item_pres dop_style_6_step">
-			<div  style="margin-right: 20px;" class="present_icon">
-				<img src="img/mainPage/w_servise.webp">
-			</div>
-			<div class="present_text_block" style="margin-left: unset;">
-				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Подбор материала и цвета</div>
-				<div class="pres_desc dop_style_6_step">Подбираем материал, цвет и определяем объём</div>
-			</div>
-		</div>
-		<div class="grid_item_pres dop_style_6_step">
-			<div  style="margin-right: 20px;" class="present_icon">
-				<img src="img/mainPage/w_dogovor.webp">
-			</div>
-			<div class="present_text_block" style="margin-left: unset;">
-				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Подписываем договор</div>
-				<div class="pres_desc dop_style_6_step">Заключаем и подписываем договор</div>
-			</div>
-		</div>
-		<div class="grid_item_pres dop_style_6_step">
-			<div  style="margin-right: 20px;" class="present_icon">
-				<img src="img/mainPage/w_delivery.webp">
-			</div>
-			<div class="present_text_block" style="margin-left: unset;">
-				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Производство и доставка</div>
-				<div class="pres_desc dop_style_6_step">Производство потолков занимает от 2-5 дней</div>
-			</div>
-		</div>
-		<div class="grid_item_pres dop_style_6_step">
-			<div  style="margin-right: 20px;" class="present_icon">
-				<img src="img/mainPage/w_setting.webp">
-			</div>
-			<div class="present_text_block" style="margin-left: unset;">
-				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Производим установку</div>
-				<div class="pres_desc dop_style_6_step">Монтаж потолков, уборка мусора, оплата</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="expressCalc" class="calculate_cont">
-		<div class="padd_calcult"></div>
-		<div style="display: flex; justify-content: center; position: relative;">
+	<div class="presents">
+		<div style="display: flex; margin-top: 50px; justify-content: center;">
 			<div class="vert_line"></div>
 		</div>
-		<div class="heder_present" style="position: relative; z-index: 2; margin-bottom: unset;">
-			<span>Экспресс расчет</span>
+		<div class="heder_present">
+			<span>За что нас выбирают</span>
+			<span>Поcмотрите сами</span>
 		</div>
-		<?php
-			$res = $db->query("SELECT id, name, price FROM priceForCalcult WHERE id IN (1, 2, 3, 4, 6)");
-			$val = [];
-			while($r = $res->fetchArray(SQLITE3_ASSOC)){
-				$val[$r['id']] = $r;
-			}
-			
-		?>
-		<div class="calcul_body">
-			<form data-price-spot="<?php echo $val[3]['price']?>"
-				  data-price-lamp="<?php echo $val[2]['price']?>"
-				  data-price-foil="<?php echo $val[1]['price']?>"
-				  data-price-minorder="<?php echo $val[4]['price'] ?>"
-				  data-price-discount="<?php echo $val[6]['price']?>" class="flex_input">
-				<input type="number" autocomplete="off" name="count_room" placeholder="Количество помещений">
-				<input type="number" autocomplete="off" name="count_svet" placeholder="Точек освещения">
-				<input type="number" autocomplete="off" name="count_square" placeholder="Общая площадь м2">
-			</form>
-			<div role="button" class="calc_btn expresCalculBtn">
-				<div class="btn_animate"></div>
-				<div class="call_me_load_anim display_none"></div>
-				<div class="call_me_load_anim call_me_load_anim2 display_none"></div>
-			Рассчитать</div>
+		<div class="cont_grid_pres">
+			<div class="grid_item_pres">
+				<div class="present_icon">
+					<img src="img/mainPage/piggy.webp">
+				</div>
+				<div class="present_text_block">
+					<div class="pres_hed">В среднем дешевле на 20%</div>
+					<div class="pres_desc">у нас дешевле чем у других</div>
+				</div>
+			</div>
+			<div class="grid_item_pres">
+				<div class="present_icon">
+					<img src="img/mainPage/guarante.webp">
+				</div>
+				<div class="present_text_block">
+					<div class="pres_hed">100%</div>
+					<div class="pres_desc">гарантия на все выполнениые работы</div>
+				</div>
+			</div>
+			<div class="grid_item_pres">
+				<div class="present_icon">
+					<img src="img/mainPage/service.webp">
+				</div>
+				<div class="present_text_block">
+					<div class="pres_hed">10 лет</div>
+					<div class="pres_desc">гарантия на все полотна</div>
+				</div>
+			</div>
+			<div class="grid_item_pres">
+				<div class="present_icon">
+					<img src="img/mainPage/production.webp">
+				</div>
+				<div class="present_text_block">
+					<div class="pres_hed">Свое производство</div>
+					<div class="pres_desc">что позволяет делать всё в короткие сроки</div>
+				</div>
+			</div>
+			<div class="grid_item_pres">
+				<div class="present_icon">
+					<img src="img/mainPa	ge/zamer.webp">
+				</div>
+				<div class="present_text_block">
+					<div class="pres_hed">Бесплатный замер</div>
+					<div class="pres_desc">по всей нижегородской области</div>
+				</div>
+			</div>
+			<div class="grid_item_pres">
+				<div class="present_icon">
+					<img src="img/mainPage/timer.webp">
+				</div>
+				<div class="present_text_block">
+					<div class="pres_hed">48 часов</div>
+					<div class="pres_desc">от выезда замерщика до монтажа</div>
+				</div>
+			</div>	
 		</div>
 	</div>
-
 
 	<div style="display: flex; justify-content: center; position: relative; margin-top: 50px;">
 		<div class="vert_line"></div>
@@ -366,6 +275,46 @@
 		</div>
 
 	</div>
+
+	<div id="expressCalc" class="calculate_cont">
+		<div class="padd_calcult"></div>
+		<div style="display: flex; justify-content: center; position: relative;">
+			<div class="vert_line"></div>
+		</div>
+		<div class="heder_present" style="position: relative; z-index: 2; margin-bottom: unset;">
+			<span>Экспресс расчет</span>
+		</div>
+		<?php
+			$res = $db->query("SELECT id, name, price FROM priceForCalcult WHERE id IN (1, 2, 3, 4, 6)");
+			$val = [];
+			while($r = $res->fetchArray(SQLITE3_ASSOC)){
+				$val[$r['id']] = $r;
+			}
+			
+		?>
+		<div class="calcul_body">
+			<form data-price-spot="<?php echo $val[3]['price']?>"
+				  data-price-lamp="<?php echo $val[2]['price']?>"
+				  data-price-foil="<?php echo $val[1]['price']?>"
+				  data-price-minorder="<?php echo $val[4]['price'] ?>"
+				  data-price-discount="<?php echo $val[6]['price']?>" class="flex_input">
+				<input type="number" autocomplete="off" name="count_room" placeholder="Количество помещений">
+				<input type="number" autocomplete="off" name="count_svet" placeholder="Точек освещения">
+				<input type="number" autocomplete="off" name="count_square" placeholder="Общая площадь м2">
+			</form>
+			<div role="button" class="calc_btn expresCalculBtn">
+				<div class="btn_animate"></div>
+				<div class="call_me_load_anim display_none"></div>
+				<div class="call_me_load_anim call_me_load_anim2 display_none"></div>
+			Рассчитать</div>
+		</div>
+	</div>
+
+
+	
+
+
+	
 
 	<?php
 	$m = date("m", time() + 691200);
@@ -479,8 +428,5 @@
 		</div>
 	</div>
 
-	<?php
-		$query = "все";
-		$hashsSelect = ['#все'];
-		include "templates/exampWorkFoto.php";
-	?>
+	
+	

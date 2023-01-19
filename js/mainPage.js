@@ -17,11 +17,66 @@ window.addEventListener('DOMContentLoaded',()=>{
 	document.querySelector('.aferta_btn').addEventListener('click', aferta_btn_action)
 	document.querySelector('.calcul_body div.calc_btn').addEventListener('click', calculate_action)
 
+	let flHowMuchStart = true
+	document.addEventListener('scroll', howMuchStart)
+	let howMuchSpans = document.querySelectorAll('.howMuchDoneSection > div > span span:first-child')
+	let howMuchCont = document.querySelectorAll('.howMuchCont')
+	for(let i =0; i < howMuchCont.length; i++){
+		let s = howMuchCont[i].querySelector(' div > span span:first-child')
+		howMuchCont[i].addEventListener('click' , howMuchViewEffect.bind(null, s))
+	}
+	let howMuchDoneData = []
+	let duractAnim = [10000, 4000, 3000, 5000, 9000, 7000]
+	let arrIdInterv = [0,0,0,0,0,0]
+	for(let i = 0; i<howMuchSpans.length; i++){
+		howMuchDoneData.push(howMuchSpans[i].innerText)
+		howMuchSpans[i].innerText = ""
+	}
 
 	let tech_elem = document.querySelectorAll('.tech_elem')
 	for(let i = 0; i < tech_elem.length; i++){
 		tech_elem[i].addEventListener('mouseover', tech_elem_over_action)
 		tech_elem[i].addEventListener('mouseout', tech_elem_out_action)
+	}
+
+	function setValueInterv(ind_elem){
+		let stepVal = Math.ceil(duractAnim[ind_elem] / 10)
+		stepVal = Math.ceil(howMuchDoneData[ind_elem] / stepVal)
+		arrIdInterv[ind_elem] = setInterval(()=>{
+			howMuchSpans[ind_elem].innerText = Number(howMuchSpans[ind_elem].innerText) + stepVal
+			if(Number(howMuchSpans[ind_elem].innerText) > Number(howMuchDoneData[ind_elem])){
+				howMuchSpans[ind_elem].innerText = howMuchDoneData[ind_elem]
+				clearInterval(arrIdInterv[ind_elem])
+				howMuchViewEffect(howMuchSpans[ind_elem])
+			} 
+		}, 10)
+	}
+
+	function howMuchViewEffect(elem){
+		let d = elem.parentNode.parentNode
+		d.style.transition = ".3s"
+		d.classList.add('boxShadEffect')
+		d.classList.add('borderEffect')
+		setTimeout(()=>{
+			d.style.transition = '4s'
+			setTimeout(()=>{
+				d.classList.remove('borderEffect')
+				d.classList.remove('boxShadEffect')
+			}, 20)
+
+		},300)
+	}
+	function howMuchStart(){
+		let cont = document.querySelector('.howMuchDoneSection')
+		let cont_rect = cont.getBoundingClientRect()
+		if(cont_rect.y < 300){
+			if(flHowMuchStart){
+				flHowMuchStart = false
+				for(let i = 0; i< howMuchSpans.length; i++){
+					setValueInterv(i)
+				}
+			}
+		}
 	}
 
 	function calculate_action(){

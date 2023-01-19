@@ -815,6 +815,70 @@ a.menu_item{
 	color: rgba(255 255 255 / 80%);
 }
 
+/*Шесть шагов ______________________________________________________*/
+
+
+.presents{
+	margin-top: 70px;
+}
+
+.cont_grid_pres{
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 1fr;
+	grid-template-columns: 1fr;
+	grid-row-gap: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.grid_item_pres{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding: 20px;
+	background-color: var(--main-col-3);
+}
+.present_icon{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	min-width: 100px;
+	min-height: 100px;
+	height: 100px;
+	width: 100px;
+	border-radius: 100px;
+	background-color: var(--main-col-1);
+}
+.pres_hed{
+	font-weight: 900;
+	color: var(--color-title);
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+.present_text_block{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	text-align: left;
+	margin-left: 20px;
+}
+.pres_desc{
+	color: var(--color-sub-title);
+}
+
 /*Перенесенные стили с световых линний______________________________________*/
 
 .green_defice{
@@ -2453,6 +2517,34 @@ textarea.invalidValueCalculate{
 		padding-right: 30px;
 	}
 
+
+
+	.grid_item_pres{
+		padding: 40px;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+	}
+	.present_text_block{
+		margin-top: 20px;
+		text-align: center;
+	}
+	.cont_grid_pres{
+		-ms-grid-columns: 1fr 20px 1fr;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 20px;
+	}
+	.presents{
+		margin-top: unset;
+	}
+
+
+
+
 	.footer_cont_1{
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -2610,6 +2702,12 @@ textarea.invalidValueCalculate{
 	}
 	.heder_present span:first-child{
 		font-size: 30px;
+	}
+
+
+	.cont_grid_pres{
+		-ms-grid-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 
 	

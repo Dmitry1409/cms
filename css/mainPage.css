@@ -6,65 +6,7 @@
 */
 
 
-.presents{
-	margin-top: 70px;
-}
-.cont_grid_pres{
-	display: -ms-grid;
-	display: grid;
-	-ms-grid-columns: 1fr;
-	grid-template-columns: 1fr;
-	grid-row-gap: 20px;
-	padding-left: 30px;
-	padding-right: 30px;
-}
-.grid_item_pres{
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	padding: 20px;
-	background-color: var(--main-col-3);
-}
-.present_icon{
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
-	min-width: 100px;
-	min-height: 100px;
-	height: 100px;
-	width: 100px;
-	border-radius: 100px;
-	background-color: var(--main-col-1);
-}
-.pres_hed{
-	font-weight: 900;
-	color: var(--color-title);
-	font-size: 20px;
-	margin-bottom: 10px;
-}
-.present_text_block{
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
-	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-	text-align: left;
-	margin-left: 20px;
-}
-.pres_desc{
-	color: var(--color-sub-title);
-}
+
 
 /*_______________________________________________технологии*/
 
@@ -336,37 +278,52 @@
 	        justify-content: center;
 }
 
+.howMuchDoneSection{
+	padding: 0 20px;
+}
+.howMuchCont{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	margin-bottom: 20px;
+	padding: 10px;
+	border: 2px solid transparent;
+	border-image: linear-gradient(to bottom, #f9f9f9 0%, #1b40cb73 100%);
+	border-image-slice: 1;
+}
 
-
-
+.borderEffect{
+	border-image: linear-gradient(to bottom, #1b40cb73 0%, #1b40cb73 100%);
+	border-image-slice: 1;
+}
+.boxShadEffect{
+	box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.35);
+}
+.howMuchDoneSection > div span:first-child span:first-child{
+	font-size: 60px;
+	font-weight: 900;
+	color: #35d411;
+	text-shadow: 3px 3px 5px rgba(0 0 0 /30%);
+}
+.howMuchDoneSection > div span:last-child{
+	font-weight: 700;
+	font-size: 25px;
+	color: #000000b3;
+}
 /*________________________________________ о компаниии*/
 
 
 
 @media(min-width: 640px){
 
-	.grid_item_pres{
-		padding: 40px;
-		-webkit-box-align: center;
-		    -ms-flex-align: center;
-		        align-items: center;
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		    -ms-flex-direction: column;
-		        flex-direction: column;
-	}
-	.present_text_block{
-		margin-top: 20px;
-		text-align: center;
-	}
-	.cont_grid_pres{
-		-ms-grid-columns: 1fr 20px 1fr;
-		grid-template-columns: 1fr 1fr;
-		grid-column-gap: 20px;
-	}
-	.presents{
-		margin-top: unset;
-	}
+
 
 	.tech_grid{
 		-ms-grid-columns: 1fr 1fr;
@@ -396,6 +353,7 @@
 	}
 	.calculate_cont{
 		background-color: white;
+		margin-top: 100px;
 	}
 	.padd_calcult{
 		display: block;
@@ -470,14 +428,21 @@
 	
 }
 
+@media(min-width: 750px){
+	.howMuchDoneSection{
+		display: -ms-grid;
+		display: grid;
+		-ms-grid-columns: 1fr 20px 1fr;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 20px;
+	}
+}
+
 
 
 
 @media(min-width: 940px){
-	.cont_grid_pres{
-		-ms-grid-columns: 1fr 1fr 1fr;
-		grid-template-columns: 1fr 1fr 1fr;
-	}
+
 	.tech_grid{
 		-ms-grid-columns: 1fr 1fr 1fr;
 		grid-template-columns: 1fr 1fr 1fr;
@@ -569,5 +534,8 @@
 	
 	.feedBackSortCont{
 		padding: 0 15%;
+	}
+	.howMuchDoneSection{
+		padding: 0 10%;
 	}
 }
