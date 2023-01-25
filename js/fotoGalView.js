@@ -139,7 +139,22 @@ function fotoGalRightAct(){
 
 function fotoGalaryDisAct(){
 	galCont = document.querySelector('.fotoGalaryCont')
+	let h = galCont.querySelectorAll("picture h3")
+	let s = galCont.querySelectorAll("picture source")
+	let g = galCont.querySelectorAll("picture img")
+
+	for(let i =0; i<3; i++){
+		h[i].innerText = ""
+		s[i].setAttribute('srcset', "")
+		g[i].setAttribute('src' , "")
+	}
+	
+	galCont.querySelector('.fotoGalaryRightBtn').removeEventListener('click', fotoGalLeftAct)
+	galCont.querySelector('.fotoGalaryLefttBtn').removeEventListener('click', fotoGalRightAct)
+	galCont.querySelector('.fotoGalCloseBtn').removeEventListener('click', fotoGalaryDisAct)
+
 	galCont.style.display = "none"
 	let body = document.querySelector('body')
+
 	body.style.overflow = ""
 }

@@ -8,10 +8,11 @@ window.addEventListener('DOMContentLoaded',()=>{
 	
 	document.querySelector('.aferta_btn').addEventListener('click', aferta_btn_action)
 	document.querySelector('.calcul_body .calc_btn').addEventListener('click', calc_btn_action)
+
+	changePlaceSvg()
 	
 		
 	document.addEventListener('scroll',()=>{
-
 		if(window.pageYOffset > (yOffset - clientHeight)){
 			if(startScrollFlag){
 				startScroll()
@@ -19,6 +20,30 @@ window.addEventListener('DOMContentLoaded',()=>{
 		}
 
 	})
+	function shuffle(array) {
+	  for (let i = array.length - 1; i > 0; i--) {
+	    let j = Math.floor(Math.random() * (i + 1));
+	    [array[i], array[j]] = [array[j], array[i]];
+	  }
+	}
+
+	function changePlaceSvg(){
+		let wrappCont = document.querySelectorAll('.cont_svg')
+		for( let i=0; i<wrappCont.length; i++){
+			ar_svgCont = wrappCont[i].querySelectorAll('.item_svg')
+			let m = []
+			for(let j =0; j<ar_svgCont.length; j++){
+				m.push(j)
+			}
+			shuffle(m)
+			let addInerHtml = ""
+
+			for(let j = 0; j<m.length; j++){
+				addInerHtml += ar_svgCont[m[j]].outerHTML
+			}
+			wrappCont[i].innerHTML = addInerHtml
+		}
+	}
 
 	function calc_btn_action(){
 		delWarnigClassCalcult()

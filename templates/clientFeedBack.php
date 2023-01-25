@@ -60,7 +60,7 @@
 
 	<div class="feedBackSortCont">
 		<span>Сортировать по: </span>
-		<div class="sortFeedbackFoto"><span>С фото</span></div>
+		<div class="sortFeedbackFoto feedSortFotoActiv"><span>С фото</span></div>
 		<div>
 			<span>Дата:</span>
 			<svg id="blue_copy" class="svg_sortdata_feedBack" version="1.1" viewBox="17 21 60 60" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -85,13 +85,17 @@
 	<div class="feed_main_cont">
 
 		<?php
-			$res = $db->query("SELECT * FROM feedBackClient");
+			$res = $db->query("SELECT * FROM feedBackClient WHERE foto_file_name_arr NOT NULL");
 			$arr = [];
 			while($r = $res->fetchArray(SQLITE3_ASSOC)){
 				$arr[] = $r;
 			}
-
 			shuffle($arr);
+			$res = $db->query("SELECT * FROM feedBackClient WHERE foto_file_name_arr IS NULL");
+			while($r = $res->fetchArray(SQLITE3_ASSOC)){
+				$arr[] = $r;
+			}
+
 			$_SESSION['allComents'] = $arr;
 
 			for($i=0; $i<15; $i++){

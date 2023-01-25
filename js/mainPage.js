@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 		howMuchCont[i].addEventListener('click' , howMuchViewEffect.bind(null, s))
 	}
 	let howMuchDoneData = []
-	let duractAnim = [10000, 4000, 3000, 5000, 9000, 7000]
+	let duractAnim = [1000, 2000, 3000, 4000, 5000, 6000]
 	let arrIdInterv = [0,0,0,0,0,0]
 	for(let i = 0; i<howMuchSpans.length; i++){
 		howMuchDoneData.push(howMuchSpans[i].innerText)

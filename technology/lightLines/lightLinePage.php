@@ -4,7 +4,6 @@
 	</div>
 	<div class="heder_present" style="position: relative; z-index: 2;">
 		<span>Световые линии</span>
-		<span>это современно</span>
 	</div>
 	
 	<div class="lightsLines_flex">

@@ -18,6 +18,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 		}
 	}
 
+
 	document.addEventListener('scroll', scrollActionFeedBack)
 	let id_intervalFeed
 	let id_timeOutFeed
@@ -48,6 +49,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 	
 
 	document.querySelector('.add_feedback_btn_open_cont > div').addEventListener('click', add_feedback_open)
+
 
 	function scrollActionFeedBack(){
 		if(!flIntervalFeed){
@@ -409,11 +411,30 @@ window.addEventListener('DOMContentLoaded',()=>{
 		let count = document.querySelector('.feedback_btns_contein span')
 		count.querySelector('span:first-child').innerText = 1
 	}
+	function shuffle(array) {
+	  for (let i = array.length - 1; i > 0; i--) {
+	    let j = Math.floor(Math.random() * (i + 1));
+	    [array[i], array[j]] = [array[j], array[i]];
+	  }
+	  return array
+	}
 	async function getAllComents(){
 		let res = await fetch(`${root_dir}scripts_php/getAllComents.php`)
 		let val = await res.json()
-		feedBackObj.allComents = val
+		let n = []
+		for(let i =0; i<val.length; i++){
+			n.push(i)
+		}
+		shuffle(n)
+		let shVal = []
+		for(let i=0; i<val.length; i++){
+			shVal.push(val[n[i]])
+		}
+
+		feedBackObj.allComents = shVal
 	}
+
+
 	async function prepareValFeedBack(right=true){
 		let val
 		if(feedBackObj.sortFlag){
@@ -649,8 +670,18 @@ window.addEventListener('DOMContentLoaded',()=>{
 	function fotoGalaryDisAct(){
 		
 		setTimeOutIntervalFeed()
-
 		galCont = document.querySelector('.fotoGalaryCont')
+
+		galCont.querySelector('.fotoGalaryRightBtn').removeEventListener('click', feedBackImgShowLeftAct)
+		galCont.querySelector('.fotoGalaryLefttBtn').removeEventListener('click', feedBackImgShowRightAct)
+		galCont.querySelector('.fotoGalCloseBtn').removeEventListener('click', fotoGalaryDisAct)
+
+		let imgs = galCont.querySelectorAll('img')
+		for(let i = 0; i<imgs.length; i++){
+			imgs[i].setAttribute("src", "")
+		}
+
+
 		galCont.style.display = "none"
 		let body = document.querySelector('body')
 		body.style.overflow = ""

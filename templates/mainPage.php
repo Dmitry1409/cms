@@ -7,7 +7,7 @@
 		<div class="vert_line"></div>
 	</div>
 	<div class="heder_present" style="position: relative; z-index: 2;">
-		<span>Решения</span>
+		<span>Технологии</span>
 	</div>
 	<div style="position: relative;">
 		<div class="padd_tech"></div>
@@ -25,6 +25,17 @@
 			</div>
 			<div class="tech_elem">				
 				<picture class="tech_picture">
+					<source srcset="img/mainPage/webp/svet_line.webp" type="image/webp">
+					<img class="img_skew" src="img/mainPage/jpg/svet_line.jpg" alt="Парящие теневые потолки">
+				</picture>	
+				<div class="tech_mask"></div>
+				<div class="skew_revers">
+					<h3 class="tech_header">Парящие<br>Теневые<br>Подсветка</h3>
+					<a href="technology/shadowProfil" class="btn_tech">Узнать подробнее</a>
+				</div>
+			</div>
+			<div class="tech_elem">				
+				<picture class="tech_picture">
 					<source srcset="img/mainPage/webp/two_level.webp" type="image/webp">
 					<img class="img_skew" src="img/mainPage/jpg/two_level.jpg" alt="Многоуровневые конструкции">
 				</picture>
@@ -32,6 +43,28 @@
 				<div class="skew_revers">
 					<h3 class="tech_header">Многоуровневые</h3>
 					<a href="technology/multiLevel" class="btn_tech">Узнать подробнее</a>
+				</div>
+			</div>
+			<div class="tech_elem">
+				<picture class="tech_picture">
+					<source srcset="img/mainPage/webp/gardin.webp" type="image/webp">
+					<img class="img_skew" src="img/mainPage/jpg/gardin.jpeg" alt="Ниша в потолке">
+				</picture>				
+				<div class="tech_mask"></div>
+				<div class="skew_revers">
+					<h3 class="tech_header">Ниши<br>Гардины</h3>
+					<a href="technology/hiddenCurtain" class="btn_tech">Узнать подробнее</a>
+				</div>
+			</div>
+			<div class="tech_elem">
+				<picture class="tech_picture">
+					<source srcset="img/mainPage/webp/glyanc2.webp" type="image/webp">
+					<img class="img_skew" src="img/mainPage/jpg/glyanc2.jpg" alt="Глянцевый вместе с матовым полотном">
+				</picture>				
+				<div class="tech_mask"></div>
+				<div class="skew_revers">
+					<h3 class="tech_header">Фактура<br>Цвет</h3>
+					<a href="technology/textureColor" class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">
@@ -56,17 +89,6 @@
 					<a href="technology/carvedCelling" class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
-			<div class="tech_elem">				
-				<picture class="tech_picture">
-					<source srcset="img/mainPage/webp/svet_line.webp" type="image/webp">
-					<img class="img_skew" src="img/mainPage/jpg/svet_line.jpg" alt="Парящие теневые потолки">
-				</picture>	
-				<div class="tech_mask"></div>
-				<div class="skew_revers">
-					<h3 class="tech_header">Парящие<br>Теневые<br>Подсветка</h3>
-					<a href="technology/shadowProfil" class="btn_tech">Узнать подробнее</a>
-				</div>
-			</div>
 			<div class="tech_elem">
 				<picture class="tech_picture">
 					<source srcset="img/mainPage/webp/6064505d189c41d3b73f639711059891.webp" type="image/webp">
@@ -78,30 +100,7 @@
 					<a href="technology/ligthNiches" class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
-
-			<div class="tech_elem">
-				<picture class="tech_picture">
-					<source srcset="img/mainPage/webp/gardin.webp" type="image/webp">
-					<img class="img_skew" src="img/mainPage/jpg/gardin.jpeg" alt="Ниша в потолке">
-				</picture>				
-				<div class="tech_mask"></div>
-				<div class="skew_revers">
-					<h3 class="tech_header">Ниши<br>Гардины</h3>
-					<a href="technology/hiddenCurtain" class="btn_tech">Узнать подробнее</a>
-				</div>
-			</div>
-
-			<div class="tech_elem">
-				<picture class="tech_picture">
-					<source srcset="img/mainPage/webp/glyanc2.webp" type="image/webp">
-					<img class="img_skew" src="img/mainPage/jpg/glyanc2.jpg" alt="Глянцевый вместе с матовым полотном">
-				</picture>				
-				<div class="tech_mask"></div>
-				<div class="skew_revers">
-					<h3 class="tech_header">Фактура<br>Цвет</h3>
-					<a href="technology/textureColor" class="btn_tech">Узнать подробнее</a>
-				</div>
-			</div>
+			
 
 			<div class="tech_elem">
 				<picture class="tech_picture">
