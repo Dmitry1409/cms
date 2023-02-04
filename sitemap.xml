@@ -23,25 +23,25 @@
 	<loc>https://auroom-nn.ru/vendorsFoil/MSD</loc>
 	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
 	<changefreq>monthly</changefreq>
-	<priority>0.8</priority>
+	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://auroom-nn.ru/vendorsFoil/BAUF</loc>
 	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
 	<changefreq>monthly</changefreq>
-	<priority>0.8</priority>
+	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://auroom-nn.ru/vendorsFoil/Pongs</loc>
 	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
 	<changefreq>monthly</changefreq>
-	<priority>0.8</priority>
+	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://auroom-nn.ru/vendorsFoil/Teqtum</loc>
 	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
 	<changefreq>monthly</changefreq>
-	<priority>0.8</priority>
+	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://auroom-nn.ru/technology/multiLevel</loc>
@@ -96,5 +96,11 @@
 	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://auroom-nn.ru/certificates</loc>
+	<lastmod>2023-01-06T02:08:19+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.6</priority>
 </url>
 </urlset>
