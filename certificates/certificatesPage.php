@@ -126,5 +126,5 @@
 <?php
 	$query = "все";
 	$hashsSelect = ['#все'];
-	include "../../templates/exampWorkFoto.php";
+	include "../templates/exampWorkFoto.php";
 ?>
