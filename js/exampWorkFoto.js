@@ -83,7 +83,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			let val = await res.json()
 			insertImgHashTagAct(val)
 		}else{
-			alert('Не удалось получить изображения от сервера, сообщите пожалуйста администратору сайта. Код ошибки: '+res.status)
+			console.log('Не удалось получить изображения от сервера, сообщите пожалуйста администратору сайта. Код ошибки: '+res.status)
 		}
 	}
 	function scrollAction(){
@@ -545,7 +545,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			let res = await response.json()
 			insertImage(res, where_insert)	
 		}else{
-			alert("Не удалось получить изображения. Сообщите пожалуйста об этой ошибке администратору сайта. Код ошибки: "+response.status)
+			console.log("Не удалось получить изображения. Сообщите пожалуйста об этой ошибке администратору сайта. Код ошибки: "+response.status)
 		}
 	}
 	function insertImage(res, where_insert){
