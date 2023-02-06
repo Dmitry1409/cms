@@ -48,6 +48,7 @@
 	
 		$dif = time() - $row['expires'];
 		$dif = (int) ($dif / $frequ);
+		$dif = $dif + 1;
 		$allVall = 0;
 		for($i = 0; $i < $dif; $i++){
 			$v = $maxVal * (rand(0, 100)/100);

@@ -21,10 +21,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 	document.addEventListener('scroll', howMuchStart)
 	let howMuchSpans = document.querySelectorAll('.howMuchDoneSection > div > span span:first-child')
 	let howMuchCont = document.querySelectorAll('.howMuchCont')
-	for(let i =0; i < howMuchCont.length; i++){
-		let s = howMuchCont[i].querySelector(' div > span span:first-child')
-		howMuchCont[i].addEventListener('click' , howMuchViewEffect.bind(null, s))
-	}
+
 	let howMuchDoneData = []
 	let duractAnim = [1000, 2000, 3000, 4000, 5000, 6000]
 	let arrIdInterv = [0,0,0,0,0,0]
@@ -57,14 +54,6 @@ window.addEventListener('DOMContentLoaded',()=>{
 		d.style.transition = ".3s"
 		d.classList.add('boxShadEffect')
 		d.classList.add('borderEffect')
-		setTimeout(()=>{
-			d.style.transition = '4s'
-			setTimeout(()=>{
-				d.classList.remove('borderEffect')
-				d.classList.remove('boxShadEffect')
-			}, 20)
-
-		},300)
 	}
 	function howMuchStart(){
 		let cont = document.querySelector('.howMuchDoneSection')
