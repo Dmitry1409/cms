@@ -281,6 +281,13 @@
 .howMuchDoneSection{
 	padding: 0 20px;
 }
+.howMuchCont:hover{
+	-webkit-box-shadow: 6px 6px 10px 0px rgba(34, 60, 80, 0.45);
+	        box-shadow: 6px 6px 10px 0px rgba(34, 60, 80, 0.45);
+}
+.howMuchCont span:hover{
+	cursor: default;
+}
 .howMuchCont{
 	display: -webkit-box;
 	display: -ms-flexbox;

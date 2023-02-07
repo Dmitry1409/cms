@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 		statusClicks: {
 			"С фото": {'status':"disable","n_comand": 0},
 			"Дата:": {'status': "disable", "n_comand": 0},
-			"Оценка:": {'status': 'disable', "n_comand": 0}
+			"Оценка:": {'status': 'down', "n_comand": 0}
 		}
 	}
 
@@ -382,7 +382,6 @@ window.addEventListener('DOMContentLoaded',()=>{
 			reqArr.splice(ind,1)
 		}
 
-
 		if(result.length > 0){
 			feedBackObj.sortFlag = true	
 			let res = await fetch(`${root_dir}scripts_php/sortFeedBack.php?arr=${JSON.stringify(result)}`)
@@ -421,17 +420,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 	async function getAllComents(){
 		let res = await fetch(`${root_dir}scripts_php/getAllComents.php`)
 		let val = await res.json()
-		let n = []
-		for(let i =0; i<val.length; i++){
-			n.push(i)
-		}
-		shuffle(n)
-		let shVal = []
-		for(let i=0; i<val.length; i++){
-			shVal.push(val[n[i]])
-		}
-
-		feedBackObj.allComents = shVal
+		feedBackObj.allComents = val
 	}
 
 
@@ -462,6 +451,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 		}else{
 			insertFeedBackItems(val.reverse(), "afterbegin", false)
 		}
+		
 	}
 	function insertFeedBackItems(val, where_insert, check_cls){
 		let cont = document.querySelector('.feed_main_cont')

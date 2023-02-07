@@ -73,7 +73,7 @@
 		</div>
 		<div>
 			<span>Оценка:</span>
-			<svg id="blue_copy" class="svg_sortdata_feedBack" version="1.1" viewBox="17 21 60 60" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<svg id="blue_copy" class="svg_sortdata_feedBack svg_sort_rotate_down" version="1.1" viewBox="17 21 60 60" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 				<g id="Layer_4_copy">
 					<path d="M31.356,25.677l38.625,22.3c1.557,0.899,1.557,3.147,0,4.046l-38.625,22.3c-1.557,0.899-3.504-0.225-3.504-2.023V27.7   C27.852,25.902,29.798,24.778,31.356,25.677z"/>
 					<path d="M69.981,47.977l-38.625-22.3c-0.233-0.134-0.474-0.21-0.716-0.259l37.341,21.559c1.557,0.899,1.557,3.147,0,4.046   l-38.625,22.3c-0.349,0.201-0.716,0.288-1.078,0.301c0.656,0.938,1.961,1.343,3.078,0.699l38.625-22.3   C71.538,51.124,71.538,48.876,69.981,47.977z"/>
@@ -85,18 +85,27 @@
 	<div class="feed_main_cont">
 
 		<?php
-			$res = $db->query("SELECT * FROM feedBackClient WHERE foto_file_name_arr NOT NULL");
-			$arr = [];
+			$res = $db->query("SELECT * FROM feedBackClient WHERE foto_file_name_arr NOT NULL ORDER BY scope DESC");
+			$a = [];
 			while($r = $res->fetchArray(SQLITE3_ASSOC)){
-				$arr[] = $r;
+				$a[] = $r;
 			}
-			shuffle($arr);
-			$res = $db->query("SELECT * FROM feedBackClient WHERE foto_file_name_arr IS NULL");
+			
+			
+			
+
+			$res = $db->query("SELECT * FROM feedBackClient WHERE foto_file_name_arr IS NULL ORDER BY scope DESC");
+			$b = [];
 			while($r = $res->fetchArray(SQLITE3_ASSOC)){
-				$arr[] = $r;
+				$b[] = $r;
 			}
+			$backarr = array_slice($b, -6);
+			array_splice($b, -6);
+			$arr = array_merge($backarr, $a, $b);
 
 			$_SESSION['allComents'] = $arr;
+
+
 
 			for($i=0; $i<15; $i++){
 				if($i<5){
@@ -172,6 +181,7 @@
 				echo "</div>";
 			}
 		?>
+
 	</div>
 
 	<div class="feedback_btns_contein">

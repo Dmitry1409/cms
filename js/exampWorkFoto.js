@@ -91,7 +91,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			let hashCont = document.querySelector('.controlHashTagCont')
 			if(!hashCont) return
 			rectHash = hashCont.getBoundingClientRect()
-			if(rectHash.y < 200){
+			if(rectHash.y < 50){
 				slidFlag = true
 				examp_right_action(null, true , true)
 				id_inter_slid = setInterval(()=>{
