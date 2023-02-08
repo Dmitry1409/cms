@@ -85,14 +85,19 @@
 	<div class="feed_main_cont">
 
 		<?php
-			$res = $db->query("SELECT * FROM feedBackClient WHERE foto_file_name_arr NOT NULL ORDER BY scope DESC");
+			$res = $db->query("SELECT * FROM feedBackClient WHERE foto_file_name_arr NOT NULL AND scope = 5");
+			$scope5 = [];
+			while($r = $res->fetchArray(SQLITE3_ASSOC)){
+				$scope5[] = $r;
+			}
+
+			shuffle($scope5);
+
+			$res = $db->query("SELECT * FROM feedBackClient WHERE foto_file_name_arr NOT NULL AND scope < 5 ORDER BY scope DESC");
 			$a = [];
 			while($r = $res->fetchArray(SQLITE3_ASSOC)){
 				$a[] = $r;
 			}
-			
-			
-			
 
 			$res = $db->query("SELECT * FROM feedBackClient WHERE foto_file_name_arr IS NULL ORDER BY scope DESC");
 			$b = [];
@@ -101,7 +106,7 @@
 			}
 			$backarr = array_slice($b, -6);
 			array_splice($b, -6);
-			$arr = array_merge($backarr, $a, $b);
+			$arr = array_merge($backarr,$scope5, $a, $b);
 
 			$_SESSION['allComents'] = $arr;
 
