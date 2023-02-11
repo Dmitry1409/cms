@@ -137,8 +137,8 @@
 			</div>
 		</div>
 		<div class="header_lozung">
-			<span>Качественная установка натяжных потолков за 3 дня</span>
-			<span>при заказе на сайте скидка 1000 руб</span>
+			<span>Натяжные потолки по 200 руб/м2</span>
+			<span>оставьте заявку и получите скидку 1000 руб.</span>
 			<a role="button"><div class="btn_animate"></div>Оставить заявку</a>
 		</div>
 		<div class="svg_triangle">
