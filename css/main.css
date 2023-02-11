@@ -556,6 +556,11 @@ a.menu_item{
 	font-size: 20px;
 	font-weight: 900;
 }
+.container_tel span{
+	color: #ffffffa8;
+	font-size: 13px;
+}
+
 .svg_icon{
 	display: -webkit-box;
 	display: -ms-flexbox;

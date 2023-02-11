@@ -81,6 +81,7 @@
 					<div class="container_tel">
 						<a href='<?php echo "tel:$comp_telef1"?>'><?php echo $comp_telef1?></a>
 						<a href='<?php echo "tel:$comp_telef2"?>'><?php echo $comp_telef2?></a>
+						<span>Нижний Новгород и обл.</span>
 					</div>
 				</div>
 			</div>
