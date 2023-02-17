@@ -95,27 +95,27 @@
 				<div class="cont_940">
 					<div class="menu_item sub_menu_btn"><span>Технологии</span><span></span></div>
 					<div role="menu" class="sub_menu">
-						<a class="menu_item" href=<?php echo $root_dir."technology/lightLines#main_section_id"?>>Световые линии</a>
-						<a class="menu_item" href=<?php echo $root_dir."technology/shadowProfil#main_section_id"?>>Парящие & Теневые & Подсветка</a>
-						<a class="menu_item" href=<?php echo $root_dir."technology/multiLevel#main_section_id"?> >Многоуровневые</a>
-						<a class="menu_item" href=<?php echo $root_dir."technology/hiddenCurtain#main_section_id"?>>Ниши & Гардины</a>
-						<a class="menu_item" href=<?php echo $root_dir."technology/textureColor#main_section_id"?>>Фактура & Цвет</a>
-						<a class="menu_item" href=<?php echo $root_dir."technology/dubleVisionPrint#main_section_id"?>>Double Vision & Фотопечать</a>
-						<a class="menu_item" href=<?php echo $root_dir."technology/carvedCelling#main_section_id"?>>Резные</a>
-						<a class="menu_item" href=<?php echo $root_dir."technology/ligthNiches#main_section_id"?>>Световые ниши</a>
-						<a class="menu_item" href=<?php echo $root_dir."technology/starsSky#main_section_id"?>>Звездное небо</a>
+						<a class="menu_item" href=<?php echo $root_dir."technology/lightLines"?>>Световые линии</a>
+						<a class="menu_item" href=<?php echo $root_dir."technology/shadowProfil"?>>Парящие & Теневые & Подсветка</a>
+						<a class="menu_item" href=<?php echo $root_dir."technology/multiLevel"?> >Многоуровневые</a>
+						<a class="menu_item" href=<?php echo $root_dir."technology/hiddenCurtain"?>>Ниши & Гардины</a>
+						<a class="menu_item" href=<?php echo $root_dir."technology/textureColor"?>>Фактура & Цвет</a>
+						<a class="menu_item" href=<?php echo $root_dir."technology/dubleVisionPrint"?>>Double Vision & Фотопечать</a>
+						<a class="menu_item" href=<?php echo $root_dir."technology/carvedCelling"?>>Резные</a>
+						<a class="menu_item" href=<?php echo $root_dir."technology/ligthNiches"?>>Световые ниши</a>
+						<a class="menu_item" href=<?php echo $root_dir."technology/starsSky"?>>Звездное небо</a>
 					</div>
 				</div>
 				<div class="line_butt"></div>
-				<a class="menu_item" href=<?php echo $root_dir."lighting#main_section_id" ?>>Освещение</a>			
+				<a class="menu_item" href=<?php echo $root_dir."lighting"?>>Освещение</a>			
 				<div class="line_butt"></div>
 				<div class="cont_940">
 					<div class="menu_item sub_menu_btn"><span>Производители ПВХ</span><span></span></div>
 					<div role="menu" class="sub_menu">
-						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/MSD#main_section_id"?>>MSD</a>
-						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/BAUF#main_section_id"?> >BAUF</a>
-						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/Pongs#main_section_id"?>>Pongs</a>
-						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/Teqtum#main_section_id"?>>Teqtum</a>
+						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/MSD"?>>MSD</a>
+						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/BAUF"?> >BAUF</a>
+						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/Pongs"?>>Pongs</a>
+						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/Teqtum"?>>Teqtum</a>
 					</div>
 				</div>	
 				<div class="line_butt"></div>
@@ -131,16 +131,16 @@
 					if(array_key_exists("favourImg", $_SESSION) or array_key_exists('buyProducts', $_SESSION)){
 						$c = count($_SESSION['favourImg']) + count($_SESSION['buyProducts']);
 
-						echo "<a class='menu_item favourIndex' href=".$root_dir."favourites#main_section_id>Избранное<span class='favour_count_menu'>$c</span></a>";
+						echo "<a class='menu_item favourIndex' href=".$root_dir."favourites>Избранное<span class='favour_count_menu'>$c</span></a>";
 					}else{
-						echo "<a class='menu_item favourIndex' href=".$root_dir."favourites#main_section_id>Избранное<span></span></a>";
+						echo "<a class='menu_item favourIndex' href=".$root_dir."favourites>Избранное<span></span></a>";
 					}
 				?>
 				
 			</div>
 		</div>
 		<div class="header_lozung">
-			<span>Натяжные потолки по 200 руб/м2</span>
+			<span>Натяжные потолки всего за 200 руб/м2</span>
 			<span>оставьте заявку и получите доп. скидку 1000 руб.</span>
 			<a role="button"><div class="btn_animate"></div>Оставить заявку</a>
 		</div>

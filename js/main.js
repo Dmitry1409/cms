@@ -21,8 +21,8 @@ let clientData = {}
 
 const root_dir = "/cms/"
 
-let YDTargetFunc = function(){
-	ym(91462500,'reachGoal','323513')
+let YDTargetFunc = function(tarId){
+	ym(91462500,'reachGoal', tarId)
 }
 
 
@@ -114,7 +114,35 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
 	checkCurrentLocation()
 
+	insertReklamHeader()
+
 	checkMaskTel()
+
+	function insertReklamHeader(){
+		let href = window.location.href
+		let mainLoz = document.querySelector(".header_lozung span:first-child")
+		let miniLoz = document.querySelector('.header_lozung span:nth-child(2)')
+		
+		if(href.indexOf('lightLines') > -1){
+			mainLoz.innerText = "Световые линии всего 450 руб/м.п"
+		}
+		if(href.indexOf('shadowProfil') > -1){
+			mainLoz.innerText = "Парящий потолок всего 250 руб/м.п"
+		}
+		if(href.indexOf('multiLevel') > -1){
+			mainLoz.innerText = "Двухуровневый переход всего 800 руб/м.п"
+		}
+		if(href.indexOf('hiddenCurtain') > -1){
+			mainLoz.innerText = "Скрытая гардина всего 500 руб/м.п"
+			miniLoz.innerText = "оставьте заявку и получите ПВХ гардину в подарок"
+		}
+		if(href.indexOf('textureColor') > -1){
+			mainLoz.innerText = "Скидка на матовое полотно 40%"
+		}
+		if(href.indexOf('lighting') > -1){
+			mainLoz.innerText = "Спот GX-53 с диодной лампой всего за 95 руб/шт"
+		}
+	}
 
 	async function checkMaskTel(){
 		let r = await fetch(`${root_dir}scripts_php/maskTelHandler.php`)
@@ -152,7 +180,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
 	async function sendMaskTelClick(){
 		fetch(`${root_dir}scripts_php/maskTelHandler.php?click=yes`)
-		ym(91462500,'reachGoal','3244353252')
+		YDTargetFunc('3244353252')
 	}
 
 	function answerClickAction(){
@@ -200,6 +228,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			}
 		}
 		a[0].style.color = "var(--main-col-1)"
+
 	}
 })
 
@@ -406,7 +435,7 @@ async function checkedAndSendYandexDirect(){
 		let ch_ot = await ch.text()
 		if(ch_ot == "nosend"){
 			if(YDTargetFunc){
-				YDTargetFunc()
+				YDTargetFunc('323513')
 			}
 		}
 	}

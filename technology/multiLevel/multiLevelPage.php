@@ -974,8 +974,8 @@
 			<div class="sale_flag">Бессплатно</div>
 
 			<img src='<?php echo $root_dir."img/gde-najti-indiv.jpg"?>' alt="Наш дизайн">
-			<h4>При заказе потолка дизайн потолка в подарок</h4>
-			<span>Акция действует до 18 ноября 2022г.</span>
+			<h4>При заказе потолка дизайн в подарок</h4>
+			<span>Акция действует до 18 июня 2023г.</span>
 			<span>Подробности по телефону</span>
 			<div role="button" class="aferta_btn">Отправить</div>
 		</div>
