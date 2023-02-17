@@ -58,7 +58,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 	function howMuchStart(){
 		let cont = document.querySelector('.howMuchDoneSection')
 		let cont_rect = cont.getBoundingClientRect()
-		if(cont_rect.y < 300){
+		if(cont_rect.y < 500){
 			if(flHowMuchStart){
 				flHowMuchStart = false
 				for(let i = 0; i< howMuchSpans.length; i++){

@@ -213,7 +213,7 @@
 					<img style="border-radius: 4px;" src="img/mainPage/people.webp">
 					<h4>Каждому 100-му клиенту мы устанавливаем потолки совершенно бесплатно!</h4>
 					<span>общей суммой до 50000 рублей *</span>
-					<span>Подробности по телефону <?php echo $comp_telef1?></span>
+					<span>Подробности по телефону</span>
 					<div role="button" class="aferta_btn">Учавствовать</div>
 				</div>
 			</div>

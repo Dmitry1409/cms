@@ -79,8 +79,10 @@
 						</svg>
 					</div>
 					<div class="container_tel">
-						<a href='<?php echo "tel:$comp_telef1"?>'><?php echo $comp_telef1?></a>
-						<a href='<?php echo "tel:$comp_telef2"?>'><?php echo $comp_telef2?></a>
+						<div class="tel-rel">							
+							<a href='<?php echo "tel:$comp_telef1"?>'><?php echo $comp_telef1?></a>
+							<a href='<?php echo "tel:$comp_telef2"?>'><?php echo $comp_telef2?></a>
+						</div>
 						<span>Нижний Новгород и обл.</span>
 					</div>
 				</div>
@@ -139,7 +141,7 @@
 		</div>
 		<div class="header_lozung">
 			<span>Натяжные потолки по 200 руб/м2</span>
-			<span>оставьте заявку и получите скидку 1000 руб.</span>
+			<span>оставьте заявку и получите доп. скидку 1000 руб.</span>
 			<a role="button"><div class="btn_animate"></div>Оставить заявку</a>
 		</div>
 		<div class="svg_triangle">

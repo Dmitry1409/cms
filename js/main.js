@@ -108,9 +108,52 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		questBlocks[i].addEventListener('click', answerClickAction)
 	}
 
+	
+
 	let idTimeOutAnswer
 
 	checkCurrentLocation()
+
+	checkMaskTel()
+
+	async function checkMaskTel(){
+		let r = await fetch(`${root_dir}scripts_php/maskTelHandler.php`)
+		if(r.ok){
+			let o = await r.text()
+			if(o == "noClick"){
+				insertMaskTel()
+			}
+		}
+	}
+	function insertMaskTel(){
+		let html = `<div class="mask-tel">
+						Показать
+					</div>`
+
+		let headcont = document.querySelector('.tel-rel')
+		let footercont = document.querySelector('.footer_inf_cont')
+		headcont.insertAdjacentHTML('afterbegin', html)
+		footercont.insertAdjacentHTML('afterbegin', html)
+		headcont.addEventListener('click', maskTelClickAction)
+		footercont.addEventListener('click', maskTelClickAction)
+		
+	}
+	function maskTelClickAction(){
+		let allMask = document.querySelectorAll('.mask-tel')
+		for(let i=0; i<allMask.length; i++){
+			allMask[i].remove()
+		}
+		let headcont = document.querySelector('.tel-rel')
+		let footercont = document.querySelector('.footer_inf_cont')
+		headcont.removeEventListener('click', maskTelClickAction)
+		footercont.removeEventListener('click', maskTelClickAction)
+		sendMaskTelClick()
+	}
+
+	async function sendMaskTelClick(){
+		fetch(`${root_dir}scripts_php/maskTelHandler.php?click=yes`)
+		ym(91462500,'reachGoal','3244353252')
+	}
 
 	function answerClickAction(){
 		let openAnswer = document.querySelector('.openAnswer')

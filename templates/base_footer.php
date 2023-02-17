@@ -198,7 +198,7 @@
 						<div class="footer_icon">
 							<img src=<?php echo $root_dir."img/phone.png"?>>
 						</div>
-						<div class="footer_inf_cont">						
+						<div class="footer_inf_cont">				
 							<a href='<?php echo "tel:$comp_telef1"?>'><?php echo $comp_telef1?></a>
 							<a href='<?php echo "tel:$comp_telef2"?>'><?php echo $comp_telef2?></a>
 						</div>

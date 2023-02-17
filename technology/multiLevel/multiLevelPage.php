@@ -976,7 +976,7 @@
 			<img src='<?php echo $root_dir."img/gde-najti-indiv.jpg"?>' alt="Наш дизайн">
 			<h4>При заказе потолка дизайн потолка в подарок</h4>
 			<span>Акция действует до 18 ноября 2022г.</span>
-			<span>Подробности по телефону <?php echo $comp_telef1?></span>
+			<span>Подробности по телефону</span>
 			<div role="button" class="aferta_btn">Отправить</div>
 		</div>
 	</div>
