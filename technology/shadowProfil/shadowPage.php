@@ -4,7 +4,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Тень и Свет</span>
+	<span>Теневой с подсветкой</span>
 </div>
 
 

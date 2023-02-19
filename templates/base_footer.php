@@ -220,7 +220,7 @@
 						</div>
 						<div class="footer_inf_cont">
 							<span class="footer_email">График работы:</span>
-							<span class="">Пн-Пт с 9:00 до 18:00</span>
+							<span class="">Пн-Вс с 8:00 до 20:00</span>
 						</div>
 					</div>
 				</div>
