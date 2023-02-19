@@ -137,7 +137,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			miniLoz.innerText = "оставьте заявку и получите ПВХ гардину в подарок"
 		}
 		if(href.indexOf('textureColor') > -1){
-			mainLoz.innerText = "Скидка на матовое полотно 40%"
+			mainLoz.innerText = "Скидка на матовое полотно 25%"
 		}
 		if(href.indexOf('lighting') > -1){
 			mainLoz.innerText = "Спот GX-53 с диодной лампой всего за 95 руб/шт"
