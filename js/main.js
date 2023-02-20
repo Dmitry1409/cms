@@ -96,6 +96,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		sub_menu_btn[i].addEventListener('click', sub_menu_action)
 	}
 
+	let footerRooms = document.querySelectorAll(".foot-room-item")
+	for(let i =0; i<footerRooms.length; i++){
+		footerRooms[i].addEventListener('click', footerRoomsAct)
+	}
+
+
 	document.querySelector('.call_me_container').addEventListener('click', order_a_call)
 	document.querySelector('.close_modal').addEventListener('click', close_modal_action)
 	document.querySelector('.modal_backgraund').addEventListener('click', close_modal_action)
@@ -117,6 +123,34 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	insertReklamHeader()
 
 	checkMaskTel()
+
+	function footerRoomsAct(){
+		if(location.pathname.indexOf("favourites") > -1){
+			location.href = location.origin+root_dir+"#exampWork_ancher"
+		}
+		let exampWork = document.querySelector('#exampWork')
+		if(exampWork){
+			exampWork.scrollIntoView({
+				'behavior': 'smooth'
+			})
+			setTimeout(()=>{
+				changeHashTag(this)
+			},1000)
+		}
+
+	}
+
+	function changeHashTag(span){
+		let tags = document.querySelectorAll(".controlHashItem")
+		span = span.innerText.toLowerCase()
+		for(let i=0; i<tags.length; i++){
+			if(tags[i].innerText.indexOf(span) > -1){
+				let event = new Event('click')
+				tags[i].dispatchEvent(event)
+				return
+			}
+		}
+	}
 
 	function insertReklamHeader(){
 		let href = window.location.href

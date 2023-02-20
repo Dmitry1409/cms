@@ -1,6 +1,12 @@
 	<?php
 		include "templates/howMuchDone.php";
 	?>
+
+	<?php
+		$query = "все";
+		$hashsSelect = ['#все'];
+		include "templates/exampWorkFoto.php";
+	?>
 	
 
 	<div style="display: flex; justify-content: center; margin-top: 100px;">
@@ -127,11 +133,7 @@
 		</div>
 	</div>
 
-	<?php
-		$query = "все";
-		$hashsSelect = ['#все'];
-		include "templates/exampWorkFoto.php";
-	?>
+	
 
 	<div class="presents">
 		<div style="display: flex; margin-top: 50px; justify-content: center;">
@@ -199,76 +201,43 @@
 		</div>
 	</div>
 
-	<div class="certificate_cont">
-		<div class="certif_940">
-			<div class="aferta_container">
-				<div style="display: flex; justify-content: center; position: relative;">
-					<div class="vert_line"></div>
-				</div>
-				<div class="heder_present" style="position: relative; z-index: 2;">
-					<span>Ежемесячная акция</span>
-				</div>
-				<div class="aferta_block">
-					<div class="sale_flag">50000 руб.</div>
-					<img style="border-radius: 4px;" src="img/mainPage/people.webp">
-					<h4>Каждому 100-му клиенту мы устанавливаем потолки совершенно бесплатно!</h4>
-					<span>общей суммой до 50000 рублей *</span>
-					<span>Подробности по телефону</span>
-					<div role="button" class="aferta_btn">Учавствовать</div>
-				</div>
-			</div>
-			<div class="certif_doc">
-				<div>
-					<div style="display: flex; justify-content: center; position: relative;">
-						<div class="vert_line"></div>
-					</div>
-					<div class="heder_present" style="position: relative; z-index: 2;">
-						<span>Сертификаты</span>
-						<span>экологические, противопожарные</span>
-					</div>
-				</div>
-				<div class="img_container">
-					<div class="img_row_cont">
-						<div class="img_border">
-							<picture>
-								<source srcset="img/vendorsFoilPage/sertifikat-eckologia-msd-fsmmw.webp" type="image/webp">
-								<img src="img/vendorsFoilPage/sertifikat-eckologia-msd-fsmmw.jpg">
-							</picture>
-						</div>
-						<div class="img_border">
-							<picture>
-								<source srcset="img/vendorsFoilPage/jfjsp9wrjgwjgjpwgjwg.webp" type="image/webp">
-								<img src="img/vendorsFoilPage/jfjsp9wrjgwjgjpwgjwg.jpg">
-							</picture>
-						</div>
-					</div>
-					<div class="img_row_cont">
-						<div class="img_border">
-							<picture>
-								<source srcset="img/vendorsFoilPage/sfpwwpewimf.webp" type="image/webp">
-								<img src="img/vendorsFoilPage/sfpwwpewimf.jpg">
-							</picture>
-						</div>
-						<div class="img_border">
-							<picture>
-								<source srcset="img/vendorsFoilPage/sgpwjwpwpfwf.webp" type="image/webp">
-								<img src="img/vendorsFoilPage/sgpwjwpwpfwf.jpg">
-							</picture>
-						</div>
-					</div>
-				</div>
-				<div role="button" class="cert_btn_cont">
-					<a href="certificates" class="all_doc_btn">Все документы</a>
-					<!-- <div class="prise_btn"><div class="btn_animate"></div>Получить прайс лист</div> -->
-				</div>
-			</div>
-		</div>
-	</div>
-
 	<?php
 		include "templates/clientFeedBack.php";
 	?>
 
+	<div id="expressCalc" class="calculate_cont">
+		<div class="padd_calcult"></div>
+		<div style="display: flex; justify-content: center; position: relative;">
+			<div class="vert_line"></div>
+		</div>
+		<div class="heder_present" style="position: relative; z-index: 2; margin-bottom: unset;">
+			<span>Экспресс расчет</span>
+		</div>
+		<?php
+			$res = $db->query("SELECT id, name, price FROM priceForCalcult WHERE id IN (1, 2, 3, 4, 6)");
+			$val = [];
+			while($r = $res->fetchArray(SQLITE3_ASSOC)){
+				$val[$r['id']] = $r;
+			}
+			
+		?>
+		<div class="calcul_body">
+			<form data-price-spot="<?php echo $val[3]['price']?>"
+				  data-price-lamp="<?php echo $val[2]['price']?>"
+				  data-price-foil="<?php echo $val[1]['price']?>"
+				  data-price-minorder="<?php echo $val[4]['price'] ?>"
+				  data-price-discount="<?php echo $val[6]['price']?>" class="flex_input">
+				<input type="number" autocomplete="off" name="count_room" placeholder="Количество помещений">
+				<input type="number" autocomplete="off" name="count_svet" placeholder="Точек освещения">
+				<input type="number" autocomplete="off" name="count_square" placeholder="Общая площадь м2">
+			</form>
+			<div role="button" class="calc_btn expresCalculBtn">
+				<div class="btn_animate"></div>
+				<div class="call_me_load_anim display_none"></div>
+				<div class="call_me_load_anim call_me_load_anim2 display_none"></div>
+			Рассчитать</div>
+		</div>
+	</div>
 
 	<div style="display: flex; justify-content: center; position: relative; margin-top: 50px;">
 		<div class="vert_line"></div>
@@ -343,44 +312,71 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 
-	<div id="expressCalc" class="calculate_cont">
-		<div class="padd_calcult"></div>
-		<div style="display: flex; justify-content: center; position: relative;">
-			<div class="vert_line"></div>
-		</div>
-		<div class="heder_present" style="position: relative; z-index: 2; margin-bottom: unset;">
-			<span>Экспресс расчет</span>
-		</div>
-		<?php
-			$res = $db->query("SELECT id, name, price FROM priceForCalcult WHERE id IN (1, 2, 3, 4, 6)");
-			$val = [];
-			while($r = $res->fetchArray(SQLITE3_ASSOC)){
-				$val[$r['id']] = $r;
-			}
-			
-		?>
-		<div class="calcul_body">
-			<form data-price-spot="<?php echo $val[3]['price']?>"
-				  data-price-lamp="<?php echo $val[2]['price']?>"
-				  data-price-foil="<?php echo $val[1]['price']?>"
-				  data-price-minorder="<?php echo $val[4]['price'] ?>"
-				  data-price-discount="<?php echo $val[6]['price']?>" class="flex_input">
-				<input type="number" autocomplete="off" name="count_room" placeholder="Количество помещений">
-				<input type="number" autocomplete="off" name="count_svet" placeholder="Точек освещения">
-				<input type="number" autocomplete="off" name="count_square" placeholder="Общая площадь м2">
-			</form>
-			<div role="button" class="calc_btn expresCalculBtn">
-				<div class="btn_animate"></div>
-				<div class="call_me_load_anim display_none"></div>
-				<div class="call_me_load_anim call_me_load_anim2 display_none"></div>
-			Рассчитать</div>
+	<div class="certificate_cont">
+		<div class="certif_940">
+			<div class="aferta_container">
+				<div style="display: flex; justify-content: center; position: relative;">
+					<div class="vert_line"></div>
+				</div>
+				<div class="heder_present" style="position: relative; z-index: 2;">
+					<span>Ежемесячная акция</span>
+				</div>
+				<div class="aferta_block">
+					<div class="sale_flag">50000 руб.</div>
+					<img style="border-radius: 4px;" src="img/mainPage/people.webp">
+					<h4>Каждому 100-му клиенту мы устанавливаем потолки совершенно бесплатно!</h4>
+					<span>общей суммой до 50000 рублей *</span>
+					<span>Подробности по телефону</span>
+					<div role="button" class="aferta_btn">Учавствовать</div>
+				</div>
+			</div>
+			<div class="certif_doc">
+				<div>
+					<div style="display: flex; justify-content: center; position: relative;">
+						<div class="vert_line"></div>
+					</div>
+					<div class="heder_present" style="position: relative; z-index: 2;">
+						<span>Сертификаты</span>
+						<span>экологические, противопожарные</span>
+					</div>
+				</div>
+				<div class="img_container">
+					<div class="img_row_cont">
+						<div class="img_border">
+							<picture>
+								<source srcset="img/vendorsFoilPage/sertifikat-eckologia-msd-fsmmw.webp" type="image/webp">
+								<img src="img/vendorsFoilPage/sertifikat-eckologia-msd-fsmmw.jpg">
+							</picture>
+						</div>
+						<div class="img_border">
+							<picture>
+								<source srcset="img/vendorsFoilPage/jfjsp9wrjgwjgjpwgjwg.webp" type="image/webp">
+								<img src="img/vendorsFoilPage/jfjsp9wrjgwjgjpwgjwg.jpg">
+							</picture>
+						</div>
+					</div>
+					<div class="img_row_cont">
+						<div class="img_border">
+							<picture>
+								<source srcset="img/vendorsFoilPage/sfpwwpewimf.webp" type="image/webp">
+								<img src="img/vendorsFoilPage/sfpwwpewimf.jpg">
+							</picture>
+						</div>
+						<div class="img_border">
+							<picture>
+								<source srcset="img/vendorsFoilPage/sgpwjwpwpfwf.webp" type="image/webp">
+								<img src="img/vendorsFoilPage/sgpwjwpwpfwf.jpg">
+							</picture>
+						</div>
+					</div>
+				</div>
+				<div role="button" class="cert_btn_cont">
+					<a href="certificates" class="all_doc_btn">Все документы</a>
+					<!-- <div class="prise_btn"><div class="btn_animate"></div>Получить прайс лист</div> -->
+				</div>
+			</div>
 		</div>
 	</div>
-
-	
-
-	
 	

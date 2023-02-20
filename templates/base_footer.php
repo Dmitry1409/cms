@@ -294,8 +294,8 @@
 			</div>
 		</div>
 		<div class="footer_locations">
-			<h4><?php echo $COMPANY_NAME?> в Нижегородской области</h4>
 			<div>
+				<h4><?php echo $COMPANY_NAME?><br> в Нижегородской области</h4>
 				<ul>
 					<li><a href=<?php echo $root_dir?>><span>Нижний Новгород</span></a></li>
 					<li><a href=<?php echo $root_dir?>><span>Дзержинск</span></a></li>
@@ -307,16 +307,37 @@
 					<li><a href=<?php echo $root_dir?>><span>Заволжье</span></a></li>
 					<li><a href=<?php echo $root_dir?>><span>Павлово</span></a></li>
 				</ul>
+			</div>
+			<div>
+				<h4>Технологии</h4>
 				<ul>
-					<li><a href=<?php echo $root_dir.'technology/textureColor'?>><span>Матовые натяжные потолки</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/textureColor'?>><span>Глянцевые натяжные потолки</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/textureColor'?>><span>Сатиновые натяжные потолки</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/textureColor'?>><span>Свето-пропускные натяжные потолки</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/multiLevel'?>><span>Двухуровные натяжные потолки</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/shadowProfil'?>><span>Парящие натяжные потолки</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/shadowProfil'?>><span>Теневые натяжные потолки</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/shadowProfil'?>><span>Натяжные потолки с подсветкой</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/dubleVisionPrint'?>><span>Натяжные потолки с фотопечатью</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/textureColor'?>><span>Матовые</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/textureColor'?>><span>Глянцевые</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/textureColor'?>><span>Сатиновые</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/textureColor'?>><span>Свето-пропускные</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/hiddenCurtain'?>><span>Скрытая гардина</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/multiLevel'?>><span>Двухуровные</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/shadowProfil'?>><span>Парящие</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/shadowProfil'?>><span>Теневые</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/shadowProfil'?>><span>С подсветкой</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/lightLines'?>><span>Световые линии</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/dubleVisionPrint'?>><span>С фотопечатью</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/carvedCelling'?>><span>Резные</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/starsSky'?>><span>Звездное небо</span></a></li>
+					<li><a href=<?php echo $root_dir.'technology/ligthNiches'?>><span>Световые ниши</span></a></li>
+				</ul>
+			</div>
+			<div>
+				<h4>Помещения</h4>
+				<ul>
+					<li class="foot-room-item"><span>Гостиная</span></li>
+					<li class="foot-room-item"><span>Прихожая</span></li>
+					<li class="foot-room-item"><span>Кухня</span></li>
+					<li class="foot-room-item"><span>Спальная</span></li>
+					<li class="foot-room-item"><span>Детска</span></li>
+					<li class="foot-room-item"><span>Санузел</span></a></li>
+					<li class="foot-room-item"><span>Офис</span></li>
+					<li class="foot-room-item"><span>Мансарда</span></li>
 				</ul>
 			</div>
 		</div>

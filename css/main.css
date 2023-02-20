@@ -809,11 +809,13 @@ a.menu_item{
 	margin-top: 45px;
 	border-top: 1px dashed rgba(255 255 255 / 30%);
 	color: white;
+	width: 100%;
 }
 
 .footer_locations span{
 	color: white;
 	text-decoration: none;
+	cursor: pointer;
 }
 .footer_locations ul{
 	color: var(--main-col-1);
@@ -2767,18 +2769,17 @@ textarea.invalidValueCalculate{
 		font-size: 14px;
 		margin-right: 20px;
 	}
-
-	.footer_locations h4{
-		text-align: center;
-		margin-right: 40%;
-	}
-
-	.footer_locations > div{
+	.footer_locations{
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-		-ms-flex-pack: distribute;
-		    justify-content: space-around;
+	}
+	.footer_locations > div{
+		width: calc(100% / 3);
+	}
+
+	.footer_locations h4{
+		text-align: center;
 		margin-right: 40%;
 	}
 	.copy_cont{

@@ -63,10 +63,10 @@ def main():
 		shutil.copytree(fol, nSite+'/'+fol)
 		print(f"Папка {fol} скопирована в папку {nSite}")
 
-	# shutil.rmtree(publFol)
+	shutil.rmtree(publFol)
 	print(f"Папка {publFol} удалена")
 
-	os.rename(nSite, "newSite")
+	os.rename(nSite, pubFol)
 	print(f"Папка {nSite} переименована в {publFol}")
 	print("Complite")
 	
