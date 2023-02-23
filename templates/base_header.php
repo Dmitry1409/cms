@@ -107,7 +107,7 @@
 					</div>
 				</div>
 				<div class="line_butt"></div>
-				<a class="menu_item" href=<?php echo $root_dir."lighting"?>>Освещение</a>			
+				<a class="menu_item" href=<?php echo $root_dir."lighting"?>>Споты</a>			
 				<div class="line_butt"></div>
 				<div class="cont_940">
 					<div class="menu_item sub_menu_btn"><span>Производители ПВХ</span><span></span></div>
@@ -136,6 +136,8 @@
 						echo "<a class='menu_item favourIndex' href=".$root_dir."favourites>Избранное<span></span></a>";
 					}
 				?>
+				<div id="kontaktBtnId"  class="menu_item">Контакты</div>
+
 				
 			</div>
 		</div>

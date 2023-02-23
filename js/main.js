@@ -38,7 +38,33 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		f = true
 	}
 
+
 	if(f){
+		let venLinkId = document.querySelector('#vendorsLinkId')
+		if(venLinkId){
+			venLinkId.addEventListener('click', ()=>{
+				if(location.pathname == root_dir){
+					if(clientWidth < 940){
+						btn_action()
+					}
+					vendorsSectionId.scrollIntoView({
+						'behavior': 'smooth'
+					})
+				}else{
+					location.href = location.origin+root_dir+"#vendorsSectionId"
+				}
+			})
+		}
+		
+		kontaktBtnId.addEventListener('click', ()=>{
+			if(clientWidth < 940){
+					btn_action()
+				}
+			kontaktSectId.scrollIntoView({
+					'behavior': 'smooth'
+				})
+		})
+
 		feedBackBtnId.addEventListener('click', ()=>{
 			if(clientWidth < 940){
 					btn_action()
@@ -62,15 +88,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		})
 
 		workExampBtnId.addEventListener('click', ()=>{
-			if(location.pathname == root_dir){
-				if(clientWidth < 940){
-					btn_action()
-				}
+			if(exampWork)
 				exampWork.scrollIntoView({
 					'behavior': 'smooth'
 				})
-			}else{
-				location.href = location.origin+root_dir+"#exampWork_ancher"
+			if(clientWidth < 940){
+				btn_action()
 			}
 		})
 
@@ -105,9 +128,26 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		checkCurrentLocation()
 
 		insertReklamHeader()
-
+		
 		checkMaskTel()
 	}
+
+	if(initNumbMain == 2){
+		let venLinkId = document.querySelector('#vendorsLinkId')
+		if(venLinkId){
+			venLinkId.addEventListener('click', ()=>{
+				if(location.pathname == root_dir){
+					vendorsSectionId.scrollIntoView({
+						'behavior': 'smooth'
+					})
+				}else{
+					location.href = location.origin+root_dir+"#vendorsSectionId"
+				}
+			})
+		}
+		checkMaskTel()
+	} 
+
 
 	let footerRooms = document.querySelectorAll(".foot-room-item")
 	if(footerRooms){

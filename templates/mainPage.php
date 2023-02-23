@@ -6,7 +6,7 @@
 	?>
 	
 
-	<div style="display: flex; justify-content: center; margin-top: 100px;">
+	<div id="techSectionIdAnch" style="display: flex; justify-content: center; margin-top: 100px;">
 		<div class="vert_line"></div>
 	</div>
 	<div class="heder_present" style="position: relative; z-index: 2;">
@@ -236,14 +236,14 @@
 		</div>
 	</div>
 
-	<div style="display: flex; justify-content: center; position: relative; margin-top: 50px;">
+	<div id="vendorsSectionId" style="display: flex; justify-content: center; position: relative; margin-top: 50px;">
 		<div class="vert_line"></div>
 	</div>
 	<div class="heder_present" style="position: relative; z-index: 2; margin-bottom: 50px;">
 		<span>Наши поставщики</span>
 	</div>
 
-	<div class="vendorSection">
+	<div  class="vendorSection">
 		<?php
 			$res = $db->query("SELECT * FROM product WHERE id > 52 AND id < 60");
 			$val = [];

@@ -1,21 +1,20 @@
 
-window.addEventListener('load', ()=>{
-	if(location.hash){
-			let hash  = location.hash.split('_')[0]
-			let d = document.querySelector(hash)
-			location.hash = ""
-			d.scrollIntoView({
-				behavior: "smooth",
-				block: 'start'
-			})
-		}
-})
 initNumbMP = 0
 window.addEventListener('DOMContentLoaded',()=>{
 	initNumbMP += 1
 	let f = false
 	if(initNumbMP < 2){
 		f = true
+	}
+
+	if(location.hash){
+		let hash  = location.hash.split('_')[0]
+		let d = document.querySelector(hash)
+		location.hash = ""
+		d.scrollIntoView({
+			behavior: "smooth",
+			block: 'start'
+		})
 	}
 
 	if(f){
@@ -31,7 +30,6 @@ window.addEventListener('DOMContentLoaded',()=>{
 			tech_elem[i].addEventListener('mouseout', tech_elem_out_action)
 		}
 	}
-
 	
 
 	function calculate_action(){

@@ -370,7 +370,7 @@ input.invalidField{
 	padding-left: 1em;
 }
 .menu_item{
-	padding: 1em;
+	padding: 13px;
 	cursor: pointer;
 }
 a.menu_item{
@@ -2430,6 +2430,7 @@ textarea.invalidValueCalculate{
 		text-decoration: none;
 		font-size: 14px;
 		margin-right: 20px;
+		cursor: pointer;
 	}
 	.footer_locations{
 		display: -webkit-box;
