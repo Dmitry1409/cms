@@ -1,11 +1,8 @@
-	<?php
-		include "templates/howMuchDone.php";
-	?>
 
 	<?php
 		$query = "все";
 		$hashsSelect = ['#все'];
-		include "templates/exampWorkFoto.php";
+		include "exampWorkFoto.php";
 	?>
 	
 
@@ -202,7 +199,7 @@
 	</div>
 
 	<?php
-		include "templates/clientFeedBack.php";
+		include "clientFeedBack.php";
 	?>
 
 	<div id="expressCalc" class="calculate_cont">

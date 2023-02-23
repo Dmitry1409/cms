@@ -29,100 +29,121 @@ let YDTargetFunc = function(tarId){
 let id_timeout_subMenu1
 let id_timeout_subMenu2
 
-
-
-
+initNumbMain = 0
 window.addEventListener('DOMContentLoaded', ()=>{
 
+	initNumbMain +=1
+	let f = false
+	if(initNumbMain < 2){
+		f = true
+	}
 
-	feedBackBtnId.addEventListener('click', ()=>{
-		if(location.pathname == root_dir){
+	if(f){
+		feedBackBtnId.addEventListener('click', ()=>{
 			if(clientWidth < 940){
-				btn_action()
-			}
+					btn_action()
+				}
 			feedBackId.scrollIntoView({
-				'behavior': 'smooth'
-			})
-		}else{
-			location.href = location.origin+root_dir+"#feedBackId_ancher"
-		}
-	})
+					'behavior': 'smooth'
+				})
+		})
 
-	expressCalcBtnId.addEventListener('click', ()=>{
-		if(location.pathname == root_dir){
-			if(clientWidth < 940){
-				btn_action()
+		expressCalcBtnId.addEventListener('click', ()=>{
+			if(location.pathname == root_dir){
+				if(clientWidth < 940){
+					btn_action()
+				}
+				expressCalc.scrollIntoView({
+					'behavior': 'smooth'
+				})
+			}else{
+				location.href = location.origin+root_dir+"#expressCalc_ancher"
 			}
-			expressCalc.scrollIntoView({
-				'behavior': 'smooth'
-			})
-		}else{
-			location.href = location.origin+root_dir+"#expressCalc_ancher"
-		}
-	})
+		})
 
-	workExampBtnId.addEventListener('click', ()=>{
-		if(location.pathname == root_dir){
-			if(clientWidth < 940){
-				btn_action()
+		workExampBtnId.addEventListener('click', ()=>{
+			if(location.pathname == root_dir){
+				if(clientWidth < 940){
+					btn_action()
+				}
+				exampWork.scrollIntoView({
+					'behavior': 'smooth'
+				})
+			}else{
+				location.href = location.origin+root_dir+"#exampWork_ancher"
 			}
-			exampWork.scrollIntoView({
-				'behavior': 'smooth'
-			})
-		}else{
-			location.href = location.origin+root_dir+"#exampWork_ancher"
+		})
+
+		questAnswerBtnId.addEventListener('click', ()=>{
+				questAnswer.scrollIntoView({
+					'behavior': 'smooth'
+				})
+				if(clientWidth < 940){
+					btn_action()
+				}
+		})
+
+		document.querySelectorAll('.virt_btn_menu')[0].addEventListener('click', btn_action)
+
+		document.querySelector('.background_menu').addEventListener('click', btn_action)
+	
+
+		let sub_menu_btn = document.querySelectorAll('.sub_menu_btn')
+		for(let i=0; i<sub_menu_btn.length; i++){
+			sub_menu_btn[i].addEventListener('click', sub_menu_action)
 		}
-	})
 
-	questAnswerBtnId.addEventListener('click', ()=>{
-		if(location.pathname == root_dir){
-			if(clientWidth < 940){
-				btn_action()
-			}
-			questAnswer.scrollIntoView({
-				'behavior': 'smooth'
-			})
-		}else{
-			location.href = location.origin+root_dir+"#questAnswer_ancher"
-		}
-	})
+		document.querySelector('.call_me_container').addEventListener('click', order_a_call)
+		document.querySelector('.close_modal').addEventListener('click', close_modal_action)
+		document.querySelector('.modal_backgraund').addEventListener('click', close_modal_action)
+		document.querySelector('.header_lozung a').addEventListener('click', call_me_action)
+		document.querySelector('.call_me_send').addEventListener('click', sendMailWithData)
+		document.querySelector('.modal_report').addEventListener('click', close_report_modal)
 
-	document.querySelectorAll('.virt_btn_menu')[0].addEventListener('click', btn_action)
 
-	document.querySelector('.background_menu').addEventListener('click', btn_action)
 
-	let sub_menu_btn = document.querySelectorAll('.sub_menu_btn')
-	for(let i=0; i<sub_menu_btn.length; i++){
-		sub_menu_btn[i].addEventListener('click', sub_menu_action)
+		checkCurrentLocation()
+
+		insertReklamHeader()
+
+		checkMaskTel()
 	}
 
 	let footerRooms = document.querySelectorAll(".foot-room-item")
-	for(let i =0; i<footerRooms.length; i++){
-		footerRooms[i].addEventListener('click', footerRoomsAct)
+	if(footerRooms){
+		if(f){
+			for(let i =0; i<footerRooms.length; i++){
+				footerRooms[i].addEventListener('click', footerRoomsAct)
+			}
+		}
 	}
-
-
-	document.querySelector('.call_me_container').addEventListener('click', order_a_call)
-	document.querySelector('.close_modal').addEventListener('click', close_modal_action)
-	document.querySelector('.modal_backgraund').addEventListener('click', close_modal_action)
-	document.querySelector('.header_lozung a').addEventListener('click', call_me_action)
-	document.querySelector('.call_me_send').addEventListener('click', sendMailWithData)
-	document.querySelector('.modal_report').addEventListener('click', close_report_modal)
-
-	let questBlocks = document.querySelectorAll('.questBlock')
-	for(let i =0; i<questBlocks.length; i++){
-		questBlocks[i].addEventListener('click', answerClickAction)
+	if(initNumbMain == 2){
+		if(footerRooms){
+			for(let i =0; i<footerRooms.length; i++){
+				footerRooms[i].addEventListener('click', footerRoomsAct)
+			}
+		}
 	}
-
 	
 
+	let questBlocks = document.querySelectorAll('.questBlock')
+	if(questBlocks){
+		if(f){
+			for(let i =0; i<questBlocks.length; i++){
+				questBlocks[i].addEventListener('click', answerClickAction)
+			}		
+		}
+	}
+	if(initNumbMain == 2){
+		if(questBlocks){
+			for(let i =0; i<questBlocks.length; i++){
+				questBlocks[i].addEventListener('click', answerClickAction)
+			}	
+		}
+	}
+
+
 	let idTimeOutAnswer
-
-	checkCurrentLocation()
-
-	insertReklamHeader()
-
-	checkMaskTel()
 
 	function footerRoomsAct(){
 		if(location.pathname.indexOf("favourites") > -1){
@@ -137,9 +158,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 				changeHashTag(this)
 			},1000)
 		}
-
 	}
-
 	function changeHashTag(span){
 		let tags = document.querySelectorAll(".controlHashItem")
 		span = span.innerText.toLowerCase()
@@ -195,9 +214,11 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		let headcont = document.querySelector('.tel-rel')
 		let footercont = document.querySelector('.footer_inf_cont')
 		headcont.insertAdjacentHTML('afterbegin', html)
-		footercont.insertAdjacentHTML('afterbegin', html)
+		if(footercont){
+			footercont.insertAdjacentHTML('afterbegin', html)
+			footercont.addEventListener('click', maskTelClickAction)
+		}
 		headcont.addEventListener('click', maskTelClickAction)
-		footercont.addEventListener('click', maskTelClickAction)
 		
 	}
 	function maskTelClickAction(){
@@ -207,8 +228,10 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		}
 		let headcont = document.querySelector('.tel-rel')
 		let footercont = document.querySelector('.footer_inf_cont')
+		if(footercont){
+			footercont.removeEventListener('click', maskTelClickAction)
+		}
 		headcont.removeEventListener('click', maskTelClickAction)
-		footercont.removeEventListener('click', maskTelClickAction)
 		sendMaskTelClick()
 	}
 

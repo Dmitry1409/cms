@@ -1,4 +1,11 @@
+
+initNumbFed = 0
 window.addEventListener('DOMContentLoaded',()=>{
+	initNumbFed +=1
+	let f = false
+	if(initNumbFed < 2){
+		f = true
+	}
 	let time_feedback = Date.now()
 
 	let fotoGalObj = {
@@ -18,37 +25,49 @@ window.addEventListener('DOMContentLoaded',()=>{
 		}
 	}
 
-
-	document.addEventListener('scroll', scrollActionFeedBack)
+	if(f){
+		document.addEventListener('scroll', scrollActionFeedBack)
+	}
 	let id_intervalFeed
 	let id_timeOutFeed
 	let flIntervalFeed = false
 
-	document.querySelector('.add_feedback_section .calc_btn').addEventListener('click', add_feedback_action)
+	if(f){		
+		document.querySelector('.add_feedback_section .calc_btn').addEventListener('click', add_feedback_action)
 
-	document.querySelector('.feed_left').addEventListener('click', feed_left_action)
-	document.querySelector('.feed_right').addEventListener('click', feed_right_action)
+		document.querySelector('.feed_left').addEventListener('click', feed_left_action)
+		document.querySelector('.feed_right').addEventListener('click', feed_right_action)
+	}
 
 	let sortFeedBackBtns = document.querySelectorAll('.feedBackSortCont > div')
 	for(let i=0; i<sortFeedBackBtns.length; i++){
-		sortFeedBackBtns[i].addEventListener('click', sortFeedBackAction)
+		if(f){
+			sortFeedBackBtns[i].addEventListener('click', sortFeedBackAction)
+		}
 	}
 
 	let imgs_feedback = document.querySelectorAll('.feed4countWrapp img')
 	for(let i=0; i<imgs_feedback.length; i++){
-		imgs_feedback[i].addEventListener('click', feedbackImgsShow)
+		if(f){
+			imgs_feedback[i].addEventListener('click', feedbackImgsShow)
+		}
 	}
 
-	document.querySelector('.add_feedback_section .calc_btn').addEventListener('click', add_feedback_action)
+	if(f){
+		document.querySelector('.add_feedback_section .calc_btn').addEventListener('click', add_feedback_action)
+	}
 
 	let scope_svg = document.querySelectorAll('.add_feedback_section svg')
 	for(let i = 0; i<scope_svg.length; i++){
-		scope_svg[i].addEventListener('click', feedback_scope_view_action)
+		if(f){
+			scope_svg[i].addEventListener('click', feedback_scope_view_action)
+		}
 	}
 
 	
-
-	document.querySelector('.add_feedback_btn_open_cont > div').addEventListener('click', add_feedback_open)
+	if(f){
+		document.querySelector('.add_feedback_btn_open_cont > div').addEventListener('click', add_feedback_open)
+	}
 
 
 	function scrollActionFeedBack(){

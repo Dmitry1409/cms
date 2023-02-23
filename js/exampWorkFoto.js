@@ -1,6 +1,14 @@
+InitNumbEx = 0
 window.addEventListener('DOMContentLoaded', ()=>{
+	InitNumbEx += 1
+	let f = false
+	if(InitNumbEx < 2){
+		f = true
+	}
 
-	document.addEventListener('scroll', scrollAction)
+	if(f){
+		document.addEventListener('scroll', scrollAction)
+	}
 	let slidFlag = false
 	let id_inter_slid
 	let id_timeOut
@@ -26,39 +34,51 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	}
 
 	let contrlHash = document.querySelectorAll('.controlHashItem')
-	for(let i=0; i<contrlHash.length; i++){
-		contrlHash[i].addEventListener('click', contrlHashAction)
+	if(f){	
+		for(let i=0; i<contrlHash.length; i++){
+			contrlHash[i].addEventListener('click', contrlHashAction)
+		}
 	}
 
 	let btn_left = document.querySelector('.examp_btn_left')
 	let btn_rgt  = document.querySelector('.examp_btn_right')
-	if(btn_left){
-		btn_left.addEventListener('click', examp_left_action)
-	}
-	if(btn_rgt){
-		btn_rgt.addEventListener('click', examp_right_action)
+	if(f){	
+		if(btn_left){
+			btn_left.addEventListener('click', examp_left_action)
+		}
+		if(btn_rgt){
+			btn_rgt.addEventListener('click', examp_right_action)
+		}
 	}
 
 
 	let pictures = document.querySelectorAll('.example_img_cont picture')
 	pictures.forEach((item)=>{
-		item.addEventListener('click', show_img)
+		if(f){
+			item.addEventListener('click', show_img)
+		}
 	})
 
 	let cls_btn = document.querySelector('.close_btn_examp')
 	if(cls_btn){
-		cls_btn.addEventListener('click', close_img_show)
+		if(f){
+			cls_btn.addEventListener('click', close_img_show)
+		}
 	}
 
 	let like_btns = document.querySelectorAll('.img_like_cont')
 	like_btns.forEach(function(item){
-		item.addEventListener('click', like_img_action)
+		if(f){
+			item.addEventListener('click', like_img_action)
+		}
 	})
 
 	let request_price_wrapp = document.querySelectorAll('.request_price_wrapp')
 
 	for (let i=0; i < request_price_wrapp.length; i++){
-		request_price_wrapp[i].addEventListener('click', howPrice)
+		if(f){
+			request_price_wrapp[i].addEventListener('click', howPrice)
+		}
 	}
 
 
@@ -92,7 +112,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			if(!hashCont) return
 			rectHash = hashCont.getBoundingClientRect()
 			if(rectHash.y < 50){
-				slidFlag = true
+				slidFlag = true				
 				examp_right_action(null, true , true)
 				id_inter_slid = setInterval(()=>{
 					examp_right_action(null, true , true)

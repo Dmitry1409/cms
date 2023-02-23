@@ -7,19 +7,21 @@ basa ="cms.db"
 copFol = ['upload_img', 'Roboto', 'img']
 
 pathArr = ['config_cms.php', 'js/main.js', 'mailer/send_mail.php',
-			'scripts_php/add_feedback.php', 'templates/mainHead.php']
-nRowArr = [[1, 2], [21], [93,96,97,98,99,100], [110, 123], [21,35]]
+			'scripts_php/add_feedback.php', 'templates/mainHead.php', 'templates/startMainHead.php']
+nRowArr = [[1, 2], [21], [93,96,97,98,99,100], [110, 123], [21,35], [99, 113]]
 
 checkArr = [['	$domain = "http://localhost";', '	$root_dir = "/cms/";'],
 			['const root_dir = "/cms/"'],
 			['echo "success";', '// if($mail->send()){', '// 	echo "success";', '// }else{', '// 	echo $mail->ErrorInfo;', '// }'],
 			['		// autoRotateImage($avatarDirOrig.$n_name);', '			// autoRotateImage($revDirOrig.$n_name);'],
+			['	<!-- <script type="text/javascript" >', '	<noscript><div><img src="https://mc.yandex.ru/watch/91462500" style="position:absolute; left:-9999px;" alt="" /></div></noscript> -->'],
 			['	<!-- <script type="text/javascript" >', '	<noscript><div><img src="https://mc.yandex.ru/watch/91462500" style="position:absolute; left:-9999px;" alt="" /></div></noscript> -->']]
 nArr = [['	$domain = "https://auroom-nn.ru";', '	$root_dir = "/";'],
 		['const root_dir = "/"'],
 		['// echo "success";', 'if($mail->send()){', '	echo "success";', '}else{', '	echo $mail->ErrorInfo;', '}'],
 		['		autoRotateImage($avatarDirOrig.$n_name);', '			autoRotateImage($revDirOrig.$n_name);'],
-		['	<script type="text/javascript" >', '	<noscript><div><img src="https://mc.yandex.ru/watch/91462500" style="position:absolute; left:-9999px;" alt="" /></div></noscript>']]
+		['	<script type="text/javascript" >', '	<noscript><div><img src="https://mc.yandex.ru/watch/91462500" style="position:absolute; left:-9999px;" alt="" /></div></noscript>'],
+		['	<script type="text/javascript" >', '	<noscript><div><img src="https://mc.yandex.ru/watch/91462500" style="position:absolute; left:-9999px;" alt="" /></div></noscript>' ]]
 
 
 def changFile(path, nRow, checkStr, newRow):

@@ -10,63 +10,29 @@ window.addEventListener('load', ()=>{
 			})
 		}
 })
-
+initNumbMP = 0
 window.addEventListener('DOMContentLoaded',()=>{
-	
-
-	document.querySelector('.aferta_btn').addEventListener('click', aferta_btn_action)
-	document.querySelector('.calcul_body div.calc_btn').addEventListener('click', calculate_action)
-
-	let flHowMuchStart = true
-	document.addEventListener('scroll', howMuchStart)
-	let howMuchSpans = document.querySelectorAll('.howMuchDoneSection > div > span span:first-child')
-	let howMuchCont = document.querySelectorAll('.howMuchCont')
-
-	let howMuchDoneData = []
-	let duractAnim = [1000, 2000, 3000, 4000, 5000, 6000]
-	let arrIdInterv = [0,0,0,0,0,0]
-	for(let i = 0; i<howMuchSpans.length; i++){
-		howMuchDoneData.push(howMuchSpans[i].innerText)
-		howMuchSpans[i].innerText = ""
+	initNumbMP += 1
+	let f = false
+	if(initNumbMP < 2){
+		f = true
 	}
+
+	if(f){
+		document.querySelector('.aferta_btn').addEventListener('click', aferta_btn_action)
+		document.querySelector('.calcul_body div.calc_btn').addEventListener('click', calculate_action)
+	}
+
 
 	let tech_elem = document.querySelectorAll('.tech_elem')
-	for(let i = 0; i < tech_elem.length; i++){
-		tech_elem[i].addEventListener('mouseover', tech_elem_over_action)
-		tech_elem[i].addEventListener('mouseout', tech_elem_out_action)
-	}
-
-	function setValueInterv(ind_elem){
-		let stepVal = Math.ceil(duractAnim[ind_elem] / 10)
-		stepVal = Math.ceil(howMuchDoneData[ind_elem] / stepVal)
-		arrIdInterv[ind_elem] = setInterval(()=>{
-			howMuchSpans[ind_elem].innerText = Number(howMuchSpans[ind_elem].innerText) + stepVal
-			if(Number(howMuchSpans[ind_elem].innerText) > Number(howMuchDoneData[ind_elem])){
-				howMuchSpans[ind_elem].innerText = howMuchDoneData[ind_elem]
-				clearInterval(arrIdInterv[ind_elem])
-				howMuchViewEffect(howMuchSpans[ind_elem])
-			} 
-		}, 10)
-	}
-
-	function howMuchViewEffect(elem){
-		let d = elem.parentNode.parentNode
-		d.style.transition = ".3s"
-		d.classList.add('boxShadEffect')
-		d.classList.add('borderEffect')
-	}
-	function howMuchStart(){
-		let cont = document.querySelector('.howMuchDoneSection')
-		let cont_rect = cont.getBoundingClientRect()
-		if(cont_rect.y < 500){
-			if(flHowMuchStart){
-				flHowMuchStart = false
-				for(let i = 0; i< howMuchSpans.length; i++){
-					setValueInterv(i)
-				}
-			}
+	if(f){		
+		for(let i = 0; i < tech_elem.length; i++){
+			tech_elem[i].addEventListener('mouseover', tech_elem_over_action)
+			tech_elem[i].addEventListener('mouseout', tech_elem_out_action)
 		}
 	}
+
+	
 
 	function calculate_action(){
 		delWarnigClassCalcult()
