@@ -17,7 +17,7 @@
 			
 		}
 		if($_GET['comand'] == "add_record"){
-			$nameFolder = "carved";
+			$nameFolder = "lightTransp";
 			for($i = 0; $i< count($_SESSION['imgs']); $i++){
 				$source = $_SESSION['imgs'][$i];
 

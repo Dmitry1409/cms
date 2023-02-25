@@ -10,7 +10,7 @@
 				<input type="text" name="call_me_name" placeholder="Ваше имя">
 				<input type="text" name="call_me_phone" placeholder="Телефон">
 				<div class="call_me_checkbox">
-					<input type="checkbox">
+					<input checked type="checkbox">
 					<span>Ознакомлен с <a href="#">ползовательским соглашением</a></span>
 				</div>
 			</form>

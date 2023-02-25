@@ -22,7 +22,7 @@
 
 
 
-	function webpImage($source, $quality = 50)
+	function webpImage($source, $quality = 80)
 	    {
 	    	global $dirNameSource, $dirNameSave;
 	        $dir = pathinfo($source, PATHINFO_DIRNAME);

@@ -1249,6 +1249,22 @@ a.menu_item{
 
 }
 
+.priseFoto{
+	position: absolute;
+	right: 0;
+	top: 10%;
+	font-size: 20px;
+	padding: 5px;
+	padding-left: 15px;
+	font-weight: 700;
+	border-radius: 3px;
+	background-color: #8ad4117a;
+	color: white;
+}
+.show_img_cont .priseFoto{
+	top: 20%;
+}
+
 .hashNameCont{
 	position: absolute;
 	display: -webkit-box;
@@ -2515,6 +2531,11 @@ textarea.invalidValueCalculate{
 	.controlHashItem{
 		font-size: 17px;
 	}
+
+	.show_img_cont .priseFoto{
+		right: 10%;
+	}
+
 
 
 	.about_cont{

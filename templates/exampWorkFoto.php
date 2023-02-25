@@ -122,7 +122,10 @@
 					if($i > 6){
 						echo "<picture class='examp_none'>";
 					}
-					$hashName = $arr[$i]['hashName'];
+					
+					$priseFoto = $arr[$i]['prise'] . " руб.";
+					echo "<div class ='priseFoto'>$priseFoto</div>";
+
 					$s_hash = "";
 					echo "<div class='hashNameCont'>";
 						for($j=0; $j<count($arr[$i]['hashName']); $j++){

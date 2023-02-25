@@ -59,6 +59,7 @@
 		}
 		$d = [];
 		$d['hashName'] = $h;
+		$d['prise'] = $r['prise'];
 		$d['webp'] = $r['webp'];
 		$d['jpg'] = $r['jpg'];
 		$d['id'] = $r['id'];

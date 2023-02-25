@@ -149,6 +149,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			}
 			let alt = ''
 			elem = `<picture class=${cl}>
+						<div class=priseFoto>${val[i]['prise']} руб.</div>
 						<div class=hashNameCont>`
 							for(j=0; j<val[i]['hashName'].length; j++){
 								elem += `<div>
@@ -200,8 +201,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		clientData.click_link = "Примеры работ фото- сколько стоит"
 
 		call_me_view()
-
-
 	}
 	function parseSRC(elem){
 		let s = elem.querySelector('source')
@@ -573,6 +572,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		for(let i =0; i<res.length; i++){
 			let alt = ""
 			elem = `<picture class=examp_none>
+						<div class=priseFoto>${res[i]['prise']} руб.</div>
 						<div class=hashNameCont>`
 							for(j=0; j<res[i]['hashName'].length; j++){
 								alt += res[i]['hashName'][j]
