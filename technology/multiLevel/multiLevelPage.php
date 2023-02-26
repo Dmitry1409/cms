@@ -3,7 +3,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Многоуровневые<br> конструкции</span>
+	<span>Делаем все виды<br> конструкций</span>
 </div>
 
 <div class="choiceConfSection">
@@ -16,7 +16,16 @@
 		</p>
 	</div>
 
-	<h3 style="margin-top: 50px;">Без щелевой переход</h3>
+	<?php
+
+		$query = "SELECT id_img FROM hashTags WHERE name = 'двухуровневый'";
+		$key_session = 'multiLevImg';
+		$hashsSelect = ['#двухуровневый'];
+		include "../../templates/exampWorkFoto.php";
+	?>
+
+
+	<h3 style="margin-top: 100px;">Без щелевой переход</h3>
 	<div class="noChelCont">
 		<div class="NoChelRow">
 			<picture>
@@ -952,13 +961,7 @@
 </div>
 
 
-<?php
 
-	$query = "SELECT id_img FROM hashTags WHERE name = 'двухуровневый'";
-	$key_session = 'multiLevImg';
-	$hashsSelect = ['#двухуровневый'];
-	include "../../templates/exampWorkFoto.php";
-?>
 
 
 <div style="display: flex; justify-content: center; position: relative; margin-top: 50px;">
@@ -971,10 +974,10 @@
 <div class="design">
 	<div class="aferta_container">
 		<div class="aferta_block">
-			<div class="sale_flag">Бессплатно</div>
+			<div class="sale_flag">-30%</div>
 
 			<img src='<?php echo $root_dir."img/gde-najti-indiv.jpg"?>' alt="Наш дизайн">
-			<h4>При заказе потолка дизайн в подарок</h4>
+			<h4>Каждый третий метр бессплатно</h4>
 			<span>Акция действует до 18 июня 2023г.</span>
 			<span>Подробности по телефону</span>
 			<div role="button" class="aferta_btn">Отправить</div>

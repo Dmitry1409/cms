@@ -53,7 +53,7 @@
 			let howMuchCont = document.querySelectorAll('.howMuchCont')
 
 			let howMuchDoneData = []
-			let duractAnim = [1000, 2000, 3000, 4000, 5000, 6000]
+			let duractAnim = [500, 1000, 1500, 2000, 2500, 3000]
 			let arrIdInterv = [0,0,0,0,0,0]
 			for(let i = 0; i<howMuchSpans.length; i++){
 				howMuchDoneData.push(howMuchSpans[i].innerText)

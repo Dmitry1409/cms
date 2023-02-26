@@ -1,4 +1,5 @@
 <div class='fotoGalaryCont'>
+	<h4></h4>
 	<div class='fotoGalCloseBtn'>
 		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px"
 			 height="20px" viewBox="0 0 612.043 612.043" style="enable-background:new 0 0 612.043 612.043;" xml:space="preserve" fill="white">
@@ -21,6 +22,7 @@
 				</g>
 			</svg>
 		</div>
+		<span><span></span> из <span></span></span>
 		<div class='fotoGalaryRightBtn'>
 			<svg version="1.1" id="Capa_1" width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 								 x="0px" y="0px" viewBox="0 0 16.9 16.9" style="enable-background:new 0 0 16.9 16.9;" xml:space="preserve">
@@ -160,6 +162,12 @@
 	</div>
 </div>
 
+<?php
+	$query = "SELECT id_img FROM hashTags WHERE name = 'резной'";
+	$hashsSelect = ['#резной'];
+	include "../../templates/exampWorkFoto.php";
+?>
+
 <h2 style="color: rgb(0 0 0 / 60%); font-weight: 600; text-align: center; margin-top: 100px;">Почему резные потолки?</h2>
 
 <div class="wrappPresentCarved">
@@ -201,9 +209,5 @@
 	</div>
 </div>
 
-<?php
-	$query = "SELECT id_img FROM hashTags WHERE name = 'резной'";
-	$hashsSelect = ['#резной'];
-	include "../../templates/exampWorkFoto.php";
-?>
+
 

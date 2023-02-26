@@ -1,5 +1,6 @@
 
 <div class='fotoGalaryCont'>
+	<h4></h4>
 	<div class='fotoGalCloseBtn'>
 		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px"
 			 height="20px" viewBox="0 0 612.043 612.043" style="enable-background:new 0 0 612.043 612.043;" xml:space="preserve" fill="white">
@@ -22,6 +23,7 @@
 				</g>
 			</svg>
 		</div>
+		<span><span></span> из <span></span></span>
 		<div class='fotoGalaryRightBtn'>
 			<svg version="1.1" id="Capa_1" width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 								 x="0px" y="0px" viewBox="0 0 16.9 16.9" style="enable-background:new 0 0 16.9 16.9;" xml:space="preserve">

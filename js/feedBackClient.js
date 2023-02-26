@@ -441,8 +441,6 @@ window.addEventListener('DOMContentLoaded',()=>{
 		let val = await res.json()
 		feedBackObj.allComents = val
 	}
-
-
 	async function prepareValFeedBack(right=true){
 		let val
 		if(feedBackObj.sortFlag){
@@ -469,8 +467,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 			insertFeedBackItems(val, "beforeend", false)
 		}else{
 			insertFeedBackItems(val.reverse(), "afterbegin", false)
-		}
-		
+		}	
 	}
 	function insertFeedBackItems(val, where_insert, check_cls){
 		let cont = document.querySelector('.feed_main_cont')
@@ -554,6 +551,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 		}
 	}
 	function feedBackImgShowRightAct(){
+
 		if(fotoGalObj.timeProtect < Date.now()){
 			let pics = document.querySelectorAll('.fotoGalaryCont picture')
 
@@ -581,15 +579,23 @@ window.addEventListener('DOMContentLoaded',()=>{
 
 			let n_img = fotoGalObj.imgs[left_ind]
 
+			let cur_num = document.querySelector('.fotoGalControlPanel > span span:first-child')
+			let max_count = document.querySelector('.fotoGalControlPanel > span span:last-child')
+			if(cur_num.innerText == 1){
+				cur_num.innerText = max_count.innerText
+			}else{
+				cur_num.innerText = Number(cur_num.innerText) - 1
+			}
+
 
 			getAndSetSrc(n_img, l.querySelector('img'))
 
+			fotoGalObj.timeProtect = Date.now() + 600
 			if(fl){
 				fotoGalObj.curIndex = fotoGalObj.imgs.length - 1
 				return
 			}
 			fotoGalObj.curIndex -=1
-			fotoGalObj.timeProtect = Date.now() + 600
 		}
 	}
 	function feedBackImgShowLeftAct(){
@@ -619,16 +625,24 @@ window.addEventListener('DOMContentLoaded',()=>{
 
 			let n_img = fotoGalObj.imgs[left_ind]
 
+			let cur_num = document.querySelector('.fotoGalControlPanel > span span:first-child')
+			let max_count = document.querySelector('.fotoGalControlPanel > span span:last-child')
+			if(cur_num.innerText == max_count.innerText){
+				cur_num.innerText = 1
+			}else{
+				cur_num.innerText = Number(cur_num.innerText) + 1
+			}
+
 
 			getAndSetSrc(n_img, l.querySelector('img'))
 
+			fotoGalObj.timeProtect = Date.now() + 600
 			
 			if(fl){
 				fotoGalObj.curIndex = 0
 				return
 			}
 			fotoGalObj.curIndex +=1
-			fotoGalObj.timeProtect = Date.now() + 600
 		}
 	}
 	function feedbackImgsShow(){
@@ -667,6 +681,15 @@ window.addEventListener('DOMContentLoaded',()=>{
 		let closeBtn = document.querySelector('.fotoGalCloseBtn')
 		closeBtn.addEventListener('click', fotoGalaryDisAct)
 
+		let nameClient = this.parentNode.parentNode.querySelector('h3').innerText
+		let d = this.parentNode.parentNode.querySelector('.feedScopeDateCont span:last-child').innerText
+
+		galCont.querySelector('h4').innerHTML = nameClient + "<br>" + d
+
+		let count = document.querySelector('.fotoGalControlPanel > span')
+		count.querySelector('span:first-child').innerText = Number(fotoGalObj.curIndex) + 1
+		count.querySelector('span:last-child').innerText = imgs.length
+
 		document.querySelector('.fotoGalaryLefttBtn').addEventListener('click', feedBackImgShowRightAct)
 		document.querySelector('.fotoGalaryRightBtn').addEventListener('click', feedBackImgShowLeftAct)
 	}
@@ -692,6 +715,12 @@ window.addEventListener('DOMContentLoaded',()=>{
 
 
 		galCont.style.display = "none"
+
+		galCont.querySelector('h4').innerHTML = ""
+		let count = document.querySelector('.fotoGalControlPanel > span')
+		count.querySelector('span:first-child').innerText = ""
+		count.querySelector('span:last-child').innerText = ""
+
 		let body = document.querySelector('body')
 		body.style.overflow = ""
 	}

@@ -36,10 +36,15 @@
 		</div>
 	</div>
 
+	<?php
+
+		$query = "SELECT id_img FROM hashTags WHERE name = 'световые линии'";
+		$key_session = 'ligthLineImg';
+		$hashsSelect = ['#световые линии'];
+		include "../../templates/exampWorkFoto.php";
+	?>
+
 	
-
-
-
 	<div class="vert_line_cont device_vert">
 		<div class="vert_line"></div>
 	</div>
@@ -125,13 +130,7 @@
 		</div>
 	</div>
 
-	<?php
-
-		$query = "SELECT id_img FROM hashTags WHERE name = 'световые линии'";
-		$key_session = 'ligthLineImg';
-		$hashsSelect = ['#световые линии'];
-		include "../../templates/exampWorkFoto.php";
-	?>
+	
 
 
 	<div class="price_section">

@@ -1253,7 +1253,7 @@ a.menu_item{
 	position: absolute;
 	right: 0;
 	top: 10%;
-	font-size: 20px;
+	font-size: 18px;
 	padding: 5px;
 	padding-left: 15px;
 	font-weight: 700;
@@ -1262,7 +1262,7 @@ a.menu_item{
 	color: white;
 }
 .show_img_cont .priseFoto{
-	top: 20%;
+	top: calc((100% - 350px)/2 + 20px);
 }
 
 .hashNameCont{
@@ -1531,6 +1531,17 @@ textarea.invalidValueCalculate{
 	top: 0;
 	left: 0;
 }
+.fotoGalaryCont > h4{
+	position: absolute;
+	top: 30px;
+	color: white;
+	left: 50%;
+	transform: translate(-50% , 0);
+	text-align: center;
+	background-color: rgb(0 0 0 / 20%);
+	padding: 15px;
+	z-index: 110;
+}
 .fotoGalh3{
 	position: absolute;
 	bottom: 100%;
@@ -1574,6 +1585,7 @@ textarea.invalidValueCalculate{
 	z-index: 110;
 	background-color: rgb(0 0 0 / 20%);
 }
+
 .fotoGalControlPanel{
 	position: absolute;
 	bottom: 30px;
@@ -1586,7 +1598,10 @@ textarea.invalidValueCalculate{
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 	z-index: 110;
-
+}
+.fotoGalControlPanel > span{
+	margin-top: 10px;
+	color: white;
 }
 .fotoGalControlPanel > div{
 	padding: 10px;
@@ -2165,6 +2180,9 @@ textarea.invalidValueCalculate{
 	.show_img_cont img{
 		height: 75%;
 	}
+	.show_img_cont .priseFoto{
+		top: 15%;
+	}
 }
 
 @media(min-width: 600px){
@@ -2233,6 +2251,10 @@ textarea.invalidValueCalculate{
 	.header_wrapp{
 		padding-left: 30px;
 		padding-right: 30px;
+	}
+
+	.show_img_cont .priseFoto{
+		top: 20%;
 	}
 
 

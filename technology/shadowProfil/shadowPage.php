@@ -31,6 +31,12 @@
 	</div>
 </div>
 
+<?php
+	$query = "SELECT id_img FROM hashTags WHERE name in ('теневой','контурная подсветка','парящий')";
+	$hashsSelect = ['#теневой', '#контурная подсветка', '#парящий'];
+	include "../../templates/exampWorkFoto.php";
+?>
+
 
 <div class="vert_line_cont device_vert">
 	<div class="vert_line"></div>
@@ -109,12 +115,6 @@
 		</picture>		
 	</div>
 </div>
-
-<?php
-	$query = "SELECT id_img FROM hashTags WHERE name in ('теневой','контурная подсветка','парящий')";
-	$hashsSelect = ['#теневой', '#контурная подсветка', '#парящий'];
-	include "../../templates/exampWorkFoto.php";
-?>
 
 
 <div class="price_section">

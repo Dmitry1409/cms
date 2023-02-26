@@ -17,6 +17,12 @@
 	</div>
 </div>
 
+<?php
+	$query = "SELECT id_img FROM hashTags WHERE name = 'фотопечать'";
+	$hashsSelect = ['#фотопечать'];
+	include "../../templates/exampWorkFoto.php";
+?>
+
 <div style="display: flex; justify-content: center; margin-top: 50px;">
 	<div class="vert_line"></div>
 </div>
@@ -199,13 +205,6 @@
 	</div>
 
 </div>
-
-<?php
-	$query = "SELECT id_img FROM hashTags WHERE name = 'фотопечать'";
-	$hashsSelect = ['#фотопечать'];
-	include "../../templates/exampWorkFoto.php";
-?>
-
 
 
 

@@ -150,13 +150,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
 
 	let footerRooms = document.querySelectorAll(".foot-room-item")
-	if(footerRooms){
-		if(f){
-			for(let i =0; i<footerRooms.length; i++){
-				footerRooms[i].addEventListener('click', footerRoomsAct)
-			}
-		}
-	}
 	if(initNumbMain == 2){
 		if(footerRooms){
 			for(let i =0; i<footerRooms.length; i++){
@@ -167,13 +160,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	
 
 	let questBlocks = document.querySelectorAll('.questBlock')
-	if(questBlocks){
-		if(f){
-			for(let i =0; i<questBlocks.length; i++){
-				questBlocks[i].addEventListener('click', answerClickAction)
-			}		
-		}
-	}
 	if(initNumbMain == 2){
 		if(questBlocks){
 			for(let i =0; i<questBlocks.length; i++){
