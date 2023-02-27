@@ -178,6 +178,10 @@
 			<span>Добавить <br> в избранное</span>
 		</div>
 		<div class="cont_left_right">
+			<span class="chechAutoCont">
+				<input type="checkbox" checked>
+				<span>авто</span>
+			</span>
 			<div class="count_img_cont">
 				<span><span>1</span> из <span><?php echo count($arr); ?></span></span>
 			</div>

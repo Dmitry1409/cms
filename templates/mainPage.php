@@ -10,7 +10,7 @@
 		<div class="vert_line"></div>
 	</div>
 	<div class="heder_present" style="position: relative; z-index: 2;">
-		<span>Технологии</span>
+		<span>Установим любой вид<br>потолка</span>
 	</div>
 	<div style="position: relative;">
 		<div class="padd_tech"></div>
@@ -123,7 +123,7 @@
 				</picture>				
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
-					<h3 class="tech_header">Освещение</h3>
+					<h3 class="tech_header">Споты</h3>
 					<a href="lighting" class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>

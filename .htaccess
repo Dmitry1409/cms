@@ -19,3 +19,5 @@ php_value log_errors_max_len 0
 </Files>
 
 DirectoryIndex index.php
+
+ErrorDocument 404 https://auroom-nn.ru

@@ -192,7 +192,7 @@
 						<div class="footer_icon">
 							<img src=<?php echo $root_dir."img/location.png"?>>
 						</div>
-						<span><?php echo $addres_comp?></span>
+						<span><?php echo $_SESSION['addres_comp']?></span>
 					</div>
 					<div class="footer_icon_text">
 						<div class="footer_icon">

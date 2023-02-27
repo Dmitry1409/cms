@@ -33,13 +33,9 @@ initNumbMain = 0
 window.addEventListener('DOMContentLoaded', ()=>{
 
 	initNumbMain +=1
-	let f = false
-	if(initNumbMain < 2){
-		f = true
-	}
 
 
-	if(f){
+	if(initNumbMain == 1){
 		let venLinkId = document.querySelector('#vendorsLinkId')
 		if(venLinkId){
 			venLinkId.addEventListener('click', ()=>{
@@ -54,6 +50,14 @@ window.addEventListener('DOMContentLoaded', ()=>{
 					location.href = location.origin+root_dir+"#vendorsSectionId"
 				}
 			})
+		}
+
+
+		let footerRooms = document.querySelectorAll(".foot-room-item")
+		if(footerRooms){
+			for(let i =0; i<footerRooms.length; i++){
+				footerRooms[i].addEventListener('click', footerRoomsAct)
+			}
 		}
 		
 		kontaktBtnId.addEventListener('click', ()=>{

@@ -81,6 +81,20 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		}
 	}
 
+	let chAuto = document.querySelector('.chechAutoCont input')
+	if(f){
+		if(chAuto){
+			chAuto.addEventListener('click', setAutoSlide)
+		}
+	}
+
+	function setAutoSlide(){
+		if(this.checked){
+			setInter()
+		}else{
+			delInter()
+		}
+	}
 
 	async function contrlHashAction(){
 		let arr = []
@@ -99,7 +113,9 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
 		let res = await fetch(`${root_dir}scripts_php/fotoExampHasTagAction.php?hashTags=${JSON.stringify(arr)}`)
 		if(res.ok){
-			resetSliderInterval()
+			if(chAuto.checked){
+				resetSliderInterval()
+			}
 			let val = await res.json()
 			insertImgHashTagAct(val)
 		}else{
@@ -209,7 +225,9 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	}
 	function like_img_action(){
 		plusCountFavorMenu()
-		resetSliderInterval()
+		if(chAuto.checked){
+			resetSliderInterval()
+		}
 		let target_img
 		if(this.classList.contains('like_cont_940')){
 			target_img = document.querySelector('.examp_right')
@@ -287,7 +305,9 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	function show_img(){
 		let cont = document.querySelector('.example_img_cont')
 		if(!cont.classList.contains('show_img_cont')){
-			resetSliderInterval()
+			if(chAuto.checked){
+				resetSliderInterval()
+			}
 			document.querySelector('body').style.overflow = "hidden"
 			let meta = document.querySelector('meta[name="viewport"]')
 			meta.remove()
@@ -401,19 +421,27 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			like_text.innerHTML = "Добавить<br>в избранное"
 		}
 	}
-	function resetSliderInterval(){
+	function delInter(){
 		clearInterval(id_inter_slid)
 		clearTimeout(id_timeOut)
+	}
+	function setInter(){
+		id_inter_slid = setInterval(()=>{
+			examp_right_action(null, true , true)
+		}, intervalVal)
+	}
+	function resetSliderInterval(){
+		delInter()
 		id_timeOut = setTimeout(()=>{
-			id_inter_slid = setInterval(()=>{
-				examp_right_action(null, true , true)
-			}, intervalVal)
+			setInter()
 		}, timeOutVal)
 	}
 	function examp_right_action(e, chan_like = true, flInterval){
 		if(Date.now() > time_protect){
 			if(!flInterval){
-				resetSliderInterval()
+				if(chAuto.checked){
+					resetSliderInterval()
+				}
 			}
 			time_protect = Date.now() + 500
 
@@ -482,7 +510,9 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	function examp_left_action(e, chan_like = true){
 		if(Date.now()>time_protect){
 
-			resetSliderInterval()
+			if(chAuto.checked){
+				resetSliderInterval()
+			}
 			
 			time_protect = Date.now() + 500
 

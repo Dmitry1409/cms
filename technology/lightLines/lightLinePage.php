@@ -3,7 +3,7 @@
 		<div class="vert_line"></div>
 	</div>
 	<div class="heder_present" style="position: relative; z-index: 2;">
-		<span>Световые линии</span>
+		<span>Световые линии <br>для любого помещения</span>
 	</div>
 	
 	<div class="lightsLines_flex">
