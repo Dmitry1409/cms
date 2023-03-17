@@ -16,5 +16,4 @@
 					"Teqtum"=> "vendorsFoil/Teqtum",
 					"favourites" => "favourites",
 					"certificates" => "certificates");
-
 ?>

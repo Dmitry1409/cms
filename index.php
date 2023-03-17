@@ -3,24 +3,7 @@
 	$db = new SQLite3('cms.db');
 	require "config_cms.php";
 
-	$p = explode("/", $_SERVER['REQUEST_URI']);
-
-	$listRout = array('svetLine' => "technology/lightLines",
-					"shadProf"=> "technology/shadowProfil",
-					"multiLev" => "technology/multiLevel",
-					"hidCur"=> "technology/hiddenCurtain",
-					"textCol"=> "technology/textureColor",
-					"dublVis"=> "technology/dubleVisionPrint",
-					"carCell"=> "technology/carvedCelling",
-					"ligNich" => "technology/ligthNiches",
-					"starSky" => "technology/starsSky",
-					"lighting" => "lighting", 
-					"MSD"=> "vendorsFoil/MSD",
-					"BAUF"=> "vendorsFoil/BAUF",
-					"Pongs"=> "vendorsFoil/Pongs",
-					"Teqtum"=> "vendorsFoil/Teqtum",
-					"favourites" => "favourites",
-					"certificates" => "certificates");
+	include "templates/listRouts.php";
 
 	$listTemplates = array("technologylightLines"=>["technology/headLines.php", "technology/lightLinePage.php"],
 						"technologyshadowProfil"=>["technology/headShadow.php", "technology/shadowPage.php"],
@@ -38,6 +21,8 @@
 						"lighting"=>["headLighting.php", "lightingPage.php"],
 						"favourites"=>["headFavourites.php", "FavouritesPage.php"],
 						"certificates"=>["headCertificates.php", "certificatesPage.php"]);
+
+	$p = explode("/", $_SERVER['REQUEST_URI']);
 
 	$clearArr = [];
 	for($i = 0; $i<count($p); $i++){

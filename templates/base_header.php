@@ -128,8 +128,13 @@
 				<div class="line_butt"></div>
 				<?php
 					if(array_key_exists("favourImg", $_SESSION) or array_key_exists('buyProducts', $_SESSION)){
-						$c = count($_SESSION['favourImg']) + count($_SESSION['buyProducts']);
-
+						$c = null;
+						if(array_key_exists("favourImg", $_SESSION)){
+							$c = count($_SESSION['favourImg']);
+						}
+						if(array_key_exists("buyProducts", $_SESSION)){
+							$c = $c + count($_SESSION['buyProducts']);
+						}
 						echo "<a class='menu_item favourIndex' href=".$GLOBALS['root_dir'].$GLOBALS['listRout']['favourites'].">Избранное<span class='favour_count_menu'>$c</span></a>";
 					}else{
 						echo "<a class='menu_item favourIndex' href=".$GLOBALS['root_dir'].$GLOBALS['listRout']['favourites'].">Избранное<span></span></a>";

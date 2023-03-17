@@ -3,7 +3,7 @@
 		$query = "все";
 		$hashsSelect = ['#все'];
 		include "exampWorkFoto.php";
-		include "../listRouts.php";
+		include "listRouts.php";
 	?>
 	
 
