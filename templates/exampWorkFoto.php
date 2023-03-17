@@ -7,6 +7,7 @@
 
 <?php
 	$arr = [];
+	$db = $GLOBALS['db'];
 	if($query != "все"){
 		$a = [];
 		$id_img = $db->query($query);
@@ -102,8 +103,8 @@
 		<div class="example_img_cont">
 			<?php
 				for($i = 0; $i<12; $i++){
-					$webp = $root_dir.$arr[$i]['webp'];
-					$jpg = $root_dir.$arr[$i]['jpg'];
+					$webp = $GLOBALS['root_dir'].$arr[$i]['webp'];
+					$jpg = $GLOBALS['root_dir'].$arr[$i]['jpg'];
 					if($i < 3){
 						echo "<picture class='examp_none'>";
 					}

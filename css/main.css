@@ -2640,6 +2640,14 @@ textarea.invalidValueCalculate{
 
 }
 
+@media(min-width: 1840px){
+	body{
+		width: 1800px;
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+}
+
 
 
 

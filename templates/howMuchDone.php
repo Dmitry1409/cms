@@ -5,7 +5,7 @@
 	<span>Нами установлено</span>
 </div>
 <?php
-	$res = $db->query('SELECT * FROM howMuchDone');
+	$res = $GLOBALS['db']->query('SELECT * FROM howMuchDone');
 	$a = [];
 	$fl = false;
 	while($r = $res->fetchArray(SQLITE3_ASSOC)){
@@ -36,7 +36,7 @@
 		}
 	}
 	if($fl){
-		$res = $db->query('SELECT * FROM howMuchDone');
+		$res = $GLOBALS['db']->query('SELECT * FROM howMuchDone');
 	}
 
 	while($r = $res->fetchArray(SQLITE3_ASSOC)){
@@ -44,8 +44,6 @@
 	}
 
 	function updateVal($row, $frequ, $maxVal){
-		global $db;
-	
 		$dif = time() - $row['expires'];
 		$dif = (int) ($dif / $frequ);
 		$dif = $dif + 1;
@@ -57,10 +55,10 @@
 		$allVall = $row['value'] + $allVall;
 		$id = $row['id'];
 		$q = "UPDATE howMuchDone SET value = $allVall WHERE id = $id";
-		$db->exec($q);
+		$GLOBALS['db']->exec($q);
 		$t = time() + $frequ;
 		$q = "UPDATE howMuchDone SET expires = $t WHERE id = $id";
-		$db->exec($q);
+		$GLOBALS['db']->exec($q);
 	}
 ?>
 <div class="howMuchDoneSection">

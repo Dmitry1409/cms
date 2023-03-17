@@ -104,7 +104,7 @@
 	<div class="cont_grid_pres">
 		<div class="grid_item_pres dop_style_6_step">
 			<div  style="margin-right: 20px;" class="present_icon">
-				<img src=<?php echo $root_dir."img/mainPage/w_mail.webp"?>>
+				<img src=<?php echo $GLOBALS['root_dir']."img/mainPage/w_mail.webp"?>>
 			</div>
 			<div class="present_text_block" style="margin-left: unset;">
 				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Оформляем заявку</div>
@@ -113,7 +113,7 @@
 		</div>
 		<div class="grid_item_pres dop_style_6_step">
 			<div  style="margin-right: 20px;" class="present_icon">
-				<img src=<?php echo $root_dir."img/mainPage/w_ruletka.webp"?>>
+				<img src=<?php echo $GLOBALS['root_dir']."img/mainPage/w_ruletka.webp"?>>
 			</div>
 			<div class="present_text_block" style="margin-left: unset;">
 				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Выезд замерщика</div>
@@ -122,7 +122,7 @@
 		</div>
 		<div class="grid_item_pres dop_style_6_step">
 			<div  style="margin-right: 20px;" class="present_icon">
-				<img src=<?php echo $root_dir."img/mainPage/w_servise.webp"?>>
+				<img src=<?php echo $GLOBALS['root_dir']."img/mainPage/w_servise.webp"?>>
 			</div>
 			<div class="present_text_block" style="margin-left: unset;">
 				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Подбор материала и цвета</div>
@@ -131,7 +131,7 @@
 		</div>
 		<div class="grid_item_pres dop_style_6_step">
 			<div  style="margin-right: 20px;" class="present_icon">
-				<img src= <?php echo $root_dir."img/mainPage/w_dogovor.webp"?>>
+				<img src= <?php echo $GLOBALS['root_dir']."img/mainPage/w_dogovor.webp"?>>
 			</div>
 			<div class="present_text_block" style="margin-left: unset;">
 				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Подписываем договор</div>
@@ -140,7 +140,7 @@
 		</div>
 		<div class="grid_item_pres dop_style_6_step">
 			<div  style="margin-right: 20px;" class="present_icon">
-				<img src=<?php echo $root_dir."img/mainPage/w_delivery.webp"?>>
+				<img src=<?php echo $GLOBALS['root_dir']."img/mainPage/w_delivery.webp"?>>
 			</div>
 			<div class="present_text_block" style="margin-left: unset;">
 				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Производство и доставка</div>
@@ -149,7 +149,7 @@
 		</div>
 		<div class="grid_item_pres dop_style_6_step">
 			<div  style="margin-right: 20px;" class="present_icon">
-				<img src=<?php echo $root_dir."img/mainPage/w_setting.webp"?>>
+				<img src=<?php echo $GLOBALS['root_dir']."img/mainPage/w_setting.webp"?>>
 			</div>
 			<div class="present_text_block" style="margin-left: unset;">
 				<div class="pres_hed dop_style_6_step"><span style="color: var(--main-col-1);">&mdash;</span>&nbsp;Производим установку</div>
@@ -170,7 +170,7 @@
 		</div>
 		<div class="about_cont">
 			<div class="pad_color"></div>
-			<img src=<?php echo $root_dir."img/about.jpg"?>>
+			<img src=<?php echo $GLOBALS['root_dir']."img/about.jpg"?>>
 			<div class="about_text">
 				<p>Решили установить натяжные потолки в зале или в спальне, на кухне или в детской, быть может, затеяли комплексный ремонт во всей квартире - для любого случая Вы сможете найти в наших каталогах массу заманчивых предложений, цены на которые Вас также приятно удивят:
 				</p>
@@ -190,33 +190,33 @@
 				<div class="footer_cont_1">
 					<div class="footer_icon_text">
 						<div class="footer_icon">
-							<img src=<?php echo $root_dir."img/location.png"?>>
+							<img src=<?php echo $GLOBALS['root_dir']."img/location.png"?>>
 						</div>
 						<span><?php echo $_SESSION['addres_comp']?></span>
 					</div>
 					<div class="footer_icon_text">
 						<div class="footer_icon">
-							<img src=<?php echo $root_dir."img/phone.png"?>>
+							<img src=<?php echo $GLOBALS['root_dir']."img/phone.png"?>>
 						</div>
 						<div class="footer_inf_cont">				
-							<a href='<?php echo "tel:$comp_telef1"?>'><?php echo $comp_telef1?></a>
-							<a href='<?php echo "tel:$comp_telef2"?>'><?php echo $comp_telef2?></a>
+							<a href='<?php echo "tel:".$GLOBALS["comp_telef1"]?>'><?php echo $GLOBALS['comp_telef1']?></a>
+							<a href='<?php echo "tel:".$GLOBALS["comp_telef2"]?>'><?php echo $GLOBALS['comp_telef2']?></a>
 						</div>
 					</div>
 				</div>
 				<div class="footer_cont_2">
 					<div class="footer_icon_text">
 						<div class="footer_icon">
-							<img src=<?php echo $root_dir."img/mail_f.png"?>>
+							<img src=<?php echo $GLOBALS['root_dir']."img/mail_f.png"?>>
 						</div>
 						<div class="footer_inf_cont">
 							<span class="footer_email">Email:</span>
-							<span class=""><?php echo $email_comp?></span>
+							<span class=""><?php echo $GLOBALS['email_comp']?></span>
 						</div>
 					</div>
 					<div class="footer_icon_text">
 						<div class="footer_icon">
-							<img src=<?php echo $root_dir."img/time.png"?>>
+							<img src=<?php echo $GLOBALS['root_dir']."img/time.png"?>>
 						</div>
 						<div class="footer_inf_cont">
 							<span class="footer_email">График работы:</span>
@@ -227,8 +227,8 @@
 			</div>
 			<div class="footer_cont_main_2">
 				<div class="footer_menu">
-					<a href=<?php echo $root_dir."lighting"?>>Товары</a>
-					<a href=<?php echo $root_dir."#techSectionIdAnch"?>>Услуги</a>
+					<a href=<?php echo $GLOBALS['root_dir']."lighting"?>>Товары</a>
+					<a href=<?php echo $GLOBALS['root_dir']."#techSectionIdAnch"?>>Услуги</a>
 					<a style="color: rgb(255 255 255 / 50%);">Прайс-лист</a>
 					<a style="color: rgb(255 255 255 / 50%);">Статьи</a>
 					<a id="vendorsLinkId">Поставщики</a>
@@ -295,36 +295,36 @@
 		</div>
 		<div class="footer_locations">
 			<div>
-				<h4><?php echo $COMPANY_NAME?><br> в Нижегородской области</h4>
+				<h4><?php echo $GLOBALS['COMPANY_NAME']?><br> в Нижегородской области</h4>
 				<ul>
-					<li><a href=<?php echo $root_dir?>><span>Нижний Новгород</span></a></li>
-					<li><a href=<?php echo $root_dir?>><span>Дзержинск</span></a></li>
-					<li><a href=<?php echo $root_dir?>><span>Кстово</span></a></li>
-					<li><a href=<?php echo $root_dir?>><span>Бор</span></a></li>
-					<li><a href=<?php echo $root_dir?>><span>Балахна</span></a></li>
-					<li><a href=<?php echo $root_dir?>><span>Богородск</span></a></li>
-					<li><a href=<?php echo $root_dir?>><span>Городец</span></a></li>
-					<li><a href=<?php echo $root_dir?>><span>Заволжье</span></a></li>
-					<li><a href=<?php echo $root_dir?>><span>Павлово</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir']?>><span>Нижний Новгород</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir']?>><span>Дзержинск</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir']?>><span>Кстово</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir']?>><span>Бор</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir']?>><span>Балахна</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir']?>><span>Богородск</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir']?>><span>Городец</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir']?>><span>Заволжье</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir']?>><span>Павлово</span></a></li>
 				</ul>
 			</div>
 			<div>
 				<h4>Технологии</h4>
 				<ul>
-					<li><a href=<?php echo $root_dir.'technology/textureColor'?>><span>Матовые</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/textureColor'?>><span>Глянцевые</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/textureColor'?>><span>Сатиновые</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/textureColor'?>><span>Свето-пропускные</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/hiddenCurtain'?>><span>Скрытая гардина</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/multiLevel'?>><span>Двухуровные</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/shadowProfil'?>><span>Парящие</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/shadowProfil'?>><span>Теневые</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/shadowProfil'?>><span>С подсветкой</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/lightLines'?>><span>Световые линии</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/dubleVisionPrint'?>><span>С фотопечатью</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/carvedCelling'?>><span>Резные</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/starsSky'?>><span>Звездное небо</span></a></li>
-					<li><a href=<?php echo $root_dir.'technology/ligthNiches'?>><span>Световые ниши</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir'].'technology/textureColor'?>><span>Матовые</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir'].'technology/textureColor'?>><span>Глянцевые</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir'].'technology/textureColor'?>><span>Сатиновые</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir'].'technology/textureColor'?>><span>Свето-пропускные</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir'].'technology/hiddenCurtain'?>><span>Скрытая гардина</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir'].'technology/multiLevel'?>><span>Двухуровные</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir'].'technology/shadowProfil'?>><span>Парящие</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir'].'technology/shadowProfil'?>><span>Теневые</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir'].'technology/shadowProfil'?>><span>С подсветкой</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir'].'technology/lightLines'?>><span>Световые линии</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir'].'technology/dubleVisionPrint'?>><span>С фотопечатью</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir'].'technology/carvedCelling'?>><span>Резные</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir'].'technology/starsSky'?>><span>Звездное небо</span></a></li>
+					<li><a href=<?php echo $GLOBALS['root_dir'].'technology/ligthNiches'?>><span>Световые ниши</span></a></li>
 				</ul>
 			</div>
 			<div>

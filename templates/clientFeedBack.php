@@ -87,6 +87,7 @@
 	<div class="feed_main_cont">
 
 		<?php
+			$db = $GLOBALS['db'];
 			$res = $db->query("SELECT * FROM feedBackClient WHERE foto_file_name_arr NOT NULL AND scope = 5");
 			$scope5 = [];
 			while($r = $res->fetchArray(SQLITE3_ASSOC)){
@@ -138,9 +139,9 @@
 				}
 					echo "<div class=feed_back_avatar>";
 					if($arr[$i]['avatar_file_name']){
-						$p = $root_dir."upload_img/avatars/400x400/".$arr[$i]['avatar_file_name'];
+						$p = $GLOBALS['root_dir']."upload_img/avatars/400x400/".$arr[$i]['avatar_file_name'];
 					}else{
-						$p = $root_dir."img/empty_avatar.png";
+						$p = $GLOBALS['root_dir']."img/empty_avatar.png";
 					}
 						echo "<img src=$p>";
 					echo"</div>";
@@ -154,7 +155,7 @@
 						echo "<div class='feed4countWrapp'>";
 						$js = json_decode($arr[$i]['foto_file_name_arr']);
 						for($j=0; $j<count($js); $j++){
-								$dir = $root_dir."upload_img/foto_review/100x100/";
+								$dir = $GLOBALS['root_dir']."upload_img/foto_review/100x100/";
 								$p = $dir.$js[$j];					
 								echo "<img src=$p>";
 						}

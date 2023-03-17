@@ -3,6 +3,7 @@
 		$query = "все";
 		$hashsSelect = ['#все'];
 		include "exampWorkFoto.php";
+		include "../listRouts.php";
 	?>
 	
 
@@ -23,7 +24,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Световые линии</h3>
-					<a href="technology/lightLines" class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $listRout["svetLine"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">				
@@ -34,7 +35,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Парящие<br>Теневые<br>Подсветка</h3>
-					<a href="technology/shadowProfil" class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $listRout["shadProf"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">				
@@ -45,7 +46,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Многоуровневые</h3>
-					<a href="technology/multiLevel" class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $listRout["multiLev"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">
@@ -56,7 +57,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Ниши<br>Гардины</h3>
-					<a href="technology/hiddenCurtain" class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $listRout["hidCur"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">
@@ -67,7 +68,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Фактура<br>Цвет</h3>
-					<a href="technology/textureColor" class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $listRout["textCol"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">
@@ -78,7 +79,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Double Vision<br>Фотопечать</h3>
-					<a href="technology/dubleVisionPrint" class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $listRout["dublVis"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">
@@ -89,7 +90,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Резные</h3>
-					<a href="technology/carvedCelling" class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $listRout["carCell"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">
@@ -100,7 +101,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Световые ниши</h3>
-					<a href="technology/ligthNiches" class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $listRout["ligNich"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			
@@ -113,7 +114,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Звездное небо</h3>
-					<a href="technology/starsSky" class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $listRout["starSky"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">
@@ -124,7 +125,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Споты</h3>
-					<a href="lighting" class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $listRout["lighting"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 		</div>
@@ -211,7 +212,7 @@
 			<span>Экспресс расчет</span>
 		</div>
 		<?php
-			$res = $db->query("SELECT id, name, price FROM priceForCalcult WHERE id IN (1, 2, 3, 4, 6)");
+			$res = $GLOBALS['db']->query("SELECT id, name, price FROM priceForCalcult WHERE id IN (1, 2, 3, 4, 6)");
 			$val = [];
 			while($r = $res->fetchArray(SQLITE3_ASSOC)){
 				$val[$r['id']] = $r;
@@ -245,7 +246,7 @@
 
 	<div  class="vendorSection">
 		<?php
-			$res = $db->query("SELECT * FROM product WHERE id > 52 AND id < 60");
+			$res = $GLOBALS['db']->query("SELECT * FROM product WHERE id > 52 AND id < 60");
 			$val = [];
 			while($r= $res->fetchArray(SQLITE3_ASSOC)){
 				$val[$r['id']] = $r;
@@ -261,7 +262,7 @@
 					<div>
 						<span>Матовое, глянцевое и сатиновое плотно ПВХ. Гарантия 12 лет</span>
 						<span class="vendorPriseCont">от <span><?php echo $val[53]['price']?></span> руб/м2</span>
-						<a href="vendorsFoil/MSD">Подробнее</a>
+						<a href='<?php echo $listRout["MSD"]?>'>Подробнее</a>
 					</div>
 				</div>
 			</div>
@@ -275,7 +276,7 @@
 					<div>
 						<span>Фактуры: глянцевый потолок, сатин, мат, полупрозрачная, ПВХ (Германия)</span>
 						<span class="vendorPriseCont">от <span><?php echo $val[57]['price']?></span> руб/м2</span>
-						<a href="vendorsFoil/BAUF">Подробнее</a>
+						<a href='<?php echo $listRout["BAUF"]?>'>Подробнее</a>
 					</div>
 				</div>
 			</div>
@@ -290,7 +291,7 @@
 					<div>
 						<span>Полотна: матовое, глянцевое, сатиновое, ПВХ (Германия). Гарантия 15 лет</span>
 						<span class="vendorPriseCont"><span><?php echo $val[59]['price']?></span> руб/м2</span>
-						<a href="vendorsFoil/Pongs">Подробнее</a>
+						<a href='<?php echo $listRout["Pongs"]?>'>Подробнее</a>
 					</div>
 				</div>
 			</div>
@@ -304,7 +305,7 @@
 					<div>
 						<span>Полотна: глянец, сатин, мат, ПВХ (Германия). Класс KM2, негорючие</span>
 						<span class="vendorPriseCont"><span><?php echo $val[58]['price']?></span> руб/м2</span>
-						<a href="vendorsFoil/Teqtum">Подробнее</a>
+						<a href='<?php echo $listRout["Teqtum"]?>'>Подробнее</a>
 					</div>
 				</div>
 			</div>
@@ -370,7 +371,7 @@
 					</div>
 				</div>
 				<div role="button" class="cert_btn_cont">
-					<a href="certificates" class="all_doc_btn">Все документы</a>
+					<a href='<?php echo $listRout["certificates"]?>' class="all_doc_btn">Все документы</a>
 					<!-- <div class="prise_btn"><div class="btn_animate"></div>Получить прайс лист</div> -->
 				</div>
 			</div>

@@ -1,4 +1,3 @@
-
 <body>
 	<div class="background_menu"></div>
 	<div class="modal_call_me">
@@ -40,11 +39,11 @@
 	<div role="banner" class="header_wrapp">
 		<div class="cap_container">
 			<div class="combo_header">
-				<a class="logo_header" href=<?php echo $root_dir?>>
-					<img src=<?php echo $root_dir."img/0001-0250.gif"?>>
+				<a class="logo_header" href=<?php echo $GLOBALS['root_dir']?>>
+					<img src=<?php echo $GLOBALS['root_dir']."img/0001-0250.gif"?>>
 				</a>
 				<div class="name_company">
-					<a href=<?php echo $root_dir?>><?php echo $COMPANY_NAME?></a>
+					<a href=<?php echo $GLOBALS['root_dir']?>><?php echo $GLOBALS['COMPANY_NAME']?></a>
 					<span>Производство и установка натяжных потолков</span>
 				</div>
 			</div>
@@ -80,8 +79,8 @@
 					</div>
 					<div class="container_tel">
 						<div class="tel-rel">							
-							<a href='<?php echo "tel:$comp_telef1"?>'><?php echo $comp_telef1?></a>
-							<a href='<?php echo "tel:$comp_telef2"?>'><?php echo $comp_telef2?></a>
+							<a href='<?php echo "tel:".$GLOBALS["comp_telef1"]?>'><?php echo $GLOBALS['comp_telef1']?></a>
+							<a href='<?php echo "tel:".$GLOBALS["comp_telef2"]?>'><?php echo $GLOBALS['comp_telef2']?></a>
 						</div>
 						<span><?php echo $_SESSION['cityHeader'];?></span>
 					</div>
@@ -90,32 +89,32 @@
 		</div>
 		<div class="container_menu">
 			<div role ="navigation" class="menu_flex_wrap">
-				<a class="menu_item" href=<?php echo $root_dir?> >Главная</a>
+				<a class="menu_item" href=<?php echo $GLOBALS['root_dir']?>>Главная</a>
 				<div class="line_butt"></div>
 				<div class="cont_940">
 					<div class="menu_item sub_menu_btn"><span>Технологии</span><span></span></div>
 					<div role="menu" class="sub_menu">
-						<a class="menu_item" href=<?php echo $root_dir."technology/lightLines"?>>Световые линии</a>
-						<a class="menu_item" href=<?php echo $root_dir."technology/shadowProfil"?>>Парящие & Теневые & Подсветка</a>
-						<a class="menu_item" href=<?php echo $root_dir."technology/multiLevel"?> >Многоуровневые</a>
-						<a class="menu_item" href=<?php echo $root_dir."technology/hiddenCurtain"?>>Ниши & Гардины</a>
-						<a class="menu_item" href=<?php echo $root_dir."technology/textureColor"?>>Фактура & Цвет</a>
-						<a class="menu_item" href=<?php echo $root_dir."technology/dubleVisionPrint"?>>Double Vision & Фотопечать</a>
-						<a class="menu_item" href=<?php echo $root_dir."technology/carvedCelling"?>>Резные</a>
-						<a class="menu_item" href=<?php echo $root_dir."technology/ligthNiches"?>>Световые ниши</a>
-						<a class="menu_item" href=<?php echo $root_dir."technology/starsSky"?>>Звездное небо</a>
+						<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['svetLine']?>>Световые линии</a>
+						<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['shadProf']?>>Парящие & Теневые & Подсветка</a>
+						<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['multiLev']?> >Многоуровневые</a>
+						<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['hidCur']?>>Ниши & Гардины</a>
+						<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['textCol']?>>Фактура & Цвет</a>
+						<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['dublVis']?>>Double Vision & Фотопечать</a>
+						<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['carCell']?>>Резные</a>
+						<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['ligNich']?>>Световые ниши</a>
+						<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['starSky']?>>Звездное небо</a>
 					</div>
 				</div>
 				<div class="line_butt"></div>
-				<a class="menu_item" href=<?php echo $root_dir."lighting"?>>Споты</a>			
+				<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['lighting']?>>Споты</a>			
 				<div class="line_butt"></div>
 				<div class="cont_940">
 					<div class="menu_item sub_menu_btn"><span>Производители ПВХ</span><span></span></div>
 					<div role="menu" class="sub_menu">
-						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/MSD"?>>MSD</a>
-						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/BAUF"?> >BAUF</a>
-						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/Pongs"?>>Pongs</a>
-						<a class="menu_item" href=<?php echo $root_dir."vendorsFoil/Teqtum"?>>Teqtum</a>
+						<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['MSD']?>>MSD</a>
+						<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['BAUF']?> >BAUF</a>
+						<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['Pongs']?>>Pongs</a>
+						<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['Teqtum']?>>Teqtum</a>
 					</div>
 				</div>	
 				<div class="line_butt"></div>
@@ -131,11 +130,12 @@
 					if(array_key_exists("favourImg", $_SESSION) or array_key_exists('buyProducts', $_SESSION)){
 						$c = count($_SESSION['favourImg']) + count($_SESSION['buyProducts']);
 
-						echo "<a class='menu_item favourIndex' href=".$root_dir."favourites>Избранное<span class='favour_count_menu'>$c</span></a>";
+						echo "<a class='menu_item favourIndex' href=".$GLOBALS['root_dir'].$GLOBALS['listRout']['favourites'].">Избранное<span class='favour_count_menu'>$c</span></a>";
 					}else{
-						echo "<a class='menu_item favourIndex' href=".$root_dir."favourites>Избранное<span></span></a>";
+						echo "<a class='menu_item favourIndex' href=".$GLOBALS['root_dir'].$GLOBALS['listRout']['favourites'].">Избранное<span></span></a>";
 					}
 				?>
+				<div class="line_butt"></div>
 				<div id="kontaktBtnId"  class="menu_item">Контакты</div>
 
 				

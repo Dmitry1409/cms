@@ -164,13 +164,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	
 
 	let questBlocks = document.querySelectorAll('.questBlock')
-	if(initNumbMain == 2){
-		if(questBlocks){
-			for(let i =0; i<questBlocks.length; i++){
-				questBlocks[i].addEventListener('click', answerClickAction)
-			}	
-		}
+	if(questBlocks){
+		for(let i =0; i<questBlocks.length; i++){
+			questBlocks[i].addEventListener('click', answerClickAction)
+		}	
 	}
+	
 
 
 	let idTimeOutAnswer
