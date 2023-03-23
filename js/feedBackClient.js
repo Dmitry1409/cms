@@ -2,10 +2,7 @@
 initNumbFed = 0
 window.addEventListener('DOMContentLoaded',()=>{
 	initNumbFed +=1
-	let f = false
-	if(initNumbFed < 2){
-		f = true
-	}
+
 	let time_feedback = Date.now()
 
 	let fotoGalObj = {
@@ -25,14 +22,14 @@ window.addEventListener('DOMContentLoaded',()=>{
 		}
 	}
 
-	if(f){
+	if(initNumbFed < 2){
 		document.addEventListener('scroll', scrollActionFeedBack)
 	}
 	let id_intervalFeed
 	let id_timeOutFeed
 	let flIntervalFeed = false
 
-	if(f){		
+	if(initNumbFed < 2){		
 		document.querySelector('.add_feedback_section .calc_btn').addEventListener('click', add_feedback_action)
 
 		document.querySelector('.feed_left').addEventListener('click', feed_left_action)
@@ -41,31 +38,31 @@ window.addEventListener('DOMContentLoaded',()=>{
 
 	let sortFeedBackBtns = document.querySelectorAll('.feedBackSortCont > div')
 	for(let i=0; i<sortFeedBackBtns.length; i++){
-		if(f){
+		if(initNumbFed < 2){
 			sortFeedBackBtns[i].addEventListener('click', sortFeedBackAction)
 		}
 	}
 
 	let imgs_feedback = document.querySelectorAll('.feed4countWrapp img')
 	for(let i=0; i<imgs_feedback.length; i++){
-		if(f){
+		if(initNumbFed < 2){
 			imgs_feedback[i].addEventListener('click', feedbackImgsShow)
 		}
 	}
 
-	if(f){
+	if(initNumbFed < 2){
 		document.querySelector('.add_feedback_section .calc_btn').addEventListener('click', add_feedback_action)
 	}
 
 	let scope_svg = document.querySelectorAll('.add_feedback_section svg')
 	for(let i = 0; i<scope_svg.length; i++){
-		if(f){
+		if(initNumbFed < 2){
 			scope_svg[i].addEventListener('click', feedback_scope_view_action)
 		}
 	}
 
 	
-	if(f){
+	if(initNumbFed < 2){
 		document.querySelector('.add_feedback_btn_open_cont > div').addEventListener('click', add_feedback_open)
 	}
 
@@ -76,7 +73,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 			let rect = cont.getBoundingClientRect()
 			if(rect.y < 100){
 				flIntervalFeed = true
-				setTimeOutIntervalFeed(4000, 4000)	
+				// setTimeOutIntervalFeed(4000, 4000)	
 			}
 		}
 	}
@@ -140,7 +137,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 				addWarningField(field_name, "invalidValueCalculate")
 				fl = false
 			}
-			if(!(/^.+$/i.test(feedback_textaria.value))){
+			if(!(/^[^]+$/i.test(feedback_textaria.value))){
 				addWarningField(feedback_textaria, "invalidValueCalculate")
 				fl = false
 			}
@@ -564,6 +561,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 			a.classList = 'fotoGalaryPicRight'
 			r.classList = "fotoGalaryPicleft"
 
+
 			setTimeout(()=>{
 				r.style.transition = ""
 			},400)
@@ -588,7 +586,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 			}
 
 
-			getAndSetSrc(n_img, l.querySelector('img'))
+			getAndSetSrc(n_img, r.querySelector('img'))
 
 			fotoGalObj.timeProtect = Date.now() + 600
 			if(fl){
@@ -596,6 +594,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 				return
 			}
 			fotoGalObj.curIndex -=1
+
 		}
 	}
 	function feedBackImgShowLeftAct(){
@@ -692,6 +691,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 
 		document.querySelector('.fotoGalaryLefttBtn').addEventListener('click', feedBackImgShowRightAct)
 		document.querySelector('.fotoGalaryRightBtn').addEventListener('click', feedBackImgShowLeftAct)
+
 	}
 	function getAndSetSrc(from_elem, to_elem){
 		let src = from_elem.getAttribute('src')

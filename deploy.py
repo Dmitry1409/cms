@@ -72,7 +72,7 @@ def main():
 	print(f"Файл {basa} скопирован в {nSite}")
 
 	for fol in copFol:
-		shutil.copytree(fol, nSite+'/'+fol)
+		shutil.copytree(publFol+"/"+fol, nSite+'/'+fol)
 		print(f"Папка {fol} скопирована в папку {nSite}")
 
 	shutil.rmtree(publFol)

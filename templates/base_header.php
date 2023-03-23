@@ -148,7 +148,7 @@
 		</div>
 		<div class="header_lozung">
 			<span>Натяжные потолки всего за 200 руб/м2</span>
-			<span>оставьте заявку и получите доп. скидку 1000 руб.</span>
+			<span>*без учета установки. Оставляй заявку на замер</span>
 			<a role="button"><div class="btn_animate"></div>Оставить заявку</a>
 		</div>
 		<div class="svg_triangle">

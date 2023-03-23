@@ -16,13 +16,13 @@
 	<div style="position: relative;">
 		<div class="padd_tech"></div>
 		<div class="tech_grid">
-			<div class="tech_elem">
+			<div class="tech_elem">				
 				<picture class="tech_picture">
 					<source srcset="img/mainPage/webp/svetovie_line.webp" type="image/webp">
 					<img class="img_skew" src="img/mainPage/jpg/svetovie_line.jpg" alt="Световые линии">
 				</picture>				
 				<div class="tech_mask"></div>
-				<div class="skew_revers">
+				<div href="/cms/" class="skew_revers">
 					<h3 class="tech_header">Световые линии</h3>
 					<a href='<?php echo $listRout["svetLine"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>

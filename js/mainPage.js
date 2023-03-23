@@ -28,9 +28,15 @@ window.addEventListener('DOMContentLoaded',()=>{
 		for(let i = 0; i < tech_elem.length; i++){
 			tech_elem[i].addEventListener('mouseover', tech_elem_over_action)
 			tech_elem[i].addEventListener('mouseout', tech_elem_out_action)
+			tech_elem[i].addEventListener('click', techLinkAct)
 		}
 	}
 	
+
+	function techLinkAct(){
+		console.log(this)
+		window.location.href = this.querySelector('a').href
+	}
 
 	function calculate_action(){
 		delWarnigClassCalcult()

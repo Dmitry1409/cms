@@ -45,19 +45,23 @@
 
 			}
 		})
+		let countInitStart = 0
 		window.addEventListener('DOMContentLoaded',()=>{
-
-			let flHowMuchStart = true
-			document.addEventListener('scroll', howMuchStart)
+			let flHowMuchStart
+			countInitStart += 1
+			let cont = document.querySelector('.howMuchDoneSection')
 			let howMuchSpans = document.querySelectorAll('.howMuchDoneSection > div > span span:first-child')
 			let howMuchCont = document.querySelectorAll('.howMuchCont')
-
 			let howMuchDoneData = []
 			let duractAnim = [500, 1000, 1500, 2000, 2500, 3000]
 			let arrIdInterv = [0,0,0,0,0,0]
-			for(let i = 0; i<howMuchSpans.length; i++){
-				howMuchDoneData.push(howMuchSpans[i].innerText)
-				howMuchSpans[i].innerText = ""
+			if(countInitStart == 1){				
+				flHowMuchStart = true
+				document.addEventListener('scroll', howMuchStart)				
+				for(let i = 0; i<howMuchSpans.length; i++){
+					howMuchDoneData.push(howMuchSpans[i].innerText)
+					howMuchSpans[i].innerText = ""
+				}
 			}
 
 			function setValueInterv(ind_elem){
@@ -79,14 +83,14 @@
 				d.classList.add('borderEffect')
 			}
 			function howMuchStart(){
-				let cont = document.querySelector('.howMuchDoneSection')
-				let cont_rect = cont.getBoundingClientRect()
+				cont_rect = cont.getBoundingClientRect()			
 				if(cont_rect.y < 500){
 					if(flHowMuchStart){
 						flHowMuchStart = false
 						for(let i = 0; i< howMuchSpans.length; i++){
 							setValueInterv(i)
 						}
+						document.removeEventListener('scroll', howMuchStart)
 					}
 				}
 			}

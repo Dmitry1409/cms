@@ -2108,8 +2108,7 @@ textarea.invalidValueCalculate{
 	-webkit-box-direction: normal;
 	    -ms-flex-direction: column;
 	        flex-direction: column;
-	width: 300px;
-	padding: 10px 0;
+	padding: 10px 20px;
 	background-color: var(--main-col-1);
 	color: white;
 	font-weight: 600;
