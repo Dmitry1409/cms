@@ -8,7 +8,7 @@ copFol = ['upload_img', 'Roboto', 'img']
 
 pathArr = ['config_cms.php', 'js/main.js', 'mailer/send_mail.php',
 			'scripts_php/add_feedback.php', 'templates/mainHead.php', 'templates/startMainHead.php', ".htaccess",'index.php']
-nRowArr = [[2, 3], [21], [93,96,97,98,99,100], [110, 123], [21,35], [99, 113], [0,1,2,3,4,5,6,7,8,9,10,11,12], [43]]
+nRowArr = [[2, 3], [21], [93,96,97,98,99,100], [110, 123], [21,35], [103, 117], [0,1,2,3,4,5,6,7,8,9,10,11,12], [43]]
 
 checkArr = [['	$domain = "http://localhost";', '	$root_dir = "/cms/";'],
 			['const root_dir = "/cms/"'],
@@ -46,7 +46,7 @@ def changFile(path, nRow, checkStr, newRow):
 			print(f"строка № {nRow[i]} заменена на {newRow[i].strip()}")
 			fl = True
 		else:
-			print(f"Ошибка в строке № {nRow[i]} нет совпадения")
+			raise Exception (f"Ошибка: в строке № {nRow[i]} нет совпадения в файле {path}")
 
 	f.close()
 	if fl:

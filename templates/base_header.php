@@ -5,7 +5,8 @@
 		<div class="call_me_cont">
 			<div class="close_modal">&#10006;</div>
 			<form>
-				<label>Перезвоните мне</label>
+				<label>Оставить заявку</label>
+				<label>*наш менеджер свяжется с вами в ближайшее время</label>
 				<input type="text" name="call_me_name" placeholder="Ваше имя">
 				<input type="text" name="call_me_phone" placeholder="Телефон">
 				<div class="call_me_checkbox">
