@@ -3,8 +3,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	InitNumbEx += 1
 
 	let hashConObj = {idInt: undefined,
-						humanClick: false, 
-						slideIntv: 13000,
+						block: false,
 						numbSlide: 0}
 
 
@@ -114,6 +113,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	}
 
 	async function contrlHashAction(e){
+		hashConObj.numbSlide = 0
+
 		let arr = []
 		let btns = document.querySelectorAll('.controlHashItem')
 		for(let i = 0; i<btns.length; i++){
@@ -133,8 +134,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			if(chAuto.checked){
 				if(!e.auto){
 					resetSliderInterval()
-					clearInterval(hashConObj.idInt)
-					hashConObj.humanClick = true
 				}
 			}
 			let val = await res.json()
@@ -331,7 +330,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
 				resetSliderInterval()
 			}
 
-			clearInterval(hashConObj.idInt)
+			hashConObj.block = true
+			hashConObj.numbSlide = 0
 
 			document.querySelector('body').style.overflow = "hidden"
 			let meta = document.querySelector('meta[name="viewport"]')
@@ -426,14 +426,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			like_940.classList = "svg_like"
 		}
 
-		if(!hashConObj.humanClick){
-			setTimeout(()=>{
-				seachAndCallContrAuto()
-				hashConObj.idInt = setInterval(()=>{
-					seachAndCallContrAuto()
-				}, hashConObj.slideIntv)
-			}, 27000)
-		}
+		hashConObj.block = false
 
 		changeHashViewMode('d')
 	}
@@ -472,16 +465,19 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	}
 	function examp_right_action(e, chan_like = true, flInterval){
 		if(Date.now() > time_protect){
-			if(!flInterval){			
+			if(!flInterval){
+				hashConObj.numbSlide = 0			
 				if(chAuto.checked){
 					resetSliderInterval()
 				}
 			}else{
-				hashConObj.numbSlide += 1
-				if(hashConObj.numbSlide % 10 == 0){
-					setTimeout(()=>{
-						seachAndCallContrAuto()
-					}, 1500)
+				if(!hashConObj.block){						
+					hashConObj.numbSlide += 1
+					if(hashConObj.numbSlide % 8 == 0){
+						setTimeout(()=>{
+							seachAndCallContrAuto()
+						}, 1500)
+					}
 				}
 			}
 			time_protect = Date.now() + 500
@@ -554,6 +550,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			if(chAuto.checked){
 				resetSliderInterval()
 			}
+
+			hashConObj.numbSlide = 0
 			
 			time_protect = Date.now() + 500
 

@@ -84,7 +84,7 @@ $mail->Port = 465;
 $mail->Username = '89202929892@mail.ru';
 $mail->Password = 'pqU1to66FIVgoheo590q';
 $mail->setFrom('89202929892@mail.ru', 'Сайт потолки');
-$mail->addAddress('aladdin-nn@mail.ru', 'Дмитрий');
+$mail->addAddress('auroom-nn@mail.ru', 'Дмитрий');
 $mail->Subject = 'Заказ';
 
 $mail->msgHTML($html);
