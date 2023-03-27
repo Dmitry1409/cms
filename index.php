@@ -21,10 +21,14 @@
 						"lighting"=>["headLighting.php", "lightingPage.php"],
 						"favourites"=>["headFavourites.php", "FavouritesPage.php"],
 						"certificates"=>["headCertificates.php", "certificatesPage.php"]);
+	
 
-	$p = explode("/", $_SERVER['REQUEST_URI']);
+	$getPar = explode("?", $_SERVER['REQUEST_URI']);
 
+	$p = explode("/", $getPar[0]);
+	
 	$clearArr = [];
+
 	for($i = 0; $i<count($p); $i++){
 		if($p[$i] != ""){
 			$clearArr[] = $p[$i];
@@ -40,7 +44,8 @@
 		}
 		$f = $f.$clearArr[$i];
 	}
-	
+
+		
 	if($f == 'cms'){
 		root();
 		exit;

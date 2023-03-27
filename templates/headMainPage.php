@@ -1,6 +1,6 @@
 	
 	<link rel="stylesheet" type="text/css" href=<?php echo $GLOBALS['root_dir']."css/mainPage.css"?>>
-	<title>Натяжные потолки в Нижнем Новгороде и в обл.</title>
+	<title>Натяжные потолки <?php echo $_SESSION['citytitle']?> и в обл.</title>
 	<?php 
 		$comName = $GLOBALS['COMPANY_NAME'];
 	?>

@@ -2,10 +2,16 @@ InitNumbEx = 0
 window.addEventListener('DOMContentLoaded', ()=>{
 	InitNumbEx += 1
 
+	let hashConObj = {idInt: undefined,
+						humanClick: false, 
+						slideIntv: 13000,
+						numbSlide: 0}
+
+
 	if(InitNumbEx < 2){
 		document.addEventListener('scroll', scrollAction)
 	}
-	let slidFlag = false
+	
 	let id_inter_slid
 	let id_timeOut
 	let timeOutVal = 7000
@@ -84,6 +90,21 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		}
 	}
 
+
+	function seachAndCallContrAuto(){
+		let cht = document.querySelectorAll(".controlHashItem")
+		let fl = true
+		while(fl){
+			let i = Math.ceil(Math.random() * cht.length)
+			if(!cht[i - 1].classList.contains('hashContrActiv')){
+				fl = false
+				let e = new Event('click')
+				e.auto = true
+				cht[i-1].dispatchEvent(e)
+			}
+		}
+	}
+
 	function setAutoSlide(){
 		if(this.checked){
 			setInter()
@@ -92,7 +113,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		}
 	}
 
-	async function contrlHashAction(){
+	async function contrlHashAction(e){
 		let arr = []
 		let btns = document.querySelectorAll('.controlHashItem')
 		for(let i = 0; i<btns.length; i++){
@@ -110,7 +131,11 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		let res = await fetch(`${root_dir}scripts_php/fotoExampHasTagAction.php?hashTags=${JSON.stringify(arr)}`)
 		if(res.ok){
 			if(chAuto.checked){
-				resetSliderInterval()
+				if(!e.auto){
+					resetSliderInterval()
+					clearInterval(hashConObj.idInt)
+					hashConObj.humanClick = true
+				}
 			}
 			let val = await res.json()
 			insertImgHashTagAct(val)
@@ -118,17 +143,18 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			console.log('Не удалось получить изображения от сервера, сообщите пожалуйста администратору сайта. Код ошибки: '+res.status)
 		}
 	}
+
 	function scrollAction(){
 		if(!id_inter_slid){
 			let hashCont = document.querySelector('.controlHashTagCont')
 			if(!hashCont) return
 			rectHash = hashCont.getBoundingClientRect()
 			if(rectHash.y < 50){
-				slidFlag = true				
 				examp_right_action(null, true , true)
 				id_inter_slid = setInterval(()=>{
 					examp_right_action(null, true , true)
 				}, intervalVal)
+				document.removeEventListener('scroll', scrollAction)
 			}
 		}
 	}
@@ -304,6 +330,9 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			if(chAuto.checked){
 				resetSliderInterval()
 			}
+
+			clearInterval(hashConObj.idInt)
+
 			document.querySelector('body').style.overflow = "hidden"
 			let meta = document.querySelector('meta[name="viewport"]')
 			meta.remove()
@@ -397,6 +426,15 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			like_940.classList = "svg_like"
 		}
 
+		if(!hashConObj.humanClick){
+			setTimeout(()=>{
+				seachAndCallContrAuto()
+				hashConObj.idInt = setInterval(()=>{
+					seachAndCallContrAuto()
+				}, hashConObj.slideIntv)
+			}, 27000)
+		}
+
 		changeHashViewMode('d')
 	}
 	function changer_like(next_img, svg){
@@ -434,9 +472,16 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	}
 	function examp_right_action(e, chan_like = true, flInterval){
 		if(Date.now() > time_protect){
-			if(!flInterval){
+			if(!flInterval){			
 				if(chAuto.checked){
 					resetSliderInterval()
+				}
+			}else{
+				hashConObj.numbSlide += 1
+				if(hashConObj.numbSlide % 10 == 0){
+					setTimeout(()=>{
+						seachAndCallContrAuto()
+					}, 1500)
 				}
 			}
 			time_protect = Date.now() + 500

@@ -73,7 +73,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 			let rect = cont.getBoundingClientRect()
 			if(rect.y < 100){
 				flIntervalFeed = true
-				// setTimeOutIntervalFeed(4000, 4000)	
+				setTimeOutIntervalFeed(4000, 4000)	
 			}
 		}
 	}
