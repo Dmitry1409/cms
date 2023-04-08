@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	//echo "noClick";
+	// echo "noClick";
 	// unset($_SESSION['maskTelClick']);
 	if(!array_key_exists('maskTelClick', $_SESSION)){
 		echo "noClick";

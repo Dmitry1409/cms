@@ -1,10 +1,11 @@
 <?php
 	session_start();
-	if(array_key_exists('YDTarget', $_SESSION)){
-		echo "send";
-	}else{
-		echo "nosend";
-		$_SESSION['YDTarget'] = 'send';
-	}
+	echo "nosend";
+	// if(array_key_exists('YDTarget', $_SESSION)){
+	// 	echo "send";
+	// }else{
+	// 	echo "nosend";
+	// 	$_SESSION['YDTarget'] = 'send';
+	// }
 
 ?>

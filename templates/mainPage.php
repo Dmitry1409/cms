@@ -147,7 +147,7 @@
 					<img src="img/mainPage/piggy.webp">
 				</div>
 				<div class="present_text_block">
-					<div class="pres_hed">В среднем дешевле на 20%</div>
+					<div class="pres_hed">В среднем дешевле на 30%</div>
 					<div class="pres_desc">у нас дешевле чем у других</div>
 				</div>
 			</div>
@@ -156,7 +156,7 @@
 					<img src="img/mainPage/guarante.webp">
 				</div>
 				<div class="present_text_block">
-					<div class="pres_hed">100%</div>
+					<div class="pres_hed">1 год</div>
 					<div class="pres_desc">гарантия на все выполнениые работы</div>
 				</div>
 			</div>
@@ -184,7 +184,7 @@
 				</div>
 				<div class="present_text_block">
 					<div class="pres_hed">Бесплатный замер</div>
-					<div class="pres_desc">по всей нижегородской области</div>
+					<div class="pres_desc">по всей Нижегородской обл. кроме*</div>
 				</div>
 			</div>
 			<div class="grid_item_pres">

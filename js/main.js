@@ -127,11 +127,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		document.querySelector('.call_me_send').addEventListener('click', sendMailWithData)
 		document.querySelector('.modal_report').addEventListener('click', close_report_modal)
 
-
-
 		checkCurrentLocation()
 
-		insertReklamHeader()
 		
 		checkMaskTel()
 	}
@@ -174,6 +171,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
 	let idTimeOutAnswer
 
+	
+
 	function footerRoomsAct(){
 		if(location.pathname.indexOf("favourites") > -1){
 			location.href = location.origin+root_dir+"#exampWork_ancher"
@@ -197,32 +196,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 				tags[i].dispatchEvent(event)
 				return
 			}
-		}
-	}
-
-	function insertReklamHeader(){
-		let href = window.location.href
-		let mainLoz = document.querySelector(".header_lozung span:first-child")
-		let miniLoz = document.querySelector('.header_lozung span:nth-child(2)')
-		
-		if(href.indexOf('lightLines') > -1){
-			mainLoz.innerText = "Световые линии всего 450 руб/м.п"
-		}
-		if(href.indexOf('shadowProfil') > -1){
-			mainLoz.innerText = "Парящий потолок всего 250 руб/м.п"
-		}
-		if(href.indexOf('multiLevel') > -1){
-			mainLoz.innerText = "Двухуровневый переход всего 800 руб/м.п"
-		}
-		if(href.indexOf('hiddenCurtain') > -1){
-			mainLoz.innerText = "Скрытая гардина всего 500 руб/м.п"
-			miniLoz.innerText = "оставьте заявку и получите ПВХ гардину в подарок"
-		}
-		if(href.indexOf('textureColor') > -1){
-			mainLoz.innerText = "Скидка на матовое полотно 25%"
-		}
-		if(href.indexOf('lighting') > -1){
-			mainLoz.innerText = "Спот GX-53 с диодной лампой всего за 95 руб/шт"
 		}
 	}
 
@@ -254,13 +227,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		let footercont = document.querySelector('.footer_inf_cont')
 		if(!headcont.querySelector('.mask-tel')){
 			headcont.insertAdjacentHTML('afterbegin', html)
+			headcont.addEventListener('click', maskTelClickAction)
 		}
 		if(footercont){
 			footercont.insertAdjacentHTML('afterbegin', html)
 			footercont.addEventListener('click', maskTelClickAction)
-		}
-		headcont.addEventListener('click', maskTelClickAction)
-		
+		}	
 	}
 	function maskTelClickAction(){
 		let allMask = document.querySelectorAll('.mask-tel')
@@ -326,7 +298,165 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			}
 		}
 		a[0].style.color = "var(--main-col-1)"
+	}
+})
 
+window.addEventListener('load', ()=>{
+	let idBanIntrv
+	let idBanTimOut
+	let valTimeout = 5000
+
+	let bannerTimeProtect = Date.now()
+	let banButt = document.querySelectorAll('.headerContrlItem')
+	if(banButt){
+		for(let i = 0; i<banButt.length; i++){
+			banButt[i].addEventListener('click', bannerAction)
+		}
+	}
+
+	getAllBanner()
+	setIntBann()
+
+	function setIntBann(){
+		idBanTimOut = setTimeout(()=>{
+			let rb = document.querySelector('.rightButBan')
+			let e = new Event("click")
+			e.auto = true
+			rb.dispatchEvent(e)
+			idBanIntrv = setInterval(()=>{
+				rb.dispatchEvent(e)
+			}, 5000)
+		}, valTimeout)
+	}
+
+	function bannerAction(e){
+		function chPoint(fl){
+			let p = document.querySelectorAll('.bannPoint div')
+			let ip
+			for(let i=0; i<p.length; i++){
+				if(p[i].classList.contains('banPointAct')){
+					ip = i
+					break
+				}
+			}
+			let next
+			if(fl =="r"){
+				if(ip + 1 == p.length){
+					next = 0
+				}else{
+					next = ip + 1
+				}
+			}else{
+				if(ip == 0){
+					next = p.length - 1
+				}else{
+					next = ip - 1
+				}
+			}
+			p[ip].classList = ""
+			p[next].classList = "banPointAct"
+		}
+		function chSpan(nodSpan, text){
+			let sa
+			let sna
+			if(nodSpan[0].classList.contains("banner_active")){
+				sa = nodSpan[0]
+				sna = nodSpan[1]
+			}else{
+				sa = nodSpan[1]
+				sna = nodSpan[0]
+			}
+			
+			sa.classList = "banner_opac_z"
+			sna.innerText = text
+			sna.classList = "banner_active"
+			setTimeout(()=>{
+				sa.innerText = text
+			},3000)
+		}
+
+		if(Date.now() > bannerTimeProtect){
+			if(!e.auto){
+				clearTimeout(idBanTimOut)
+				clearInterval(idBanIntrv)
+				valTimeout = 10000
+				setIntBann()
+			}	
+			let p = document.querySelectorAll('.header_lozung picture')
+			let ai
+			for(let i=0; i<p.length; i++){
+				if(p[i].classList.contains('banner_active')){
+					ai = i
+					break;
+				}
+			}
+			let next 
+			if(this.classList.contains('rightButBan')){
+				chPoint('r')
+				if(ai + 1 == p.length){
+					next = 0
+				}else{
+					next = ai + 1
+				}
+			}else{
+				chPoint('l')
+				if(ai - 1 < 0){
+					next = p.length - 1
+				}else{
+					next = ai - 1
+				}
+			}
+			p[ai].classList.add("banner_opac_z")
+			p[ai].classList.remove('banner_active')
+			setTimeout(()=>{
+				p[ai].classList.add('banner_dis_none')
+			},3000)
+
+			p[next].classList.remove('banner_dis_none')
+			setTimeout(()=>{
+				p[next].classList.add('banner_active')
+				p[next].classList.remove('banner_opac_z')
+			},30)
+
+			let span1 = document.querySelector('.header_title_wrapp > span:first-child').querySelectorAll("span")
+			let span2 = document.querySelector('.header_title_wrapp > span:nth-child(2)').querySelectorAll("span")
+
+			chSpan(span1, p[next].getAttribute('mainText'))
+
+			chSpan(span2, p[next].getAttribute('secText'))
+	
+			bannerTimeProtect = Date.now() + 3000
+		}
+	}
+
+	async function getAllBanner(){
+		let r = await fetch(`${root_dir}scripts_php/getAllBanner.php`)
+		let a =  await r.json()
+		insertBanner(a)
+		insertBannerPoint(a)
+	}
+	function insertBannerPoint(a){
+		let cont = document.querySelector(".bannPoint")
+		for(let i = 0; i<a.length; i++){
+			let d = document.createElement('div')
+			if(i == 0){
+				d.classList = "banPointAct"
+			}
+			cont.append(d)
+		}
+	}
+	function insertBanner(arr){
+		let p = document.querySelector(".header_lozung")
+		let imgIdRow = p.querySelector("picture").getAttribute('idRow')
+		for(let i = 0; i<arr.length; i++){
+			let h = `<picture class = 'headerPicture banner_dis_none banner_opac_z' idRow=${arr[i]['id']} maintext='${arr[i]["mainText"]}' sectext='${arr[i]["secText"]}'>
+						<img src=${root_dir}img/rekHeader/jpg/${arr[i]['imgSrc']}>
+					</picture>`
+
+				if(imgIdRow != arr[i]['id']){
+					p.insertAdjacentHTML('beforeend', h)
+				}
+		}
 	}
 })
 
