@@ -151,8 +151,8 @@
 		</div>
 		<?php
 			$idRow = 1;
-			$yandGroup = ["5138204222"=>3];
-			$pathArr = [["lighting", 2],["textureColor", 4]];
+			$yandGroup = ["5138204222"=>3, "5138183123"=>4];
+			$pathArr = [["lighting", 2],["textureColor", 4], ["hiddenCurtain", 3]];
 			$fl = false;
 
 			if(array_key_exists("idGroup", $_GET)){
@@ -202,9 +202,12 @@
 				$id = $a['id'];
 				$m = $a['mainText'];
 				$t2 = $a['secText'];
-				$s = $GLOBALS['root_dir']."img/rekHeader/jpg/".$a["imgSrc"];
+				$jp = $GLOBALS['root_dir']."img/rekHeader/jpg/".$a["imgSrc"];
+				$w = explode(".", $a["imgSrc"])[0].".webp";
+				$w = $GLOBALS['root_dir']."img/rekHeader/webp/".$w;
 				echo "<picture class='headerPicture banner_active' idRow=$id maintext='$m' sectext='$t2'>";
-					echo "<img src=$s>";
+					echo "<source srcset='$w' type='image/webp'/>";
+					echo "<img src=$jp>";
 				echo "</picture>";
 			?>
 

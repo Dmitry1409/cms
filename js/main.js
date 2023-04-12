@@ -449,7 +449,10 @@ window.addEventListener('load', ()=>{
 		let p = document.querySelector(".header_lozung")
 		let imgIdRow = p.querySelector("picture").getAttribute('idRow')
 		for(let i = 0; i<arr.length; i++){
+			let w = arr[i]['imgSrc'].split(".")[0]
+			w = `${root_dir}img/rekHeader/webp/${w}.webp`
 			let h = `<picture class = 'headerPicture banner_dis_none banner_opac_z' idRow=${arr[i]['id']} maintext='${arr[i]["mainText"]}' sectext='${arr[i]["secText"]}'>
+						<source srcset='${w}' type='image/webp'/>
 						<img src=${root_dir}img/rekHeader/jpg/${arr[i]['imgSrc']}>
 					</picture>`
 
