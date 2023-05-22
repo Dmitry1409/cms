@@ -5,5 +5,6 @@
 	while($o = $r->fetchArray(SQLITE3_ASSOC)){
 		$e[] = $o;
 	}
+	shuffle($e);
 	echo json_encode($e);
 ?>

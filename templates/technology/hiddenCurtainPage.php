@@ -9,6 +9,25 @@
 
 <div class="vari_gard_cont">
 	<div class="vari_gard_item">
+		<p class="parag_color_text">С Профилем Lumfer</p>
+		<picture class="vari_cont_picture">
+			<source srcset='../img/hiddenCurtainPage/webp/sfsdsgdht3h3tn.webp' type="image/webp">
+			<img src='../img/hiddenCurtainPage/jpg/sfsdsgdht3h3tn.jpg'  alt="Скрытая гардина с профилем Lumfer">
+		</picture>
+		<div class="vari_item_fexbox parag_color_text">
+			<span>
+				<div class="big_green_defice"></div><span>Возможно сделать обрыв гардины в любом месте</span>
+			</span>
+
+			<span>
+				<div class="big_green_defice"></div> <span>Есть место для установки подсветки</span>
+			</span>
+			<span>
+				<div class="big_green_defice"></div><span>Цвет профиля белый или черный</span>
+			</span>
+		</div>
+	</div>
+	<div class="vari_gard_item">
 		<p class="parag_color_text">С Профилем ПК-5</p>
 		<picture class="vari_cont_picture">
 			<source srcset='<?php echo $GLOBALS["root_dir"]."img/rendered/webp/nvowofbwbwb.webp"?>' type="image/webp">
@@ -27,6 +46,10 @@
 			</span>
 		</div>
 	</div>
+</div>
+
+
+<div class="vari_gard_cont">
 	<div class="vari_gard_item">
 		<p class="parag_color_text">Имитация стены</p>
 		<picture class="vari_cont_picture">
@@ -45,10 +68,6 @@
 			</span>
 		</div>
 	</div>
-</div>
-
-
-<div class="vari_gard_cont">
 	<div class="vari_gard_item">
 		<p class="parag_color_text">С перегибом полотна</p>
 		<picture class="vari_cont_picture">
@@ -68,6 +87,8 @@
 			</span>
 		</div>
 	</div>
+</div>
+<div class="vari_gard_cont">
 	<div class="vari_gard_item">
 		<p class="parag_color_text">Накладной монтаж</p>
 		<picture class="vari_cont_picture">
@@ -145,7 +166,7 @@
 		</thead>
 		<tbody>
 			<?php
-				$res = $GLOBALS['db']->query("SELECT * FROM product WHERE id IN (20,21,22,23,24,25,26,6,8,9,18,19) ORDER BY id DESC");
+				$res = $GLOBALS['db']->query("SELECT * FROM product WHERE id IN (20,21,22,23,24,25,26,6,8,9,18,19,60) ORDER BY id DESC");
 				while($r = $res->fetchArray(SQLITE3_ASSOC)){
 					echo "<tr>";
 						echo "<td>$r[name]</td>";

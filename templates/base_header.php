@@ -26,7 +26,7 @@
 	<div class="modal_report">
 		<div class="report_box">
 			<h2>Ваше сообщение доставлено!</h2>
-			<p>с вами свяжутся в течении не более 30 минут.</p>
+			<p>с вами свяжутся в течении не более 30 минут в рабочее время.</p>
 			<div class="calc_btn"><div class="btn_animate"></div>Ок</div>
 		</div>
 	</div>
