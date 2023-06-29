@@ -1,11 +1,9 @@
 
-	<?php
-		$query = "все";
-		$hashsSelect = ['#все'];
-		include "exampWorkFoto.php";
-		include "listRouts.php";
-	?>
+
 	
+	<?php
+		include "clientFeedBack.php";
+	?>
 
 	<div id="techSectionIdAnch" style="display: flex; justify-content: center; margin-top: 100px;">
 		<div class="vert_line"></div>
@@ -131,7 +129,12 @@
 		</div>
 	</div>
 
-	
+	<?php
+		$query = "все";
+		$hashsSelect = ['#все'];
+		include "exampWorkFoto.php";
+		include "listRouts.php";
+	?>	
 
 	<div class="presents">
 		<div style="display: flex; margin-top: 50px; justify-content: center;">
@@ -156,7 +159,7 @@
 					<img src="img/mainPage/guarante.webp">
 				</div>
 				<div class="present_text_block">
-					<div class="pres_hed">1 год</div>
+					<div class="pres_hed">12 месяцев</div>
 					<div class="pres_desc">гарантия на все выполнениые работы</div>
 				</div>
 			</div>
@@ -199,9 +202,7 @@
 		</div>
 	</div>
 
-	<?php
-		include "clientFeedBack.php";
-	?>
+	
 
 	<div id="expressCalc" class="calculate_cont">
 		<div class="padd_calcult"></div>

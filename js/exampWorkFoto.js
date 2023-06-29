@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
 
 
-	current_img = document.querySelector('.count_img_cont > span span:first-child')
+	current_img = document.querySelector('.examle_flex .count_img_cont > span span:first-child')
 	if(clientWidth >= 940){
 		current_img.innerText = 2
 	}
@@ -207,7 +207,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		
 		hashTagActObj.fl = true
 		hashTagActObj.arr = val.slice(12)
-		let countImg = document.querySelector('.count_img_cont > span')
+		let countImg = document.querySelector('.examle_flex .count_img_cont > span')
 		countImg.querySelector('span:first-child').innerText = 1
 		countImg.querySelector('span:last-child').innerText = val.length
 
@@ -501,7 +501,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 				ch[0].classList = 'examp_right_940'
 			}
 
-			let count_img = document.querySelector('.count_img_cont > span span:last-child')
+			let count_img = document.querySelector('.examle_flex .count_img_cont > span span:last-child')
 			let max_count = Number(count_img.innerText)
 			let count_number = Number(current_img.innerText)
 			if(max_count > count_number){
@@ -575,7 +575,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 				ch[ch.length -1].classList = "examp_left"
 			}
 
-			let count_img = document.querySelector('.count_img_cont > span span:last-child')
+			let count_img = document.querySelector('.examle_flex .count_img_cont > span span:last-child')
 			let max_count = Number(count_img.innerText)
 			let count_number = Number(current_img.innerText)
 
