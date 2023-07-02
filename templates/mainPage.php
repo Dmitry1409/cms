@@ -20,7 +20,7 @@
 					<img class="img_skew" src="img/mainPage/jpg/svetovie_line.jpg" alt="Световые линии">
 				</picture>				
 				<div class="tech_mask"></div>
-				<div href="/cms/" class="skew_revers">
+				<div class="skew_revers">
 					<h3 class="tech_header">Световые линии</h3>
 					<a href='<?php echo $listRout["svetLine"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>

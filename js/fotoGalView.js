@@ -26,6 +26,11 @@ function fotoGaleryInit(){
 			break
 		}
 	}
+
+	let countImgCont = document.querySelector('.fotoGalControlPanel > span')
+	countImgCont.querySelector('span:first-child').innerText = fotoGalObj.curIndex + 1
+	countImgCont.querySelector('span:last-child').innerText = fotoGalObj.picInd.length
+	
 	
 	let ar_ind = [fotoGalObj.curIndex -1 , fotoGalObj.curIndex, fotoGalObj.curIndex + 1]
 
@@ -89,6 +94,15 @@ function fotoGalLeftAct(){
 		let h3 = fotoGalObj.picInd[left_ind].getAttribute('fotoGalTitle')
 		l.querySelector('h3').innerText = h3
 
+		let countImg = document.querySelector('.fotoGalControlPanel > span span:first-child')
+		let cVal = Number(countImg.innerText)
+		if(cVal == fotoGalObj.picInd.length){
+			cVal = 1
+		}else{
+			cVal = cVal + 1
+		}
+		countImg.innerText = cVal
+
 		if(fl){
 			fotoGalObj.curIndex = 0
 			return
@@ -129,6 +143,16 @@ function fotoGalRightAct(){
 		let h3 = fotoGalObj.picInd[left_ind].getAttribute('fotoGalTitle')
 		r.querySelector('h3').innerText = h3
 
+		let countImg = document.querySelector('.fotoGalControlPanel > span span:first-child')
+		let cVal = Number(countImg.innerText)
+		if(cVal == 1){
+			cVal = fotoGalObj.picInd.length
+		}else{
+			cVal = cVal - 1
+		}
+		countImg.innerText = cVal
+
+
 		if(fl){
 			fotoGalObj.curIndex = fotoGalObj.picInd.length - 1
 			return
@@ -148,6 +172,9 @@ function fotoGalaryDisAct(){
 		s[i].setAttribute('srcset', "")
 		g[i].setAttribute('src' , "")
 	}
+	let countImgCont = document.querySelector('.fotoGalControlPanel > span')
+	countImgCont.querySelector('span:first-child').innerText = ""
+	countImgCont.querySelector('span:last-child').innerText = ""
 	
 	galCont.querySelector('.fotoGalaryRightBtn').removeEventListener('click', fotoGalLeftAct)
 	galCont.querySelector('.fotoGalaryLefttBtn').removeEventListener('click', fotoGalRightAct)
