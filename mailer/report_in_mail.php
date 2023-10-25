@@ -1,9 +1,9 @@
 <?php
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\Exception;
-	require_once '../mailer/Exception.php';
-	require_once '../mailer/PHPMailer.php';
-	require_once '../mailer/SMTP.php';
+	require_once 'Exception.php';
+	require_once 'PHPMailer.php';
+	require_once 'SMTP.php';
 
 	session_start();
 
@@ -30,5 +30,5 @@
 	$mail->Subject = $tema;
 
 	$mail->msgHTML($msg);
-
+	$mail->send();
 ?>

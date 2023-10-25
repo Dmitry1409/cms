@@ -162,7 +162,7 @@
 		$t = urlencode($clientName.' оставил отзыв');
 		$msg = urlencode($text_review);
 		echo "success";
-		file_get_contents($domain.$root_dir.'scripts_php/report_in_mail.php?msg='.$msg.'&tema='.$t);
+		file_get_contents($domain.$root_dir.'mailer/report_in_mail.php?msg='.$msg.'&tema='.$t);
 	}else{
 		echo $db->lastErrorMsg();
 	}
