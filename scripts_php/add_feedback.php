@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	include "../config_cms.php";
 	$db = new SQLite3('../cms.db');
 
 	function randName($oldName){
@@ -156,8 +157,12 @@
 	}
 
 	
+
 	if($db->exec($q)){
+		$t = urlencode($clientName.' оставил отзыв');
+		$msg = urlencode($text_review);
 		echo "success";
+		file_get_contents($domain.$root_dir.'scripts_php/report_in_mail.php?msg='.$msg.'&tema='.$t);
 	}else{
 		echo $db->lastErrorMsg();
 	}
