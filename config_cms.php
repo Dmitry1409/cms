@@ -4,7 +4,7 @@
 	$root_dir = "/cms/";
 	$COMPANY_NAME = "АuRoom";
 	$comp_telef1 = "8(831)200-34-98";
-	$comp_telef2 = "+7 920 292 98 92";
+	$comp_telef2 = "+7 996 567 37 62";
 	$email_comp = "auroom-nn@mail.ru";
 	if(!array_key_exists('cityHeader', $_SESSION)){
 		$_SESSION['cityHeader'] = "Нижний Новгород и обл.";
