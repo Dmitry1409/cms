@@ -5,6 +5,22 @@
 * Browsers: last 4 version
 */
 
+.cont_img_prev{
+	display: flex;
+	height: 65px;
+	width: 100%;
+	margin-top: 3px;
+}
+.cont_img_prev a{
+	width: 25%;
+	margin-right: 3px;
+}
+.cont_img_prev img{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
 .vari_gard_item{
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -72,6 +88,11 @@
 }
 .illuminGardCont > div{
 	padding: 20px 30px;
+}
+@media(min-width: 640px){
+	.cont_img_prev{
+		height: 90px;
+	}
 }
 
 @media(min-width: 800px){
