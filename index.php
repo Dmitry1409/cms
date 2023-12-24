@@ -26,15 +26,16 @@
 	$getPar = explode("?", $_SERVER['REQUEST_URI']);
 
 	$p = explode("/", $getPar[0]);
-	
-	$clearArr = [];
 
+	//очищаем массив от пустых строк в начале и конце массива
+	$clearArr = [];
 	for($i = 0; $i<count($p); $i++){
 		if($p[$i] != ""){
 			$clearArr[] = $p[$i];
 		}
 	}
 
+	//делаем путь миную cms если путь длинее одного
 	$f = "";
 	for($i=0; $i<count($clearArr); $i++){
 		if(count($clearArr) > 1){
@@ -44,7 +45,6 @@
 		}
 		$f = $f.$clearArr[$i];
 	}
-
 		
 	if($f == 'cms'){
 		root();
