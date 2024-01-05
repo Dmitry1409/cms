@@ -1,9 +1,12 @@
 
 
 let clientWidth = document.documentElement.clientWidth
+let clientHeight = document.documentElement.clientHeight
+
 
 window.addEventListener('resize', ()=>{
 		clientWidth = document.documentElement.clientWidth
+		clientHeight = document.documentElement.clientHeight
 	})
 
 let time_main_menu = Date.now()
@@ -279,7 +282,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	
 	function checkCurrentLocation(){
 		let dirs = ['lightLines', 'multiLevel', 'dubleVisionPrint', 'carvedCelling', 'shadowProfil', 'ligthNiches', 'hiddenCurtain',
-					'textureColor', 'starsSky', 'lighting', 'MSD', 'BAUF', 'Pongs', 'Teqtum', 'favourites']
+					'textureColor', 'starsSky', 'lighting', 'MSD', 'BAUF', 'Pongs', 'Teqtum', 'favourites','simpleCeil']
 		let href = window.location.href
 		let a = document.querySelectorAll('.menu_flex_wrap a')
 		for(let i = 0; i<dirs.length; i++){
@@ -462,6 +465,16 @@ window.addEventListener('load', ()=>{
 	}
 })
 
+function visibleElem(elem){
+	let el_t = elem.getBoundingClientRect().top
+	let el_b = elem.getBoundingClientRect().bottom
+	if(el_t < clientHeight && el_b > 0){
+		return true
+	}else{
+		return false
+	}
+
+}
 
 function plusCountFavorMenu(){
 	let span = document.querySelector('.favourIndex span')
@@ -608,6 +621,12 @@ function close_modal_action(e){
 			picture.remove()
 		}, 1400)
 	}
+	let img = document.querySelector(".call_me_cont img")
+	if(img){
+		setTimeout(()=>{
+			img.remove()
+		}, 1400)
+	}
 	reset_call_me_box()
 	clientData = {}
 }
@@ -626,9 +645,14 @@ async function sendMailWithData(){
 		if(clientData.foto_id){
 			query += `&foto_id=${clientData.foto_id}`
 		}
+		if(clientData.simpleCeil){
+			query += `&simpleCeil=${JSON.stringify(clientData.simpleCeil)}`
+		}
 		let animateBtn = document.querySelector('.call_me_cont .call_me_send')
 		reset_call_me_box()
 		showCalcultAnim(animateBtn)
+
+		console.log(query)
 
 		let res = await fetch(query)
 		let report = await res.text()
@@ -636,7 +660,7 @@ async function sendMailWithData(){
 
 		setTimeout(()=>{
 			delAnimCalcut(animateBtn)
-			if(res.ok){					
+			if(res.ok){				
 				if(report == "success"){
 					reset_calcult()
 					open_report_modal()
@@ -738,6 +762,11 @@ function call_me_view(){
 					<source srcset=${clientData.foto_src[0]} type=image/webp>
 					<img src=${clientData.foto_src[1]}>
 				</picture>`
+		checkbox.insertAdjacentHTML('afterend', html)
+	}
+	if(clientData.simpleCeil){
+		let checkbox = document.querySelector('.call_me_checkbox')
+		html = `<img src=${clientData.simpleCeil['img_sr']}>`
 		checkbox.insertAdjacentHTML('afterend', html)
 	}
 

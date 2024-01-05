@@ -185,8 +185,9 @@ window.addEventListener('DOMContentLoaded', ()=>{
 				cl = 'examp_none'
 			}
 			let alt = ''
+			// <div class=priseFoto>${val[i]['prise']} руб.</div>
 			elem = `<picture class=${cl}>
-						<div class=priseFoto>${val[i]['prise']} руб.</div>
+						
 						<div class=hashNameCont>`
 							for(j=0; j<val[i]['hashName'].length; j++){
 								elem += `<div>
@@ -641,7 +642,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		for(let i =0; i<res.length; i++){
 			let alt = ""
 			elem = `<picture class=examp_none>
-						<div class=priseFoto>${res[i]['prise']} руб.</div>
+	
 						<div class=hashNameCont>`
 							for(j=0; j<res[i]['hashName'].length; j++){
 								alt += res[i]['hashName'][j]

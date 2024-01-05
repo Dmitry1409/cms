@@ -1,6 +1,3 @@
-
-
-	
 	<?php
 		include "clientFeedBack.php";
 	?>
@@ -56,6 +53,17 @@
 				<div class="skew_revers">
 					<h3 class="tech_header">Ниши<br>Гардины</h3>
 					<a href='<?php echo $listRout["hidCur"]?>' class="btn_tech">Узнать подробнее</a>
+				</div>
+			</div>
+			<div class="tech_elem">
+				<picture class="tech_picture">
+					<source srcset="img/mainPage/webp/efwfwwgw.webp" type="image/webp">
+					<img class="img_skew" src="img/mainPage/jpg/efwfwwgw.jpg" alt="Глянцевый вместе с матовым полотном">
+				</picture>				
+				<div class="tech_mask"></div>
+				<div class="skew_revers">
+					<h3 class="tech_header">Простой<br>потолок</h3>
+					<a href='<?php echo $listRout["simpleCeil"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">
@@ -133,7 +141,6 @@
 		$query = "все";
 		$hashsSelect = ['#все'];
 		include "exampWorkFoto.php";
-		include "listRouts.php";
 	?>	
 
 	<div class="presents">
@@ -202,7 +209,9 @@
 		</div>
 	</div>
 
-	
+	<?php
+		include "ligthing_link_block.php";
+	?>
 
 	<div id="expressCalc" class="calculate_cont">
 		<div class="padd_calcult"></div>
@@ -328,7 +337,7 @@
 					<h4>Каждому 100-му клиенту мы устанавливаем потолки совершенно бесплатно!</h4>
 					<span>общей суммой до 50000 рублей *</span>
 					<span>Подробности по телефону</span>
-					<div role="button" class="aferta_btn">Учавствовать</div>
+					<div role="button" class="aferta_btn afert_btn_click">Учавствовать</div>
 				</div>
 			</div>
 			<div class="certif_doc">

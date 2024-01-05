@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 		btnsLight[i].addEventListener('click', btnLightActiv)
 	}
 
-	document.querySelector('.FPcontArrow').addEventListener('click', addProduct)
+	document.querySelector('.add_prod_btn_id').addEventListener('click', addProduct)
 
 	let sortBtn = document.querySelectorAll('.sortItem')
 	for(let i =0; i<sortBtn.length; i++){
@@ -194,7 +194,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 	}
 
 	function checkCount(){
-		let cur = document.querySelector('.FPcountCont > span')
+		let cur = document.querySelector('.count_prod_id > span')
 		let all = cur.querySelector('span:last-child')
 		cur = cur.querySelector('span:first-child')
 		let item =  document.querySelectorAll('.catalogProdItem')

@@ -1,7 +1,8 @@
 <?php
 	session_start();
 	$db = new SQLite3('cms.db');
-	require "config_cms.php";
+
+	require_once "config_cms.php";
 
 	include "templates/listRouts.php";
 
@@ -20,7 +21,8 @@
 						"vendorsFoilTeqtum"=>["vendorsFoil/headTeqtum.php", "vendorsFoil/teqtumPage.php"],
 						"lighting"=>["headLighting.php", "lightingPage.php"],
 						"favourites"=>["headFavourites.php", "FavouritesPage.php"],
-						"certificates"=>["headCertificates.php", "certificatesPage.php"]);
+						"certificates"=>["headCertificates.php", "certificatesPage.php"],
+						"technologysimpleCeil"=>["technology/headSimpleCeil.php", "technology/simpleCeilPage.php"]);
 	
 
 	$getPar = explode("?", $_SERVER['REQUEST_URI']);
@@ -35,7 +37,7 @@
 		}
 	}
 
-	//делаем путь миную cms если путь длинее одного
+	//делаем путь минуя cms если путь длинее одного
 	$f = "";
 	for($i=0; $i<count($clearArr); $i++){
 		if(count($clearArr) > 1){
@@ -45,7 +47,7 @@
 		}
 		$f = $f.$clearArr[$i];
 	}
-		
+
 	if($f == 'cms'){
 		root();
 		exit;
@@ -57,6 +59,13 @@
 		require "templates/base_header.php";
 		include "templates/".$listTemplates[$f][1];
 		require "templates/clientFeedBack.php";
+		if(strpos($_SERVER['REQUEST_URI'], "simpleCeil") == false){
+			$out_count = 2;
+			include "templates/simple_ceil_offer_block.php";
+		}
+		if(strpos($_SERVER['REQUEST_URI'], "lighting") == false && strpos($_SERVER['REQUEST_URI'], "simpleCeil") == false){
+			include "templates/ligthing_link_block.php";
+		}
 		require "templates/base_footer.php";
 	}else{
 		header('Location: '.$domain.$root_dir);
@@ -66,6 +75,7 @@
 		require "templates/startMainHead.php";
 		require "templates/headMainPage.php";
 		require "templates/base_header.php";
+		require "templates/saleMainPage.php";
 		include "templates/howMuchDone.php";
 	}
 ?>

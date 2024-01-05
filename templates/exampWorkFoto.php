@@ -125,7 +125,7 @@
 					}
 					
 					$priseFoto = $arr[$i]['prise'] . " руб.";
-					echo "<div class ='priseFoto'>$priseFoto</div>";
+					// echo "<div class ='priseFoto'>$priseFoto</div>";
 
 					$s_hash = "";
 					echo "<div class='hashNameCont'>";

@@ -90,12 +90,12 @@
 
 	?>
 </div>
-<div class="FPcountCont">
+<div class="FPcountCont count_prod_id">
 	<span><span>12</span> из <span><?php echo count($arr)?></span></span>
 </div>
 
 <div role="button" class="arrow-wrapp">	
-	<div class="FPcontArrow">
+	<div class="FPcontArrow add_prod_btn_id">
 		<div class="arrow-8"></div>
 	</div>
 </div>

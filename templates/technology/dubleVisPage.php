@@ -112,10 +112,10 @@
 		}	
 	?>
 </div>
-<div class="FPcountCont">
+<div class="FPcountCont fp_count_id">
 	<span><span>12</span> из <span><?php echo count($allImg); ?></span></span>
 </div>
-<div role="button" class="FPcontArrow">
+<div role="button" class="FPcontArrow add_img_dub_vis_id">
 	<div class="arrow-8"></div>
 </div>
 

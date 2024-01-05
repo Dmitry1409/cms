@@ -100,7 +100,7 @@ if(array_key_exists('buyProducts', $_SESSION)){
 		echo "</div>";
 	echo "</div>";
 }else{
-	echo "<h2>Пусто</h2>";
+	echo "<h2 class='h2_empty'>Пусто</h2>";
 }
 
 ?>
@@ -117,10 +117,10 @@ if(array_key_exists("favourImg", $_SESSION)){
 	if(count($_SESSION['favourImg'])>0){
 		include "templates/favourExamFotoTemplate.php";
 	}else{
-		echo "<h2>Пусто</h2>";
+		echo "<h2 class=h2_empty>Пусто</h2>";
 	}
 }else{
-	echo "<h2>Пусто</h2>";
+	echo "<h2 class=h2_empty>Пусто</h2>";
 }
 
 ?>

@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', ()=>{
 
-	document.querySelector('.FPcontArrow').addEventListener('click', addImgAction)
+	document.querySelector('.add_img_dub_vis_id').addEventListener('click', addImgAction)
 
 	document.querySelector('.aferta_btn').addEventListener('click', aferta_btn_action)
 
@@ -259,7 +259,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			if(res.ok){
 				val = await res.json()
 
-				let len = document.querySelector('.FPcountCont > span')
+				let len = document.querySelector('.fp_count_id > span')
 				let count = len.querySelector('span:first-child')
 				len = len.querySelector('span:last-child')
 				len.innerText = val['len']
@@ -356,7 +356,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	async function addImgAction(){
 		let arrow = document.querySelector('.arrow-8')
 
-		let counter = document.querySelector('.FPcountCont > span')
+		let counter = document.querySelector('.fp_count_id > span')
 		counter = counter.querySelector('span:first-child')
 
 		if(arrow.classList.contains('arrRotate')){
@@ -381,7 +381,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		
 		let imgs = document.querySelectorAll('.fotoPrintCont img')
 		counter.innerText = imgs.length
-		let len = document.querySelector('.FPcountCont > span')
+		let len = document.querySelector('.fp_count_id > span')
 		len = len.querySelector('span:last-child')
 		len = Number(len.innerText)
 		if(imgs.length == len){

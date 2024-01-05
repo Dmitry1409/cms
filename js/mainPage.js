@@ -18,7 +18,8 @@ window.addEventListener('DOMContentLoaded',()=>{
 	}
 
 	if(f){
-		document.querySelector('.aferta_btn').addEventListener('click', aferta_btn_action)
+		document.querySelector('.afert_btn_click').addEventListener('click', aferta_btn_action)
+		document.querySelector('.sales_btn_click').addEventListener('click', sales_btn_action)
 		document.querySelector('.calcul_body div.calc_btn').addEventListener('click', calculate_action)
 	}
 
@@ -108,6 +109,10 @@ window.addEventListener('DOMContentLoaded',()=>{
 
 	function aferta_btn_action(){
 		clientData.click_link = "Главная страница кнопка оформить на сайте скидка 1000 руб"
+		call_me_view()
+	}
+	function sales_btn_action(){
+		clientData.click_link = "Главная страница кнопка акция потолок за 8500"
 		call_me_view()
 	}
 

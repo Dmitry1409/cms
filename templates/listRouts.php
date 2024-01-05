@@ -15,5 +15,6 @@
 					"Pongs"=> "vendorsFoil/Pongs",
 					"Teqtum"=> "vendorsFoil/Teqtum",
 					"favourites" => "favourites",
-					"certificates" => "certificates");
+					"certificates" => "certificates",
+					"simpleCeil"=> "technology/simpleCeil");
 ?>

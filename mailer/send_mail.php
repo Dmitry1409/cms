@@ -73,6 +73,15 @@ if(array_key_exists('foto_id', $_GET)){
 		$html = $html."\n<img style='width=300px; height=300px; object-fit=cover;' src=$src>";
 	}
 }
+if(array_key_exists("simpleCeil", $_GET)){
+	$html = $html."\n<h3>Заказать простой потолок</h3><br><br>";
+	$simpleCeil = json_decode($_GET['simpleCeil']);
+	$sr = $simpleCeil->img_sr;
+	$sr = $domain.$sr;
+	$html = $html."\n<img style='width=300px; height=300px; object-fit=cover;' src=$sr>";
+	$pr = $simpleCeil->prise;
+	$html = $html."\n<h3>Цена: $pr</h3>";
+}
 
 if(array_key_exists('click_link', $_GET)){
 	$click_link = $_GET['click_link'];
@@ -89,11 +98,9 @@ $mail->Subject = 'Заказ';
 
 $mail->msgHTML($html);
 
-
-// echo var_dump($html);
 echo "success";
 // $mail->addAttachment('hed2.jpg');
-// echo "success";
+
 // if($mail->send()){
 // 	echo "success";
 // }else{
