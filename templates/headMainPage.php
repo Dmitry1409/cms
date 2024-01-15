@@ -1,5 +1,5 @@
 	
-	<link rel="stylesheet" type="text/css" href=<?php echo $GLOBALS['root_dir']."css/mainPage.css"?>>
+	<link rel="stylesheet" type="text/css" href=<?php echo $GLOBALS['root_dir']."css/".$GLOBALS['fn']['mainPage.css']?>>
 	<title>Натяжные потолки <?php echo $_SESSION['citytitle']?> и в обл.</title>
 	<?php 
 		$comName = $GLOBALS['COMPANY_NAME'];

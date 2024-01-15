@@ -50,7 +50,15 @@ window.addEventListener("DOMContentLoaded",()=>{
 				let date = new Date()
 				let y = String(date.getFullYear())
 				y = y.slice(2)
-				let today = `Актуально на ${date.getDate()}.${date.getMonth() + 1}.${y}г.`
+				let m = date.getMonth()+1
+				if(m < 10){
+					m = "0"+String(m)
+				}
+				let d = date.getDate()
+				if(d < 10){
+					d = "0"+String(d)
+				}
+				let today = `Актуально на ${d}.${m}.${y}г.`
 				let last_Elem = count_cart[count_cart.length-1]
 
 

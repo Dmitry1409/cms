@@ -9,3 +9,4 @@ cms.db
 *.svg
 *.ico
 test.php
+test.js

@@ -103,7 +103,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			}
 		}
 	}
-
 	function setAutoSlide(){
 		if(this.checked){
 			setInter()
@@ -111,7 +110,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			delInter()
 		}
 	}
-
 	async function contrlHashAction(e){
 		hashConObj.numbSlide = 0
 
@@ -142,7 +140,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			console.log('Не удалось получить изображения от сервера, сообщите пожалуйста администратору сайта. Код ошибки: '+res.status)
 		}
 	}
-
 	function scrollAction(){
 		if(!id_inter_slid){
 			let hashCont = document.querySelector('.controlHashTagCont')

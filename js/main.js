@@ -24,6 +24,7 @@ let clientData = {}
 
 const root_dir = "/cms/"
 
+
 let YDTargetFunc = function(tarId){
 	ym(91462500,'reachGoal', tarId)
 }
@@ -473,9 +474,7 @@ function visibleElem(elem){
 	}else{
 		return false
 	}
-
 }
-
 function plusCountFavorMenu(){
 	let span = document.querySelector('.favourIndex span')
 	if(!span.innerText){
@@ -486,7 +485,6 @@ function plusCountFavorMenu(){
 		span.innerText = Number(span.innerText) + 1
 	}
 }
-
 function delWarnigClassCalcult(){
 	let inpArr = document.querySelectorAll('.calcul_body input')
 	for(let i=0; i<inpArr.length; i++){

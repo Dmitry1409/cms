@@ -5,9 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0
 				maximum-scale=1.0, user-scalable=0">
 				
-	<link rel="stylesheet" type="text/css" href=<?php echo $GLOBALS['root_dir']."css/main.css" ?>>
-	<link rel="stylesheet" type="text/css" href=<?php echo $GLOBALS['root_dir']."css/normalize.css" ?>>
-	<script defer type="text/javascript" src=<?php echo $GLOBALS['root_dir']."js/main.js"?>></script>
+	<link rel="stylesheet" type="text/css" href=<?php echo $GLOBALS['root_dir']."css/".$GLOBALS["fn"]["main.css"]?>>
+	<link rel="stylesheet" type="text/css" href=<?php echo $GLOBALS['root_dir']."css/".$GLOBALS["fn"]["normalize.css"] ?>>
+	<script defer type="text/javascript" src=<?php echo $GLOBALS['root_dir']."js/".$GLOBALS["fn"]["main.js"]?>></script>
 	<script type="text/javascript">
 		window.addEventListener('load', ()=>{
 			let done = document.querySelector('.howMuchDoneSection')
@@ -20,7 +20,7 @@
 
 				let e = new Event('DOMContentLoaded')
 				let sExm = document.createElement('script')
-				sExm.src = "js/exampWorkFoto.js"
+				sExm.src = '<?php echo $GLOBALS["root_dir"]."js/".$GLOBALS["fn"]["exampWorkFoto.js"]?>'
 				sExm.type = "text/javascript"
 				sExm.onload = function(){
 					window.dispatchEvent(e)
@@ -28,7 +28,7 @@
 				head.append(sExm)
 
 				let sFeed = document.createElement('script')
-				sFeed.src = 'js/feedBackClient.js'
+				sFeed.src = '<?php echo $GLOBALS["root_dir"]."js/".$GLOBALS["fn"]["feedBackClient.js"]?>'
 				sFeed.type = "text/javascript"
 				sFeed.onload = function(){
 					window.dispatchEvent(e)
@@ -36,7 +36,7 @@
 				head.append(sFeed)
 
 				let mP = document.createElement('script')
-				mP.src = "js/mainPage.js"
+				mP.src = '<?php echo $GLOBALS["root_dir"]."js/".$GLOBALS["fn"]["mainPage.js"]?>'
 				mP.type = "text/javascript"
 				mP.onload = function(){
 					window.dispatchEvent(e)
@@ -95,7 +95,7 @@
 			}
 		})
 	</script>
-	<script type="text/javascript" src='<?php echo $GLOBALS["root_dir"]."js/simpleCeilOffer.js"?>'></script>
+	<script type="text/javascript" src='<?php echo $GLOBALS["root_dir"]."js/".$GLOBALS["fn"]["simpleCeilOffer.js"]?>'></script>
 	<link rel="apple-touch-icon" sizes="180x180" href='<?php echo $GLOBALS["root_dir"]."img/favicon_io/apple-touch-icon.png"?>'>
 	<link rel="icon" type="image/png" sizes="32x32" href='<?php echo $GLOBALS["root_dir"]."img/favicon_io/favicon-32x32.png"?>'>
 	<link rel="icon" type="image/png" sizes="16x16" href='<?php echo $GLOBALS["root_dir"]."img/favicon_io/favicon-16x16.png"?>'>

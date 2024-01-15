@@ -1,6 +1,6 @@
 
 	<title>Заказать установку световых линий</title>
-	<link rel="stylesheet" type="text/css" href="../css/technology/lights.css">
+	<link rel="stylesheet" type="text/css" href=<?php echo $GLOBALS['root_dir']."css/technology/".$GLOBALS['fn']['lights.css']?>>
 	<?php 
 		$price_work = $GLOBALS['db']->querySingle("SELECT price FROM priceForCalcult WHERE id = 8");
 	?>

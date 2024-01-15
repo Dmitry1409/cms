@@ -55,7 +55,7 @@
 		<div class="cont_img_sales">
 			<img style="border-radius: 4px;" src="img/sales/Q5yfRA34DK4.jpg">
 		</div>
-		<h4>Матовый потолок BAUF 14 м2 за 8500 руб. с установкой</h4>
+		<h4>Матовый потолок 14 м2 за 8500 руб. с установкой</h4>
 		
 		<div class="serv_cont_saleMainPage">
 			<div>
@@ -86,7 +86,7 @@
 				<svg width="15px" height="15px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" fill="white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
 				</style><g><polygon points="434.8,49 174.2,309.7 76.8,212.3 0,289.2 174.1,463.3 196.6,440.9 196.6,440.9 511.7,125.8 434.8,49     "/></g>
 				</svg>
-				<span class="text_sale_cart">Полотно BAUF classic</span>
+				<span class="text_sale_cart">Полотно матовое</span>
 			</div>
 		</div>
 		<span>Акция действует до <?php echo $tar_date;?></span>

@@ -5,21 +5,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0
 				maximum-scale=1.0, user-scalable=0">
 				
-	<link rel="stylesheet" type="text/css" href=<?php echo $GLOBALS['root_dir']."css/main.css" ?>>
-	<link rel="stylesheet" type="text/css" href=<?php echo $GLOBALS['root_dir']."css/normalize.css" ?>>
-	<script defer type="text/javascript" src=<?php echo $GLOBALS['root_dir']."js/main.js"?>></script>
-	<script defer type="text/javascript" src=<?php echo $GLOBALS['root_dir']."js/feedBackClient.js"?>></script>
-	<script type="text/javascript" src='<?php echo $GLOBALS["root_dir"]."js/simpleCeilOffer.js"?>'></script>
-	<script type="text/javascript" src='<?php echo $GLOBALS["root_dir"]."js/sale_light_block.js"?>'></script>
+	<link rel="stylesheet" type="text/css" href=<?php echo $GLOBALS['root_dir']."css/".$GLOBALS['fn']['main.css'] ?>>
+	<link rel="stylesheet" type="text/css" href=<?php echo $GLOBALS['root_dir']."css/".$GLOBALS['fn']['normalize.css']?>>
+	<script defer type="text/javascript" src=<?php echo $GLOBALS['root_dir']."js/".$GLOBALS['fn']["main.js"]?>></script>
+	<script defer type="text/javascript" src=<?php echo $GLOBALS['root_dir']."js/".$GLOBALS['fn']["feedBackClient.js"]?>></script>
+	<script type="text/javascript" src=<?php echo $GLOBALS["root_dir"]."js/".$GLOBALS['fn']["simpleCeilOffer.js"]?>></script>
+	<script type="text/javascript" src=<?php echo $GLOBALS["root_dir"]."js/".$GLOBALS['fn']["sale_light_block.js"]?>></script>
 	<?php
 		if(strpos($_SERVER['REQUEST_URI'], "favourites") == false){
-			echo "<script defer type='text/javascript' src=".$GLOBALS['root_dir']."js/exampWorkFoto.js></script>";
+			echo "<script defer type='text/javascript' src=".$GLOBALS['root_dir']."js/".$GLOBALS['fn']["exampWorkFoto.js"]."></script>";
 		}
 	?>
 	<link rel="apple-touch-icon" sizes="180x180" href='<?php echo $GLOBALS['root_dir']."img/favicon_io/apple-touch-icon.png"?>'>
 	<link rel="icon" type="image/png" sizes="32x32" href='<?php echo $GLOBALS['root_dir']."img/favicon_io/favicon-32x32.png"?>'>
 	<link rel="icon" type="image/png" sizes="16x16" href='<?php echo $GLOBALS['root_dir']."img/favicon_io/favicon-16x16.png"?>'>
-	<link rel="manifest" href='<?php echo $GLOBALS['root_dir']."site.webmanifest"?>'>
+	<link rel="manifest" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['fn']["site.webmanifest"]?>>
 	<!-- Yandex.Metrika counter -->
 	<!-- <script type="text/javascript" >
 		   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};

@@ -3,7 +3,6 @@
 	include "templates/simple_ceil_offer_block.php";
 ?>
 
-<script type="text/javascript" src='<?php echo $root_dir."js/sale_light_block.js"?>'></script>
 <?php
 	include "templates/ligthing_link_block.php";
 ?>
