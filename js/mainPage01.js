@@ -1,12 +1,4 @@
-
-initNumbMP = 0
 window.addEventListener('DOMContentLoaded',()=>{
-	initNumbMP += 1
-	let f = false
-	if(initNumbMP < 2){
-		f = true
-	}
-
 	if(location.hash){
 		let hash  = location.hash.split('_')[0]
 		let d = document.querySelector(hash)
@@ -17,25 +9,71 @@ window.addEventListener('DOMContentLoaded',()=>{
 		})
 	}
 
-	if(f){
-		document.querySelector('.afert_btn_click').addEventListener('click', aferta_btn_action)
-		document.querySelector('.sales_btn_click').addEventListener('click', sales_btn_action)
-		document.querySelector('.calcul_body div.calc_btn').addEventListener('click', calculate_action)
-	}
+	document.querySelector('.afert_btn_click').addEventListener('click', aferta_btn_action)
+	document.querySelector('.sales_btn_click').addEventListener('click', sales_btn_action)
+	document.querySelector('.calcul_body div.calc_btn').addEventListener('click', calculate_action)
 
 
 	let tech_elem = document.querySelectorAll('.tech_elem')
-	if(f){		
+	if(tech_elem){		
 		for(let i = 0; i < tech_elem.length; i++){
 			tech_elem[i].addEventListener('mouseover', tech_elem_over_action)
 			tech_elem[i].addEventListener('mouseout', tech_elem_out_action)
 			tech_elem[i].addEventListener('click', techLinkAct)
 		}
 	}
+
+	howMuchDoneAction()
 	
+	function howMuchDoneAction(){
+
+		let flHowMuchStart = true
+		let cont = document.querySelector('.howMuchDoneSection')
+		let howMuchSpans = document.querySelectorAll('.howMuchDoneSection > div > span span:first-child')
+		let howMuchCont = document.querySelectorAll('.howMuchCont')
+		let howMuchDoneData = []
+		let duractAnim = [500, 1000, 1500, 2000, 2500, 3000]
+		let arrIdInterv = [0,0,0,0,0,0]				
+		document.addEventListener('scroll', howMuchStart)				
+		for(let i = 0; i<howMuchSpans.length; i++){
+			howMuchDoneData.push(howMuchSpans[i].innerText)
+			howMuchSpans[i].innerText = ""
+		}
+		
+
+		function setValueInterv(ind_elem){
+			let stepVal = Math.ceil(duractAnim[ind_elem] / 10)
+			stepVal = Math.ceil(howMuchDoneData[ind_elem] / stepVal)
+			arrIdInterv[ind_elem] = setInterval(()=>{
+				howMuchSpans[ind_elem].innerText = Number(howMuchSpans[ind_elem].innerText) + stepVal
+				if(Number(howMuchSpans[ind_elem].innerText) > Number(howMuchDoneData[ind_elem])){
+					howMuchSpans[ind_elem].innerText = howMuchDoneData[ind_elem]
+					clearInterval(arrIdInterv[ind_elem])
+					howMuchViewEffect(howMuchSpans[ind_elem])
+				} 
+			}, 10)
+		}
+		function howMuchViewEffect(elem){
+			let d = elem.parentNode.parentNode
+			d.style.transition = ".3s"
+			d.classList.add('boxShadEffect')
+			d.classList.add('borderEffect')
+		}
+		function howMuchStart(){
+			cont_rect = cont.getBoundingClientRect()			
+			if(cont_rect.y < 500){
+				if(flHowMuchStart){
+					flHowMuchStart = false
+					for(let i = 0; i< howMuchSpans.length; i++){
+						setValueInterv(i)
+					}
+					document.removeEventListener('scroll', howMuchStart)
+				}
+			}
+		}
+	}
 
 	function techLinkAct(){
-		console.log(this)
 		window.location.href = this.querySelector('a').href
 	}
 
@@ -90,10 +128,21 @@ window.addEventListener('DOMContentLoaded',()=>{
 			if(spots && spots < 3){
 				sum += Number(lamp_price)
 			}
+			let rep_msg = ""
+			if(rooms){
+				rep_msg += `<h3>Колличество комнат - ${rooms} </h3>`
+			}
+			if(spots){
+				rep_msg += `<h3>Колличество освещения - ${spots}</h3>`
+			}
+			rep_msg += `<h3>Общая площадь - ${sq}</h3>`
+			rep_msg += `<h3>Сумма - ${sum}</h3>`
+			rep_msg += `<h3>Скидка - ${discount}</h3>`
+			rep_msg = encodeURI(rep_msg)
+			fetch(`${root_dir}mailer/report_in_mail.php?tema=Калькулятор_главная&msg=${rep_msg}`) 
 
 			let rand_time = ((Math.random() * 2) + 1) * 1000
 			let btnAnim = document.querySelector('.calculate_cont .calc_btn')
-			console.log(btnAnim)
 			showCalcultAnim(btnAnim)
 			setTimeout(()=>{
 				insertResultCalcult(price, "afterend", sum, discount)
@@ -108,7 +157,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 	}
 
 	function aferta_btn_action(){
-		clientData.click_link = "Главная страница кнопка оформить на сайте скидка 1000 руб"
+		clientData.click_link = "Главная страница кнопка учавствовать в акции 100 клиенту бессплатно"
 		call_me_view()
 	}
 	function sales_btn_action(){

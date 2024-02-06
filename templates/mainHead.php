@@ -9,8 +9,8 @@
 	<link rel="stylesheet" type="text/css" href=<?php echo $GLOBALS['root_dir']."css/".$GLOBALS['fn']['normalize.css']?>>
 	<script defer type="text/javascript" src=<?php echo $GLOBALS['root_dir']."js/".$GLOBALS['fn']["main.js"]?>></script>
 	<script defer type="text/javascript" src=<?php echo $GLOBALS['root_dir']."js/".$GLOBALS['fn']["feedBackClient.js"]?>></script>
-	<script type="text/javascript" src=<?php echo $GLOBALS["root_dir"]."js/".$GLOBALS['fn']["simpleCeilOffer.js"]?>></script>
-	<script type="text/javascript" src=<?php echo $GLOBALS["root_dir"]."js/".$GLOBALS['fn']["sale_light_block.js"]?>></script>
+	<script defer type="text/javascript" src=<?php echo $GLOBALS["root_dir"]."js/".$GLOBALS['fn']["simpleCeilOffer.js"]?>></script>
+	<script defer type="text/javascript" src=<?php echo $GLOBALS["root_dir"]."js/".$GLOBALS['fn']["sale_light_block.js"]?>></script>
 	<?php
 		if(strpos($_SERVER['REQUEST_URI'], "favourites") == false){
 			echo "<script defer type='text/javascript' src=".$GLOBALS['root_dir']."js/".$GLOBALS['fn']["exampWorkFoto.js"]."></script>";

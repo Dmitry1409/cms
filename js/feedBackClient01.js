@@ -1,7 +1,4 @@
-
-initNumbFed = 0
-window.addEventListener('DOMContentLoaded',()=>{
-	initNumbFed +=1
+window.addEventListener("DOMContentLoaded", ()=>{
 
 	let time_feedback = Date.now()
 
@@ -22,59 +19,47 @@ window.addEventListener('DOMContentLoaded',()=>{
 		}
 	}
 
-	if(initNumbFed < 2){
-		document.addEventListener('scroll', scrollActionFeedBack)
-	}
+	document.addEventListener('scroll', scrollActionFeedBack)
+
 	let id_intervalFeed
 	let id_timeOutFeed
 	let flIntervalFeed = false
+		
+	document.querySelector('.add_feedback_section .calc_btn').addEventListener('click', add_feedback_action)
 
-	if(initNumbFed < 2){		
-		document.querySelector('.add_feedback_section .calc_btn').addEventListener('click', add_feedback_action)
-
-		document.querySelector('.feed_left').addEventListener('click', feed_left_action)
-		document.querySelector('.feed_right').addEventListener('click', feed_right_action)
-	}
+	document.querySelector('.feed_left').addEventListener('click', feed_left_action)
+	document.querySelector('.feed_right').addEventListener('click', feed_right_action)
 
 	let sortFeedBackBtns = document.querySelectorAll('.feedBackSortCont > div')
 	for(let i=0; i<sortFeedBackBtns.length; i++){
-		if(initNumbFed < 2){
-			sortFeedBackBtns[i].addEventListener('click', sortFeedBackAction)
-		}
+		sortFeedBackBtns[i].addEventListener('click', sortFeedBackAction)
 	}
 
 	let imgs_feedback = document.querySelectorAll('.feed4countWrapp img')
 	for(let i=0; i<imgs_feedback.length; i++){
-		if(initNumbFed < 2){
-			imgs_feedback[i].addEventListener('click', feedbackImgsShow)
-		}
-	}
-
-	if(initNumbFed < 2){
-		document.querySelector('.add_feedback_section .calc_btn').addEventListener('click', add_feedback_action)
+		imgs_feedback[i].addEventListener('click', feedbackImgsShow)
 	}
 
 	let scope_svg = document.querySelectorAll('.add_feedback_section svg')
 	for(let i = 0; i<scope_svg.length; i++){
-		if(initNumbFed < 2){
-			scope_svg[i].addEventListener('click', feedback_scope_view_action)
-		}
+		scope_svg[i].addEventListener('click', feedback_scope_view_action)
 	}
 
 	
-	if(initNumbFed < 2){
-		document.querySelector('.add_feedback_btn_open_cont > div').addEventListener('click', add_feedback_open)
-	}
+	document.querySelector('.add_feedback_btn_open_cont > div').addEventListener('click', add_feedback_open)
 
+	let cont_feed = document.querySelector('.feedback_section')
 
 	function scrollActionFeedBack(){
-		if(!flIntervalFeed){
-			let cont = document.querySelector('.feedBackSortCont')
-			let rect = cont.getBoundingClientRect()
-			if(rect.y < 100){
+		if(visibleElem(cont_feed)){
+			if(!flIntervalFeed){
 				flIntervalFeed = true
-				setTimeOutIntervalFeed(4000, 4000)	
+				setTimeOutIntervalFeed(4000, 4000)
 			}
+		}else{
+			if(flIntervalFeed) flIntervalFeed = false
+			clearTimeout(id_timeOutFeed)
+			clearInterval(id_intervalFeed)
 		}
 	}
 
@@ -691,7 +676,6 @@ window.addEventListener('DOMContentLoaded',()=>{
 
 		document.querySelector('.fotoGalaryLefttBtn').addEventListener('click', feedBackImgShowRightAct)
 		document.querySelector('.fotoGalaryRightBtn').addEventListener('click', feedBackImgShowLeftAct)
-
 	}
 	function getAndSetSrc(from_elem, to_elem){
 		let src = from_elem.getAttribute('src')

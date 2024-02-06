@@ -1,15 +1,13 @@
-InitNumbEx = 0
+
 window.addEventListener('DOMContentLoaded', ()=>{
-	InitNumbEx += 1
 
 	let hashConObj = {idInt: undefined,
 						block: false,
 						numbSlide: 0}
 
 
-	if(InitNumbEx < 2){
-		document.addEventListener('scroll', scrollAction)
-	}
+	document.addEventListener('scroll', scrollAction)
+	
 	
 	let id_inter_slid
 	let id_timeOut
@@ -35,60 +33,50 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	}
 
 	let contrlHash = document.querySelectorAll('.controlHashItem')
-	if(InitNumbEx < 2){	
-		for(let i=0; i<contrlHash.length; i++){
-			contrlHash[i].addEventListener('click', contrlHashAction)
-		}
+	for(let i=0; i<contrlHash.length; i++){
+		contrlHash[i].addEventListener('click', contrlHashAction)
 	}
 
 	let btn_left = document.querySelector('.examp_btn_left')
 	let btn_rgt  = document.querySelector('.examp_btn_right')
-	if(InitNumbEx < 2){	
-		if(btn_left){
-			btn_left.addEventListener('click', examp_left_action)
-		}
-		if(btn_rgt){
-			btn_rgt.addEventListener('click', examp_right_action)
-		}
+	if(btn_left){
+		btn_left.addEventListener('click', examp_left_action)
 	}
+	if(btn_rgt){
+		btn_rgt.addEventListener('click', examp_right_action)
+	}
+	
 
 
 	let pictures = document.querySelectorAll('.example_img_cont picture')
 	pictures.forEach((item)=>{
-		if(InitNumbEx < 2){
-			item.addEventListener('click', show_img)
-		}
+		item.addEventListener('click', show_img)
 	})
 
 	let cls_btn = document.querySelector('.close_btn_examp')
 	if(cls_btn){
-		if(InitNumbEx < 2){
-			cls_btn.addEventListener('click', close_img_show)
-		}
+		cls_btn.addEventListener('click', close_img_show)
+		
 	}
 
 	let like_btns = document.querySelectorAll('.img_like_cont')
 	like_btns.forEach(function(item){
-		if(InitNumbEx < 2){
-			item.addEventListener('click', like_img_action)
-		}
+		item.addEventListener('click', like_img_action)
 	})
 
 	let request_price_wrapp = document.querySelectorAll('.request_price_wrapp')
 
 	for (let i=0; i < request_price_wrapp.length; i++){
-		if(InitNumbEx < 2){
-			request_price_wrapp[i].addEventListener('click', howPrice)
-		}
+		request_price_wrapp[i].addEventListener('click', howPrice)
 	}
 
 	let chAuto = document.querySelector('.chechAutoCont input')
-	if(InitNumbEx < 2){
-		if(chAuto){
-			chAuto.addEventListener('click', setAutoSlide)
-		}
+	if(chAuto){
+		chAuto.addEventListener('click', setAutoSlide)
 	}
 
+	let contExamp = document.querySelector(".example_img_cont")
+	let fl_slid = false
 
 	function seachAndCallContrAuto(){
 		let cht = document.querySelectorAll(".controlHashItem")
@@ -141,18 +129,35 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		}
 	}
 	function scrollAction(){
-		if(!id_inter_slid){
-			let hashCont = document.querySelector('.controlHashTagCont')
-			if(!hashCont) return
-			rectHash = hashCont.getBoundingClientRect()
-			if(rectHash.y < 50){
-				examp_right_action(null, true , true)
-				id_inter_slid = setInterval(()=>{
-					examp_right_action(null, true , true)
-				}, intervalVal)
-				document.removeEventListener('scroll', scrollAction)
+		if(visibleElem(contExamp)){
+			if(!fl_slid){
+				fl_slid = true
+				if(chAuto.checked){			
+					id_timeOut = setTimeout(()=>{
+						examp_right_action(null, true , true)
+						setInter()
+					}, 4000)
+				}
 			}
+		}else{
+			if(fl_slid){
+				fl_slid = false
+				delInter()
+			}
+
 		}
+		// if(!id_inter_slid){
+		// 	let hashCont = document.querySelector('.controlHashTagCont')
+		// 	if(!hashCont) return
+		// 	rectHash = hashCont.getBoundingClientRect()
+		// 	if(rectHash.y < 50){
+		// 		examp_right_action(null, true , true)
+		// 		id_inter_slid = setInterval(()=>{
+		// 			examp_right_action(null, true , true)
+		// 		}, intervalVal)
+		// 		document.removeEventListener('scroll', scrollAction)
+		// 	}
+		// }
 	}
 	function insertImgHashTagAct(val){
 		let pic = document.querySelectorAll('.example_img_cont picture')

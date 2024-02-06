@@ -1,7 +1,4 @@
-	<?php
-		include "clientFeedBack.php";
-	?>
-
+	
 	<div id="techSectionIdAnch" style="display: flex; justify-content: center; margin-top: 100px;">
 		<div class="vert_line"></div>
 	</div>
@@ -19,7 +16,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Световые линии</h3>
-					<a href='<?php echo $listRout["svetLine"]?>' class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $GLOBALS['listRout']['svetLine']?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">				
@@ -30,7 +27,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Парящие<br>Теневые<br>Подсветка</h3>
-					<a href='<?php echo $listRout["shadProf"]?>' class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $GLOBALS['listRout']["shadProf"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">				
@@ -41,7 +38,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Многоуровневые</h3>
-					<a href='<?php echo $listRout["multiLev"]?>' class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $GLOBALS['listRout']["multiLev"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">
@@ -52,7 +49,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Ниши<br>Гардины</h3>
-					<a href='<?php echo $listRout["hidCur"]?>' class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $GLOBALS['listRout']["hidCur"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">
@@ -63,7 +60,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Простой<br>потолок</h3>
-					<a href='<?php echo $listRout["simpleCeil"]?>' class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $GLOBALS['listRout']["simpleCeil"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">
@@ -74,7 +71,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Фактура<br>Цвет</h3>
-					<a href='<?php echo $listRout["textCol"]?>' class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $GLOBALS['listRout']["textCol"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">
@@ -85,7 +82,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Double Vision<br>Фотопечать</h3>
-					<a href='<?php echo $listRout["dublVis"]?>' class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $GLOBALS['listRout']["dublVis"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">
@@ -96,7 +93,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Резные</h3>
-					<a href='<?php echo $listRout["carCell"]?>' class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $GLOBALS['listRout']["carCell"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">
@@ -107,7 +104,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Световые ниши</h3>
-					<a href='<?php echo $listRout["ligNich"]?>' class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $GLOBALS['listRout']["ligNich"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			
@@ -120,7 +117,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Звездное небо</h3>
-					<a href='<?php echo $listRout["starSky"]?>' class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $GLOBALS['listRout']["starSky"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">
@@ -131,7 +128,7 @@
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
 					<h3 class="tech_header">Споты</h3>
-					<a href='<?php echo $listRout["lighting"]?>' class="btn_tech">Узнать подробнее</a>
+					<a href='<?php echo $GLOBALS['listRout']["lighting"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 		</div>
@@ -190,7 +187,7 @@
 			</div>
 			<div class="grid_item_pres">
 				<div class="present_icon">
-					<img src="img/mainPa	ge/zamer.webp">
+					<img src="img/mainPage/zamer.webp">
 				</div>
 				<div class="present_text_block">
 					<div class="pres_hed">Бесплатный замер</div>
@@ -272,7 +269,7 @@
 					<div>
 						<span>Матовое, глянцевое и сатиновое плотно ПВХ. Гарантия 12 лет</span>
 						<span class="vendorPriseCont">от <span><?php echo $val[53]['price']?></span> руб/м2</span>
-						<a href='<?php echo $listRout["MSD"]?>'>Подробнее</a>
+						<a href='<?php echo $GLOBALS['listRout']["MSD"]?>'>Подробнее</a>
 					</div>
 				</div>
 			</div>
@@ -286,7 +283,7 @@
 					<div>
 						<span>Фактуры: глянцевый потолок, сатин, мат, полупрозрачная, ПВХ (Германия)</span>
 						<span class="vendorPriseCont">от <span><?php echo $val[57]['price']?></span> руб/м2</span>
-						<a href='<?php echo $listRout["BAUF"]?>'>Подробнее</a>
+						<a href='<?php echo $GLOBALS['listRout']["BAUF"]?>'>Подробнее</a>
 					</div>
 				</div>
 			</div>
@@ -301,7 +298,7 @@
 					<div>
 						<span>Полотна: матовое, глянцевое, сатиновое, ПВХ (Германия). Гарантия 15 лет</span>
 						<span class="vendorPriseCont"><span><?php echo $val[59]['price']?></span> руб/м2</span>
-						<a href='<?php echo $listRout["Pongs"]?>'>Подробнее</a>
+						<a href='<?php echo $GLOBALS['listRout']["Pongs"]?>'>Подробнее</a>
 					</div>
 				</div>
 			</div>
@@ -315,7 +312,7 @@
 					<div>
 						<span>Полотна: глянец, сатин, мат, ПВХ (Германия). Класс KM2, негорючие</span>
 						<span class="vendorPriseCont"><span><?php echo $val[58]['price']?></span> руб/м2</span>
-						<a href='<?php echo $listRout["Teqtum"]?>'>Подробнее</a>
+						<a href='<?php echo $GLOBALS['listRout']["Teqtum"]?>'>Подробнее</a>
 					</div>
 				</div>
 			</div>
@@ -381,7 +378,7 @@
 					</div>
 				</div>
 				<div role="button" class="cert_btn_cont">
-					<a href='<?php echo $listRout["certificates"]?>' class="all_doc_btn">Все документы</a>
+					<a href='<?php echo $GLOBALS['listRout']["certificates"]?>' class="all_doc_btn">Все документы</a>
 					<!-- <div class="prise_btn"><div class="btn_animate"></div>Получить прайс лист</div> -->
 				</div>
 			</div>

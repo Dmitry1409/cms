@@ -99,7 +99,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			let print_price = price.getAttribute('data-price-print')
 			let discount = price.getAttribute('data-price-discount')
 
-
 			let sum = 0
 			if(sq <= 3){
 				sum = Number(minOrder)
@@ -117,6 +116,19 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			if(spots && spots < 3){
 				sum += Number(lamp_price)
 			}
+
+			let rep_msg = ""
+			if(print){
+				rep_msg += `<h3>Площадь печати - ${print} </h3>`
+			}
+			if(spots){
+				rep_msg += `<h3>Колличество освещения - ${spots}</h3>`
+			}
+			rep_msg += `<h3>Общая площадь - ${sq}</h3>`
+			rep_msg += `<h3>Сумма - ${sum}</h3>`
+			rep_msg += `<h3>Скидка - ${discount}</h3>`
+			rep_msg = encodeURI(rep_msg)
+			fetch(`${root_dir}mailer/report_in_mail.php?tema=Калькулятор_фотопечать&msg=${rep_msg}`)
 
 			let rand_time = ((Math.random() * 2) + 1) * 1000
 

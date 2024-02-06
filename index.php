@@ -24,19 +24,7 @@
 						"certificates"=>["headCertificates.php", "certificatesPage.php"],
 						"technologysimpleCeil"=>["technology/headSimpleCeil.php", "technology/simpleCeilPage.php"]);
 
-	$fn = array('Favourites_script.js'=>'Favourites_script.js', 'carvedCelling_script.js'=>'carvedCelling_script.js', 'dubleVis_script.js'=>		'dubleVis_script.js', 'exampWorkFoto.js'=>'exampWorkFoto.js', 'fancybox.js'=>'fancybox.js',
-	 			'feedBackClient.js'=>'feedBackClient.js', 'fotoGalView.js'=>'fotoGalView.js', 'hidenCurtain.js'=>'hidenCurtain.js',
-	  			'ligthing_script.js'=>'ligthing_script.js', 'main.js'=>'main.js', 'mainPage.js'=>'mainPage.js',
-	   			'multiLev_script.js'=>'multiLev_script.js','sale_light_block.js'=>'sale_light_block.js',
-	   			'simpleCeilOffer.js'=>'simpleCeilOffer.js','starsSky_script.js'=>'starsSky_script.js',
-	   			'textureColor_script.js'=>'textureColor_script.js','FavouritesStyle.css'=>'FavouritesStyle.css',
-	   			'fancybox.css'=>'fancybox.css', 'lightingStyle.css'=>'lightingStyle.css', 'main.css'=>'main01.css',
-	   			'mainPage.css'=>'mainPage.css', 'normalize.css'=>'normalize.css','vendorsFoilStyle.css'=>'vendorsFoilStyle.css', 
-	   			'carvedCellingStyle.css'=>'carvedCellingStyle.css','dubleVisStyle.css'=>'dubleVisStyle.css', 
-	   			'hiddenCurtainStyle.css'=>'hiddenCurtainStyle.css','lightNichesStyle.css'=>'lightNichesStyle.css',
-	   			'lights.css'=>'lights.css', 'multiLevelStyle.css'=>'multiLevelStyle.css','shadow.css'=>'shadow.css',
-	   			'starsSkyStyle.css'=>'starsSkyStyle.css', 'textureColorStyle.css'=>'textureColorStyle.css',
-	   			'site.webmanifest'=>'site.webmanifest');
+	
 	
 
 	$getPar = explode("?", $_SERVER['REQUEST_URI']);
@@ -63,6 +51,7 @@
 	}
 
 	if($f == 'cms'){
+		// echo $root_dir;
 		root();
 		exit;
 	}
@@ -86,10 +75,16 @@
 	}
 
 	function root(){
-		require "templates/startMainHead.php";
+		require "templates/mainHead.php";
+		// require "templates/startMainHead.php";
 		require "templates/headMainPage.php";
 		require "templates/base_header.php";
 		require "templates/saleMainPage.php";
 		include "templates/howMuchDone.php";
+		include "templates/clientFeedBack.php";
+		include "templates/mainPage.php";
+		$out_count = 2;
+		include "templates/simple_ceil_offer_block.php";
+		include "templates/base_footer.php";
 	}
 ?>

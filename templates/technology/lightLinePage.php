@@ -3,7 +3,8 @@
 		<div class="vert_line"></div>
 	</div>
 	<div class="heder_present" style="position: relative; z-index: 2;">
-		<span>Световые линии <br>для любого помещения</span>
+		<span>Световые линии</span>
+		<span>вы будете в восторге<br>за слова отвечаем</span>
 	</div>
 	
 	<div class="lightsLines_flex">
@@ -49,7 +50,7 @@
 		<div class="vert_line"></div>
 	</div>
 	<div class="heder_present" style="position: relative; z-index: 2;">
-		<span>Игра со стеной</span>
+		<span>Примыкание к стене</span>
 	</div>
 
 	<div class="lightsLines_flex row-reverse">

@@ -68,6 +68,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 			fl = false
 		}
 
+
 		if(fl){
 			multiLev = inpArr[1].value
 			spots = inpArr[2].value
@@ -97,6 +98,19 @@ window.addEventListener('DOMContentLoaded',()=>{
 			if(spots && spots < 3){
 				sum += Number(lamp_price)
 			}
+
+			let rep_msg = ""
+			if(multiLev){
+				rep_msg += `<h3>Дв. уровневый переход - ${multiLev} </h3>`
+			}
+			if(spots){
+				rep_msg += `<h3>Колличество освещения - ${spots}</h3>`
+			}
+			rep_msg += `<h3>Общая площадь - ${sq}</h3>`
+			rep_msg += `<h3>Сумма - ${sum}</h3>`
+			rep_msg += `<h3>Скидка - ${discount}</h3>`
+			rep_msg = encodeURI(rep_msg)
+			fetch(`${root_dir}mailer/report_in_mail.php?tema=Калькулятор_двухуров&msg=${rep_msg}`)
 
 			let rand_time = ((Math.random() * 2) + 1) * 1000
 

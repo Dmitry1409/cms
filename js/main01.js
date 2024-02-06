@@ -1,4 +1,4 @@
-
+const root_dir = "/cms/"
 
 let clientWidth = document.documentElement.clientWidth
 let clientHeight = document.documentElement.clientHeight
@@ -22,8 +22,6 @@ let time_main_menu = Date.now()
 // }
 let clientData = {}
 
-const root_dir = "/cms/"
-
 
 let YDTargetFunc = function(tarId){
 	ym(91462500,'reachGoal', tarId)
@@ -33,136 +31,98 @@ let YDTargetFunc = function(tarId){
 let id_timeout_subMenu1
 let id_timeout_subMenu2
 
-initNumbMain = 0
+
 window.addEventListener('DOMContentLoaded', ()=>{
-
-	initNumbMain +=1
-
-
-	if(initNumbMain == 1){
-		let venLinkId = document.querySelector('#vendorsLinkId')
-		if(venLinkId){
-			venLinkId.addEventListener('click', ()=>{
-				if(location.pathname == root_dir){
-					if(clientWidth < 940){
-						btn_action()
-					}
-					vendorsSectionId.scrollIntoView({
-						'behavior': 'smooth'
-					})
-				}else{
-					location.href = location.origin+root_dir+"#vendorsSectionId"
-				}
-			})
-		}
-
-
-		let footerRooms = document.querySelectorAll(".foot-room-item")
-		if(footerRooms){
-			for(let i =0; i<footerRooms.length; i++){
-				footerRooms[i].addEventListener('click', footerRoomsAct)
+	
+	kontaktBtnId.addEventListener('click', ()=>{
+		if(clientWidth < 940){
+				btn_action()
 			}
+		kontaktSectId.scrollIntoView({
+				'behavior': 'smooth'
+			})
+	})
+
+	feedBackBtnId.addEventListener('click', ()=>{
+		if(clientWidth < 940){
+				btn_action()
+			}
+		feedBackId.scrollIntoView({
+				'behavior': 'smooth'
+			})
+	})
+
+	expressCalcBtnId.addEventListener('click', ()=>{
+		if(location.pathname == root_dir){
+			if(clientWidth < 940){
+				btn_action()
+			}
+			expressCalc.scrollIntoView({
+				'behavior': 'smooth'
+			})
+		}else{
+			location.href = location.origin+root_dir+"#expressCalc_ancher"
 		}
-		
-		kontaktBtnId.addEventListener('click', ()=>{
-			if(clientWidth < 940){
-					btn_action()
-				}
-			kontaktSectId.scrollIntoView({
-					'behavior': 'smooth'
-				})
-		})
+	})
 
-		feedBackBtnId.addEventListener('click', ()=>{
-			if(clientWidth < 940){
-					btn_action()
-				}
-			feedBackId.scrollIntoView({
-					'behavior': 'smooth'
-				})
-		})
+	workExampBtnId.addEventListener('click', ()=>{
+		if(exampWork)
+			exampWork.scrollIntoView({
+				'behavior': 'smooth'
+			})
+		if(clientWidth < 940){
+			btn_action()
+		}
+	})
 
-		expressCalcBtnId.addEventListener('click', ()=>{
+	questAnswerBtnId.addEventListener('click', ()=>{
+			questAnswer.scrollIntoView({
+				'behavior': 'smooth'
+			})
+			if(clientWidth < 940){
+				btn_action()
+			}
+	})
+
+	document.querySelectorAll('.virt_btn_menu')[0].addEventListener('click', btn_action)
+
+	document.querySelector('.background_menu').addEventListener('click', btn_action)
+
+
+	let sub_menu_btn = document.querySelectorAll('.sub_menu_btn')
+	for(let i=0; i<sub_menu_btn.length; i++){
+		sub_menu_btn[i].addEventListener('click', sub_menu_action)
+	}
+
+	document.querySelector('.call_me_container').addEventListener('click', order_a_call)
+	document.querySelector('.close_modal').addEventListener('click', close_modal_action)
+	document.querySelector('.modal_backgraund').addEventListener('click', close_modal_action)
+	document.querySelector('.header_lozung a').addEventListener('click', call_me_action)
+	document.querySelector('.call_me_send').addEventListener('click', sendMailWithData)
+	document.querySelector('.modal_report').addEventListener('click', close_report_modal)
+
+	let tel_rel = document.querySelector('.tel-rel')
+	if(tel_rel.querySelector('.mask-tel')){
+		tel_rel.addEventListener('click', maskTelClickAction)
+		let fot_tel = document.querySelector('.footer_inf_cont')
+		fot_tel.addEventListener('click', maskTelClickAction)
+	}
+
+	let venLinkId = document.querySelector('#vendorsLinkId')
+	if(venLinkId){
+		venLinkId.addEventListener('click', ()=>{
 			if(location.pathname == root_dir){
 				if(clientWidth < 940){
 					btn_action()
 				}
-				expressCalc.scrollIntoView({
+				vendorsSectionId.scrollIntoView({
 					'behavior': 'smooth'
 				})
 			}else{
-				location.href = location.origin+root_dir+"#expressCalc_ancher"
+				location.href = location.origin+root_dir+"#vendorsSectionId"
 			}
 		})
-
-		workExampBtnId.addEventListener('click', ()=>{
-			if(exampWork)
-				exampWork.scrollIntoView({
-					'behavior': 'smooth'
-				})
-			if(clientWidth < 940){
-				btn_action()
-			}
-		})
-
-		questAnswerBtnId.addEventListener('click', ()=>{
-				questAnswer.scrollIntoView({
-					'behavior': 'smooth'
-				})
-				if(clientWidth < 940){
-					btn_action()
-				}
-		})
-
-		document.querySelectorAll('.virt_btn_menu')[0].addEventListener('click', btn_action)
-
-		document.querySelector('.background_menu').addEventListener('click', btn_action)
-	
-
-		let sub_menu_btn = document.querySelectorAll('.sub_menu_btn')
-		for(let i=0; i<sub_menu_btn.length; i++){
-			sub_menu_btn[i].addEventListener('click', sub_menu_action)
-		}
-
-		document.querySelector('.call_me_container').addEventListener('click', order_a_call)
-		document.querySelector('.close_modal').addEventListener('click', close_modal_action)
-		document.querySelector('.modal_backgraund').addEventListener('click', close_modal_action)
-		document.querySelector('.header_lozung a').addEventListener('click', call_me_action)
-		document.querySelector('.call_me_send').addEventListener('click', sendMailWithData)
-		document.querySelector('.modal_report').addEventListener('click', close_report_modal)
-
-		checkCurrentLocation()
-
-		
-		checkMaskTel()
 	}
-
-	if(initNumbMain == 2){
-		let venLinkId = document.querySelector('#vendorsLinkId')
-		if(venLinkId){
-			venLinkId.addEventListener('click', ()=>{
-				if(location.pathname == root_dir){
-					vendorsSectionId.scrollIntoView({
-						'behavior': 'smooth'
-					})
-				}else{
-					location.href = location.origin+root_dir+"#vendorsSectionId"
-				}
-			})
-		}
-		checkMaskTel()
-	} 
-
-
-	let footerRooms = document.querySelectorAll(".foot-room-item")
-	if(initNumbMain == 2){
-		if(footerRooms){
-			for(let i =0; i<footerRooms.length; i++){
-				footerRooms[i].addEventListener('click', footerRoomsAct)
-			}
-		}
-	}
-	
 
 	let questBlocks = document.querySelectorAll('.questBlock')
 	if(questBlocks){
@@ -170,12 +130,17 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			questBlocks[i].addEventListener('click', answerClickAction)
 		}	
 	}
+
+	let footerRooms = document.querySelectorAll(".foot-room-item")
+	if(footerRooms){
+		for(let i =0; i<footerRooms.length; i++){
+			footerRooms[i].addEventListener('click', footerRoomsAct)
+		}
+	}
+
+	checkCurrentLocation()
 	
-
-
 	let idTimeOutAnswer
-
-	
 
 	function footerRoomsAct(){
 		if(location.pathname.indexOf("favourites") > -1){
@@ -203,41 +168,9 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		}
 	}
 
-	async function checkMaskTel(){
-		let r = await fetch(`${root_dir}scripts_php/maskTelHandler.php`)
-		if(r.ok){
-			let o = await r.text()
-			if(o == "noClick"){
-				insertMaskTel()
-			}
-		}
-	}
-	function insertMaskTel(){
-		let html = `<div class="mask-tel">
-						<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-							 width="70%" height="70%" viewBox="0 0 512 512" fill="rgba(255,255,255, 0.9)" xml:space="preserve">
-							<path d="M256,96C144.341,96,47.559,161.021,0,256c47.559,94.979,144.341,160,256,160c111.656,0,208.439-65.021,256-160
-								C464.441,161.021,367.656,96,256,96z M382.225,180.852c30.082,19.187,55.572,44.887,74.719,75.148
-								c-19.146,30.261-44.639,55.961-74.719,75.148C344.428,355.257,300.779,368,256,368c-44.78,0-88.428-12.743-126.225-36.852
-								c-30.08-19.188-55.57-44.888-74.717-75.148c19.146-30.262,44.637-55.962,74.717-75.148c1.959-1.25,3.938-2.461,5.929-3.65
-								C130.725,190.866,128,205.613,128,221c0,70.691,57.308,128,128,128c70.691,0,128-57.309,128-128
-								c0-15.387-2.725-30.134-7.703-43.799C378.285,178.39,380.266,179.602,382.225,180.852z M256,205c0,26.51-21.49,48-48,48
-								s-48-21.49-48-48s21.49-48,48-48S256,178.49,256,205z"/>
-						</svg>
-					</div>`
-
-		let headcont = document.querySelector('.tel-rel')
-		let footercont = document.querySelector('.footer_inf_cont')
-		if(!headcont.querySelector('.mask-tel')){
-			headcont.insertAdjacentHTML('afterbegin', html)
-			headcont.addEventListener('click', maskTelClickAction)
-		}
-		if(footercont){
-			footercont.insertAdjacentHTML('afterbegin', html)
-			footercont.addEventListener('click', maskTelClickAction)
-		}	
-	}
+	
 	function maskTelClickAction(){
+		console.log('mask')
 		let allMask = document.querySelectorAll('.mask-tel')
 		for(let i=0; i<allMask.length; i++){
 			allMask[i].remove()
@@ -307,7 +240,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 window.addEventListener('load', ()=>{
 	let idBanIntrv
 	let idBanTimOut
-	let valTimeout = 5000
+	let valTimeout = 3000
 
 	let bannerTimeProtect = Date.now()
 	let banButt = document.querySelectorAll('.headerContrlItem')
@@ -316,9 +249,28 @@ window.addEventListener('load', ()=>{
 			banButt[i].addEventListener('click', bannerAction)
 		}
 	}
-
+	let bannCont = document.querySelector('.header_lozung')
+	let flBanner = false
 	getAllBanner()
-	setIntBann()
+
+	window.addEventListener('scroll', bannerScrollAction)
+
+	
+
+	function bannerScrollAction(){
+		if(visibleElem(bannCont)){
+			if(!flBanner){
+				flBanner = true
+				setIntBann()
+			}
+		}else{
+			if(flBanner){
+				flBanner = false
+				clearInterval(idBanIntrv)
+				clearTimeout(idBanTimOut)
+			}
+		}
+	}
 
 	function setIntBann(){
 		idBanTimOut = setTimeout(()=>{
@@ -428,7 +380,7 @@ window.addEventListener('load', ()=>{
 
 			chSpan(span2, p[next].getAttribute('secText'))
 	
-			bannerTimeProtect = Date.now() + 3000
+			bannerTimeProtect = Date.now() + 2000
 		}
 	}
 
@@ -573,7 +525,6 @@ function open_report_modal(msg_header, msg_body ){
 	},10)
 }
 function reset_call_me_box(){
-
 	document.querySelector('.call_me_cont input[type="checkbox"]').checked = false
 	let nameField = document.querySelector('.call_me_cont input[name="call_me_name"]')
 	let phoneField = document.querySelector('.call_me_cont input[name="call_me_phone"]')
