@@ -37,15 +37,15 @@
 	
 	$fn = array('Favourites_script.js'=>'Favourites_script.js', 'carvedCelling_script.js'=>'carvedCelling_script.js', 'dubleVis_script.js'=>		'dubleVis_script01.js', 'exampWorkFoto.js'=>'exampWorkFoto01.js', 'fancybox.js'=>'fancybox.js',
 	 			'feedBackClient.js'=>'feedBackClient01.js', 'fotoGalView.js'=>'fotoGalView.js', 'hidenCurtain.js'=>'hidenCurtain.js',
-	  			'ligthing_script.js'=>'ligthing_script.js', 'main.js'=>'main01.js', 'mainPage.js'=>'mainPage01.js',
+	  			'ligthing_script.js'=>'ligthing_script.js', 'main.js'=>'main02.js', 'mainPage.js'=>'mainPage02.js',
 	   			'multiLev_script.js'=>'multiLev_script01.js','sale_light_block.js'=>'sale_light_block01.js',
 	   			'simpleCeilOffer.js'=>'simpleCeilOffer01.js','starsSky_script.js'=>'starsSky_script.js',
 	   			'textureColor_script.js'=>'textureColor_script.js','FavouritesStyle.css'=>'FavouritesStyle.css',
-	   			'fancybox.css'=>'fancybox.css', 'lightingStyle.css'=>'lightingStyle.css', 'main.css'=>'main01.css',
-	   			'mainPage.css'=>'mainPage.css', 'normalize.css'=>'normalize.css','vendorsFoilStyle.css'=>'vendorsFoilStyle.css', 
+	   			'fancybox.css'=>'fancybox.css', 'lightingStyle.css'=>'lightingStyle.css', 'main.css'=>'main02.css',
+	   			'mainPage.css'=>'mainPage01.css', 'normalize.css'=>'normalize.css','vendorsFoilStyle.css'=>'vendorsFoilStyle.css', 
 	   			'carvedCellingStyle.css'=>'carvedCellingStyle.css','dubleVisStyle.css'=>'dubleVisStyle.css', 
-	   			'hiddenCurtainStyle.css'=>'hiddenCurtainStyle.css','lightNichesStyle.css'=>'lightNichesStyle.css',
-	   			'lights.css'=>'lights.css', 'multiLevelStyle.css'=>'multiLevelStyle.css','shadow.css'=>'shadow.css',
+	   			'hiddenCurtainStyle.css'=>'hiddenCurtainStyle01.css','lightNichesStyle.css'=>'lightNichesStyle.css',
+	   			'lights.css'=>'lights01.css', 'multiLevelStyle.css'=>'multiLevelStyle.css','shadow.css'=>'shadow01.css',
 	   			'starsSkyStyle.css'=>'starsSkyStyle.css', 'textureColorStyle.css'=>'textureColorStyle.css',
 	   			'site.webmanifest'=>'site.webmanifest');
 ?>
