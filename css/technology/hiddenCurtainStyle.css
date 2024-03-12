@@ -5,6 +5,7 @@
 * Browsers: last 4 version
 */
 
+
 .cont_img_prev{
 	display: flex;
 	height: 65px;
@@ -38,16 +39,7 @@
 	font-size: 20px;
 }
 
-.big_green_defice{
-	width: 20px;
-	height: 4px;
-	border-radius: 3px;
-	background-color: var(--main-col-1);
-	position: absolute;
-	right: calc(100% + 10px);
-	top: 6px;
 
-}
 .vari_item_fexbox{
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -96,6 +88,12 @@
 }
 
 @media(min-width: 800px){
+	.vari_tenevoy > div:first-child{
+		margin-right: 30px;
+	}
+	.vari_tenevoy > div{
+		width: calc((100% - 30px)/2);
+	}
 	.vari_gard_cont{
 		display: -webkit-box;
 		display: -ms-flexbox;

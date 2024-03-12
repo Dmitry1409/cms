@@ -1,12 +1,32 @@
+	<div class="huw_m_sales_wrapp">
+	<?php
+		echo "<div>";
+		require "templates/saleMainPage.php";
+		echo "</div>";
+		echo "<div>";
+		include "templates/howMuchDone.php";
+		echo "</div>";
+	?>
+	</div>
+
+	<?php
+		include "templates/clientFeedBack.php";
+	?>
 	
 	<div id="techSectionIdAnch" style="display: flex; justify-content: center; margin-top: 100px;">
 		<div class="vert_line"></div>
 	</div>
 	<div class="heder_present" style="position: relative; z-index: 2;">
-		<span>Установим любой вид<br>потолка</span>
+		<h1>Установим любой вид<br>потолка</h1>
 	</div>
 	<div style="position: relative;">
 		<div class="padd_tech"></div>
+		<div class="tech_down_bt">
+			<span>+6</span>
+			<div role="button" class="arrow-wrapp">	
+				<div class="arrow-8"></div>
+			</div>
+		</div>
 		<div class="tech_grid">
 			<div class="tech_elem">				
 				<picture class="tech_picture">
@@ -26,8 +46,19 @@
 				</picture>	
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
-					<h3 class="tech_header">Парящие<br>Теневые<br>Подсветка</h3>
+					<h3 class="tech_header">Парящий<br>Подсветка</h3>
 					<a href='<?php echo $GLOBALS['listRout']["shadProf"]?>' class="btn_tech">Узнать подробнее</a>
+				</div>
+			</div>
+			<div class="tech_elem">				
+				<picture class="tech_picture">
+					<source srcset="img/mainPage/webp/diploma.webp" type="image/webp">
+					<img class="img_skew" src="img/mainPage/jpg/diploma.jpg" alt="Теневые потолки">
+				</picture>				
+				<div class="tech_mask"></div>
+				<div class="skew_revers">
+					<h3 class="tech_header">Теневой</h3>
+					<a href='<?php echo $GLOBALS['listRout']['tenevoy']?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">				
@@ -37,7 +68,7 @@
 				</picture>
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
-					<h3 class="tech_header">Многоуровневые</h3>
+					<h3 class="tech_header">Многоуровневый</h3>
 					<a href='<?php echo $GLOBALS['listRout']["multiLev"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
@@ -92,7 +123,7 @@
 				</picture>			
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
-					<h3 class="tech_header">Резные</h3>
+					<h3 class="tech_header">Резной</h3>
 					<a href='<?php echo $GLOBALS['listRout']["carCell"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
@@ -107,8 +138,6 @@
 					<a href='<?php echo $GLOBALS['listRout']["ligNich"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
-			
-
 			<div class="tech_elem">
 				<picture class="tech_picture">
 					<source srcset="img/mainPage/webp/night_sky.webp" type="image/webp">
@@ -127,7 +156,7 @@
 				</picture>				
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
-					<h3 class="tech_header">Споты</h3>
+					<h3 class="tech_header">Свето-техника</h3>
 					<a href='<?php echo $GLOBALS['listRout']["lighting"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
@@ -145,7 +174,7 @@
 			<div class="vert_line"></div>
 		</div>
 		<div class="heder_present">
-			<span>За что нас выбирают</span>
+			<h1>За что нас выбирают</h1>
 			<span>Поcмотрите сами</span>
 		</div>
 		<div class="cont_grid_pres">
@@ -154,7 +183,7 @@
 					<img src="img/mainPage/piggy.webp">
 				</div>
 				<div class="present_text_block">
-					<div class="pres_hed">В среднем дешевле на 30%</div>
+					<div class="pres_hed">Дешевле на 30%</div>
 					<div class="pres_desc">у нас дешевле чем у других</div>
 				</div>
 			</div>
@@ -216,7 +245,7 @@
 			<div class="vert_line"></div>
 		</div>
 		<div class="heder_present" style="position: relative; z-index: 2; margin-bottom: unset;">
-			<span>Экспресс расчет</span>
+			<h1>Экспресс расчет</h1>
 		</div>
 		<?php
 			$res = $GLOBALS['db']->query("SELECT id, name, price FROM priceForCalcult WHERE id IN (1, 2, 3, 4, 6)");
@@ -248,7 +277,7 @@
 		<div class="vert_line"></div>
 	</div>
 	<div class="heder_present" style="position: relative; z-index: 2; margin-bottom: 50px;">
-		<span>Наши поставщики</span>
+		<h1>Наши поставщики<br>полотна</h1>
 	</div>
 
 	<div  class="vendorSection">
@@ -326,7 +355,7 @@
 					<div class="vert_line"></div>
 				</div>
 				<div class="heder_present" style="position: relative; z-index: 2;">
-					<span>Ежемесячная акция</span>
+					<h1>Ежемесячная акция</h1>
 				</div>
 				<div class="aferta_block">
 					<div class="sale_flag">50000 руб.</div>
@@ -343,7 +372,7 @@
 						<div class="vert_line"></div>
 					</div>
 					<div class="heder_present" style="position: relative; z-index: 2;">
-						<span>Сертификаты</span>
+						<h1>Сертификаты</h1>
 						<span>экологические, противопожарные</span>
 					</div>
 				</div>

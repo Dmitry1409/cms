@@ -2,7 +2,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Выбранные товары</span>
+	<h1>Выбранные товары</h1>
 </div>
 
 <?php
@@ -108,7 +108,7 @@ if(array_key_exists('buyProducts', $_SESSION)){
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Вам понравилось</span>
+	<h1>Вам понравилось</h1>
 </div>
 
 <?php

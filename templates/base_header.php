@@ -98,19 +98,20 @@
 						<div class="menu_item sub_menu_btn"><span>Технологии</span><span></span></div>
 						<div role="menu" class="sub_menu">
 							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['svetLine']?>>Световые линии</a>
-							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['shadProf']?>>Парящие & Теневые & Подсветка</a>
-							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['multiLev']?> >Многоуровневые</a>
+							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['tenevoy']?>>Теневой</a>
+							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['shadProf']?>>Парящий & Подсветка</a>
+							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['multiLev']?> >Многоуровневый</a>
 							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['hidCur']?>>Ниши & Гардины</a>
 							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['simpleCeil']?>>Простой потолок</a>
 							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['textCol']?>>Фактура & Цвет</a>
 							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['dublVis']?>>Double Vision & Фотопечать</a>
-							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['carCell']?>>Резные</a>
+							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['carCell']?>>Резной</a>
 							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['ligNich']?>>Световые ниши</a>
 							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['starSky']?>>Звездное небо</a>
 						</div>
 					</div>
 					<div class="line_butt"></div>
-					<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['lighting']?>>Споты</a>			
+					<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['lighting']?>>Свето-техника</a>			
 					<div class="line_butt"></div>
 					<div class="cont_940">
 						<div class="menu_item sub_menu_btn"><span>Производители ПВХ</span><span></span></div>
@@ -153,27 +154,15 @@
 		</div>
 		<?php
 			$idRow = 1;
-			$yandGroup = ["5366403762"=>3, "5366403756"=>4, "5153947638"=>4, "5153947644"=>3];
 			$pathArr = [["lighting", 2],["textureColor", 4], ["hiddenCurtain", 3]];
-			$fl = false;
 
-			//если есть группы яндекса директа выбираем банеры под него
-			if(array_key_exists("idGroup", $_GET)){
-				if(array_key_exists($_GET['idGroup'], $yandGroup)){
-					$idRow = $yandGroup[$_GET['idGroup']];
-					$fl = true;
-				}
-			}
 			// если в пути содержится один из трех ваиантов выбираем банер под него
-			if(!$fl){
-				$uri = $_SERVER['REQUEST_URI'];
-				for($i = 0; $i<count($pathArr); $i++){
-					if(strpos($uri, $pathArr[$i][0]) or strpos($uri, $pathArr[$i][0]) === 0){
-						$idRow = $pathArr[$i][1];
-						break;
-					}
+			$uri = $_SERVER['REQUEST_URI'];
+			for($i = 0; $i<count($pathArr); $i++){
+				if(strpos($uri, $pathArr[$i][0]) or strpos($uri, $pathArr[$i][0]) === 0){
+					$idRow = $pathArr[$i][1];
+					break;
 				}
-
 			}
 
 			$a = $GLOBALS['db']->query("SELECT * FROM headerBanner WHERE id = $idRow")->fetchArray(SQLITE3_ASSOC);

@@ -3,8 +3,8 @@
 		<div class="vert_line"></div>
 	</div>
 	<div class="heder_present" style="position: relative; z-index: 2;">
-		<span>Световые линии</span>
-		<span>вы будете в восторге<br>за слова отвечаем</span>
+		<h1>Световые линии</h1>
+		<span>главный элемент интерьера</span>
 	</div>
 	
 	<div class="lightsLines_flex">
@@ -40,7 +40,7 @@
 	<?php
 
 		$query = "SELECT id_img FROM hashTags WHERE name = 'световые линии'";
-		$key_session = 'ligthLineImg';
+		// $key_session = 'ligthLineImg';
 		$hashsSelect = ['#световые линии'];
 		include "templates/exampWorkFoto.php";
 	?>
@@ -50,7 +50,7 @@
 		<div class="vert_line"></div>
 	</div>
 	<div class="heder_present" style="position: relative; z-index: 2;">
-		<span>Примыкание к стене</span>
+		<h1>Примыкание к стене</h1>
 	</div>
 
 	<div class="lightsLines_flex row-reverse">
@@ -78,7 +78,7 @@
 		<div class="vert_line"></div>
 	</div>
 	<div class="heder_present" style="position: relative; z-index: 2;">
-		<span>Различные формы</span>
+		<h1>Различные формы</h1>
 	</div>
 
 	<div class="lightsLines_flex row_quadr">
@@ -107,7 +107,7 @@
 		<div class="vert_line"></div>
 	</div>
 	<div class="heder_present" style="position: relative; z-index: 2;">
-		<span>Устройство</span>
+		<h1>Устройство</h1>
 		<span>световых линий</span>
 	</div>
 
@@ -139,7 +139,7 @@
 			<div class="vert_line"></div>
 		</div>
 		<div class="heder_present" style="position: relative; z-index: 2;">
-			<span>Цены</span>
+			<h1>Цены</h1>
 		</div>
 
 		<div class="price_table">

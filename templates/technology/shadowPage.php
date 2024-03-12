@@ -4,16 +4,15 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Подберём профиль</span>
-	<span>и установим</span>
+	<h1>Установим парящий<br>потолок</h1>
 </div>
 
 
 <div class="lightsLines_flex">
 	<div class="lights_img_cont">
 		<picture>
-			<source srcset="../img/a9e89e81-915e-4292-a88a-069c649eaa7b.webp" type="image/webp">
-			<img src="../img/a9e89e81-915e-4292-a88a-069c649eaa7b.jpg" alt="Парящие и теневые потолки">
+			<source srcset="../img/flying/18246695-pariashchii-potolok-84.webp" type="image/webp">
+			<img src="../img/flying/18246695-pariashchii-potolok-84.jpg" alt="Парящие потолки и потолки с подсветкой">
 		</picture>
 	</div>
 	<div class="lights_text">
@@ -43,7 +42,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Виды профилей</span>
+	<h1>Виды профилей</h1>
 </div>
 
 <div class="types_prof_cont">
@@ -117,13 +116,43 @@
 	</div>
 </div>
 
+<div class="vert_line_cont device_vert">
+	<div class="vert_line"></div>
+</div>
+<div class="heder_present" style="position: relative; z-index: 2;">
+	<h1>Парящий<br>с рассеивателем</h1>
+</div>
+
+
+<div class="lightsLines_flex">
+	<div class="lights_img_cont">
+		<picture>
+			<source srcset="../img/flying/xnr78gbuk0w0dcpzax1h73k0.webp" type="image/webp">
+			<img src="../img/flying/xnr78gbuk0w0dcpzax1h73k0.jpg" alt="Парящий потолок с рассеивателем">
+		</picture>
+	</div>
+	<div class="lights_text">
+		<div class="flex_col">
+			<span>
+				<div class="big_green_defice"></div><span>Равномерный свет</span>
+			</span>
+			<span>
+				<div class="big_green_defice"></div> <span>Дополнительная изоляция</span>
+			</span>
+			<span>
+				<div class="big_green_defice"></div><span>Легкий доступ</span>
+			</span>
+		</div>
+	</div>
+</div>
+
 
 <div class="price_section">
 	<div class="vert_line_cont device_vert">
 		<div class="vert_line"></div>
 	</div>
 	<div class="heder_present" style="position: relative; z-index: 2;">
-		<span>Цены</span>
+		<h1>Цены</h1>
 	</div>
 
 	<div class="price_table">

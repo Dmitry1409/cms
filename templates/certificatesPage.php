@@ -2,7 +2,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2; margin-bottom: 50px;">
-	<span>Экологический сертификат</span>
+	<h1>Экологический сертификат</h1>
 	<span>от института экологии и сертификации</span>
 </div>
 
@@ -24,7 +24,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2; margin-bottom: 50px;">
-	<span>Сертификат соответствия</span>
+	<h1>Сертификат соответствия</h1>
 </div>
 
 <div class="img_cont">
@@ -43,7 +43,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2; margin-bottom: 50px;">
-	<span>Продукт повышенной экологической безопасности</span>
+	<h1>Продукт повышенной экологической безопасности</h1>
 </div>
 
 
@@ -82,7 +82,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2; margin-bottom: 50px;">
-	<span>Сертификат официального дистрибьютора</span>
+	<h1>Сертификат официального дистрибьютора</h1>
 </div>
 
 <div class="img_cont">
@@ -102,7 +102,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2; margin-bottom: 50px;">
-	<span>Пожарная безопасность</span>
+	<h1>Пожарная безопасность</h1>
 </div>
 
 <div class="img_cont">

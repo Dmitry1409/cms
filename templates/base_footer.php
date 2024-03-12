@@ -243,7 +243,7 @@
 		</div>
 		<div class="footer_cont_main_2">
 			<div class="footer_menu">
-				<a href=<?php echo $GLOBALS['root_dir']."lighting"?>>Товары</a>
+				<a href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']["lighting"]?>>Товары</a>
 				<a href=<?php echo $GLOBALS['root_dir']."#techSectionIdAnch"?>>Услуги</a>
 				<a style="color: rgb(255 255 255 / 50%);">Прайс-лист</a>
 				<a style="color: rgb(255 255 255 / 50%);">Статьи</a>
@@ -313,15 +313,15 @@
 		<div>
 			<h4><?php echo $GLOBALS['COMPANY_NAME']?><br> в Нижегородской области</h4>
 			<ul>
-				<li><a href=<?php echo $GLOBALS['root_dir']?>><span>Нижний Новгород</span></a></li>
-				<li><a href=<?php echo $GLOBALS['root_dir']?>><span>Дзержинск</span></a></li>
-				<li><a href=<?php echo $GLOBALS['root_dir']?>><span>Кстово</span></a></li>
-				<li><a href=<?php echo $GLOBALS['root_dir']?>><span>Бор</span></a></li>
-				<li><a href=<?php echo $GLOBALS['root_dir']?>><span>Балахна</span></a></li>
-				<li><a href=<?php echo $GLOBALS['root_dir']?>><span>Богородск</span></a></li>
-				<li><a href=<?php echo $GLOBALS['root_dir']?>><span>Городец</span></a></li>
-				<li><a href=<?php echo $GLOBALS['root_dir']?>><span>Заволжье</span></a></li>
-				<li><a href=<?php echo $GLOBALS['root_dir']?>><span>Павлово</span></a></li>
+				<li><a href=<?php echo $GLOBALS['root_dir']."?city=nizhniyNovgorod"?>><span>Нижний Новгород</span></a></li>
+				<li><a href=<?php echo $GLOBALS['root_dir']."?city=dzerzhinsk"?>><span>Дзержинск</span></a></li>
+				<li><a href=<?php echo $GLOBALS['root_dir']."?city=kstovo"?>><span>Кстово</span></a></li>
+				<li><a href=<?php echo $GLOBALS['root_dir']."?city=bor"?>><span>Бор</span></a></li>
+				<li><a href=<?php echo $GLOBALS['root_dir']."?city=balahna"?>><span>Балахна</span></a></li>
+				<li><a href=<?php echo $GLOBALS['root_dir']."?city=bogorodsk"?>><span>Богородск</span></a></li>
+				<li><a href=<?php echo $GLOBALS['root_dir']."?city=gorodec"?>><span>Городец</span></a></li>
+				<li><a href=<?php echo $GLOBALS['root_dir']."?city=zavolzhe"?>><span>Заволжье</span></a></li>
+				<li><a href=<?php echo $GLOBALS['root_dir']."?city=pavlovo"?>><span>Павлово</span></a></li>
 			</ul>
 		</div>
 		<div>
@@ -334,7 +334,7 @@
 				<li><a href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['hidCur']?>><span>Скрытая гардина</span></a></li>
 				<li><a href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['multiLev']?>><span>Двухуровные</span></a></li>
 				<li><a href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['shadProf']?>><span>Парящие</span></a></li>
-				<li><a href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['shadProf']?>><span>Теневые</span></a></li>
+				<li><a href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['tenevoy']?>><span>Теневые</span></a></li>
 				<li><a href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['shadProf']?>><span>С подсветкой</span></a></li>
 				<li><a href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['svetLine']?>><span>Световые линии</span></a></li>
 				<li><a href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['dublVis']?>><span>С фотопечатью</span></a></li>
@@ -358,12 +358,9 @@
 		</div>
 	</div>
 	<div class="copy_cont">
-		<span>Copyright &copy; 2020 - 2023<br> <?php echo $GLOBALS['COMPANY_NAME']?></span>
+		<span>Copyright &copy; 2020 - 2024<br> <?php echo $GLOBALS['COMPANY_NAME']?></span>
 		<span>Поддержка.&nbsp; &nbsp;<a href="#">Разработка сайтов</a></span>
 	</div>
 </div>
-
-
-
 </body>
 </html>

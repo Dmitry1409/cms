@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0
 				maximum-scale=1.0, user-scalable=0">
-				
+	<meta name="robots" content="index, follow">
 	<link rel="stylesheet" type="text/css" href=<?php echo $GLOBALS['root_dir']."css/".$GLOBALS['fn']['main.css'] ?>>
 	<link rel="stylesheet" type="text/css" href=<?php echo $GLOBALS['root_dir']."css/".$GLOBALS['fn']['normalize.css']?>>
 	<script defer type="text/javascript" src=<?php echo $GLOBALS['root_dir']."js/".$GLOBALS['fn']["main.js"]?>></script>

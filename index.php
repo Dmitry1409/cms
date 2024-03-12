@@ -7,6 +7,7 @@
 	include "templates/listRouts.php";
 
 	$listTemplates = array("technologylightLines"=>["technology/headLines.php", "technology/lightLinePage.php"],
+						"technologytenevoy"=>["technology/headTenevoy.php", "technology/tenevoyPage.php"],
 						"technologyshadowProfil"=>["technology/headShadow.php", "technology/shadowPage.php"],
 						"technologymultiLevel"=>["technology/headMultiLevel.php", "technology/multiLevelPage.php"],
 						"technologyhiddenCurtain"=>["technology/headHiddenCurtain.php", "technology/hiddenCurtainPage.php"],
@@ -51,7 +52,6 @@
 	}
 
 	if($f == 'cms'){
-		// echo $root_dir;
 		root();
 		exit;
 	}
@@ -76,12 +76,8 @@
 
 	function root(){
 		require "templates/mainHead.php";
-		// require "templates/startMainHead.php";
 		require "templates/headMainPage.php";
 		require "templates/base_header.php";
-		require "templates/saleMainPage.php";
-		include "templates/howMuchDone.php";
-		include "templates/clientFeedBack.php";
 		include "templates/mainPage.php";
 		$out_count = 2;
 		include "templates/simple_ceil_offer_block.php";

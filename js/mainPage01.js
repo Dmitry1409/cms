@@ -25,6 +25,33 @@ window.addEventListener('DOMContentLoaded',()=>{
 
 	howMuchDoneAction()
 	
+	techProceesing()
+
+	function techProceesing(){
+
+		function tech_bt_act(){
+			bt.remove()
+			cont.style.height = cont.scrollHeight + "px"
+		}
+		let cont = document.querySelector('.tech_grid')
+		let elem = cont.querySelectorAll(".tech_elem")
+		let h_e = elem[0].offsetHeight + 10
+		let over
+		if(clientWidth < 640){
+			over = h_e * 6 + 150
+		}else if( clientWidth > 640 && clientWidth < 940){
+			over = h_e * 3 + 150
+		}else{
+			over = h_e*2 + 150
+		}
+		cont.style.overflow = "hidden"
+		cont.style.height = over + "px"
+
+		let bt = document.querySelector('.tech_down_bt')
+		bt.addEventListener("click", tech_bt_act)
+
+	}
+
 	function howMuchDoneAction(){
 
 		let flHowMuchStart = true

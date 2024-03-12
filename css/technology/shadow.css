@@ -5,6 +5,21 @@
 * Browsers: last 4 version
 */
 
+.flex_col{
+	display: flex;;
+	flex-direction: column;
+	margin-top: 30px;
+	margin-left: 15%;
+
+}
+.flex_col > span {
+	position: relative;
+	margin: 15px;
+	font-size: 18px;
+}
+.flex_col > span > span{
+	margin-left: 10px;
+}
 .types_row{
 	display: -webkit-box;
 	display: -ms-flexbox;

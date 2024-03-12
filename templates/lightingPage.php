@@ -3,7 +3,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Доставим и установим</span>
+	<h1>Доставим и установим</h1>
 </div>
 
 

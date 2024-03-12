@@ -3,7 +3,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Double Vision</span>
+	<h1>Double Vision</h1>
 	<span>новые возможности</span>
 </div>
 <div class="dubleVideo_wrapp">
@@ -27,7 +27,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Фотопечать это</span>
+	<h1>Фотопечать это</h1>
 </div>
 
 <div class="presentContFP">
@@ -55,7 +55,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Варианты изображений</span>
+	<h1>Варианты изображений</h1>
 </div>
 
 <div class="FPControlPanel">
@@ -124,7 +124,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Наше оборудование</span>
+	<h1>Наше оборудование</h1>
 </div>
 
 <div class="euipWrapp">
@@ -212,7 +212,7 @@
 		<div class="vert_line"></div>
 	</div>
 	<div class="heder_present" style="position: relative; z-index: 2;">
-		<span>Экспресс расчет</span>
+		<h1>Экспресс расчет</h1>
 	</div>
 
 	<?php

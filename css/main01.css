@@ -32,6 +32,30 @@ body{
 	letter-spacing: 0.5px;
 }
 
+
+.big_green_defice{
+	width: 20px;
+	height: 4px;
+	border-radius: 3px;
+	background-color: var(--main-col-1);
+	position: absolute;
+	right: calc(100% + 10px);
+	top: 6px;
+}
+.advan_cont{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	font-weight: 400;
+}
+.advan_cont > span{
+	margin-bottom: 10px;
+}
+
 .ligth_sale_link_img_cont > div:first-child{
 	position: absolute;
 	left: 30px;
@@ -179,6 +203,13 @@ body{
 	        align-items: center;
 	margin-bottom: 50px;
 	text-align: center;
+}
+.heder_present h1{
+	color: var(--color-title);
+	font-size: 25px;
+	font-weight: 900;
+	margin-top: 30px;
+	margin-bottom: 10px;
 }
 .heder_present span:last-child{
 	color: var(--color-sub-title);
@@ -844,7 +875,7 @@ a.menu_item{
 	z-index: 1;
 	height: 75%;
 	width: 100%;	
-	transition: opacity 3s;
+	transition: opacity 2s;
 }
 .headerPicture img{
 	width: 100%;
@@ -2675,16 +2706,26 @@ textarea.invalidValueCalculate{
 }
 
 @media(min-width: 940px){
+	.huw_m_sales_wrapp > div{
+		width: 50%;
+	}
+	.huw_m_sales_wrapp{
+		display: flex;
+	}
+	.heder_present h1{
+		font-size: 30px;
+	}
+
 	.ligth_sale_link_img_cont{
 		width: 70%;
 		background-size: 110%;
 		margin: 50px 15%;
 	}
 	.sales_block{
-		margin: 0 15%;
+		margin: 0 5%;
 	}
 	.cont_img_sales{
-		height: 400px;
+		height: 300px;
 	}
 	.report_box{
 		width: 70%;

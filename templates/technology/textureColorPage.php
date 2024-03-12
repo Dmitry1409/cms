@@ -55,7 +55,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Глянцевый</span>
+	<h1>Глянцевый</h1>
 </div>
 
 <div class="facture_cont">
@@ -83,7 +83,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Матовый</span>
+	<h1>Матовый</h1>
 </div>
 
 <div class="facture_cont flex-reverse">
@@ -111,7 +111,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Сатиновый</span>
+	<h1>Сатиновый</h1>
 </div>
 
 <div class="facture_cont">
@@ -139,7 +139,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Свето-пропускной</span>
+	<h1>Свето-пропускной</h1>
 </div>
 
 <div class="facture_cont flex-reverse">
@@ -167,7 +167,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Узорчатый</span>
+	<h1>Узорчатый</h1>
 </div>
 
 <div class="facture_cont">
@@ -195,7 +195,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Металлик</span>
+	<h1>Металлик</h1>
 </div>
 
 <div class="facture_cont flex-reverse">
@@ -230,7 +230,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Глянец 320см</span>
+	<h1>Глянец 320см</h1>
 </div>
 
 <div class="color_gamma_cont">
@@ -1077,7 +1077,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Глянец 500см</span>
+	<h1>Глянец 500см</h1>
 </div>
 
 
@@ -1178,7 +1178,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Матовый 320см</span>
+	<h1>Матовый 320см</h1>
 </div>
 
 <div class="color_gamma_cont">
@@ -1316,7 +1316,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Матовый 500см</span>
+	<h1>Матовый 500см</h1>
 </div>
 
 <div class="color_gamma_cont">
@@ -1358,7 +1358,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Сатин 320см</span>
+	<h1>Сатин 320см</h1>
 </div>
 
 <div class="color_gamma_cont">
@@ -1432,7 +1432,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Сатин 500см</span>
+	<h1>Сатин 500см</h1>
 </div>
 
 <div class="color_gamma_cont">
@@ -1479,7 +1479,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Узорчатые</span>
+	<h1>Узорчатые</h1>
 </div>
 
 <div class="color_yzory_grid">
@@ -1956,7 +1956,7 @@
 		<div class="vert_line"></div>
 	</div>
 	<div class="heder_present" style="position: relative; z-index: 2;">
-		<span>Цены</span>
+		<h1>Цены</h1>
 	</div>
 
 	<div class="price_table">

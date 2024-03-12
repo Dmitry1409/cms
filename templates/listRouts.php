@@ -1,6 +1,7 @@
 <?php
 	
 	$listRout = array('svetLine' => "technology/lightLines",
+					"tenevoy"=>"technology/tenevoy",
 					"shadProf"=> "technology/shadowProfil",
 					"multiLev" => "technology/multiLevel",
 					"hidCur"=> "technology/hiddenCurtain",

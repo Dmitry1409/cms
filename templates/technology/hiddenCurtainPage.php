@@ -3,7 +3,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Скрытая гардина</span>
+	<h1>Установим скрытую гардину</h1>
 	<span>варианты исполнения</span>
 </div>
 
@@ -152,7 +152,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Еще варианты</span>
+	<h1>Еще варианты</h1>
 </div>
 
 <div class="vari_gard_cont">
@@ -214,7 +214,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Подсветка</span>
+	<h1>Подсветка</h1>
 </div>
 
 
@@ -252,7 +252,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Цены</span>
+	<h1>Цены</h1>
 </div>
 
 <div class="price_table">

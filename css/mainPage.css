@@ -9,7 +9,32 @@
 
 
 /*_______________________________________________технологии*/
-
+.tech_down_bt{
+	position: absolute;
+	height: 150px;
+	width: 100%;
+	bottom: 0;
+	background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(255,255,255,0) 100%);
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	align-items:  center;
+	justify-content: space-around;
+	-webkit-box-shadow: 0px 14px 24px -1px rgba(0, 0, 0, 0.64);
+	-moz-box-shadow: 0px 14px 24px -1px rgba(0, 0, 0, 0.64);
+	box-shadow: 0px 14px 24px -1px rgba(0, 0, 0, 0.64);
+	transition: 0.4s;
+}
+.tech_down_bt span{
+	font-size: 50px;
+	font-weight: 100;
+	color: #ffffffb0;
+}
+.tech_down_bt:hover{
+	-webkit-box-shadow: 0px 19px 24px -1px rgba(0, 0, 0, 0.78);
+	-moz-box-shadow: 0px 19px 24px -1px rgba(0, 0, 0, 0.78);
+	box-shadow: 0px 19px 24px -1px rgba(0, 0, 0, 0.78);
+}
 .tech_grid{
 	display: -ms-grid;
 	display: grid;
@@ -22,6 +47,7 @@
 	padding-top: 5px;
 	background-color: white;
 	z-index: 3;
+	transition: height 1s;
 }
 
 .tech_elem{
@@ -439,13 +465,13 @@
 }
 
 @media(min-width: 750px){
-	.howMuchDoneSection{
+	/*.howMuchDoneSection{
 		display: -ms-grid;
 		display: grid;
 		-ms-grid-columns: 1fr 20px 1fr;
 		grid-template-columns: 1fr 1fr;
 		grid-column-gap: 20px;
-	}
+	}*/
 }
 
 
@@ -453,6 +479,18 @@
 
 @media(min-width: 940px){
 
+
+	.tech_down_bt{
+		-webkit-transform: skew(0, 10deg);
+		    -ms-transform: skew(0, 10deg);
+		        transform: skew(0, 10deg);
+	}
+
+	.tech_down_bt span{
+		-webkit-transform: skew(0, 350deg);
+		    -ms-transform: skew(0, 350deg);
+		        transform: skew(0, 350deg);
+	} 
 	.tech_grid{
 		-ms-grid-columns: 1fr 1fr 1fr;
 		grid-template-columns: 1fr 1fr 1fr;
@@ -546,6 +584,6 @@
 		padding: 0 15%;
 	}
 	.howMuchDoneSection{
-		padding: 0 10%;
+		padding: 0 3%;
 	}
 }

@@ -3,7 +3,8 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Делаем все виды<br> конструкций</span>
+	<h1>Делаем все виды</h1>
+	<span>двухуровневых потолков</span>
 </div>
 
 <div class="choiceConfSection">
@@ -119,7 +120,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Форма</span>
+	<h1>Форма потолка</h1>
 	<span>вид сверху</span>
 </div>
 <div class="wrapp_cont_svg">
@@ -967,7 +968,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Действует акция</span>
+	<h1>Действует акция</h1>
 </div>
 
 <?php
@@ -1032,7 +1033,7 @@
 			<div class="vert_line"></div>
 		</div>
 		<div class="heder_present" style="position: relative; z-index: 2; margin-bottom: unset;">
-			<span>Экспресс расчет</span>
+			<h1>Экспресс расчет</h1>
 		</div>
 
 		<?php

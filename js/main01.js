@@ -31,9 +31,9 @@ let YDTargetFunc = function(tarId){
 let id_timeout_subMenu1
 let id_timeout_subMenu2
 
-
 window.addEventListener('DOMContentLoaded', ()=>{
-	
+
+		
 	kontaktBtnId.addEventListener('click', ()=>{
 		if(clientWidth < 940){
 				btn_action()
@@ -42,7 +42,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 				'behavior': 'smooth'
 			})
 	})
-
+			
 	feedBackBtnId.addEventListener('click', ()=>{
 		if(clientWidth < 940){
 				btn_action()
@@ -51,7 +51,9 @@ window.addEventListener('DOMContentLoaded', ()=>{
 				'behavior': 'smooth'
 			})
 	})
+	
 
+	
 	expressCalcBtnId.addEventListener('click', ()=>{
 		if(location.pathname == root_dir){
 			if(clientWidth < 940){
@@ -64,7 +66,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			location.href = location.origin+root_dir+"#expressCalc_ancher"
 		}
 	})
-
+	
 	workExampBtnId.addEventListener('click', ()=>{
 		if(exampWork)
 			exampWork.scrollIntoView({
@@ -74,14 +76,16 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			btn_action()
 		}
 	})
+	
+
 
 	questAnswerBtnId.addEventListener('click', ()=>{
-			questAnswer.scrollIntoView({
-				'behavior': 'smooth'
-			})
-			if(clientWidth < 940){
-				btn_action()
-			}
+		questAnswer.scrollIntoView({
+			'behavior': 'smooth'
+		})
+		if(clientWidth < 940){
+			btn_action()
+		}
 	})
 
 	document.querySelectorAll('.virt_btn_menu')[0].addEventListener('click', btn_action)
@@ -168,7 +172,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		}
 	}
 
-	
 	function maskTelClickAction(){
 		console.log('mask')
 		let allMask = document.querySelectorAll('.mask-tel')
@@ -213,9 +216,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		},20000)
 	}
 
-	
 	function checkCurrentLocation(){
-		let dirs = ['lightLines', 'multiLevel', 'dubleVisionPrint', 'carvedCelling', 'shadowProfil', 'ligthNiches', 'hiddenCurtain',
+		let dirs = ['lightLines',"tenevoy", 'multiLevel', 'dubleVisionPrint', 'carvedCelling', 'shadowProfil', 'ligthNiches', 'hiddenCurtain',
 					'textureColor', 'starsSky', 'lighting', 'MSD', 'BAUF', 'Pongs', 'Teqtum', 'favourites','simpleCeil']
 		let href = window.location.href
 		let a = document.querySelectorAll('.menu_flex_wrap a')
@@ -251,6 +253,7 @@ window.addEventListener('load', ()=>{
 	}
 	let bannCont = document.querySelector('.header_lozung')
 	let flBanner = false
+	
 	getAllBanner()
 
 	window.addEventListener('scroll', bannerScrollAction)
@@ -327,7 +330,7 @@ window.addEventListener('load', ()=>{
 			sna.classList = "banner_active"
 			setTimeout(()=>{
 				sa.innerText = text
-			},3000)
+			},2000)
 		}
 
 		if(Date.now() > bannerTimeProtect){
@@ -336,7 +339,8 @@ window.addEventListener('load', ()=>{
 				clearInterval(idBanIntrv)
 				valTimeout = 10000
 				setIntBann()
-			}	
+			}
+
 			let p = document.querySelectorAll('.header_lozung picture')
 			let ai
 			for(let i=0; i<p.length; i++){
@@ -365,7 +369,7 @@ window.addEventListener('load', ()=>{
 			p[ai].classList.remove('banner_active')
 			setTimeout(()=>{
 				p[ai].classList.add('banner_dis_none')
-			},3000)
+			},2000)
 
 			p[next].classList.remove('banner_dis_none')
 			setTimeout(()=>{
@@ -387,6 +391,7 @@ window.addEventListener('load', ()=>{
 	async function getAllBanner(){
 		let r = await fetch(`${root_dir}scripts_php/getAllBanner.php`)
 		let a =  await r.json()
+		console.log(a)
 		insertBanner(a)
 		insertBannerPoint(a)
 	}

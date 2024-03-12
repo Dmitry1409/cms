@@ -6,47 +6,35 @@
 	$comp_telef1 = "8(831)200-34-98";
 	$comp_telef2 = "+7 996 567 37 62";
 	$email_comp = "auroom-nn@mail.ru";
-	if(!array_key_exists('cityHeader', $_SESSION)){
+
+
+	$ourCity = array("nizhniyNovgorod"=>['г. Нижний Новгород и обл.', 'г. Нижний Новгород Московское ш. 105', 'в Нижнем Новгороде'],
+					"dzerzhinsk"=>['г. Дзержинск', 'г. Дзержинск ул. Циолковского, 32А', "в Дзержинске"],
+					"kstovo"=>['г. Кстово', 'г. Кстово ул. Мира, 21А', "в г. Кстово"],
+					"bor"=>['г. Бор', 'г. Бор ул. Максима Горького, 90', "на Бору"],
+					"balahna"=>['г. Балахна', "г.Балахна ул. Челюскинцев, 10А", "в Балахне"],
+					"bogorodsk"=>['г. Богородск', 'г. Богородск ул. Ленина, 203', "в Богородске"],
+					"gorodec"=>['г. Городец', 'г. Городец ул.Кирова, 25', "в Городце"],
+					"zavolzhe"=>['г. Заволжье', 'г. Заволжье ул. Пономарёва, 2', "в Заволжье"],
+					"pavlovo"=>['г. Павлово', 'г. Павлово ул. Аллея Ильича, 5', "в Павлово"]);
+	
+
+	if(!array_key_exists('cityHeader', $_SESSION) && !array_key_exists("city", $_GET)){
 		$_SESSION['cityHeader'] = "Нижний Новгород и обл.";
 		$_SESSION['addres_comp'] = "г. Нижний Новгород Московское шоссе 105";
 		$_SESSION['citytitle'] = "в Нижнем Новгороде";
-	}
-
-	if(array_key_exists("idGroup", $_GET)){
-
-		$groupYDirect = array('5153947630'=>['г. Балахна', "г.Балахна ул. Челюскинцев, 10А", "в Балахне"],
-							'5153947629' => ['г. Нижний Новгород и обл.', 'г. Нижний Новгород Московское ш. 105', 'в Нижнем Новгороде'],
-							'5153947631' => ['г. Городец', 'г. Городец ул.Кирова, 25', "в Городце"],
-							'5153947632' => ['г. Заволжье', 'г. Заволжье ул. Пономарёва, 2', "в Заволжье"],
-							'5153947633' => ['г. Бор', 'г. Бор ул. Максима Горького, 90', "на Бору"],
-							'5153947634' => ['г. Дзержинск', 'г. Дзержинск ул. Циолковского, 32А', "в Дзержинске"],
-							'5153947635' => ['г. Богородск', 'г. Богородск ул. Ленина, 203', "в Богородске"],
-							'5153947636' => ['г. Кстово', 'г. Кстово ул. Мира, 21А', "в г. Кстово"],
-							'5153947637' => ['г. Павлово', 'г. Павлово ул. Аллея Ильича, 5', "в Павлово"]);
-
-
-		$groupYDirect2 = array('5366403748'=>['г. Балахна', "г.Балахна ул. Челюскинцев, 10А", "в Балахне"],
-							'5366403747' => ['г. Нижний Новгород и обл.', 'г. Нижний Новгород Московское ш. 105', 'в Нижнем Новгороде'],
-							'5366403749' => ['г. Городец', 'г. Городец ул.Кирова, 25', "в Городце"],
-							'5366403750' => ['г. Заволжье', 'г. Заволжье ул. Пономарёва, 2', "в Заволжье"],
-							'5366403751' => ['г. Бор', 'г. Бор ул. Максима Горького, 90', "на Бору"],
-							'5366403752' => ['г. Дзержинск', 'г. Дзержинск ул. Циолковского, 32А', "в Дзержинске"],
-							'5366403753' => ['г. Богородск', 'г. Богородск ул. Ленина, 203', "в Богородске"],
-							'5366403754' => ['г. Кстово', 'г. Кстово ул. Мира, 21А', "в г. Кстово"],
-							'5366403755' => ['г. Павлово', 'г. Павлово ул. Аллея Ильича, 5', "в Павлово"]);
-
-		$idg = $_GET['idGroup'];
-		if(array_key_exists($idg, $groupYDirect)){
-			$_SESSION['cityHeader'] = $groupYDirect[$idg][0];
-			$_SESSION['addres_comp'] = $groupYDirect[$idg][1];
-			$_SESSION['citytitle'] = $groupYDirect[$idg][2];
-		}elseif(array_key_exists($_GET['idGroup'], $groupYDirect2)){
-			$_SESSION['cityHeader'] = $groupYDirect2[$idg][0];
-			$_SESSION['addres_comp'] = $groupYDirect2[$idg][1];
-			$_SESSION['citytitle'] = $groupYDirect2[$idg][2];
+	}elseif(array_key_exists("city", $_GET)){
+		if(array_key_exists($_GET['city'], $ourCity)){
+			$_SESSION['cityHeader'] = $ourCity[$_GET['city']][0];
+			$_SESSION['addres_comp'] = $ourCity[$_GET['city']][1];
+			$_SESSION['citytitle'] = $ourCity[$_GET['city']][2];
+		}else{
+			$_SESSION['cityHeader'] = "Нижний Новгород и обл.";
+			$_SESSION['addres_comp'] = "г. Нижний Новгород Московское шоссе 105";
+			$_SESSION['citytitle'] = "в Нижнем Новгороде";
 		}
 	}
-
+	
 	$fn = array('Favourites_script.js'=>'Favourites_script.js', 'carvedCelling_script.js'=>'carvedCelling_script.js', 'dubleVis_script.js'=>		'dubleVis_script01.js', 'exampWorkFoto.js'=>'exampWorkFoto01.js', 'fancybox.js'=>'fancybox.js',
 	 			'feedBackClient.js'=>'feedBackClient01.js', 'fotoGalView.js'=>'fotoGalView.js', 'hidenCurtain.js'=>'hidenCurtain.js',
 	  			'ligthing_script.js'=>'ligthing_script.js', 'main.js'=>'main01.js', 'mainPage.js'=>'mainPage01.js',

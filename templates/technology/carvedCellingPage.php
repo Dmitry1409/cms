@@ -56,7 +56,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Резные потолки</span>
+	<h1>Резные потолки</h1>
 </div>
 
 <div class="hederTopWrappCarved">
@@ -89,7 +89,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>С подсветкой</span>
+	<h1>Резные с подсветкой</h1>
 </div>
 
 <div class="hederTopWrappCarved flex-revers-carved">
@@ -121,7 +121,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Варианты реза</span>
+	<h1>Варианты расскроя</h1>
 </div>
 
 <div class="hederTextCarved variCarvedText">
@@ -133,7 +133,6 @@
 	<?php
 		include "scripts_php/collectImage.php";
 		$arr = [];
-		unset($_SESSION['applyImg']);
 		if(!array_key_exists('applyImg', $_SESSION)){
 			$path = getImages('img/apply');
 			$arr = [];

@@ -2,7 +2,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Спец. предложения</span>
+	<h1>Спец. предложения</h1>
 </div>
 
 

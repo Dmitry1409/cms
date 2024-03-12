@@ -2,7 +2,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Световые ниши</span>
+	<h1>Световые ниши</h1>
 	<span>ультро-современное решение</span>
 </div>
 <div class="slott_cont">
@@ -63,7 +63,7 @@
 		<div class="vert_line"></div>
 	</div>
 	<div class="heder_present" style="position: relative; z-index: 2;">
-		<span>Цены</span>
+		<h1>Цены</h1>
 	</div>
 
 	<div class="price_table">

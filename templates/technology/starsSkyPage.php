@@ -2,8 +2,8 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Звездное небо</span>
-	<span>это атмосферно</span>
+	<h1>Звездное небо</h1>
+	<span>исполняем мечты</span>
 </div>
 
 <div class="starsVideoHederWrapp">
@@ -30,7 +30,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Варианты исполнения</span>
+	<h1>Варианты исполнения</h1>
 </div>
 <p class="variExecutStarsparag">Конечный вид потолка зависит от нескольких факторов:</p>
 <div class="variExecBlockStars">
@@ -70,7 +70,7 @@
 			<div class="vert_line"></div>
 		</div>
 		<div class="heder_present" style="position: relative; z-index: 2;">
-			<span>Цены</span>
+			<h1>Цены</h1>
 		</div>
 
 		<div class="price_table">

@@ -56,8 +56,8 @@
 		<div class="vert_line"></div>
 	</div>
 	<div class="heder_present" style="position: relative; z-index: 2;">
-		<span>Отзывы наших клиентов</span>
-		<span>будем благодарны за любой отзыв</span>
+		<h1>Настоящие отзывы</h1>
+		<span>Убедитесь сами: настоящие отзывы от наших клиентов</span>
 	</div>
 
 	<div class="feedBackSortCont">

@@ -2,7 +2,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Нами установлено</span>
+	<h1>Нами установлено</h1>
 </div>
 <?php
 	$res = $GLOBALS['db']->query('SELECT * FROM howMuchDone');

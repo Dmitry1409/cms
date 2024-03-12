@@ -6,7 +6,7 @@
 	$v = $GLOBALS['db']->querySingle("SELECT price FROM product WHERE id = 54");
 ?>
 <div class="heder_present" style="position: relative; z-index: 2; margin-bottom: 50px;">
-	<span>MSD-Premium <?php echo $v?> руб/м2</span>
+	<h1>MSD-Premium <?php echo $v?> руб/м2</h1>
 </div>
 
 <div class="text_cont">	

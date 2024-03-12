@@ -2,7 +2,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<span>Примеры работ</span>
+	<h1>Примеры работ</h1>
 </div>
 
 <?php
