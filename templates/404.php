@@ -1,0 +1,1 @@
+<h1 style="font-size: 28px; text-align: center; margin: 150px 0; color: rgba(0,0,0,0.7);">Страница не найдена</h1>

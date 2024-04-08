@@ -71,7 +71,13 @@
 		}
 		require "templates/base_footer.php";
 	}else{
-		header('Location: '.$domain.$root_dir);
+		http_response_code(404);
+		require "templates/mainHead.php";
+		echo "</head>";
+		require "templates/base_header.php";
+		require "templates/404.php";
+		require "templates/clientFeedBack.php";
+		require "templates/base_footer.php";
 	}
 
 	function root(){

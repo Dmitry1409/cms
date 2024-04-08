@@ -120,7 +120,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<h1>Форма потолка</h1>
+	<h1>Форма перехода<br>потолка</h1>
 	<span>вид сверху</span>
 </div>
 <div class="wrapp_cont_svg">
@@ -1022,7 +1022,7 @@
 			<div class="sale_flag">-30%</div>
 
 			<img src='<?php echo $GLOBALS["root_dir"]."img/gde-najti-indiv.jpg"?>' alt="Наш дизайн">
-			<h4>Каждый третий погонный метр перехода бессплатно</h4>
+			<h4>Каждый третий погонный метр перехода в подарок</h4>
 			<span>Акция действует до <?php echo $tar_date?></span>
 			<span>Подробности по телефону</span>
 			<div role="button" class="aferta_btn">Отправить</div>

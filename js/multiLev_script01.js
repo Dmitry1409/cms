@@ -98,7 +98,9 @@ window.addEventListener('DOMContentLoaded',()=>{
 			if(spots && spots < 3){
 				sum += Number(lamp_price)
 			}
-
+			if(sum > 20000){
+				discount = sum * 0.2
+			}
 			let rep_msg = ""
 			if(multiLev){
 				rep_msg += `<h3>Дв. уровневый переход - ${multiLev} </h3>`

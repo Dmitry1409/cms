@@ -1,9 +1,11 @@
 
+
+
 <div style="display: flex; justify-content: center; margin-top: 50px;">
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<h1>Установим скрытую гардину</h1>
+	<h1>Установим скрытую<br>гардину</h1>
 	<span>варианты исполнения</span>
 </div>
 

@@ -1,11 +1,36 @@
+
+
 window.addEventListener("DOMContentLoaded", ()=>{
 
 	let time_feedback = Date.now()
+
+	let flIntervalFeed = false
+
 
 	let fotoGalObj = {
 						imgs: "",
 						curIndex: ""
 	}
+
+	let id_intervalFeed
+	let id_timeOutFeed
+	let flFancyFeedBack = false
+
+
+	Fancybox.bind(document.getElementById("feedBackContId"), "[data-fancybox]", {
+  		on: {
+	    close: () => {
+	    	feedBackFancyInterval()
+	    },
+	    initLayout: () =>{
+	    	feedBackFancyInterval()
+	    },
+	  },
+	});
+
+	
+
+	
 
 	let feedBackObj = {
 		sortFlag : false,
@@ -21,9 +46,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 	document.addEventListener('scroll', scrollActionFeedBack)
 
-	let id_intervalFeed
-	let id_timeOutFeed
-	let flIntervalFeed = false
+	
 		
 	document.querySelector('.add_feedback_section .calc_btn').addEventListener('click', add_feedback_action)
 
@@ -35,11 +58,6 @@ window.addEventListener("DOMContentLoaded", ()=>{
 		sortFeedBackBtns[i].addEventListener('click', sortFeedBackAction)
 	}
 
-	let imgs_feedback = document.querySelectorAll('.feed4countWrapp img')
-	for(let i=0; i<imgs_feedback.length; i++){
-		imgs_feedback[i].addEventListener('click', feedbackImgsShow)
-	}
-
 	let scope_svg = document.querySelectorAll('.add_feedback_section svg')
 	for(let i = 0; i<scope_svg.length; i++){
 		scope_svg[i].addEventListener('click', feedback_scope_view_action)
@@ -49,6 +67,30 @@ window.addEventListener("DOMContentLoaded", ()=>{
 	document.querySelector('.add_feedback_btn_open_cont > div').addEventListener('click', add_feedback_open)
 
 	let cont_feed = document.querySelector('.feedback_section')
+
+
+	function feedBackFancyInterval(){
+		if(flFancyFeedBack){
+			flFancyFeedBack = false
+			setTimeOutIntervalFeed(valTime0 = 6000)
+		}else{
+			clearTimeout(id_timeOutFeed)
+			clearInterval(id_intervalFeed)
+			flFancyFeedBack = true		
+		}
+	}
+
+	function setTimeOutIntervalFeed(valTimeO=30000, valInter=4000){
+		clearTimeout(id_timeOutFeed)
+		clearInterval(id_intervalFeed)
+
+		id_timeOutFeed = setTimeout(()=>{
+			feed_right_action(null, true)
+			id_intervalFeed = setInterval(()=>{
+				feed_right_action(null, true)
+			}, valInter)
+		}, valTimeO)
+	}
 
 	function scrollActionFeedBack(){
 		if(visibleElem(cont_feed)){
@@ -206,18 +248,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 				scope_svg[i].querySelector('polygon').classList.remove('scope_svg_action')
 			}
 		}
-	}
-	function setTimeOutIntervalFeed(valTimeO=30000, valInter=4000){
-		clearTimeout(id_timeOutFeed)
-		clearInterval(id_intervalFeed)
-
-		id_timeOutFeed = setTimeout(()=>{
-			feed_right_action(null, true)
-			id_intervalFeed = setInterval(()=>{
-				feed_right_action(null, true)
-			}, valInter)
-		}, valTimeO)
-	}
+	}	
 	function feed_left_action(){
 		if(Date.now() > time_feedback){
 			time_feedback = Date.now() + 450
@@ -473,9 +504,11 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			if(val[i]['foto_file_name_arr']){
 				let foto_arr = JSON.parse(val[i]['foto_file_name_arr'])
 				fotoCont += "<div class='feed4countWrapp'>"
+				let rand = Math.ceil(Math.random() * 10000)
 				for(let j =0; j<foto_arr.length; j++){
-					let p = `${root_dir}upload_img/foto_review/100x100/${foto_arr[j]}`
+					fotoCont += `<a data-fancybox='gallery${rand}' href = '${root_dir}upload_img/foto_review/800x800/${foto_arr[j]}'> `
 					fotoCont += `<img src='${root_dir}upload_img/foto_review/100x100/${foto_arr[j]}'>`
+					fotoCont += "</a>"
 				}
 				fotoCont += "</div>"
 			}
@@ -516,14 +549,6 @@ window.addEventListener("DOMContentLoaded", ()=>{
 							</div>
 						</div>`
 			cont.insertAdjacentHTML(where_insert, html)
-
-			setEventListenerFeedBack()
-		}
-	}
-	function setEventListenerFeedBack(){
-		let imgs_feedback = document.querySelectorAll('.feed4countWrapp img')
-		for(let i=0; i<imgs_feedback.length; i++){
-			imgs_feedback[i].addEventListener('click', feedbackImgsShow)
 		}
 	}
 	function deleteFeedBacksItem(){
@@ -532,180 +557,11 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			items[i].remove()
 		}
 	}
-	function feedBackImgShowRightAct(){
-
-		if(fotoGalObj.timeProtect < Date.now()){
-			let pics = document.querySelectorAll('.fotoGalaryCont picture')
-
-			let l = document.querySelector('.fotoGalaryPicleft')
-			let a = document.querySelector('.fotoGalaryPicAct')
-			let r = document.querySelector('.fotoGalaryPicRight')
-
-			r.style.transition = '0s'
-			l.classList = 'fotoGalaryPicAct'
-			a.classList = 'fotoGalaryPicRight'
-			r.classList = "fotoGalaryPicleft"
-
-
-			setTimeout(()=>{
-				r.style.transition = ""
-			},400)
-			let fl
-			let left_ind = fotoGalObj.curIndex - 2
-
-			if(fotoGalObj.curIndex == 0){		
-				left_ind = fotoGalObj.imgs.length - 2 
-				fl = true
-			}else if(fotoGalObj.curIndex == 1){
-				left_ind = fotoGalObj.imgs.length - 1
-			}
-
-			let n_img = fotoGalObj.imgs[left_ind]
-
-			let cur_num = document.querySelector('.fotoGalControlPanel > span span:first-child')
-			let max_count = document.querySelector('.fotoGalControlPanel > span span:last-child')
-			if(cur_num.innerText == 1){
-				cur_num.innerText = max_count.innerText
-			}else{
-				cur_num.innerText = Number(cur_num.innerText) - 1
-			}
-
-
-			getAndSetSrc(n_img, r.querySelector('img'))
-
-			fotoGalObj.timeProtect = Date.now() + 600
-			if(fl){
-				fotoGalObj.curIndex = fotoGalObj.imgs.length - 1
-				return
-			}
-			fotoGalObj.curIndex -=1
-
-		}
-	}
-	function feedBackImgShowLeftAct(){
-		if(fotoGalObj.timeProtect < Date.now()){
-			let l = document.querySelector('.fotoGalaryPicleft')
-			let a = document.querySelector('.fotoGalaryPicAct')
-			let r = document.querySelector('.fotoGalaryPicRight')
-
-			l.style.transition = "0s"
-			l.classList = "fotoGalaryPicRight"
-			a.classList = "fotoGalaryPicleft"
-			r.classList = "fotoGalaryPicAct"
-
-			setTimeout(()=>{
-				l.style.transition = ""
-			},400)
-
-
-			let fl
-			let left_ind = fotoGalObj.curIndex + 2
-			if(fotoGalObj.curIndex == (fotoGalObj.imgs.length - 1)){		
-				left_ind = 1
-				fl = true
-			}else if(fotoGalObj.curIndex == (fotoGalObj.imgs.length - 2)){
-				left_ind = 0
-			}
-
-			let n_img = fotoGalObj.imgs[left_ind]
-
-			let cur_num = document.querySelector('.fotoGalControlPanel > span span:first-child')
-			let max_count = document.querySelector('.fotoGalControlPanel > span span:last-child')
-			if(cur_num.innerText == max_count.innerText){
-				cur_num.innerText = 1
-			}else{
-				cur_num.innerText = Number(cur_num.innerText) + 1
-			}
-
-
-			getAndSetSrc(n_img, l.querySelector('img'))
-
-			fotoGalObj.timeProtect = Date.now() + 600
-			
-			if(fl){
-				fotoGalObj.curIndex = 0
-				return
-			}
-			fotoGalObj.curIndex +=1
-		}
-	}
-	function feedbackImgsShow(){
-		fotoGalObj.timeProtect = Date.now()
-
-		clearInterval(id_intervalFeed)
-		clearTimeout(id_timeOutFeed)
-
-		let parent = this.parentNode
-		let imgs = parent.querySelectorAll('img')
-		fotoGalObj.imgs = imgs
-		for(let i=0; i<imgs.length; i++){
-			if(imgs[i] == this) fotoGalObj.curIndex = i
-		}
-		ar_ind = [fotoGalObj.curIndex-1, fotoGalObj.curIndex, fotoGalObj.curIndex + 1]
-		if(fotoGalObj.curIndex == 0){
-			ar_ind[0] = imgs.length -1
-		}
-		if(fotoGalObj.curIndex == imgs.length -1){
-			ar_ind[2] = 0
-		}
-		let pics = document.querySelectorAll('.fotoGalaryCont picture')
-		for(let i =0; i<3; i++){
-			getAndSetSrc(imgs[ar_ind[i]], pics[i].querySelector('img'))
-		}
-		pics[0].classList = "fotoGalaryPicleft"
-		pics[1].classList = "fotoGalaryPicAct"
-		pics[2].classList = "fotoGalaryPicRight"
-
-
-
-		let body = document.querySelector('body')
-		body.style.overflow = "hidden"
-		let galCont = document.querySelector('.fotoGalaryCont')
-		galCont.style.display = "flex"
-		let closeBtn = document.querySelector('.fotoGalCloseBtn')
-		closeBtn.addEventListener('click', fotoGalaryDisAct)
-
-		let nameClient = this.parentNode.parentNode.querySelector('h3').innerText
-		let d = this.parentNode.parentNode.querySelector('.feedScopeDateCont span:last-child').innerText
-
-		galCont.querySelector('h4').innerHTML = nameClient + "<br>" + d
-
-		let count = document.querySelector('.fotoGalControlPanel > span')
-		count.querySelector('span:first-child').innerText = Number(fotoGalObj.curIndex) + 1
-		count.querySelector('span:last-child').innerText = imgs.length
-
-		document.querySelector('.fotoGalaryLefttBtn').addEventListener('click', feedBackImgShowRightAct)
-		document.querySelector('.fotoGalaryRightBtn').addEventListener('click', feedBackImgShowLeftAct)
-	}
 	function getAndSetSrc(from_elem, to_elem){
 		let src = from_elem.getAttribute('src')
 		src = src.slice(src.indexOf("/100x100/")+9)
 		src = `${root_dir}upload_img/foto_review/800x800/`+src
 		to_elem.setAttribute('src', src)
 	}
-	function fotoGalaryDisAct(){
-		
-		setTimeOutIntervalFeed()
-		galCont = document.querySelector('.fotoGalaryCont')
-
-		galCont.querySelector('.fotoGalaryRightBtn').removeEventListener('click', feedBackImgShowLeftAct)
-		galCont.querySelector('.fotoGalaryLefttBtn').removeEventListener('click', feedBackImgShowRightAct)
-		galCont.querySelector('.fotoGalCloseBtn').removeEventListener('click', fotoGalaryDisAct)
-
-		let imgs = galCont.querySelectorAll('img')
-		for(let i = 0; i<imgs.length; i++){
-			imgs[i].setAttribute("src", "")
-		}
-
-
-		galCont.style.display = "none"
-
-		galCont.querySelector('h4').innerHTML = ""
-		let count = document.querySelector('.fotoGalControlPanel > span')
-		count.querySelector('span:first-child').innerText = ""
-		count.querySelector('span:last-child').innerText = ""
-
-		let body = document.querySelector('body')
-		body.style.overflow = ""
-	}
+	
 })

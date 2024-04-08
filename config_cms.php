@@ -35,6 +35,8 @@
 		}
 	}
 	
+	$app_v = "0002";
+
 	$fn = array('Favourites_script.js'=>'Favourites_script.js', 'carvedCelling_script.js'=>'carvedCelling_script.js', 'dubleVis_script.js'=>		'dubleVis_script01.js', 'exampWorkFoto.js'=>'exampWorkFoto01.js', 'fancybox.js'=>'fancybox.js',
 	 			'feedBackClient.js'=>'feedBackClient01.js', 'fotoGalView.js'=>'fotoGalView.js', 'hidenCurtain.js'=>'hidenCurtain.js',
 	  			'ligthing_script.js'=>'ligthing_script.js', 'main.js'=>'main02.js', 'mainPage.js'=>'mainPage02.js',
@@ -48,4 +50,9 @@
 	   			'lights.css'=>'lights01.css', 'multiLevelStyle.css'=>'multiLevelStyle.css','shadow.css'=>'shadow01.css',
 	   			'starsSkyStyle.css'=>'starsSkyStyle.css', 'textureColorStyle.css'=>'textureColorStyle.css',
 	   			'site.webmanifest'=>'site.webmanifest');
+
+	foreach ($fn as $k => $v) {
+		$fn[$k] = $fn[$k]."?v=$app_v";
+	}
+
 ?>

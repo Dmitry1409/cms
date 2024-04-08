@@ -11,6 +11,7 @@ window.addEventListener('resize', ()=>{
 
 let time_main_menu = Date.now()
 
+
 // clientData = {
 	// timeProtect: Date.now(),
 	// dataProd: [{code:"", amount:""}],
@@ -30,6 +31,7 @@ let YDTargetFunc = function(tarId){
 
 let id_timeout_subMenu1
 let id_timeout_subMenu2
+
 
 window.addEventListener('DOMContentLoaded', ()=>{
 
@@ -51,8 +53,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 				'behavior': 'smooth'
 			})
 	})
-	
-
 	
 	expressCalcBtnId.addEventListener('click', ()=>{
 		if(location.pathname == root_dir){
@@ -77,8 +77,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		}
 	})
 	
-
-
 	questAnswerBtnId.addEventListener('click', ()=>{
 		questAnswer.scrollIntoView({
 			'behavior': 'smooth'
@@ -391,7 +389,6 @@ window.addEventListener('load', ()=>{
 	async function getAllBanner(){
 		let r = await fetch(`${root_dir}scripts_php/getAllBanner.php`)
 		let a =  await r.json()
-		console.log(a)
 		insertBanner(a)
 		insertBannerPoint(a)
 	}
@@ -422,6 +419,8 @@ window.addEventListener('load', ()=>{
 		}
 	}
 })
+
+
 
 function visibleElem(elem){
 	let el_t = elem.getBoundingClientRect().top
