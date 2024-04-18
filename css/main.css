@@ -32,6 +32,36 @@ body{
 	letter-spacing: 0.5px;
 }
 
+.zakaz_wrapp{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	border: 2px solid #8ad411b5;
+	border-radius: 4px;
+	padding: 20px;
+	margin: 20px 10px;
+}
+.zakaz_wrapp button{
+	margin-left: 20px;
+}
+
+.text_zakaz_green_block{
+	font-size: 21px;
+	font-weight: 700;
+	color: rgba(0 0 0 / 0.7);
+}
+.green_btn_zakaz{
+	padding: 7px;
+    background-color: var(--main-col-1);
+    color: white;
+    text-align: center;
+    border: 2px solid var(--main-col-1);
+    border-radius: 3px;
+}
+.green_btn_zakaz:hover{
+	cursor: pointer;
+    background-color: rgba(138 212 17 / 0.7);
+}
 
 .big_green_defice{
 	width: 20px;
@@ -1807,6 +1837,9 @@ textarea.invalidValueCalculate{
 	font-weight: 400;
 	font-size: 17px;
 }
+p.parag_color_text{
+	text-align: center;
+}
 
 /*контрольные кнопки хэштэгов_________________________________________________*/
 
@@ -2878,7 +2911,12 @@ textarea.invalidValueCalculate{
 
 	/*Перенесенные стили с световых линний___________________________________-*/
 
+	.lights_img_cont{
+		height: 450px;
+	}
+
 	.lightsLines_flex{
+		align-items: center;
 		-webkit-box-orient: horizontal;
 		-webkit-box-direction: normal;
 		    -ms-flex-direction: row;
@@ -2889,6 +2927,7 @@ textarea.invalidValueCalculate{
 		width: 50%;
 	}
 	.lights_text{
+		font-size: 17px;
 		width: 50%;
 		padding-top: 0px;
 	}

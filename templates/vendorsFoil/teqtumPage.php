@@ -19,6 +19,11 @@
 
 	<p>Надежные, инновационные потолки из негорючего полотна разработаны специально для помещений с высокими требованиями к пожаробезопасности.</p>
 
+	<?php
+		$text_offer = "Заказать цена от 750 р/м2";
+		include "templates/zakaz_offer_block.php";
+	?>
+
 	<h2>Скрытая маркировка на полотне</h2>
 	<div class="img_cont">
 		<img src="../img/vendorsFoilPage/fwefgbqqbqb.png">

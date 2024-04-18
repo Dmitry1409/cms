@@ -1,7 +1,6 @@
 
 window.addEventListener('DOMContentLoaded',()=>{
 
-	
 	let yzor_img = document.querySelectorAll('.color_yzory_grid img')
 
 	for(let i=0; i<yzor_img.length; i++){
@@ -21,7 +20,6 @@ window.addEventListener('DOMContentLoaded',()=>{
 	for(let i=0; i<fotoGalObj.picInd.length; i++){
 		fotoGalObj.picInd[i].addEventListener('click', fotoGaleryInit)
 	}
-
 
 	function yzorScaleAction(){
 		if(this.classList.contains('yzory_scale')){

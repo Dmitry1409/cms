@@ -3,15 +3,21 @@
 	<div class="vert_line"></div>
 </div>
 <?php
-	$v = $GLOBALS['db']->querySingle("SELECT price FROM product WHERE id = 54");
+	$v = $GLOBALS['db']->querySingle("SELECT price FROM product WHERE id = 53");
 ?>
 <div class="heder_present" style="position: relative; z-index: 2; margin-bottom: 50px;">
-	<h1>MSD-Premium <?php echo $v?> руб/м2</h1>
+	<h1>MSD-Classic <?php echo $v?> руб/м2</h1>
 </div>
 
 <div class="text_cont">	
-	<p>MSD-Premium – ПВХ-пленка для натяжных потолков от одного из крупнейших производителей натяжных полотен – MSD. Завод-изготовитель расположен в Китае и оснащен современным европейским и японским оборудованием. Однако производство сырья для потолочной пленки МСД линейки Премиум организовано в Тайвани, что обусловлено повышенными требованиями к экологичности полотна.</p>
+	<p>MSD Classc – ПВХ-пленка для натяжных потолков от одного из крупнейших производителей натяжных полотен – MSD. Завод-изготовитель расположен в Китае и оснащен современным европейским и японским оборудованием. Однако производство сырья для потолочной пленки МСД линейки Премиум организовано в Тайвани, что обусловлено повышенными требованиями к экологичности полотна.</p>
+	
+	<?php
+		$text_offer = "Заказать цена от 220 р/м2";
+		include "templates/zakaz_offer_block.php";
+	?>
 </div>
+
 <div class="img_cont">
 	<img src="../img/vendorsFoilPage/msdPremium.jpg">
 </div>
@@ -80,7 +86,12 @@
 		<p>Класс пожаробезопасности КМ4.</p>
 	</div>
 
-	<h2>Сертификат соответствия</h2>
+	<?php
+		$text_offer = "Заказать цена от 220 р/м2";
+		include "templates/zakaz_offer_block.php";
+	?>
+
+	<h2>Сертификат соответствия<br>полотна MSD</h2>
 	<div class="img_cont">
 		<img src="../img/vendorsFoilPage/sertifikat-eckologia-msd-fsmmw.jpg">
 	</div>

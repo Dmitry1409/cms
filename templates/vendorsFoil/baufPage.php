@@ -23,6 +23,10 @@
 		<div class="green_defise"></div>
 		<p>Подлинность материала гарантирует фирменная маркировка производителя, выполненная на каждом метре пленки.</p>
 	</div>
+	<?php
+		$text_offer = "Заказать цена от 550 р/м2";
+		include "templates/zakaz_offer_block.php";
+	?>
 </div>
 <div class="img_cont">
 	<img src="../img/vendorsFoilPage/BAUF.jpg">
@@ -95,6 +99,11 @@
 		<div class="green_defise"></div>
 		<p>Пленка Bauf выпускается полотнами различной ширины: от 130 до 450 см.</p>
 	</div>
+
+	<?php
+		$text_offer = "Заказать цена от 550 р/м2";
+		include "templates/zakaz_offer_block.php";
+	?>
 
 	<h2>Таблица показателей пленки BAUF</h2>
 </div>

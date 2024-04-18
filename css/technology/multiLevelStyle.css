@@ -28,15 +28,6 @@
 .choiceConfSection > h3:first-child{
 	margin-top: 50px;
 }
-.choiseCofpagWrapp{
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-}
-
 .NoChelRow img{
 	width: 100%;
 	height: 300px;
@@ -60,13 +51,10 @@
 .NoChelRow span{
 	margin-bottom: 20px;
 }
-.NoChelRow div{
-	margin-top: 30px;
+.NoChelRow div:last-child{
 	padding-left: 10px;
 }
-.NoChelRow p{
-	margin-top: 40px;
-}
+
 
 .cont_svg{
 	display: -webkit-box;

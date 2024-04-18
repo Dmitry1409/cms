@@ -8,7 +8,7 @@ copFol = ['upload_img', 'Roboto', 'img']
 
 pathArr = ['config_cms.php', 'js/main.js', 'mailer/send_mail.php',
 			'scripts_php/add_feedback.php', 'templates/mainHead.php', ".htaccess",'index.php']
-nRowArr = [[2, 3], [0], [100,103,104,105,106,107], [111, 124], [23,37], [0,1,2,3,4,5,6,7,8,9,10,11,12], [53]]
+nRowArr = [[2, 3], [0], [100,103,104,105,106,107], [111, 124], [25,39], [0,1,2,3,4,5,6,7,8,9,10,11,12], [53]]
 
 checkArr = [['	$domain = "http://localhost";', '	$root_dir = "/cms/";'],
 			['const root_dir = "/cms/"'],

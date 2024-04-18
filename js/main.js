@@ -86,6 +86,11 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		}
 	})
 
+	let zakaz_btn = document.querySelectorAll(".zak_btn_class_id")
+	for(let i=0; i<zakaz_btn.length; i++){
+		zakaz_btn[i].addEventListener("click", zakaz_btn_action)
+	}
+
 	document.querySelectorAll('.virt_btn_menu')[0].addEventListener('click', btn_action)
 
 	document.querySelector('.background_menu').addEventListener('click', btn_action)
@@ -143,6 +148,11 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	checkCurrentLocation()
 	
 	let idTimeOutAnswer
+
+	function zakaz_btn_action(){
+		clientData.click_link = this.previousElementSibling.innerText + " " +window.location.href
+		call_me_view()
+	}
 
 	function footerRoomsAct(){
 		if(location.pathname.indexOf("favourites") > -1){

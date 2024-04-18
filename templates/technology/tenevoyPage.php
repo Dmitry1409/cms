@@ -16,6 +16,10 @@
 	<div class="lights_text">
 		<span>Теневые натяжные потолки - это стильное и практичное решение для обновления интерьера вашего дома или офиса. Благодаря специальным профилям, они не только отлично смотрятся, но и обладают рядом преимуществ. Первое, что бросается в глаза - это их элегантный и современный внешний вид, который подойдет к любому стилю интерьера. Благодаря такому методу на стене остаётся правильный, ровный теневой зазор, создаётся ощущение, словно потолок парит в воздухе, совершенно не касаясь стен.
 		</span>
+		<?php
+			$text_offer = "Заказать цена от 250 р/м.п";
+			include "templates/zakaz_offer_block.php";
+		?>
 		<p class="green_defice">Преимущества: </p>
 		<div class="advan_cont">
 			<span>
@@ -65,6 +69,10 @@
 				<img alt="Теневой потолок" src="../img/tenevoy/trumb/sdgsgshdhdfh.jpg">
 			</a>
 		</div>
+		<?php
+			$text_offer = "Заказать цена от 450 р/м.п";
+			include "templates/zakaz_offer_block.php";
+		?>
 		<div class="vari_item_fexbox parag_color_text">
 			<span>
 				<div class="big_green_defice"></div><span>Идеально ровные углы</span>
@@ -98,6 +106,10 @@
 				<img alt="Теневой потолок" src="../img/tenevoy/trumb/sldlsgnlslngnlwbizon.jpg">
 			</a>
 		</div>
+		<?php
+			$text_offer = "Заказать цена от 250 р/м.п";
+			include "templates/zakaz_offer_block.php";
+		?>	
 		<div class="vari_item_fexbox parag_color_text">
 			<span>
 				<div class="big_green_defice"></div><span>Подойдет на стены с радиусом</span>
