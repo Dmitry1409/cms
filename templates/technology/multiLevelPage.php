@@ -3,7 +3,7 @@
 	<div class="vert_line"></div>
 </div>
 <div class="heder_present" style="position: relative; z-index: 2;">
-	<h1>Установим<br> двухуровневый потолок</h1>
+	<h1>Мы установим любой<br> двухуровневый потолок</h1>
 </div>
 
 <div class="lightsLines_flex">

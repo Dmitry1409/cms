@@ -170,12 +170,11 @@ body{
 }
 .cont_img_sales{
 	width: 100%;
-	height: 200px;
 }
 .cont_img_sales img{
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
+	object-fit: contain;
 }
 .sales_block{
 	margin: 0 20px;

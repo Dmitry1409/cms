@@ -6,8 +6,8 @@
 </div>
 
 <?php
-	$m = date("m", time() + 172800);
-	$tar_date = date('d', time() + 172800);
+	$m = date("m", time() + 604800);
+	$tar_date = date('d', time() + 604800);
 	$m_text = "";
 	switch ($m) {
 		case '01':
@@ -51,13 +51,13 @@
 	?>
 
 	<div class="aferta_block sales_block">
-		<div class="sale_flag">8500 руб. <br> под ключ</div>
+		<!-- <div style="font-weight:900; font-size: 20px;" class="sale_flag">1+1=3</div> -->
 		<div class="cont_img_sales">
-			<img style="border-radius: 4px;" src="img/sales/Q5yfRA34DK4.jpg">
+			<img style="border-radius: 4px;" src="img/sales/dfgdge24g2rgg2.jpg">
 		</div>
-		<h4>Матовый потолок 14 м2 за 8500 руб. с установкой</h4>
-		
-		<div class="serv_cont_saleMainPage">
+		<h4 style="margin-bottom: 20px;">Каждый третий потолок в подарок</h4>
+		<span style="margin-bottom: 20px;">Подробности уточняете по телефону. Записывайтесь на бесплатный замер.</span>
+		<!-- <div class="serv_cont_saleMainPage">
 			<div>
 				<svg width="15px" height="15px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" fill="white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
 				</style><g><polygon points="434.8,49 174.2,309.7 76.8,212.3 0,289.2 174.1,463.3 196.6,440.9 196.6,440.9 511.7,125.8 434.8,49     "/></g>
@@ -88,7 +88,7 @@
 				</svg>
 				<span class="text_sale_cart">Полотно матовое</span>
 			</div>
-		</div>
-		<span>Акция действует до <?php echo $tar_date;?></span>
+		</div> -->
+		<span style="color: white;">Акция действует до <?php echo $tar_date;?></span>
 		<div role="button" class="aferta_btn sales_btn_click">Оставить заявку</div>
 	</div>
