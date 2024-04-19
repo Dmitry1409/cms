@@ -2556,9 +2556,6 @@ p.parag_color_text{
 		display: grid;
   		grid-template-columns: 1fr 1fr;
 	}
-	.cont_img_sales{
-		height: 300px;
-	}
 	.sales_block{
 		margin: 0 10%;
 	}
@@ -2756,9 +2753,7 @@ p.parag_color_text{
 	.sales_block{
 		margin: 0 5%;
 	}
-	.cont_img_sales{
-		height: 300px;
-	}
+
 	.report_box{
 		width: 70%;
 	}
