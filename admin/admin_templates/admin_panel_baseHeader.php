@@ -11,4 +11,5 @@
 	<a href="logout.php" style="position: absolute; right: 20px;">выйти</a>
 	<div>
 		<a href="dataBase.php">База данных</a>
+		<a href="admin_templates/pricing.php">Счета</a>
 	</div>
