@@ -4,6 +4,7 @@ import os, shutil
 nSite = "var"
 publFol = "public_html"
 basa ="cms.db"
+pricing_basa = "pricing.db"
 copFol = ['upload_img', 'Roboto', 'img']
 
 pathArr = ['config_cms.php', 'js/main.js', 'mailer/send_mail.php',
@@ -68,6 +69,9 @@ def main():
 
 	shutil.copyfile(publFol+'/'+basa, nSite+'/'+basa)
 	print(f"Файл {basa} скопирован в {nSite}")
+
+	shutil.copyfile(publFol+"/admin/"+pricing_basa, nSite+"/admin/"+pricing_basa)
+	print(f"Файл {pricing_basa} скопирован в {nSite}")
 
 	for fol in copFol:
 		shutil.copytree(publFol+"/"+fol, nSite+'/'+fol)

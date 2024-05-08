@@ -2,6 +2,7 @@ img/
 Roboto/
 upload_img/
 cms.db
+pricing.db
 *.jpeg
 *.jpg
 *.webp

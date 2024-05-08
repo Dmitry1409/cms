@@ -9,9 +9,14 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 	let btn = document.querySelectorAll('button[name="tab"]')[0]
 	btn.addEventListener('click', ()=>{
-		
 		if(menu.header.childNodes.length < 1) ajax.get("comand=tab")
 
+	})
+
+	let select = document.querySelector("select")
+	select.addEventListener('change', (e)=>{
+		// console.log(select.value)
+		ajax.nameDB = select.value
 	})
 
 
@@ -19,6 +24,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 		if(this.readyState == 4){
 			if(this.status == 200){
 				params.blockAjax = false
+				// console.log(this.responseText)
 				if(params.resText){
 					ajax.serverRespons = this.responseText
 				}else{
@@ -829,7 +835,8 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 	class Ajax{
 
-		handlerUrl = "handlerDB.php" 
+		handlerUrl = "handlerDB.php"
+		nameDB = "../cms.db" 
 
 		post(par){
 			if(!params.blockAjax){		
@@ -846,6 +853,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 				httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
 				httpRequest.onreadystatechange = receive_ajax
+				par += "&nameDB="+this.nameDB
 				httpRequest.send(par)
 				params.blockAjax = true
 			}
@@ -861,8 +869,9 @@ document.addEventListener('DOMContentLoaded',()=>{
 				}
 
 				httpRequest.overrideMimeType('text/xml');
+				console.log(ajax)
 
-				httpRequest.open('GET', this.handlerUrl+"?"+get_params, true);
+				httpRequest.open('GET', this.handlerUrl+"?"+get_params+"&nameDB="+this.nameDB, true);
 
 				httpRequest.onreadystatechange = receive_ajax
 

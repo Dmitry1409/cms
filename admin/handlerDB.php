@@ -1,5 +1,11 @@
 <?php
-	$db = new SQLite3('../cms.db');
+	$ndb = null;
+	if($_SERVER['REQUEST_METHOD']== "POST"){
+		$ndb = $_POST['nameDB'];
+	}elseif($_SERVER['REQUEST_METHOD']== "GET"){
+		$ndb = $_GET['nameDB'];
+	}
+	$db = new SQLite3($ndb);
 
 	// имена таблиц и колонок 
 	$imageObj_table_name = "imageObj";
@@ -135,6 +141,7 @@
 		}
 
 		if($_POST['comand'] == 'updateCell'){
+			// echo var_dump($_POST);
 			$newVal = $_POST['newVal'];
 			$col = $_POST['col'];
 			$nTab = $_POST['name_table'];
@@ -142,6 +149,7 @@
 			unset($_POST['col']);
 			unset($_POST['name_table']);
 			unset($_POST["comand"]);
+			unset($_POST['nameDB']);
 			$q = "UPDATE $nTab SET $col = '$newVal' WHERE ";
 			$i = 0;
 			foreach($_POST as $key => $val){
@@ -174,6 +182,7 @@
 
 		if($_POST['comand'] == "delete_row"){
 			$name_tb = $_POST['name_table'];
+			unset($_POST['nameDB']);
 			unset($_POST['comand']);
 			unset($_POST['name_table']);
 			$q = "DELETE FROM ".$name_tb." WHERE ";
@@ -200,7 +209,7 @@
 		}
 
 		if($_POST['comand'] == "add_record_table"){
-			$keys =  array_slice(array_keys($_POST), 0, -2);
+			$keys =  array_slice(array_keys($_POST), 0, -3);
 			$name_table = $_POST['name_table'];
 
 			$query = "INSERT INTO $name_table (";
@@ -219,6 +228,7 @@
 			}
 
 			$query = $query.")";
+
 			if($db->exec($query)){
 				echo true;
 			}else{
