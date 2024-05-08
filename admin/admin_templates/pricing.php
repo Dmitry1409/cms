@@ -45,6 +45,8 @@
 <body>
 
 	<?php
+		include "../../config_cms.php";
+
 		$dirs = [];
 		$db = new SQLite3("../pricing.db");
 		$res = $db->query("SELECT * FROM dir_catalog");
@@ -128,7 +130,7 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td><img class="close_png" src="/cms/img/close.png"></td>
+					<td><img class="close_png" src=<?php echo $root_dir."img/close.png"?>></td>
 					<td><input name='name' style="width: 200px;" type="text"></td>
 					<td><input name='mert' style="width: 50px;" type="text"></td>
 					<td><input name="count" style="width: 50px;" type="text"></td>
@@ -137,7 +139,7 @@
 				</tr>
 			</tbody>
 		</table>
-		<img class="plus_png" src="/cms/img/plus.png">
+		<img class="plus_png" src=<?php echo $root_dir."img/plus.png"?>>
 	</div>
 	<button name='total'>Итого</button>
 	<button name='open'>открыть</button>
