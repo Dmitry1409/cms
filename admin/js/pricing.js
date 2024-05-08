@@ -232,7 +232,6 @@ window.addEventListener("DOMContentLoaded",()=>{
 		let out_arr = []
 		let tr = document.querySelector('tbody').querySelectorAll("tr")
 		let numbPrice = document.querySelector("input[name=number_price]").value
-		console.log(docDefinition)
 		docDefinition.content[2]['text'] = "Счет №"+String(numbPrice)
 		let sum = 0
 		for(let i=0; i<tr.length; i++){
@@ -265,8 +264,8 @@ window.addEventListener("DOMContentLoaded",()=>{
 		for(let i=0; i<out_arr.length; i++){
 			docDefinition['content'][3]['table']['body'].push(out_arr[i])
 		}
-		pdfMake.createPdf(docDefinition).open({}, window.open());
-		// pdfMake.createPdf(docDefinition).download("cfsf.pdf")
+		// pdfMake.createPdf(docDefinition).open({}, window.open());
+		pdfMake.createPdf(docDefinition).download(`Счет_потолки№${numbPrice}.pdf`)
 	}
 	 
 	document.querySelector("button[name=total]").addEventListener('click', totalAction)
