@@ -1,0 +1,103 @@
+body{
+	touch-action: none;
+}
+.wrapp_m{
+	display: flex;
+	overflow: auto;
+}
+.dayModalWrapp{
+	display: none;
+	position: fixed;
+	opacity: 0;
+	transition: .5s;
+	top: 0;
+	left: 0;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.3);
+	padding: 20px;
+	width: 100vw;
+	height: 100vh;
+	/*overflow: auto;*/
+	z-index: 5;
+}
+.dayModalWrapp > div {
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	position: relative;
+	background-color: white;
+	overflow: auto;
+}
+.modalDayClose {
+	position: absolute;
+	right: 5px;
+	z-index: 30;
+	top: 5px;
+}
+.inp_wrap_modal{
+	width: 50%;
+}
+.inserChoiseBlock{
+	padding: 10px; 
+	width: 100%; 
+	border: 1px solid;
+}
+.insertwrappModal{
+	width: 50%;
+}
+.cartClientMod{
+	padding: 4px;
+	border: 2px solid rgba(0,0,0,0.65);
+	margin-bottom: 5px;
+}
+.insertClients{
+	max-height: 300px;
+	overflow: auto;
+}
+.obj-cont-modal:hover{
+	background-color: #ebf6ff;
+	cursor: pointer;
+}
+.tel-cont-day{
+	display: flex;
+	flex-direction: column;
+	border: 1px solid rgba(0,0,0,0.3)
+}
+.tel-cont-day > span{
+	margin-right: 10px;
+}
+.obj-cont-modal{
+	display: flex;
+	flex-direction: column;
+	border: 1px solid rgba(0,0,0,0.3);
+	margin-bottom: 5px;
+}
+.cartClientMod > div{
+	margin-bottom: 5px;
+}
+.name_phon_wrapp{
+	margin-bottom: 5px;
+}
+.eventWrappDay{
+	padding: 10px;
+	border: 1px solid grey;
+	margin-top: 20px;
+}
+.block-flexy{
+	display: flex; 
+	flex-wrap: wrap;
+}
+.evTelWr a{
+	margin-right: 10px;
+}
+.start_finish{
+	display: flex;
+	justify-content: space-between;
+}
+
+@media (min-width: 500px){
+	.block-flexy > div{
+		margin-right: 20px;
+	}
+}

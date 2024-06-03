@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<!-- <link rel="stylesheet" type="text/css" href="../css/admin.css"> -->
-	<script src='../js/pdfmake_2.10.min.js'></script>
-	<script src='../js/vfs_fonts.min.js'></script>
-	<script src="../js/pricing.js" type="text/javascript"></script>
-	<style type="text/css">
+
+
+	<script defer src='js/pdfmake_2.10.min.js'></script>
+	<script defer src='js/vfs_fonts.min.js'></script>
+	<script defer src="js/pricing.js" type="text/javascript"></script>
+	<style  type="text/css">
 
 		.plus_png{
 			width: 20px;
@@ -39,16 +34,13 @@
 		input[name=number_price]{
 			margin: 20px;
 		}
-
 	</style>
-</head>
-<body>
 
 	<?php
-		include "../../config_cms.php";
+		include "../config_cms.php";
 
 		$dirs = [];
-		$db = new SQLite3("../pricing.db");
+		$db = new SQLite3("pricing.db");
 		$res = $db->query("SELECT * FROM dir_catalog");
 		$allData = [];
 		while($o = $res->fetchArray(SQLITE3_ASSOC)){
@@ -144,3 +136,4 @@
 	<button name='total'>Итого</button>
 	<button name='open'>открыть</button>
 </body>
+</html>

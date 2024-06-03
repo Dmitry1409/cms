@@ -36,7 +36,7 @@
 				$pass = $db->querySingle('SELECT password FROM stuff WHERE name == "admin"');
 				if ($pass == $_POST['password']){
 					$_SESSION['isAdmin'] = true;
-					header('Location: admin/admin_panel.php');
+					header('Location: admin/');
 					ob_end_flush();
 					exit;
 				}else{

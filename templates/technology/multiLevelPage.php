@@ -1024,7 +1024,7 @@
 			$m_text ="Апреля";
 			break;
 		case '05':
-			$m_text ="Майя";
+			$m_text ="Мая";
 			break;
 		case '06':
 			$m_text ="Июня";

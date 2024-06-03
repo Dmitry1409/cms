@@ -91,7 +91,7 @@ if(array_key_exists('click_link', $_GET)){
 $mail->Host = 'ssl://smtp.mail.ru';
 $mail->Port = 465;
 $mail->Username = '89202929892@mail.ru';
-$mail->Password = '3sYbVduDCzksjsR744bu';
+$mail->Password = 'nGWBmwn0wY2cHc1vvQvi';
 $mail->setFrom('89202929892@mail.ru', 'Сайт Auroom');
 $mail->addAddress('auroom-nn@mail.ru', 'Дмитрий');
 $mail->Subject = 'Заказ';
