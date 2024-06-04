@@ -90,8 +90,6 @@
 		}
 	}
 
-	
-
 
 	$clientName = str_replace("'", '"', $_POST['client_name']);
 	$text_review = str_replace("'", '"', $_POST['text_review']);
@@ -105,27 +103,30 @@
 	$revDir800 = "../upload_img/foto_review/800x800/";
 
 	$arrDB = [];
-	if(array_key_exists("avatar", $_FILES)){	
-		$n_name = randName($_FILES['avatar']['name']);
-		$arrDB['avatarFileName'] = $n_name;
-		move_uploaded_file($_FILES['avatar']['tmp_name'], $avatarDirOrig.$n_name);
-		// autoRotateImage($avatarDirOrig.$n_name);
-		resize($n_name, $avatarDirOrig, 400, null, $avatarDir400);
-	}
 
-	unset($_FILES['avatar']);
-
-
-	if(count($_FILES)> 0){
-		$arrDB['fotoRevArr'] = [];
-		for($i = 0; $i<count($_FILES); $i++){
-			$n_name = randName($_FILES[$i]['name']);
+	if(array_key_exists('fotoArr', $_POST)){	
+		$js = json_decode($_POST['fotoArr']);
+		for($i=0; $i<count($js); $i++){
+			$n_name = md5(microtime() . rand(0, 9999)).".jpg";
 			$arrDB['fotoRevArr'][] = $n_name;
-			move_uploaded_file($_FILES[$i]['tmp_name'], $revDirOrig.$n_name);
-			// autoRotateImage($revDirOrig.$n_name);
+			$o = fopen($revDirOrig.$n_name, "wb");
+			fwrite($o, base64_decode($js[$i]));
+			fclose($o);
+			$o = fopen($revDir800.$n_name, "wb");
+			fwrite($o, base64_decode($js[$i]));
+			fclose($o);
 			resize($n_name, $revDirOrig, 100, null, $revDir100);
-			resize($n_name, $revDirOrig, 800, null, $revDir800);
 		}
+		
+	}
+	if(array_key_exists("avatar", $_POST)){
+		$js = json_decode($_POST['avatar']);
+		$n_name = md5(microtime() . rand(0, 9999)).".jpg";
+		$arrDB['avatarFileName'] = $n_name;
+		$o = fopen($avatarDirOrig.$n_name, "wb");
+		fwrite($o, base64_decode($js[0]));
+		fclose($o);
+		resize($n_name, $avatarDirOrig, 400, null, $avatarDir400);
 	}
 
 	$timestamp = time();

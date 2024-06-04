@@ -16,6 +16,16 @@ window.addEventListener("DOMContentLoaded", ()=>{
 	let id_timeOutFeed
 	let flFancyFeedBack = false
 
+	let foto = {
+		length: 0,
+		count: 0,
+		avatar: [],
+		arr: []
+	}
+
+	let formData = new FormData()
+
+
 
 	Fancybox.bind(document.getElementById("feedBackContId"), "[data-fancybox]", {
   		on: {
@@ -183,8 +193,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			}
 
 			if(fl){
-				let formData = new FormData()
-
+				showCalcultAnim(this)
 				formData.append('client_name', field_name.value)
 				formData.append('text_review', feedback_textaria.value)
 				formData.append('scope', scope)
@@ -192,46 +201,111 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 				let avatar_inp = document.querySelector('.add_feedback_section input[name="image_avatar"]')
 				let foto_inp = document.querySelector('.add_feedback_section input[name="image_review"')
-
+				let fl_foto = false
 				if(avatar_inp.files.length == 1){
-					
-					formData.append('avatar', avatar_inp.files[0], avatar_inp.files[0].name)
+					fl_foto = true
+					foto['length'] += avatar_inp.files.length
+					let reader = new FileReader()
+					reader.onload = function(e){
+						CompressImage(e.target.result, foto.avatar)
+					}
+					reader.readAsDataURL(avatar_inp.files[0])
 				}
 
 				if(foto_inp.files.length > 0){
+					fl_foto = true
+					foto['length'] += foto_inp.files.length
 					for(let i=0; i< foto_inp.files.length; i++){
-						formData.append(i, foto_inp.files[i], foto_inp.files[i].name)
+						let reader = new FileReader()
+
+						reader.onload = function(e){
+							CompressImage(e.target.result, foto.arr)
+						}
+						reader.readAsDataURL(foto_inp.files[i])
 					}
 				}
-				showCalcultAnim(this)
+				if(!fl_foto){
+					sendFeedBack()
+				}
 				
-				let res = await fetch(`${root_dir}scripts_php/add_feedback.php`, {
-					method: "POST",
-					body: formData
-				})
-				let ot = await res.text()
-				setTimeout(()=>{
-					delAnimCalcut(this)
-					generelClearFeedBack()		
-					if(res.ok){
-						if(ot == "success"){
-							let h = "Ваш отзыв доставлен!"
-							let b = "Спасибо за обратную связь."
-							open_report_modal(h, b)
-						}else{
-							let h = "Ваш отзыв не доставлен!"
-							let b = `Сообщите пожалуйста администратору сайта об ошибке: ${ot}`
-							open_report_modal(h, b)
-						}
-					}else{
-						let h = "Ваш отзыв не доставлен!"
-						let b = `Сообщите пожалуйста администратору сайта об ошибке: ${res.status}`
-						open_report_modal(h, b)
-					}
-				},1000)
 			}
 		}
 	}
+
+	function CompressImage(base64, arr){
+		let can = document.createElement('canvas')
+		let img = document.createElement('img')
+		img.onload =  function(){
+			let orWidth = img.width
+			let orHeight = img.height
+			const maxWidth = 1024
+			const maxHeight = 768
+			if(orWidth > orHeight){
+				if(orWidth > maxWidth){
+					orHeight = Math.round((orHeight *= maxWidth / orWidth))
+					orWidth = maxWidth
+				}
+			}else{
+				if(orHeight > maxHeight){
+					orWidth = Math.round((orWidth *= maxHeight / orHeight))
+					orHeight = maxHeight
+				}
+			}
+			can.width = orWidth
+			can.height = orHeight
+			let ctx = can.getContext('2d')
+			ctx.drawImage(img, 0, 0, orWidth, orHeight)
+			let comData = can.toDataURL('image/jpeg', 0.7)
+
+			arr.push(comData.split(',')[1])
+
+			if(foto.length > 0){
+				if(foto.count == foto.length - 1){
+					sendFeedBack()
+				}
+
+				foto.count ++
+			}
+		}		
+		img.src = base64
+	}
+
+	async function sendFeedBack(){
+		if(foto.arr.length > 0){
+			formData.append('fotoArr', JSON.stringify(foto.arr))
+		}
+		if(foto.avatar.length > 0){
+			formData.append('avatar', JSON.stringify(foto.avatar))
+		}
+
+		let res = await fetch(`${root_dir}scripts_php/add_feedback.php`, {
+			method: "POST",
+			body: formData
+		})
+		
+
+		let ot = await res.text()
+		setTimeout(()=>{
+			delAnimCalcut(document.querySelector('.add_feedback_section .calc_btn'))
+			generelClearFeedBack()		
+			if(res.ok){
+				if(ot == "success"){
+					let h = "Ваш отзыв доставлен!"
+					let b = "Спасибо за обратную связь."
+					open_report_modal(h, b)
+				}else{
+					let h = "Ваш отзыв не доставлен!"
+					let b = `Сообщите пожалуйста администратору сайта об ошибке: ${ot}`
+					open_report_modal(h, b)
+				}
+			}else{
+				let h = "Ваш отзыв не доставлен!"
+				let b = `Сообщите пожалуйста администратору сайта об ошибке: ${res.status}`
+				open_report_modal(h, b)
+			}
+		},1000)
+	}
+
 	function feedback_scope_view_action(){
 		let ind 
 		for(let i = 0; i<scope_svg.length; i++){

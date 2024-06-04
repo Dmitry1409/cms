@@ -4,12 +4,11 @@ import os, shutil
 nSite = "var"
 publFol = "public_html"
 basa ="cms.db"
-pricing_basa = "pricing.db"
+crm_basa = "crm.db"
 copFol = ['upload_img', 'Roboto', 'img']
 
-pathArr = ['config_cms.php', 'js/main.js', 'mailer/send_mail.php',
-			'scripts_php/add_feedback.php', 'templates/mainHead.php', ".htaccess",'index.php']
-nRowArr = [[2, 3], [0], [100,103,104,105,106,107], [111, 124], [25,39], [0,1,2,3,4,5,6,7,8,9,10,11,12], [53]]
+pathArr = ['config_cms.php', 'js/main.js', 'mailer/send_mail.php', 'templates/mainHead.php', ".htaccess",'index.php']
+nRowArr = [[2, 3], [0], [100,103,104,105,106,107], [25,39], [0,1,2,3,4,5,6,7,8,9,10,11,12], [53]]
 
 checkArr = [['	$domain = "http://localhost";', '	$root_dir = "/cms/";'],
 			['const root_dir = "/cms/"'],
@@ -70,8 +69,8 @@ def main():
 	shutil.copyfile(publFol+'/'+basa, nSite+'/'+basa)
 	print(f"Файл {basa} скопирован в {nSite}")
 
-	shutil.copyfile(publFol+"/admin/"+pricing_basa, nSite+"/admin/"+pricing_basa)
-	print(f"Файл {pricing_basa} скопирован в {nSite}")
+	shutil.copyfile(publFol+"/admin/"+crm_basa, nSite+"/admin/"+crm_basa)
+	print(f"Файл {crm_basa} скопирован в {nSite}")
 
 	for fol in copFol:
 		shutil.copytree(publFol+"/"+fol, nSite+'/'+fol)
