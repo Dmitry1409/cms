@@ -1,116 +1,5 @@
 window.addEventListener("DOMContentLoaded", ()=>{
-	class EventCalendar{
-		constructor(){
-			this.interElem = null
-			this.movProxy = null
-			this.leaveProxy = null
-			this.collActDiv = []
-			this.clockModAbsol = document.querySelector('.clock_modal_absol')
-			this.clock_div = document.querySelectorAll(".clock_modal_absol > div")
-			for(let i=0; i<this.clock_div.length; i++){
-				this.clock_div[i].addEventListener('pointerdown', this.downClockDiv.bind(this))
-				this.clock_div[i].addEventListener('pointerup', this.upClockDiv.bind(this))
-			}
-			this.html = `<div class='insertDivClock'>
-							<textarea placeholder="Описание события" rows="2" cols="25"></textarea>
-							<select>
-								<option value="замер">Замер</option>
-								<option value="монтаж">Монтаж</option>
-								<option value="звонок">Звонок</option>
-								<option value="доставка">Доставка</option>
-								<option value="другое">Другое</option>
-							</select>
-							<div class='dopSelectEvent'></div>
-							<svg class="svg_close_event" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-								<defs>
-									<style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style>
-								</defs>
-								<title/>
-								<g id="cross"><line class="cls-1" x1="7" x2="25" y1="7" y2="25"/><line class="cls-1" x1="7" x2="25" y1="25" y2="7"/>
-								</g>
-							</svg>			
-						</div>`
-		}
-
-		async getInsertInDopBlock(){
-			let typeEv = document.querySelector('.insertDivClock select')
-			let res = await fetch(`getDataForEvent.php?eventType=${typeEv.value}`)
-			console.log(await res.text())
-		}
-
-		insertHTML(inElem){
-			if(this.interElem){
-				this.interElem.insertAdjacentHTML("beforeend", this.html)
-				this.interElem = null
-				this.addHandlers()
-			}
-			this.getInsertInDopBlock()
-		}
-		addHandlers(){
-			document.querySelector('.svg_close_event').addEventListener('click', this.eventDel.bind(this))
-		}
-		eventDel(e){
-			for(let i=0;i<this.collActDiv.length; i++){
-				this.collActDiv[i].classList.remove("clock_action")
-				let ch = this.collActDiv[i].children
-				if(ch.length > 0){
-					for(let j=0; j<ch.length; j++){
-						ch[j].remove()
-					}
-				}
-			}
-		}
-
-		getBoundRectDiv(){
-			this.divBoundRect = []
-			for(let i=0; i<this.clock_div.length; i++){
-				let a = []
-				a.push(this.clock_div[i])
-				a.push(this.clock_div[i].getBoundingClientRect())
-				this.divBoundRect.push(a)
-			}
-		}
-
-		pointerMoveClock(e){
-			for(let i=0; i<this.divBoundRect.length; i++){
-				if(e.y > this.divBoundRect[i][1].top && e.y < this.divBoundRect[i][1].bottom ){
-					if(!this.divBoundRect[i][0].classList.contains("clock_action")){
-						this.divBoundRect[i][0].classList.add('clock_action')
-						this.collActDiv.push(this.divBoundRect[i][0])
-					}
-				}
-			}
-		}
-
-		downClockDiv(e){
-			if(!e.currentTarget.classList.contains('clock_action')){
-				this.collActDiv.push(e.currentTarget)
-				this.movProxy = this.pointerMoveClock.bind(this)
-				this.clockModAbsol.addEventListener('pointermove', this.movProxy)
-				this.leaveProxy = this.leaveOut.bind(this)
-				this.clockModAbsol.addEventListener('pointerleave', this.leaveProxy)		
-				this.interElem = e.currentTarget
-				e.currentTarget.classList.add("clock_action")
-			}
-		}
-
-		upClockDiv(e){
-			if(this.interElem){
-				this.insertHTML()
-				this.clockModAbsol.removeEventListener('pointermove', this.movProxy)
-				this.clockModAbsol.removeEventListener("pointerleave", this.leaveProxy)
-				// document.querySelector('.svg_close_event').addEventListener("click", delEventAction)
-			}		
-		}
-		leaveOut(e){
-			this.clockModAbsol.removeEventListener("pointerleave", this.leaveProxy)
-			this.clockModAbsol.removeEventListener('pointermove', this.movProxy)
-			this.insertHTML()
-			
-		}
-	}
-
-
+	
 	scrollCalendar()
 
 	document.querySelector('.inp_wrap_modal button').addEventListener('click', addEventAct)
@@ -121,7 +10,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 	for(let i=0; i<d.length; i++){
 		d[i].addEventListener('click', dayShow)
 	}
-	// let event = new EventCalendar()
+
 
 
 	document.querySelector('.modalDayClose').addEventListener('click', closeModalDay)
@@ -161,6 +50,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 		let finish = document.querySelector('.inp_wrap_modal input[name=finish]')
 		finish.value = nd+"."+nm+"."+d+" "
 		let events = await fetch(`getDayEvents.php?day=${nd}&month=${nm}`)
+
 		if(events.ok){
 			events = await events.json()
 			insertEvents(events)
@@ -170,12 +60,11 @@ window.addEventListener("DOMContentLoaded", ()=>{
 	}
 
 	function insertEvents(arr_e){
-		console.log(arr_e)
 		let div_par = document.querySelector('.dayModalWrapp > div')
 		let html = ""
 		for(let i=0; i<arr_e.length; i++){
 			html += `<div class="eventWrappDay">`
-				html += `<div style="text-align: center; font-weight: bold;">${arr_e[i]['type']}</div>`		
+				html += `<div style="text-align: center; font-weight: bold;">${arr_e[i]['type']}: ${arr_e[i]['status']}</div>`		
 				let tel = ``
 				let telAr = arr_e[i]['client']['tel_arr']
 				for(let j =0; j<telAr.length; j++){
@@ -183,36 +72,86 @@ window.addEventListener("DOMContentLoaded", ()=>{
 				}
 				html += `<div class="block-flexy">`
 					html += `<div>
-								<div>Клиент: ${arr_e[i]['client']['name']}</div>
+								<div>Клиент: <span table='clients' tabCol='name' rowID='${arr_e[i]['client']['id']}' class='change_fild_id'>${arr_e[i]['client']['name']}</span></div>
 								<div class="evTelWr">Телефоны: ${tel}</div>
 							</div>`
 					html += `<div>
 								<div>Объект: ${arr_e[i]['obj']['type']}</div>
-								<div style="font-weight: bold;">Адрес: ${arr_e[i]['obj']['address']}</div>
+								<div style="font-weight: bold;">Адрес: <span tabcol='address' rowid='${arr_e[i]['obj']['id']}' table='object' class='change_fild_id'>${arr_e[i]['obj']['address']}</span></div>
 							</div>`
 					html += `<div>
 								<div>Статус: ${arr_e[i]['obj']['status']}</div>
-								<div>Описание: ${arr_e[i]['obj']['description']}</div>
+								<div>Описание: <span table='object' tabcol='description' rowid='${arr_e[i]['obj']['id']}' class='change_fild_id'>${arr_e[i]['obj']['description']}</span></div>
 							</div>`
+					if(arr_e[i]['type'] == "замер"){
+						if(arr_e[i]['status'] == "выполнено"){
+							html += `<a class="link_event" href='showZamer?idZamer=${arr_e[i]['ref_zamer']}'>показать</a>`
+						}else{
+							html += `<a class="link_event" href='addReportZamer?idEvent=${arr_e[i]['id']}'>отправить</a>`
+						}
+					}
 				html += `</div>`
-				if(arr_e[i]['start'].length > 9){
-					html += `<div class="start_finish"><span>Начало: ${arr_e[i]['start'].slice(9)}</span>
-									<span>Конец: ${arr_e[i]['finish'].slice(9)}</span>
-							</div>`
-				}
+				html += `<div class="start_finish"><span>Начало: <span tabcol='start' rowid='${arr_e[i]['id']}' table='events' class='change_fild_id'>${arr_e[i]['start']}</span></span>
+								<span>Конец: <span tabcol='finish' rowid='${arr_e[i]['id']}' table='events' class='change_fild_id'>${arr_e[i]['finish']}</span></span>
+						</div>`
 			html += "</div>"
 		}
 
 		if(html){
 			html = "<div class='cont_eventDay'>"+html+"</div>"
 			div_par.insertAdjacentHTML('beforeend', html)
+			let add_inp = document.querySelectorAll('.change_fild_id')
+			for(let i =0; i<add_inp.length; i++){
+				add_inp[i].addEventListener('click', change_fild_view)
+			}
+
 		}
 
+	}
+
+	function change_fild_view(){
+		let html = `<input rowid='${this.getAttribute('rowid')}'
+		 tabcol='${this.getAttribute('tabcol')}' table='${this.getAttribute("table")}'
+		  class='add_input_id' type='text' value='${this.innerText}'>`
+		this.parentNode.insertAdjacentHTML("beforeend", html)
+		this.remove()
+		let add_inps = document.querySelectorAll('.add_input_id')
+		for(let i=0; i<add_inps.length; i++){
+			add_inps[i].addEventListener('change', change_fild_fetch)
+		}
+
+	}
+	async function change_fild_fetch(){
+		if(confirm(`Изменить поле на ${this.value}`)){
+			let fd = new FormData()
+			fd.append('comand', "change_fild")
+			fd.append('table', this.getAttribute('table'))
+			fd.append('rowid', this.getAttribute('rowid'))
+			let tabcol = this.getAttribute('tabcol')
+			fd.append('tabcol', tabcol)
+			if(tabcol =="finish" || tabcol == "start"){
+				if(!checkDataTimeInput(this.value)){
+					this.style.border = "1px solid red"
+					return
+				}else{
+					this.style.border = ""
+				}
+			}
+			fd.append('newval', this.value)
+			let res = await fetch('handlerCRM.php', {method: 'POST',body: fd})
+			let o = await res.text()
+			if(o == "succes"){
+				showMsg()
+			}else{
+				showMsg('r', o)
+			}
+		}
 	}
 
 	async function zamerModalAct(){
 		let insClient = document.querySelector('.insertClients')
 		let res = await fetch(`getNewClients.php`)
+		// console.log(await res.json())
 		res = await res.json()
 		html = ``
 		for(let i=0; i<res.length; i++){
@@ -247,6 +186,19 @@ window.addEventListener("DOMContentLoaded", ()=>{
 		}
 				
 	}
+	function incommingCall(){
+		let html = `<div class="addClientWrap">
+						<input placeholder="Имя" type="text" name="clientName">
+						<input placeholder="Телефон" type="number" name="telehon">
+						<input placeholder="Адрес объекта" type="text" name="address">
+						<input placeholder="Тип объекта" type="text" name="typeObj">
+						<input name="desc" placeholder="Описание" name="desc">
+						<input type="text" placeholder="Откуда нас нашел" name="from">
+					</div>`
+		let add_block = document.querySelector('.add_block_modal')
+		add_block.insertAdjacentHTML('beforeend', html)
+	}
+
 
 	function checkDataTimeInput(str){
 		if(str.length>9){
@@ -254,7 +206,6 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			if(!/\d\d\.\d\d\.\d\d$/.test(sp[0])){
 				return false
 			}
-			console.log(sp[1])
 			if(!/\d\d:\d\d$/.test(sp[1])){
 				return false
 			}
@@ -287,29 +238,62 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			return
 		}
 
-		let where = document.querySelector('.inserChoiseBlock > div:first-child')
-		
-		if(where.innerText == "выбрать:"){
-			where.style.border = "1px solid red"
-			return
-		}
-
 		fd = new FormData()
 		fd.append('comand', "addEvent")
 		fd.append("start", start.value)
 		fd.append('finish', finish.value)
 		fd.append('type', select.value)
 		if(select.value == "замер"){
+			let where = document.querySelector('.inserChoiseBlock > div:first-child')
+			if(where.innerText == "выбрать:"){
+				where.style.border = "1px solid red"
+				return
+			}
 			let obj_id = document.querySelector('.inserChoiseBlock').querySelector('.obj-cont-modal').getAttribute("obj_id")
 			fd.append('obj_id', obj_id)
 			let client_id = document.querySelector('.inserChoiseBlock').querySelector('.name_phon_wrapp').getAttribute("client_id")
 			fd.append('client_id', client_id)
 		}
-
+		if(select.value == "вх. звонок"){
+			let clName = document.querySelector('input[name=clientName]')
+			if(clName.value != ""){
+				fd.append("name", clName.value)
+			}
+			let tel = document.querySelector('input[name=telehon]')
+			if(tel.value == ""){
+				tel.style.border = "1px solid red"
+				return
+			}else{
+				tel.style.border = ""
+				fd.append("telehon", tel.value)
+			}
+			let add = document.querySelector('input[name=address]')
+			if(add.value !=""){
+				fd.append('address', add.value)
+			}
+			let typeObj = document.querySelector('input[name=typeObj]')
+			if(typeObj.value != ""){
+				fd.append('typeObj', typeObj.value)
+			}
+			let desc = document.querySelector('input[name=desc]')
+			if(desc.value == ""){
+				desc.style.border = "1px solid red"
+				return
+			}else{
+				desc.style.border = ""
+				fd.append('desc', desc.value)
+			}
+			let from = document.querySelector('input[name=from]')
+			if(from.value !=""){
+				fd.append('from', from.value)
+			}
+		}
+		
 		let res = await fetch('handlerCRM.php', {method: 'POST',body: fd});
 
 		if(res.ok){
 			let o = await res.text()
+			console.log(o)
 			if(o == "succes"){
 				showMsg()
 				setTimeout(()=>{
@@ -334,14 +318,15 @@ window.addEventListener("DOMContentLoaded", ()=>{
 		let html = this.parentNode.querySelector("div:first-child").outerHTML
 		html += this.outerHTML
 		ch_bl.insertAdjacentHTML('beforeend', html)
-		// console.log(this.parentNode.querySelector("div:first-child"))
-		// ch_bl.append(this)
 		document.querySelector('.insertClients').remove()
 	}
 	function changeSelectModalAction(){
 		switch(this.value){
 			case "замер":
 				zamerModalAct();
+				break;
+			case "вх. звонок":
+				incommingCall()
 				break;
 		}
 	}

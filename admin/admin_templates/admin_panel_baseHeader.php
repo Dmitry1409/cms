@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0
+				maximum-scale=1.0, user-scalable=0">
 	<title>Админка</title>
 	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
+	<script defer src="js/main_admin.js"></script>
 	<style type="text/css">
 		.panelWrapp a{
 			padding: 10px;
@@ -37,24 +39,7 @@
 			right: 20px !important;
 		}
 	</style>
-	<script type="text/javascript">	
-		function showMsg(col='g', text='Успех'){
-			let time
-			let msg = document.querySelector('.msg')
-			msg.innerText = text
-			if(col == "g"){
-				time = 2000
-				msg.classList = 'msg_action msg_succ msg'
-			}else if(col == "r"){
-				time = 8000
-				msg.classList = "msg_err msg_action msg"
-			}
-			setTimeout(()=>{
-				msg.classList.remove('msg_action')
-				msg.style.right = (-msg.offsetWidth)+"px"
-			}, time)
-		}	
-	</script>
+	
 </head>
 <body>
 	<div class="msg"></div>

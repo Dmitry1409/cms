@@ -40,7 +40,7 @@
 		include "../config_cms.php";
 
 		$dirs = [];
-		$db = new SQLite3("pricing.db");
+		$db = new SQLite3("crm.db");
 		$res = $db->query("SELECT * FROM dir_catalog");
 		$allData = [];
 		while($o = $res->fetchArray(SQLITE3_ASSOC)){

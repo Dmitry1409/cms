@@ -80,6 +80,7 @@ body{
 	margin-bottom: 5px;
 }
 .eventWrappDay{
+	position: relative;
 	padding: 10px;
 	border: 1px solid grey;
 	margin-top: 20px;
@@ -94,6 +95,11 @@ body{
 .start_finish{
 	display: flex;
 	justify-content: space-between;
+}
+.link_event{
+	position: absolute;
+	right: 10px;
+	top: 10px;
 }
 
 @media (min-width: 500px){

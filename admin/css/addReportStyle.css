@@ -1,0 +1,80 @@
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+ 	-webkit-appearance: none;
+  	margin: 0;
+}
+
+.room_block{
+	border: 1px solid grey;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+.room_block > div{
+	display: flex;
+	flex-wrap: wrap;
+}
+.focus_room{
+	border: 2px solid grey;
+}
+.inp_razmer{
+	width: 50px;
+}
+.menu_img{
+	position: absolute;
+	left: -30px;
+	width: 25px;
+	height: 25px;
+}
+.add_dop_panel{
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	background-color: white;
+	right: -160px;
+	padding: 10px;
+	width: 160px;
+	box-shadow: -5px 7px 8px 0px rgba(34, 60, 80, 0.26);
+	transition: 0.5s;
+}
+.open_dop_menu{
+	right: 10px;
+}
+.add_dop_panel > span{
+	padding: 3px;
+	margin-top: 3px;
+	border: 1px solid grey;
+	cursor: pointer;
+}
+.insert_dopy{
+	padding: 3px;
+	border: 1px solid gray;
+}
+
+.plusImg{
+	width: 20px;
+	height: 20px;
+}
+.flex-column-alig{
+	display: flex; 
+	flex-direction: column; 
+	align-items: center;
+}
+.column-padd{
+	display: flex; 
+	flex-direction: column;
+	border: 1px solid gray;
+	padding: 5px;
+}
+.wrap_flex_bord{
+	display: flex; 
+	border: 1px solid gray;
+}
+.flex_border{
+	display: flex; 
+	align-items: center;
+	width: 100%;
+	border: 1px solid gray;
+	flex-wrap: wrap;
+}
+.offset_top{
+	margin-top: 20px;
+}

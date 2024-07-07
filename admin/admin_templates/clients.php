@@ -45,7 +45,7 @@
 <h3>Список клиентов</h3>
 <?php
 	$db = new SQLite3('crm.db');
-	$res = $db->query("SELECT * FROM clients");
+	$res = $db->query("SELECT * FROM clients ORDER BY created DESC");
 	$out = [];
 	while($r = $res->fetchArray(SQLITE3_ASSOC)){
 		$q = "SELECT val FROM phones WHERE id in ".listToCupStr($r['ref_tel']);

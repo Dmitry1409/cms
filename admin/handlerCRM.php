@@ -3,171 +3,248 @@
 	$db = new SQLite3("crm.db");
 	$time = time();
 
-	function getAndAddinFild($q, $n_value){
+	function getAndAddinFild($table, $col, $rowid, $val){
 		global $db;
-		$res = $db->querySingle($q);
+
+		$res = $db->querySingle("SELECT $col FROM $table WHERE id = $rowid");
+
+		$out = "";
+
 		if(!$res){
-			return "[$n_value]";
+			$out = "[$val]";
 		}else{
 			$js = json_decode($res);
-			$js[] = $n_value;
-			return json_encode($js);
+			$js[] = $val;
+			$out = json_encode($js);
 		}
-		
+		return update_fild($table, $col, $rowid, $out);
+	}
+
+	function update_fild($table, $col, $rowid, $val){
+		global $db;
+		if(!$db->exec("UPDATE $table SET $col = '$val' WHERE id = $rowid")){
+			return $db->lastErrorMsg();
+		}else{
+			return "succes";
+		}
+
+	}
+	function insert_object($status, $description, $created, $type, $ref_client, $address){
+		global $db;
+
+		$q = "INSERT INTO object (status, description, created";
+		if($type){
+			$q .= ", type";
+		}
+		if($ref_client){
+			$q .= ", ref_client";
+		}
+		if($address){
+			$q .= ", address";
+		}
+		$q .= ") VALUES ('$status', '$description', $created";
+		if($type){
+			$q .=", '$type'";
+		}
+		if($ref_client){
+			$q .= ", $ref_client";
+		}
+		if($address){
+			$q .= ", '$address'";
+		}
+		$q .= ")";
+
+		if(!$db->exec($q)){
+			echo $db->lastErrorMsg();
+			exit;
+		}else{
+			return $db->lastInsertRowID();
+		}
+
+	}
+
+	function get_or_null($key, $arr){
+		if(array_key_exists($key, $arr)){
+			return $arr[$key];
+		}else{
+			return NULL;
+		}
+	}
+
+	function insert_phone($tel, $ref_client){
+		global $db;
+		$q = "INSERT INTO phones (val";
+		if($ref_client){
+			$q .=", ref_client";
+		}
+		$q .= ") VALUES ('$tel'";
+		if($ref_client){
+			$q .= ", $ref_client";
+		}		
+		$q .= ")";
+
+		if(!$db->exec($q)){
+			echo $db->lastErrorMsg();
+			exit;
+		}else{
+			return $db->lastInsertRowID();
+		}
+	}
+
+	function insert_event($start, $finish, $type, $status, $ref_client, $ref_obj){
+		global $db;
+
+		$q = "INSERT INTO events (start, finish, type, status, created";
+		if($ref_client){
+			$q .= ", ref_client";
+		}
+		if($ref_obj){
+			$q .= ", ref_obj";
+		}
+		$q .= ") VALUES ('$start', '$finish', '$type', '$status', ".time();
+		if($ref_client){
+			$q .= ", $ref_client";
+		}
+		if($ref_obj){
+			$q .= ", $ref_obj";
+		}
+		$q .= ")";
+
+		if(!$db->exec($q)){
+			echo $db->lastErrorMsg();
+			exit;
+		}else{
+			return $db->lastInsertRowID();
+		}
+	}
+
+	function insert_client($status, $name, $ref_tel, $ref_obj, $ref_event, $from_is){
+		global $db;
+
+		$q = "INSERT INTO clients (status, created";
+		if($name){
+			$q .= ", name";
+		}
+		if($ref_tel){
+			$q .= ", ref_tel";
+		}
+		if($ref_obj){
+			$q .= ", ref_obj";
+		}
+		if($ref_event){
+			$q .= ", ref_event";
+		}
+		if($from_is){
+			$q .= ", from_is";
+		}
+
+		$q .= ") VALUES ('$status', ".time();
+
+		if($name){
+			$q .= ", '$name'";
+		}
+
+		if($ref_tel){
+			$q .= ", '[$ref_tel]'";
+		}
+		if($ref_obj){
+			$q .= ", '[$ref_obj]'";
+		}
+		if($ref_event){
+			$q .= ", '[$ref_event]'";
+		}
+		if($from_is){
+			$q .= ", '$from_is'";
+		}
+
+		$q .=")";
+
+		if(!$db->exec($q)){
+			echo $db->lastErrorMsg();
+			exit;
+		}else{
+			return $db->lastInsertRowID();
+		}
+
+
 	}
 
 	if($_SERVER['REQUEST_METHOD']=="POST"){
 
-		if($_POST['comand'] == "addObject"){
-			$q = "INSERT INTO object (status, type, description, ref_client, created";
-			if(array_key_exists("address", $_POST)){
-				$q = $q.", address";
-			}
-			$q = $q.") VALUES ('{$_POST['status']}', '{$_POST['type']}', '{$_POST['description']}', '{$_POST['client_id']}',$time";
-			if(array_key_exists("address", $_POST)){
-				$q = $q.", '{$_POST['address']}'";
-			}
-			$q = $q.")";
-			if(!$db->exec($q)){
-				echo $db->lastErrorMsg();
-				exit;
-			}
-			$idObj =  $db->lastInsertRowID();
-			$n = getAndAddinFild("SELECT ref_obj FROM clients WHERE id = {$_POST['client_id']}", $idObj);
-			$q = "UPDATE clients SET ref_obj = '$n' WHERE id = {$_POST['client_id']}";
-			if(!$db->exec($q)){
-				echo $db->lastErrorMsg();
-				exit;
-			}
-			echo "succes";
-		}
+		//из страницы все клиенты
+		if($_POST['comand'] == "addClient"){
 
-		if($_POST['comand'] == "addPhone"){
-			$q = "INSERT INTO phones (val, ref_client) VALUES('{$_POST['tel']}', '{$_POST['client_id']}')";
-			if(!$db->exec($q)){
-				echo $db->lastErrorMsg();
-				exit;
-			}
-			$idTel = $db->lastInsertRowID();
-			$nv = getAndAddinFild("SELECT ref_tel FROM clients WHERE id = {$_POST['client_id']}", $idTel);
-			$q = "UPDATE clients SET ref_tel = '$nv' WHERE id = {$_POST['client_id']}";
-			if(!$db->exec($q)){
-				echo $db->lastErrorMsg();
-				exit;
-			}
-			echo "succes";
-		}
-		
-		if($_POST['comand'] =="addEvent"){
-			$q = "INSERT INTO events (start, finish, type, created, status";
-			if($_POST['type'] == "замер"){
-				$q = $q.",ref_obj, ref_client";
-			}
-			$q = $q.") VALUES ('{$_POST['start']}','{$_POST['finish']}','{$_POST['type']}',$time, 'будет'";
-			if($_POST['type'] == 'замер'){
-				$q = $q.", '{$_POST['obj_id']}', '{$_POST['client_id']}'";
-			}
-			$q = $q.")";
+			$phID = insert_phone($_POST['tel']);
 
-			if(!$db->exec($q)){
-				echo $db->lastErrorMsg();
-				exit;
-			}
-			$evID = $db->lastInsertRowID();
-			if($_POST['type'] =="замер"){
-				$ref = getAndAddinFild("SELECT ref_event FROM object WHERE id = {$_POST['obj_id']}", $evID);
-				$q = "UPDATE object SET ref_event = '$ref' WHERE id = {$_POST['obj_id']}";
-				if(!$db->exec($q)){
-					echo $db->lastErrorMsg();
-					exit;
-				}
-				
-				$ev = getAndAddinFild("SELECT ref_event FROM clients WHERE id = {$_POST['client_id']}", $evID);
+			$objID = insert_object("нужно", $_POST['desc'], $time, get_or_null('typeObj', $_POST),
+									 NULL, get_or_null('address', $_POST));
 
-				if(!$db->exec("UPDATE clients SET ref_event = '$ev' WHERE id = {$_POST['client_id']}")){
-					echo $db->lastErrorMsg();
-					exit;
-				}
+			$clID = insert_client("новый", get_or_null('name', $_POST), "$phID", "$objID", NULL, get_or_null('from', $_POST));
 
-			}
-			echo "succes";
 			
+			update_fild("phones", "ref_client", $phID, $clID);
+
+			echo update_fild("object", "ref_client", $objID, $clID);
+
+
 		}
 
+		//из календаря менять поля
+		if($_POST['comand'] == "change_fild"){
+			echo update_fild($_POST['table'], $_POST['tabcol'], $_POST['rowid'], $_POST['newval']);
+		}
+
+		//из страницы клиенты добавление объекта
+		if($_POST['comand'] == "addObject"){
+
+			$idObj =  insert_object($_POST['status'], $_POST['description'], $time, get_or_null("type", $_POST),
+									get_or_null('client_id', $_POST), get_or_null("address", $_POST));
+
+			echo getAndAddinFild('clients', 'ref_obj', $_POST['client_id'], $idObj);
+		}
+		//из страници все клиенты
+		if($_POST['comand'] == "addPhone"){
+			$idTel = insert_phone($_POST['tel'], $_POST['client_id']);
+			echo getAndAddinFild("clients", "ref_tel", $_POST['client_id'], $idTel);
+
+		}
+		//из календаря
+		if($_POST['comand'] =="addEvent"){
+			if($_POST['type'] == "замер"){
+
+				$evID = insert_event($_POST['start'], $_POST['finish'], $_POST['type'], 'будет',
+									 $_POST['client_id'], $_POST['obj_id']);
+
+				getAndAddinFild('object', 'ref_event', $_POST['obj_id'], $evID);
+				
+				echo getAndAddinFild('clients', 'ref_event', $_POST['client_id'], $evID);
+			}
+			
+			
+			if($_POST["type"] == "вх. звонок"){
+
+				$phID = insert_phone($_POST['telehon']);
+
+				$objID = insert_object('нужно', $_POST['desc'], $time, get_or_null('typeObj', $_POST),
+						 NULL, get_or_null('address', $_POST));
+
+
+				$clID = insert_client('новый', get_or_null('name', $_POST),
+						 "$phID", "$objID", NULL, get_or_null('from_is', $_POST));
+
+				$evID = insert_event($_POST['start'], $_POST['finish'], $_POST['type'], "было", $clID, $objID);
+
+				update_fild("phones", "ref_client", $phID, $clID);
+
+				update_fild("object", "ref_client", $objID, $clID);
+
+
+				echo update_fild("clients", "ref_event", $clID, "[$evID]");
+
+			}
+		}
 	}
 	
-	if(array_key_exists("comand", $_GET)){
-		if($_GET['comand'] == "addClient"){
-			$q = "INSERT INTO phones (val) VALUES ('".$_GET['tel']."')";
-			if(!$db->exec($q)){
-				echo $db->lastErrorMsg();
-				exit;
-			}
-			$phID = $db->lastInsertRowID();
-
-			$q = "INSERT INTO object (description, type, created, status";
-			if($_GET['address']){
-				$q = $q.", address)";
-			}else{
-				$q = $q.")";
-			}
-			$q = $q." VALUES ('".$_GET['desc']."','".$_GET['type']."',".time().",'нужно'";
-			if($_GET['address']){
-				$q = $q.",'".$_GET['address']."')";
-			}else{
-				$q = $q.")";
-			}
-
-
-			if(!$db->exec($q)){
-				echo $db->lastErrorMsg();
-				exit;
-			}
-			$objID = $db->lastInsertRowID();
-
-
-			$q = "INSERT INTO clients (ref_tel, ref_obj, created, status";
-			if($_GET['name']){
-				$q = $q.", name";
-			}
-			if($_GET['from']){
-				$q = $q.", from_is)";
-			}else{
-				$q = $q.")";
-			}
-			$q = $q." VALUES ('[".$phID."]', '[".$objID."]',".time().", 'need'";
-			if($_GET['name']){
-				$q = $q.",'".$_GET['name']."'";
-			}
-			if($_GET['from']){
-				$q = $q.", '".$_GET['from']."')";
-			}else{
-				$q = $q.")";
-			}
-
-			if(!$db->exec($q)){
-				echo $db->lastErrorMsg();
-				exit;
-			}
-			$clID = $db->lastInsertRowID();
-			$q = "UPDATE phones SET ref_client = $clID WHERE id = $phID";
-
-			if(!$db->exec($q)){
-				echo $db->lastErrorMsg();
-				exit;
-			}
-
-			$q = "UPDATE object SET ref_client = $clID WHERE id = $objID";
-
-			if(!$db->exec($q)){
-				echo $db->lastErrorMsg();
-				exit;
-			}
-
-			echo "succes";
-		}
-	}
-
 	function createInsertQuery($arr, $table){
 		$q = "INSERT INTO $table (";
 		$i = 0;

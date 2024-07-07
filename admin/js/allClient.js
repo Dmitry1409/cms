@@ -100,41 +100,43 @@ window.addEventListener("DOMContentLoaded", ()=>{
 	}
 
 	async function addClient(){
+
 		let inputs = document.querySelectorAll('.addClientWrap input, .addClientWrap textarea')
-		let par = `?comand=addClient`
+
+		let fd = new FormData();
+
+		fd.append('comand', "addClient")
+
 		if(inputs[0].value){
-			par += `&name=${inputs[0].value}`
+			fd.append('name', inputs[0].value)
 		}
 		if(inputs[1].value){
-			par+= `&tel=${inputs[1].value}`
+			fd.append('tel', inputs[1].value)
 			inputs[1].style.border = ""
 		}else{
 			inputs[1].style.border = "1px solid red"
 			return
 		}
 		if(inputs[2].value){
-			par += `&address=${inputs[2].value}`
+			fd.append('address', inputs[2].value)
 		}
 		if(inputs[3].value){
-			par += `&type=${inputs[3].value}`
-			inputs[3].style.border = ""
-		}else{
-			inputs[3].style.border = '1px solid red'
-			return
+			fd.append('typeObj', inputs[3].value)
 		}
 		if(inputs[4].value){
-			par += `&desc=${inputs[4].value}`
+			fd.append('desc', inputs[4].value)
 			inputs[4].style.border = ""
 		}else{
 			inputs[4].style.border = "1px solid red"
 			return
 		}
 		if(inputs[5].value){
-			par += `&from=${inputs[5].value}`
+			fd.append('from', inputs[5].value)
 		}
 
-		let res = await fetch('handlerCRM.php'+par)
+		let res = await fetch('handlerCRM.php', {method: 'POST', body: fd})
 		let ot = await res.text()
+		
 		if(ot == "succes"){
 			showMsg()
 		}else{

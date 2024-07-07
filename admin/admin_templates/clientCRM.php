@@ -15,7 +15,8 @@
 					<option value="-">тип события</option>
 					<option value="замер">Замер</option>
 					<option value="монтаж">Монтаж</option>
-					<option value="звонок">Звонок</option>
+					<option value="вх. звонок">вх. звонок</option>
+					<option value="ис. звонок">ис. звонок</option>
 					<option value="заказать">Заказать</option>
 					<option value="доставка">Доставка</option>
 					<option value="посчитать">Посчитать</option>
@@ -33,6 +34,7 @@
 				<div class="insertClients"></div>
 			</div>
 		</div>
+		<div style="margin-top: 20px;" class="add_block_modal"></div>
 	</div>
 </div>
 	
@@ -112,10 +114,12 @@
 			$fl_e = false;
 			for($e = 0; $e < count($events); $e++){
 				$start = $events[$e]['start'];
+				$finish = $events[$e]['finish'];
 				$e_m = (int)substr($start, 3, 2);
 				if($i == ($e_m -1)){
-					$e_d = (int)substr($start, 0, 2);
-					if(($e_d ) == $j){
+					$e_d_s = (int)substr($start, 0, 2);
+					$e_d_f = (int)substr($finish, 0, 2);
+					if($e_d_s <= $j and $j <= $e_d_f){
 						$n_col = null;
 						if($events[$e]['type'] == "замер"){
 							$n_col = 'zam_col';

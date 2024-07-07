@@ -7,11 +7,12 @@
 
 
 	$db = new SQLite3('crm.db');
-	$res = $db->query("SELECT * FROM clients WHERE status = 'need' ORDER BY created DESC");
+	$res = $db->query("SELECT * FROM clients WHERE status = 'новый' ORDER BY created DESC");
 	$ar = [];
 	while($r = $res->fetchArray(SQLITE3_ASSOC)){
 		$q = "SELECT val FROM phones WHERE id in ";
 		$q = $q.listToCupStr($r['ref_tel']);
+
 		$tel = $db->query($q);
 		$tjs = [];
 		while($v = $tel->fetchArray(SQLITE3_ASSOC)){

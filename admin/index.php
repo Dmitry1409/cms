@@ -11,7 +11,9 @@
 					"adminPanel"=>[],
 					"pricing"=>["admin_templates/pricing.php"],
 					"clientCRM"=>["admin_templates/clientCRM.php"],
-					"clients"=>["admin_templates/clients.php"]);
+					"clients"=>["admin_templates/clients.php"],
+					"addReportZamer"=>["admin_templates/addReportZamer.php"],
+					"showZamer"=>["admin_templates/showZamer.php"]);
 	
 	$getPar = explode("?", $_SERVER['REQUEST_URI']);
 
