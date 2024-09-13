@@ -1,7 +1,28 @@
 <?php
+	
+	session_start();
+	if(!$_SESSION['isAdmin']){
+		http_response_code(403);
+		exit;
+	}
 
 	$db = new SQLite3("crm.db");
 	$time = time();
+
+	function exec_query($q, $fl_succes){
+		global $db;
+
+		if(!$db->exec($q)){
+			echo $db->lastErrorMsg();
+			exit;
+		}else{
+			if($fl_succes){
+				return "succes";
+			}else{
+				return $db->lastInsertRowID();
+			}
+		}
+	}
 
 	function getAndAddinFild($table, $col, $rowid, $val){
 		global $db;
@@ -17,256 +38,297 @@
 			$js[] = $val;
 			$out = json_encode($js);
 		}
-		return update_fild($table, $col, $rowid, $out);
+		return update_filds($table, [$col=>$out], $rowid);
+	}
+	
+	function update_filds($table, $arr, $rowid){
+		$q = "UPDATE $table SET ";
+		foreach ($arr as $key => $value) {
+			if(is_numeric($value)){
+				$q .= "$key=$value,";
+			}else{
+				$q .= "$key='$value',";
+			}
+		}
+		$q = substr($q, 0, strlen($q)-1);
+		$q .= " WHERE id = $rowid";
+		return exec_query($q, true);
 	}
 
-	function update_fild($table, $col, $rowid, $val){
-		global $db;
-		if(!$db->exec("UPDATE $table SET $col = '$val' WHERE id = $rowid")){
-			return $db->lastErrorMsg();
-		}else{
-			return "succes";
+	function insert_row($table, $arr){
+		$q = "INSERT INTO $table (";
+		foreach ($arr as $key => $value) {
+			$q .= $key.",";
 		}
+		
+		$q .= " created) VALUES (";
+		foreach ($arr as $key => $value) {
+			if(is_numeric($value)){
+				$q .= $value.",";
+			}else{
+				$q .="'$value',";
+			}
+		}
+		$q .= time().")";
 
-	}
-	function insert_object($status, $description, $created, $type, $ref_client, $address){
-		global $db;
-
-		$q = "INSERT INTO object (status, description, created";
-		if($type){
-			$q .= ", type";
-		}
-		if($ref_client){
-			$q .= ", ref_client";
-		}
-		if($address){
-			$q .= ", address";
-		}
-		$q .= ") VALUES ('$status', '$description', $created";
-		if($type){
-			$q .=", '$type'";
-		}
-		if($ref_client){
-			$q .= ", $ref_client";
-		}
-		if($address){
-			$q .= ", '$address'";
-		}
-		$q .= ")";
-
-		if(!$db->exec($q)){
-			echo $db->lastErrorMsg();
-			exit;
-		}else{
-			return $db->lastInsertRowID();
-		}
-
-	}
-
-	function get_or_null($key, $arr){
-		if(array_key_exists($key, $arr)){
-			return $arr[$key];
-		}else{
-			return NULL;
-		}
-	}
-
-	function insert_phone($tel, $ref_client){
-		global $db;
-		$q = "INSERT INTO phones (val";
-		if($ref_client){
-			$q .=", ref_client";
-		}
-		$q .= ") VALUES ('$tel'";
-		if($ref_client){
-			$q .= ", $ref_client";
-		}		
-		$q .= ")";
-
-		if(!$db->exec($q)){
-			echo $db->lastErrorMsg();
-			exit;
-		}else{
-			return $db->lastInsertRowID();
-		}
-	}
-
-	function insert_event($start, $finish, $type, $status, $ref_client, $ref_obj){
-		global $db;
-
-		$q = "INSERT INTO events (start, finish, type, status, created";
-		if($ref_client){
-			$q .= ", ref_client";
-		}
-		if($ref_obj){
-			$q .= ", ref_obj";
-		}
-		$q .= ") VALUES ('$start', '$finish', '$type', '$status', ".time();
-		if($ref_client){
-			$q .= ", $ref_client";
-		}
-		if($ref_obj){
-			$q .= ", $ref_obj";
-		}
-		$q .= ")";
-
-		if(!$db->exec($q)){
-			echo $db->lastErrorMsg();
-			exit;
-		}else{
-			return $db->lastInsertRowID();
-		}
-	}
-
-	function insert_client($status, $name, $ref_tel, $ref_obj, $ref_event, $from_is){
-		global $db;
-
-		$q = "INSERT INTO clients (status, created";
-		if($name){
-			$q .= ", name";
-		}
-		if($ref_tel){
-			$q .= ", ref_tel";
-		}
-		if($ref_obj){
-			$q .= ", ref_obj";
-		}
-		if($ref_event){
-			$q .= ", ref_event";
-		}
-		if($from_is){
-			$q .= ", from_is";
-		}
-
-		$q .= ") VALUES ('$status', ".time();
-
-		if($name){
-			$q .= ", '$name'";
-		}
-
-		if($ref_tel){
-			$q .= ", '[$ref_tel]'";
-		}
-		if($ref_obj){
-			$q .= ", '[$ref_obj]'";
-		}
-		if($ref_event){
-			$q .= ", '[$ref_event]'";
-		}
-		if($from_is){
-			$q .= ", '$from_is'";
-		}
-
-		$q .=")";
-
-		if(!$db->exec($q)){
-			echo $db->lastErrorMsg();
-			exit;
-		}else{
-			return $db->lastInsertRowID();
-		}
-
-
+		return exec_query($q, false);
 	}
 
 	if($_SERVER['REQUEST_METHOD']=="POST"){
 
+		if($_POST['comand'] == "deleteTel"){
+			$ref_cl = $db->querySingle("SELECT ref_client FROM phones WHERE id = {$_POST['tel_id']}");
+			$tel_arr = json_decode($db->querySingle("SELECT ref_tel FROM clients WHERE id = $ref_cl"));
+			$out = [];
+			for($i=0; $i<count($tel_arr); $i++){
+				if($tel_arr[$i] != $_POST['tel_id']){
+					$out[] = $tel_arr[$i];
+				}
+			}
+			$out = json_encode($out);
+			$q = "UPDATE clients SET ref_tel = '$out' WHERE id = $ref_cl";
+			exec_query($q);
+			$q = "DELETE FROM phones WHERE id = {$_POST['tel_id']}";
+			echo exec_query($q, true);
+		}
+
 		//из страницы все клиенты
 		if($_POST['comand'] == "addClient"){
 
-			$phID = insert_phone($_POST['tel']);
+			$phID = insert_row("phones", ["val"=>$_POST['tel']]);
 
-			$objID = insert_object("нужно", $_POST['desc'], $time, get_or_null('typeObj', $_POST),
-									 NULL, get_or_null('address', $_POST));
+			$arr = [
+					"status"=>'нужно',
+					'description'=>$_POST['desc']
+				];
+			if(array_key_exists("typeObj", $_POST)){
+				$arr['type'] = $_POST['typeObj'];
+			}
+			if(array_key_exists("address", $_POST)){
+				$arr['address'] = $_POST['address'];
+			}
+			$objID = insert_row("object", $arr);
 
-			$clID = insert_client("новый", get_or_null('name', $_POST), "$phID", "$objID", NULL, get_or_null('from', $_POST));
+			$arr = [
+					"status"=>'новый',
+					"ref_tel"=>"[$phID]",
+					"ref_obj"=>"[$objID]"
+				];
+			if(array_key_exists("name", $_POST)){
+				$arr['name'] = $_POST['name'];
+			}
+			if(array_key_exists("from", $_POST)){
+				$arr['from_is'] = $_POST['from'];
+			}
 
+			$clID = insert_row("clients", $arr);
 			
-			update_fild("phones", "ref_client", $phID, $clID);
+			update_filds("phones", ["ref_client"=> $clID],$phID);
 
-			echo update_fild("object", "ref_client", $objID, $clID);
-
-
+			echo update_filds("object", ["ref_client"=>$clID], $objID);
 		}
 
 		//из календаря менять поля
 		if($_POST['comand'] == "change_fild"){
-			echo update_fild($_POST['table'], $_POST['tabcol'], $_POST['rowid'], $_POST['newval']);
+			if($_POST['table'] == "events"){
+				if($_POST['tabcol'] == "status"){
+					$events = $db->query("SELECT * FROM {$_POST['table']} WHERE id = {$_POST['rowid']}")->fetchArray(SQLITE3_ASSOC);
+					if($events['type'] == "монтаж"){
+						if($_POST['newval'] == 'выполнен'){
+							update_filds('zakaz', ['status'=>"выполнен"], $events['ref_zakaz']);
+							update_filds("clients", ["status"=>"монтаж выполнен"], $events['ref_client']);
+							update_filds("object", ["status"=>"монтаж выполнен"], $events['ref_obj']);
+						}
+						echo update_filds($_POST['table'], [$_POST['tabcol']=> $_POST['newval']],$_POST['rowid']);
+					}
+				}
+			}else{
+				echo update_filds($_POST['table'], [$_POST['tabcol']=> $_POST['newval']],$_POST['rowid']);
+			}
 		}
 
 		//из страницы клиенты добавление объекта
 		if($_POST['comand'] == "addObject"){
+			$arr = [
+					"status"=>$_POST['status'],
+					"description"=>$_POST['description'],
+					"ref_client"=>$_POST['client_id'],
+				];
+			if(array_key_exists("address", $_POST)){
+				$arr['address'] = $_POST['address'];
+			}
+			if(array_key_exists("typeObj", $_POST)){
+				$arr['type'] = $_POST['typeObj'];
+			}
 
-			$idObj =  insert_object($_POST['status'], $_POST['description'], $time, get_or_null("type", $_POST),
-									get_or_null('client_id', $_POST), get_or_null("address", $_POST));
+			$idObj = insert_row("object", $arr);
 
 			echo getAndAddinFild('clients', 'ref_obj', $_POST['client_id'], $idObj);
 		}
 		//из страници все клиенты
 		if($_POST['comand'] == "addPhone"){
-			$idTel = insert_phone($_POST['tel'], $_POST['client_id']);
+			$idTel = insert_row("phones", ["val"=>$_POST['tel'],"ref_client"=>$_POST['client_id']]);
 			echo getAndAddinFild("clients", "ref_tel", $_POST['client_id'], $idTel);
 
 		}
 		//из календаря
 		if($_POST['comand'] =="addEvent"){
+			if($_POST['type']=="монтаж"){
+				$sel = $db->query("SELECT * FROM zakaz WHERE id = {$_POST['zakaz_id']}")->fetchArray(SQLITE3_ASSOC);
+				$arr = ["start"=>$_POST['start'],
+						"finish"=>$_POST['start'],
+						"type"=>$_POST['type'],
+						"status"=>"назначен",
+						"ref_zakaz"=>$_POST['zakaz_id'], 
+						"ref_client"=>$_POST['client_id'],
+						"ref_obj"=>$_POST['obj_id'],
+						"ref_zamer"=>$sel['ref_zamer']];
+				$idEv = insert_row("events", $arr);
+				update_filds("clients", ["status"=>"монтаж назначен"], $_POST['client_id']);
+				update_filds("object", ["status"=>"монтаж назначен"], $_POST['obj_id']);
+				getAndAddinFild("clients", "ref_event", $_POST['client_id'], $idEv);
+				echo getAndAddinFild("object", "ref_event", $_POST['obj_id'], $idEv);
+			}
 			if($_POST['type'] == "замер"){
 
-				$evID = insert_event($_POST['start'], $_POST['finish'], $_POST['type'], 'будет',
-									 $_POST['client_id'], $_POST['obj_id']);
+				$arr = [
+						"start"=>$_POST['start'],
+						"finish"=>$_POST['finish'],
+						"type"=>$_POST['type'],
+						"status"=>"будет",
+						"ref_client"=>$_POST['client_id'],
+						"ref_obj"=>$_POST['obj_id']
+					];
+
+				$evID = insert_row("events", $arr);
 
 				getAndAddinFild('object', 'ref_event', $_POST['obj_id'], $evID);
+
+				update_filds("clients", ["status"=>"замер назначен"], $_POST['client_id']);
+
+				update_filds("object", ["status"=>"замер назначен"], $_POST['obj_id']);
 				
 				echo getAndAddinFild('clients', 'ref_event', $_POST['client_id'], $evID);
 			}
-			
-			
+					
 			if($_POST["type"] == "вх. звонок"){
 
-				$phID = insert_phone($_POST['telehon']);
+				$phID = insert_row("phones", ["val"=>$_POST['telehon']]);
 
-				$objID = insert_object('нужно', $_POST['desc'], $time, get_or_null('typeObj', $_POST),
-						 NULL, get_or_null('address', $_POST));
+				$arr = [
+						"status"=>'нужно',
+						"description"=>$_POST['desc']
+					];
+				if(array_key_exists("typeObj", $_POST)){
+					$arr['type'] = $_POST['typeObj'];
+				}
+				if(array_key_exists("address", $_POST)){
+					$arr['address'] = $_POST['address'];
+				}
+				$objID = insert_row("object", $arr);
 
 
-				$clID = insert_client('новый', get_or_null('name', $_POST),
-						 "$phID", "$objID", NULL, get_or_null('from_is', $_POST));
+				$arr = [
+						"status"=>"новый",
+						"ref_tel"=>"[$phID]",
+						"ref_obj"=>"[$objID]",
 
-				$evID = insert_event($_POST['start'], $_POST['finish'], $_POST['type'], "было", $clID, $objID);
+					];
+				if(array_key_exists('name', $_POST)){
+					$arr['name'] = $_POST['name'];
+				}
+				if(array_key_exists("from_is", $_POST)){
+					$arr['from_is'] = $_POST['from_is'];
+				}
+				$clID = insert_row("clients", $arr);
 
-				update_fild("phones", "ref_client", $phID, $clID);
 
-				update_fild("object", "ref_client", $objID, $clID);
+				$arr = ["start"=>$_POST['start'],
+						"finish"=>$_POST['finish'],
+						"type"=>$_POST['type'],
+						"status"=>"было",
+						"ref_client"=> $clID,
+						"ref_obj"=>$objID
+						];
+				$evID = insert_row("events", $arr);
 
+				update_filds("phones", ["ref_client"=>$clID],$phID);
 
-				echo update_fild("clients", "ref_event", $clID, "[$evID]");
+				update_filds("object", ["ref_client"=>$clID], $objID);
 
+				echo update_filds("clients", ["ref_event"=>"[$evID]"], $clID);
+			}
+			if($_POST["type"] == "ис. звонок"){
+				$arr = ["start"=>$_POST['start'],
+						"finish"=>$_POST['start'],
+						"type"=>$_POST['type'],
+						"status"=>"будет", 
+						"ref_client"=>$_POST['client_id'],
+						"ref_obj"=>$_POST['obj_id']];
+				$idEv = insert_row("events", $arr);
+				echo getAndAddinFild("clients", "ref_event", $_POST['client_id'], $idEv);
+			}
+
+			if($_POST["type"] == "заказать"){
+				$sel = $db->query("SELECT * FROM zakaz WHERE id = {$_POST['zakaz_id']}")->fetchArray(SQLITE3_ASSOC);
+				$arr = ["start"=>$_POST['start'],
+						"finish"=>$_POST['start'],
+						"type"=>$_POST['type'],
+						"status"=>"ожидает отправки",
+						"ref_zakaz"=>$_POST['zakaz_id'], 
+						"ref_client"=>$sel['ref_client'],
+						"ref_obj"=>$sel['ref_obj'],
+						"ref_zamer"=>$sel['ref_zamer']];
+				$idEv = insert_row("events", $arr);
+
+				$arr = ["status"=>'ожидает отправки',
+						"data_send"=>$_POST['start'],
+						"ref_event"=>"[$idEv]"];
+				echo update_filds("zakaz", $arr, $_POST['zakaz_id']);
+			}
+			if($_POST['type'] == "доставка"){
+				$sel = $db->query("SELECT * FROM zakaz WHERE id = {$_POST['zakaz_id']}")->fetchArray(SQLITE3_ASSOC);
+				$arr = ["start"=>$_POST['start'],
+						"finish"=>$_POST['start'],
+						"type"=>$_POST['type'],
+						"status"=>"будет",
+						"ref_zakaz"=>$_POST['zakaz_id'], 
+						"ref_client"=>$sel['ref_client'],
+						"ref_obj"=>$sel['ref_obj'],
+						"ref_zamer"=>$sel['ref_zamer']];
+				$idEv = insert_row("events", $arr);
+				echo getAndAddinFild('zakaz', 'ref_event', $_POST['zakaz_id'], $idEv);
+			}
+			if($_POST['type'] == "другое"){
+				$arr = [
+						"start"=>$_POST['start'],
+						"finish"=>$_POST['finish'],
+						"type"=>$_POST['type'],
+						"status"=>"не выполнено",
+						"comment"=>$_POST['disc']
+					];
+				if(array_key_exists("header", $_POST)){
+					$arr["header"] = $_POST['header']; 
+				}
+
+				insert_row("events", $arr);
+				echo "succes";
 			}
 		}
 	}
-	
-	function createInsertQuery($arr, $table){
-		$q = "INSERT INTO $table (";
-		$i = 0;
-		foreach ($arr as $key => $value) {
-			if($i<(count($arr)-1)){
-				$q = $q.$key.",";
-			}else{
-				$q = $q.$key.")";
-			}
-			$i++;
+
+	if($_SERVER["REQUEST_METHOD"] == "GET"){
+		if($_GET['comand'] == "addZakaz"){
+			$res = $db->query("SELECT * FROM zamer WHERE id = {$_GET['idZamer']}")->fetchArray(SQLITE3_ASSOC);
+			$arr = ["status"=>"создан",
+					"ref_zamer"=>$_GET['idZamer'],
+					"ref_obj"=>$res['ref_obj'],
+					"ref_client"=>$res['ref_client']];
+
+			$idZak = insert_row("zakaz", $arr);
+			$arr = ["ref_zakaz"=>$idZak];
+			echo update_filds("zamer", $arr, $_GET['idZamer']);
 		}
-		$q = $q." VALUES (";
-		$i = 0;
-		foreach ($arr as $key => $value) {
-			if($i<(count($arr)-1)){
-				$q = $q.$value.",";
-			}else{
-				$q = $q.$value.")";
-			}
-			$i++;
-		}
-		return $q;
 	}
 
 ?>

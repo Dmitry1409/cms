@@ -1,8 +1,6 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0
-				maximum-scale=1.0, user-scalable=0">
 </head>
 <body>
 
@@ -56,7 +54,7 @@
 					echo "<td>$raz</td>";
 					$f = null;
 					if(array_key_exists("фото", $r)){
-						$f = "<a style='margin-left: 20px;' target='_blank' href='img_admin/img_zamer/{$r->{'фото'}}'><img style='width: 50px;' src='img_admin/img_zamer/{$r->{'фото'}}'></a>";
+						$f = "<a style='margin-left: 20px;' target='_blank' href='https://auroom-nn.ru/admin/img_admin/img_zamer/{$r->{'фото'}}'><img style='width: 50px;' src='img_admin/img_zamer/{$r->{'фото'}}'></a>";
 					}
 					echo "<td>$f</td>";
 				echo "</tr>";
@@ -83,7 +81,6 @@
 				echo "</tr>";
 
 			}
-
 		}
 	?>
 	<table>

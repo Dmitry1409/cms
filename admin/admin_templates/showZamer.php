@@ -52,11 +52,27 @@
 		padding: 3px;
 	}
 </style>
+
+<?php
+	$db = new SQLite3('crm.db');
+	$idZamer = $_GET['idZamer'];	
+?>
+<title>Замер № <?php echo $idZamer?></title>
+
+<script src="../js/fancybox.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../css/fancybox.css">
+
 <script type="text/javascript">
 	async function createZakaz(){
+		document.querySelector('.createZakaz_btn_id').remove()
 		let url = new URL(window.location.href)
-		console.log(url.searchParams.get('idZamer'))
+		let idZamer = url.searchParams.get('idZamer')
+		let res = await fetch(`handlerCRM.php?comand=addZakaz&idZamer=${idZamer}`);
+		checkRespondServer(res)	
 	}
+	window.addEventListener("DOMContentLoaded", ()=>{
+		Fancybox.bind("[data-fancybox='gallary']",{})
+	})
 </script>
 
 
@@ -106,7 +122,7 @@
 
 	}
 
-	$db = new SQLite3('crm.db');
+	
 	$zamer = $db->query("SELECT * FROM zamer WHERE id = {$_GET['idZamer']}")->fetchArray(SQLITE3_ASSOC);
 
 	$zam_js = json_decode($zamer['json']);
@@ -127,7 +143,7 @@
 			echo "<h3 style='margin-bottom:5px;'>Помещение: {$rooms[$i]->{'помещение'}}</h3>";
 			echo "<div class='rooms-block'>";
 				if(array_key_exists("фото", $rooms[$i])){
-					echo "<img class='zam_img' src='img_admin/img_zamer/{$rooms[$i]->{'фото'}}'>";
+					echo "<img data-fancybox='gallary' class='zam_img' src='img_admin/img_zamer/{$rooms[$i]->{'фото'}}'>";
 				}
 				echo "<div class='flex-wrap'>";
 					foreach ($keys_room as $kr) {
@@ -170,7 +186,7 @@
 	$ob = 0;
 
 	function print_table_row($arr){
-		global $prod, $ob;
+		global $prod, $ob, $sum_zakaz;
 
 
 		$itog = 0;
@@ -199,12 +215,14 @@
 					echo "<td>не найдено</td>";
 				}
 		}
+		$sum_zakaz += $itog;
 		echo "<tr><td></td><td>Итого</td><td></td><td></td><td></td><td style='font-weight:bold;'>$itog</td></tr>";
 	}
 
 	function out_polotna($arr){
-		global $ob;
+		global $ob, $sum_zakaz;
 		$loc = 0;
+		$sq = 0;
 		$n = 1;
 		foreach ($arr as $v) {
 			echo "<tr>";
@@ -218,6 +236,7 @@
 				echo "<td>$name</td>";
 				echo "<td>{$v->{'м2'}}</td>";
 				echo "<td>{$v->{'фактура'}}</td>";
+				$sq += $v->{"м2"};
 				$s = ceil(180*$v->{'м2'});
 				$loc += $s;
 				echo "<td>180</td>";
@@ -226,11 +245,15 @@
 
 		}
 		$ob += $loc;
-		echo "<tr><td></td><td>Итого</td><td></td><td></td><td></td><td style='font-weight:bold;'>$loc</td></tr>";
+		$sum_zakaz += $loc;
+		echo "<tr><td></td><td>Итого</td><td>$sq</td><td></td><td></td><td style='font-weight:bold;'>$loc</td></tr>";
 	}
 
 ?>
-<div style="border: 1px solid grey;">
+<div style="margin-top: 20px; border: 1px solid grey;">
+	<?php
+		$sum_zakaz = 0;
+	?>
 	<h3>Полотна</h3>
 	<table>
 		<thead>
@@ -265,9 +288,15 @@
 			<?php print_table_row($sum_mat)?>
 		</tdoby>
 	</table>
-
-	<a href='<?php echo "createZakaz.php?idZamer=".$_GET['idZamer']?>'>Создать заказ</a>
-	<button onclick="createZakaz()" >Создать заказ</button>
+	<h3>Заказ на сумму: <?php echo $sum_zakaz?></h3>
+	<?php
+		if(!$zamer['ref_zakaz']){
+			echo "<button class='createZakaz_btn_id' style='margin: 10px;' onclick='createZakaz()'>Создать заказ</button>";
+		}else{
+			$zakaz = $db->query("SELECT * FROM zakaz WHERE id = {$zamer['ref_zakaz']}")->fetchArray(SQLITE3_ASSOC);
+			echo "<h4>Заказ номер № {$zakaz['id']} статус : {$zakaz['status']}</h4>";
+		}
+	?>
 </div>
 
 
@@ -278,6 +307,7 @@
 <table>
 	<thead>
 		<tr>
+			<td>#</td>
 			<td>наименование</td>
 			<td>кол.</td>
 			<td>ед.</td>

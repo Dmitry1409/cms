@@ -303,7 +303,8 @@
 		</div>
 		<div class="insert_dopy"></div>
 	</div>
-	<img class="plusImg add_room_id" src="../img/plus.png">
+		
+	<div style="margin-bottom: 30px;"><img class="plusImg add_room_id" src="../img/plus.png"></div>
 
-	<button class="calculate_btn_id">Рассчитать</button>
+	<button class="calculate_btn_id">Отправить</button>
 </div>

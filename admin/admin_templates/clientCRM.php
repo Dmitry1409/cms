@@ -12,15 +12,14 @@
 			<div class="inp_wrap_modal">
 				<button>Добавить</button>
 				<select>
-					<option value="-">тип события</option>
-					<option value="замер">Замер</option>
-					<option value="монтаж">Монтаж</option>
+					<option value="тип события">тип события</option>
+					<option value="замер">замер</option>
+					<option value="монтаж">монтаж</option>
 					<option value="вх. звонок">вх. звонок</option>
 					<option value="ис. звонок">ис. звонок</option>
-					<option value="заказать">Заказать</option>
-					<option value="доставка">Доставка</option>
-					<option value="посчитать">Посчитать</option>
-					<option value="другое">Другое</option>
+					<option value="заказать">заказать</option>
+					<option value="доставка">доставка</option>
+					<option value="другое">другое</option>
 				</select>
 				<div style="display: flex; flex-direction: column;">
 					<input style="width: 150px;" placeholder="Начало" type="text" name="start">
@@ -126,6 +125,21 @@
 						}
 						if($events[$e]['type'] == "монтаж"){
 							$n_col = 'mount_col';
+						}
+						if($events[$e]['type']== "вх. звонок"){
+							$n_col = "in_colling_col";
+						}
+						if($events[$e]['type']== "заказать"){
+							$n_col = "zakazat_col";
+						}
+						if($events[$e]['type']== "доставка"){
+							$n_col = "deliv_col";
+						}
+						if($events[$e]['type']== "ис. звонок"){
+							$n_col = "out_coling_col";
+						}
+						if($events[$e]['type']=="другое"){
+							$n_col = "other_col";
 						}
 						if($fl_e){
 							$evHtml = $evHtml."<div class='n-point $n_col'></div>";

@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0
 				maximum-scale=1.0, user-scalable=0">
-	<title>Админка</title>
+	<!-- <title>Админка</title> -->
 	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
 	<script defer src="js/main_admin.js"></script>
 	<style type="text/css">
@@ -37,6 +37,12 @@
 		}
 		.msg_action{
 			right: 20px !important;
+		}
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button {
+		    /* display: none; <- Crashes Chrome on hover */
+		    -webkit-appearance: none;
+		    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 		}
 	</style>
 	

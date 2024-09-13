@@ -1,8 +1,20 @@
-window.addEventListener("DOMContentLoaded", ()=>{
-
-})
 
 
+async function checkRespondServer(res){
+	if(res.ok){	
+		let text = await res.text()
+		if(text == "succes"){
+			showMsg()
+			return true
+		}else{
+			showMsg('r', text)
+			return false
+		}
+	}else{
+		showMsg('r', `Проблемы с запросом. Статус: ${res.status}`)
+		return false
+	}
+}
 
 function showMsg(col='g', text='Успех'){
 	let time

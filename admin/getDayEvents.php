@@ -14,12 +14,15 @@
 			$intEvStart = (int)$st[0];
 			$intEvFin = (int)$fn[0];
 			if($intDay >= $intEvStart and $intDay <= $intEvFin){
-				// if($r['type'] == "замер" || $r['type'] == "монтаж"){
-				// }
-				$q = "SELECT * FROM object WHERE id = {$r['ref_obj']}";
-				$r['obj'] = $db->query($q)->fetchArray(SQLITE3_ASSOC);
-				$q = "SELECT * FROM clients WHERE id = {$r['ref_client']}";
-				$r['client'] = $db->query($q)->fetchArray(SQLITE3_ASSOC);
+				if($r['type'] == "другое"){
+					$out[] = $r;
+					continue;
+				}
+				if($r['type'] == "доставка" OR $r['type'] == "монтаж"){
+					$r['zakaz_status'] = $db->querySingle("SELECT status FROM zakaz WHERE id ={$r['ref_zakaz']}");
+				}
+				$r['obj'] = $db->query("SELECT * FROM object WHERE id = {$r['ref_obj']}")->fetchArray(SQLITE3_ASSOC);
+				$r['client'] = $db->query("SELECT * FROM clients WHERE id = {$r['ref_client']}")->fetchArray(SQLITE3_ASSOC);
 				$q = "SELECT * FROM phones WHERE id in";
 				$q = $q.listToCupStr($r['client']['ref_tel']);
 				$tel = $db->query($q);

@@ -365,19 +365,55 @@
 	}
 
 	$id_zamer = $db->lastInsertRowID();
-	$q = "UPDATE events SET ref_zamer = $id_zamer, status = 'выполнено' WHERE id = $id_event";
 
-	if(!$db->exec($q)){
-		echo $db->lastErrorMsg();
-		exit;
-	}
+	update_filds("events", ["ref_zamer"=>$id_zamer], $id_event);
 
-	$q = "UPDATE object SET status = 'замерено' WHERE id = $id_obj";
+	update_filds("events", ["status"=>"выполнено"], $id_event);
 
-	if(!$db->exec($q)){
-		echo $db->lastErrorMsg();
-		exit;
-	}
+	update_filds("object", ["status"=>"замер выполнен"], $id_obj);
+
+	update_filds("clients", ["status"=>"замер выполнен"], $id_client);
+
+	getAndAddinFild('object', "ref_zamer", $id_obj, $id_zamer);
 
 	echo "succes";
+
+
+	function getAndAddinFild($table, $col, $rowid, $val){
+		global $db;
+
+		$res = $db->querySingle("SELECT $col FROM $table WHERE id = $rowid");
+
+		$out = "";
+
+		if(!$res){
+			$out = "[$val]";
+		}else{
+			$js = json_decode($res);
+			$js[] = $val;
+			$out = json_encode($js);
+		}
+		return update_filds($table, [$col=>$out], $rowid);
+	}
+	
+	function update_filds($table, $arr, $rowid){
+		global $db;
+
+		$q = "UPDATE $table SET ";
+		foreach ($arr as $key => $value) {
+			if(is_numeric($value)){
+				$q .= "$key=$value,";
+			}else{
+				$q .= "$key='$value',";
+			}
+		}
+		$q = substr($q, 0, strlen($q)-1);
+		$q .= " WHERE id = $rowid";
+
+		if(!$db->exec($q)){
+			echo $db->lastErrorMsg();
+			exit;
+		}
+	}
+
 ?>

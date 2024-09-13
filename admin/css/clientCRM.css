@@ -84,6 +84,12 @@ body{
 	padding: 10px;
 	border: 1px solid grey;
 	margin-top: 20px;
+	overflow: hidden;
+	transition: 0.4s;
+	height: 88px;
+}
+.hid_event_block{
+	
 }
 .block-flexy{
 	display: flex; 
@@ -100,6 +106,16 @@ body{
 	position: absolute;
 	right: 10px;
 	top: 10px;
+}
+.close_event_block{
+	display:flex; 
+	justify-content: center;
+}
+.svg_up_event_block{
+	fill: rgba(0,0,0,0.5);
+	width: 20px;
+	height: 20px;
+	transform: rotate(180deg);
 }
 
 @media (min-width: 500px){

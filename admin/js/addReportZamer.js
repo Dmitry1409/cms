@@ -1,4 +1,5 @@
 window.addEventListener('DOMContentLoaded',()=>{
+
 	let timest1
 	let len_img = 0;
 	let cur_img = 0;
@@ -97,6 +98,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 		addEventList()
 	}
 	function collectData(){
+		document.querySelector('.calculate_btn_id').remove()
 		timest1 = Date.now()
 		let room_bl = document.querySelectorAll('.room_block')
 		for(let i=0; i<room_bl.length; i++){
@@ -269,8 +271,12 @@ window.addEventListener('DOMContentLoaded',()=>{
 			body: fd
 		})
 		console.log("получен ответ",Date.now() - timest1)
-
-		console.log(await res.text())
+		checkRespondServer(res)
+		if(res.ok){
+			setTimeout(()=>{
+				window.location.href = './clientCRM'
+			})
+		}
 	}
 
 
