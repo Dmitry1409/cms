@@ -106,7 +106,7 @@
 						for($j=0; $j<count($js); $j++){
 								$dir = $GLOBALS['root_dir']."upload_img/foto_review/100x100/";
 								$p = $dir.$js[$j];
-								echo "<a data-fancybox='gallery".$rand."'"." href=".$root_dir."upload_img/foto_review/800x800/".$js[$j].">";					
+								echo "<a data-fancybox='gallery".$rand."'"." href=".$GLOBALS['root_dir']."upload_img/foto_review/800x800/".$js[$j].">";					
 								echo "<img src=$p>";
 								echo "</a>";
 						}

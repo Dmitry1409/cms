@@ -25,7 +25,7 @@
 			    	<?php echo $val['prise']." руб.";?>
 			    </div>
 			    <div class="sales_img_cont">
-			    	<img src='<?php echo $root_dir.$val["img_src"];?>'>
+			    	<img src='<?php echo {$GLOBALS['root_dir']}.$val["img_src"];?>'>
 			    </div>
 			    <div class="elem_cart_sale">
 			    	<?php

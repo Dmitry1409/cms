@@ -157,7 +157,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 				indx = 2
 			}
 			for(let i=indx; i<tel.length; i++){
-				if(tel[i] >= 0 && tel[i]<= 9){
+				if(tel[i] != " " &&tel[i] >= 0 && tel[i]<= 9){
 					clear += tel[i]
 				}
 			}
@@ -266,9 +266,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			
 			let res = await fetch('handlerCRM.php', {method: 'POST',body: fd});
 
-			checkRespondServer(res)
-
-			if(res.ok){
+			if(await checkRespondServer(res)){
 				setTimeout(()=>{
 					location.reload()
 				}, 1000)
