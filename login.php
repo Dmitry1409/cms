@@ -1,68 +1,39 @@
 <?php
 	require "config_cms.php";
-	require "session_handlers.php";
-	$db = new SQLite3('cms.db');
-	session_start();
-	collect_data();
-	ob_start();
-?>
+	$db = new SQLite3('admin/crm.db');
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Вход</title>
-	<style type="text/css">
-		.flex_cont{
-			width: 100%;
-			height: 100vh;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-		}
-		.error{
-			color: red;
-			font-size: 12px;
-		}
-	</style>
-</head>
-<body>
-	<?php
-		if($_SERVER['REQUEST_METHOD'] == "POST"){
-
-			if($_POST['login'] == "admin"){
-				$pass = $db->querySingle('SELECT password FROM stuff WHERE name == "admin"');
-				if ($pass == $_POST['password']){
-					$_SESSION['isAdmin'] = true;
-					header('Location: admin/');
-					ob_end_flush();
-					exit;
-				}else{
-					$error_login = "Не верный пароль";
-					include "templates/form_login.php";
-					exit;
+	if($_SERVER['REQUEST_METHOD'] == "POST"){
+		if($_POST['login'] == "admin"){
+			$admin = $db->query("SELECT * FROM stuff WHERE role = 'admin'")->fetchArray(SQLITE3_ASSOC);
+			if($admin['pass'] == md5($_POST['password'])){
+				$tok_js = json_decode($admin['tokens']);
+				$arr_tok = [];
+				for($i=0; $i<count($tok_js); $i++){
+					if($tok_js[$i]->{'expires'}>time()){
+						$arr_tok[] = $tok_js[$i];
+					}
 				}
+				$new_cook = md5(microtime() . rand(0, 9999));
+				$t = time()+ 604800;
+				setcookie("aur_crm", $new_cook, $t, $root_dir."admin");
+				$arr_tok[] = ["val"=>$new_cook, "expires"=>$t];
+				$arr_tok = json_encode($arr_tok);
+				$db->query("UPDATE stuff SET tokens = '$arr_tok' WHERE role = 'admin'");
+				header('Location: admin/');
 			}else{
-				$error_login = "Не верный логин";
-				include "templates/form_login.php";
-				exit;
+				$error_login = "Не верный пароль";
 			}
-
-		}elseif($_SERVER['REQUEST_METHOD'] == "GET"){
-			if(!$_SESSION['isAdmin']){
-				include "templates/form_login.php";
-			}else{
-				header("Location: admin/admin_panel.php");
-				ob_end_flush();
-				exit;
-			}
-		}
-	?>
-
-	<a href="index.php">index</a>
+		}else{
+			$error_login = "Не верный логин";
+		}	
+	}
 	
-	</body>
-</html>
+	include "templates/form_login.php";
+
+
+
+
+?>
+	
+
 
