@@ -1,10 +1,17 @@
 <?php
+
+	$db = new SQLite3("crm.db");
+	include "api/api_secure.php";
+
+
 	$ndb = null;
 	if($_SERVER['REQUEST_METHOD']== "POST"){
 		$ndb = $_POST['nameDB'];
 	}elseif($_SERVER['REQUEST_METHOD']== "GET"){
 		$ndb = $_GET['nameDB'];
 	}
+
+
 	$db = new SQLite3($ndb);
 
 	// имена таблиц и колонок 

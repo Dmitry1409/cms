@@ -1,10 +1,4 @@
 <?php
-	session_start();
-	if(!$_SESSION['isAdmin']){
-		http_response_code(403);
-		exit;
-	}
-
 
 	$db = new SQLite3('../crm.db');
 

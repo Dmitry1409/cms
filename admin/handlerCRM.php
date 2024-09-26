@@ -1,12 +1,10 @@
 <?php
 	
-	session_start();
-	if(!$_SESSION['isAdmin']){
-		http_response_code(403);
-		exit;
-	}
-
 	$db = new SQLite3("crm.db");
+
+	include "api/api_secure.php";
+
+
 	$time = time();
 
 	function exec_query($q, $fl_succes){
