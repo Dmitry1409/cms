@@ -366,7 +366,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 						</div>`
 				html += `<div>
 							<div>Объект: ${item['obj']['type']}</div>
-							<div style="font-weight: bold;">Адрес: <span tabcol='address' rowid='${item['obj']['id']}' table='object' class='change_fild_id'>${item['obj']['address']}</span></div>
+							<div style="font-weight: bold;">Адрес: <a href='yandexnavi://map_search?text=${item['obj']['address']}' tabcol='address' rowid='${item['obj']['id']}' table='object' class='change_fild_id'>${item['obj']['address']}</a></div>
 						</div>`
 				html += `<div>
 							<div>Статус: ${item['obj']['status']}</div>

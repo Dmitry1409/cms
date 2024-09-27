@@ -88,9 +88,10 @@ body{
 	transition: 0.4s;
 	height: 88px;
 }
-.hid_event_block{
-	
+div.eventWrappDay:last-child{
+	margin-bottom: 100px;
 }
+
 .block-flexy{
 	display: flex; 
 	flex-wrap: wrap;
