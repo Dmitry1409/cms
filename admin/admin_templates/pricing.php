@@ -31,8 +31,11 @@
 			cursor: default;
 			font-size: 18px;
 		}
-		input[name=number_price]{
-			margin: 20px;
+
+		.flex-column{
+			display: flex; 
+			flex-direction: column;
+			margin-bottom: 10px;
 		}
 	</style>
 
@@ -105,7 +108,36 @@
 
 	?>
 
-	<input type="text" name="number_price" placeholder="Номер счета">
+	<div class="wrapp_input_dogov flex-column">
+		<span class="flex-column" style="max-width: 200px;">
+			<span>Номер договора</span>
+			<input autocomplete="off" type="text">
+		</span>
+		<span class="flex-column">
+			<span>Имя клиента</span>
+			<input autocomplete="off" type="text">
+		</span>
+		<span style="max-width: 200px;" class="flex-column">
+			<span>Дата</span>
+			<input autocomplete="off" type="text">
+		</span>
+		<span class="flex-column">
+			<span>Адрес</span>
+			<input autocomplete="off" type="text">
+		</span>
+		<span class="flex-column">
+			<span>Сумма</span>
+			<input style="max-width: 200px;" autocomplete="off" type="text">
+		</span>
+		<span class="flex-column">
+			<span>Предоплата</span>
+			<input style="max-width: 200px;" autocomplete="off" type="text">
+		</span>
+		<span class="flex-column">
+			<span>Сроки</span>
+			<input style="max-width: 200px;" autocomplete="off" type="text">
+		</span>	
+	</div>
 
 	<div class="tableWrap" style="overflow: scroll;">
 		

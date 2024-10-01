@@ -138,7 +138,7 @@
 							update_filds("object", ["status"=>"монтаж выполнен"], $events['ref_obj']);
 						}						
 					}elseif($events['type'] == "заказать"){
-						echo update_filds('zakaz', ['status'=>$_POST['newval']], $events['ref_zakaz']);
+						update_filds('zakaz', ['status'=>$_POST['newval']], $events['ref_zakaz']);
 					}
 				}
 				echo update_filds($_POST['table'], [$_POST['tabcol']=> $_POST['newval']],$_POST['rowid']);
