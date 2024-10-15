@@ -290,11 +290,11 @@
 	</table>
 	<h3>Заказ на сумму: <?php echo $sum_zakaz?></h3>
 	<?php
-		if(!$zamer['ref_zakaz']){
+		if(!$zamer['ref_zakupki']){
 			echo "<button class='createZakaz_btn_id' style='margin: 10px;' onclick='createZakaz()'>Создать заказ</button>";
 		}else{
-			$zakaz = $db->query("SELECT * FROM zakaz WHERE id = {$zamer['ref_zakaz']}")->fetchArray(SQLITE3_ASSOC);
-			echo "<h4>Заказ номер № {$zakaz['id']} статус : {$zakaz['status']}</h4>";
+			$zakup = $db->query("SELECT * FROM zakupki WHERE id = {$zamer['ref_zakupki']}")->fetchArray(SQLITE3_ASSOC);
+			echo "<h4>Закупка номер № {$zakup['id']} статус : {$zakup['status']}</h4>";
 		}
 	?>
 </div>

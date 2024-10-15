@@ -396,8 +396,8 @@ window.addEventListener("DOMContentLoaded", ()=>{
 		deliv_html_put(item){
 			let html = `<div style='margin-bottom:10px; display: flex; justify-content: space-around;'>
 							<span style='width: 40%; font-size: 12px; border: 1px solid grey; display: flex; flex-direction: column;'>
-								<div style='font-weight:bold'>Заказ: №${item['ref_zakaz']}</div>
-								<div style='font-weight:bold'>Статус: ${item['zakaz_status']}</div>
+								<div style='font-weight:bold'>Заказ: №${item['ref_zakupki']}</div>
+								<div style='font-weight:bold'>Статус: ${item['zakupki_status']}</div>
 							</span>
 							<a style="max-height: 1em;" href='showZamer?idZamer=${item['ref_zamer']}''>Показать замер № ${item['ref_zamer']}</a>
 						</div>`

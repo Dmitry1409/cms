@@ -7,12 +7,12 @@
 		echo json_encode(client_obj_list("SELECT * FROM clients WHERE status in ('новый','повторно') ORDER BY created DESC"));
 	}
 	if($_GET['metod']=="заказать"){
-		$q = "SELECT * FROM zakaz WHERE status = 'создан' ORDER BY created DESC";
+		$q = "SELECT * FROM zakupki WHERE status = 'создан' ORDER BY created DESC";
 		echo json_encode(client_obj($q));
 	}
 
 	if($_GET['metod']=="доставка" OR $_GET['metod']=="монтаж"){
-		$q = "SELECT * FROM zakaz WHERE status = 'ожидает отправки' OR status = 'отправлен' OR status='создан' ORDER BY created DESC";
+		$q = "SELECT * FROM zakupki WHERE status = 'ожидает отправки' OR status = 'отправлен' OR status='создан' ORDER BY created DESC";
 		echo json_encode(client_obj($q));
 	}
 

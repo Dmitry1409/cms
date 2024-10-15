@@ -2,45 +2,11 @@
 
 	<script defer src='js/pdfmake_2.10.min.js'></script>
 	<script defer src='js/vfs_fonts.min.js'></script>
-	<script defer src="js/pricing.js" type="text/javascript"></script>
-	<style  type="text/css">
-
-		.plus_png{
-			width: 20px;
-		}
-
-		.tableWrap{
-			overflow: auto;
-		}
-		.close_png{
-			width: 20px;
-			opacity: 0;
-			transition: 0.3s;
-		}
-		.close_png:hover{
-			opacity: 1;
-		}
-		.ulclose{
-			height: 0;			
-		}
-		ul{
-			transition: 0.5s;
-			overflow: hidden;
-		}
-		li{
-			cursor: default;
-			font-size: 18px;
-		}
-
-		.flex-column{
-			display: flex; 
-			flex-direction: column;
-			margin-bottom: 10px;
-		}
-	</style>
+	<script defer src="js/create_dogovor.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="css/dogovor_shet_style.css">
+	
 
 	<?php
-		include "../config_cms.php";
 
 		$dirs = [];
 		$db = new SQLite3("crm.db");
@@ -54,7 +20,7 @@
 		while($o = $res->fetchArray(SQLITE3_ASSOC)){
 			$allProduct[] = $o;
 		}
-		// echo var_dump($allProduct);
+
 
 		function print_prod($parent){
 			global $allProduct;
@@ -154,7 +120,7 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td><img class="close_png" src=<?php echo $root_dir."img/close.png"?>></td>
+					<td><img class="close_png" src='../img/close.png'></td>
 					<td><input name='name' style="width: 200px;" type="text"></td>
 					<td><input name='mert' style="width: 50px;" type="text"></td>
 					<td><input name="count" style="width: 50px;" type="text"></td>
@@ -163,9 +129,7 @@
 				</tr>
 			</tbody>
 		</table>
-		<img class="plus_png" src=<?php echo $root_dir."img/plus.png"?>>
+		<img class="plus_png" src='../img/plus.png'>
 	</div>
 	<button name='total'>Итого</button>
 	<button name='open'>открыть</button>
-</body>
-</html>

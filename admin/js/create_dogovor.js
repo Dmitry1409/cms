@@ -3,7 +3,7 @@ let dataProd = {}
 getAllProd()
 
 async function getAllProd(){
-	let res = await fetch("getAllprodPricing.php")
+	let res = await fetch("api/getAllprodPricing.php")
 	js = await res.json()
 	for(i=0; i<js.length; i++){
 		dataProd[js[i]['id']] = js[i]

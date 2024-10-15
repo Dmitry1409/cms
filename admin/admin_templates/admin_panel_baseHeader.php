@@ -54,6 +54,7 @@
 		<a href="adminPanel">Панель</a>
 		<a href="dataBase">База данных</a>
 		<a href="clientCRM">Клиенты CRM</a>
-		<a href="pricing">Счета</a>
+		<a href="create_dogovor">Договор</a>
+		<a href="create_shet">Счет</a>
 		<a href="clients">Клиенты</a>
 	</div>

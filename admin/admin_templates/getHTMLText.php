@@ -19,9 +19,9 @@
 
 	<?php
 
-		$db = new SQLite3('crm.db');
+		// $db = new SQLite3('crm.db');
 
-		$zam = $db->query("SELECT * FROM zamer WHERE id = {$_GET['idZamer']}")->fetchArray(SQLITE3_ASSOC);
+		$zam = $db->query("SELECT * FROM zamer WHERE id = {$idzamer}")->fetchArray(SQLITE3_ASSOC);
 		$zam_js = json_decode($zam['json']);
 		$rooms = $zam_js->rooms;
 		$sum_mat = $zam_js->sum_mat;

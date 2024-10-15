@@ -1,0 +1,32 @@
+.plus_png{
+	width: 20px;
+}
+
+.tableWrap{
+	overflow: auto;
+}
+.close_png{
+	width: 20px;
+	opacity: 0;
+	transition: 0.3s;
+}
+.close_png:hover{
+	opacity: 1;
+}
+.ulclose{
+	height: 0;			
+}
+ul{
+	transition: 0.5s;
+	overflow: hidden;
+}
+li{
+	cursor: default;
+	font-size: 18px;
+}
+
+.flex-column{
+	display: flex; 
+	flex-direction: column;
+	margin-bottom: 10px;
+}

@@ -133,12 +133,12 @@
 					$events = $db->query("SELECT * FROM {$_POST['table']} WHERE id = {$_POST['rowid']}")->fetchArray(SQLITE3_ASSOC);
 					if($events['type'] == "монтаж"){
 						if($_POST['newval'] == 'выполнен'){
-							update_filds('zakaz', ['status'=>"выполнен"], $events['ref_zakaz']);
+							update_filds('zakupki', ['status'=>"выполнен"], $events['ref_zakupki']);
 							update_filds("clients", ["status"=>"монтаж выполнен"], $events['ref_client']);
 							update_filds("object", ["status"=>"монтаж выполнен"], $events['ref_obj']);
 						}						
 					}elseif($events['type'] == "заказать"){
-						update_filds('zakaz', ['status'=>$_POST['newval']], $events['ref_zakaz']);
+						update_filds('zakupki', ['status'=>$_POST['newval']], $events['ref_zakupki']);
 					}
 				}
 				echo update_filds($_POST['table'], [$_POST['tabcol']=> $_POST['newval']],$_POST['rowid']);
@@ -174,12 +174,12 @@
 		//из календаря
 		if($_POST['comand'] =="addEvent"){
 			if($_POST['type']=="монтаж"){
-				$sel = $db->query("SELECT * FROM zakaz WHERE id = {$_POST['zakaz_id']}")->fetchArray(SQLITE3_ASSOC);
+				$sel = $db->query("SELECT * FROM zakupki WHERE id = {$_POST['zakaz_id']}")->fetchArray(SQLITE3_ASSOC);
 				$arr = ["start"=>$_POST['start'],
 						"finish"=>$_POST['start'],
 						"type"=>$_POST['type'],
 						"status"=>"назначен",
-						"ref_zakaz"=>$_POST['zakaz_id'], 
+						"ref_zakupki"=>$_POST['zakaz_id'], 
 						"ref_client"=>$_POST['client_id'],
 						"ref_obj"=>$_POST['obj_id'],
 						"ref_zamer"=>$sel['ref_zamer']];
@@ -270,12 +270,12 @@
 			}
 
 			if($_POST["type"] == "заказать"){
-				$sel = $db->query("SELECT * FROM zakaz WHERE id = {$_POST['zakaz_id']}")->fetchArray(SQLITE3_ASSOC);
+				$sel = $db->query("SELECT * FROM zakupki WHERE id = {$_POST['zakaz_id']}")->fetchArray(SQLITE3_ASSOC);
 				$arr = ["start"=>$_POST['start'],
 						"finish"=>$_POST['start'],
 						"type"=>$_POST['type'],
 						"status"=>"ожидает отправки",
-						"ref_zakaz"=>$_POST['zakaz_id'], 
+						"ref_zakupki"=>$_POST['zakaz_id'], 
 						"ref_client"=>$sel['ref_client'],
 						"ref_obj"=>$sel['ref_obj'],
 						"ref_zamer"=>$sel['ref_zamer']];
@@ -284,20 +284,20 @@
 				$arr = ["status"=>'ожидает отправки',
 						"data_send"=>$_POST['start'],
 						"ref_event"=>"[$idEv]"];
-				echo update_filds("zakaz", $arr, $_POST['zakaz_id']);
+				echo update_filds("zakupki", $arr, $_POST['zakaz_id']);
 			}
 			if($_POST['type'] == "доставка"){
-				$sel = $db->query("SELECT * FROM zakaz WHERE id = {$_POST['zakaz_id']}")->fetchArray(SQLITE3_ASSOC);
+				$sel = $db->query("SELECT * FROM zakupki WHERE id = {$_POST['zakaz_id']}")->fetchArray(SQLITE3_ASSOC);
 				$arr = ["start"=>$_POST['start'],
 						"finish"=>$_POST['start'],
 						"type"=>$_POST['type'],
 						"status"=>"будет",
-						"ref_zakaz"=>$_POST['zakaz_id'], 
+						"ref_zakupki"=>$_POST['zakaz_id'], 
 						"ref_client"=>$sel['ref_client'],
 						"ref_obj"=>$sel['ref_obj'],
 						"ref_zamer"=>$sel['ref_zamer']];
 				$idEv = insert_row("events", $arr);
-				echo getAndAddinFild('zakaz', 'ref_event', $_POST['zakaz_id'], $idEv);
+				echo getAndAddinFild('zakupki', 'ref_event', $_POST['zakaz_id'], $idEv);
 			}
 			if($_POST['type'] == "другое"){
 				$arr = [
@@ -325,8 +325,8 @@
 					"ref_obj"=>$res['ref_obj'],
 					"ref_client"=>$res['ref_client']];
 
-			$idZak = insert_row("zakaz", $arr);
-			$arr = ["ref_zakaz"=>$idZak];
+			$idZak = insert_row("zakupki", $arr);
+			$arr = ["ref_zakupki"=>$idZak];
 			echo update_filds("zamer", $arr, $_GET['idZamer']);
 		}
 	}

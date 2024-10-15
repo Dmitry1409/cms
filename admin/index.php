@@ -8,8 +8,9 @@
 	include "admin_templates/admin_panel_baseHeader.php";
 
 	$dirs = array("dataBase"=>["admin_templates/dataBase.php"],
+					"create_shet"=>["admin_templates/create_shet.php"],
 					"adminPanel"=>[],
-					"pricing"=>["admin_templates/pricing.php"],
+					"create_dogovor"=>["admin_templates/create_dogovor.php"],
 					"clientCRM"=>["admin_templates/clientCRM.php"],
 					"clients"=>["admin_templates/clients.php"],
 					"addReportZamer"=>["admin_templates/addReportZamer.php"],
