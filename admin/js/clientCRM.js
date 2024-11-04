@@ -47,8 +47,11 @@ window.addEventListener("DOMContentLoaded", ()=>{
 		}
 
 		async insItemModalAct(chose){
+			let cont_load_indicator = document.querySelector('.insertClients')
+			insert_load_indicator(cont_load_indicator)
 			let res = await fetch(`api/getNewClients.php?metod=${chose}`)
 			res = await res.json()
+			remove_load_indicator()
 			let html = ``
 			for(let i=0; i<res.length; i++){
 				html += `<div class='cartClientMod'>`
@@ -195,6 +198,8 @@ window.addEventListener("DOMContentLoaded", ()=>{
 				}
 			}
 
+			
+
 			let fd = new FormData()
 			fd.append('comand', "addEvent")
 			fd.append("start", start.value)
@@ -263,10 +268,13 @@ window.addEventListener("DOMContentLoaded", ()=>{
 					fd.append('from', from.value)
 				}
 			}
+
+			insert_load_indicator(this.add_block)
 			
 			let res = await fetch('handlerCRM.php', {method: 'POST',body: fd});
 
 			if(await checkRespondServer(res)){
+				remove_load_indicator()
 				setTimeout(()=>{
 					location.reload()
 				}, 1000)
@@ -302,10 +310,15 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			let finish = document.querySelector('.inp_wrap_modal input[name=finish]')
 			finish.value = nd+"."+nm+"."+d+" "
 
+			let cont_load_indicator = this.modalWrapp.querySelector('.add_block_modal')
+
+			insert_load_indicator(cont_load_indicator)
+
 			let events = await fetch(`getDayEvents.php?day=${nd}&month=${nm}`)
 
 			if(events.ok){
 				events = await events.json()
+				remove_load_indicator()
 				this.insertEvents(events)
 			}else{
 				showMsg('r', events.status+" "+events.statusText)
@@ -433,7 +446,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			let wrap_event = e.currentTarget.parentNode.parentNode
 			let html = this.get_select_html(wrap_event.getAttribute('type_event'), e.currentTarget.innerText)
 			e.currentTarget.outerHTML = html
-			document.querySelector('.select_status_id').addEventListener('change', this.change_status_fetch.bind(this))
+			wrap_event.querySelector('.select_status_id').addEventListener('change', this.change_status_fetch.bind(this))
 		}
 
 		get_select_html(type, status){

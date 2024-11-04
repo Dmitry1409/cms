@@ -1,9 +1,8 @@
 <?php
-
 	$db = new SQLite3('crm.db');
 	// $d = $_GET['day'].".".$_GET['month']."%";
 	$q = "SELECT * FROM events";
-	// echo var_dump($db);
+
 	$res = $db->query($q);
 	$out = [];
 	while($r = $res->fetchArray(SQLITE3_ASSOC)){

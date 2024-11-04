@@ -44,6 +44,20 @@
 		    -webkit-appearance: none;
 		    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 		}
+
+		.wrapp_load_indicator{
+			display: flex;
+			justify-content: center;
+		}
+
+		.load_indicator{
+			animation: loading 1s linear infinite;
+		}
+		@keyframes loading{
+			from {transform: rotateZ(0deg);}
+			to {transform: rotateZ(360deg);}
+		}
+
 	</style>
 	
 </head>

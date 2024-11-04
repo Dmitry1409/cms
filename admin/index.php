@@ -18,12 +18,12 @@
 	
 	$getPar = explode("?", $_SERVER['REQUEST_URI']);
 
-	$p = explode("/", $getPar[0]);
+	$pMain = explode("/", $getPar[0]);
 
-	for($iM=0; $iM<count($p); $iM++){
-		if(array_key_exists($p[$iM], $dirs)){
-			for($jM=0; $jM<count($dirs[$p[$iM]]); $jM++){
-				include $dirs[$p[$iM]][$jM];
+	for($iM=0; $iM<count($pMain); $iM++){
+		if(array_key_exists($pMain[$iM], $dirs)){
+			for($jM=0; $jM<count($dirs[$pMain[$iM]]); $jM++){
+				include $dirs[$pMain[$iM]][$jM];
 			}
 		}
 	}

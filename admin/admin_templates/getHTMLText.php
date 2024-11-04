@@ -19,12 +19,24 @@
 
 	<?php
 
-		// $db = new SQLite3('crm.db');
+		$polot = [];
+		$complect = [];
 
-		$zam = $db->query("SELECT * FROM zamer WHERE id = {$idzamer}")->fetchArray(SQLITE3_ASSOC);
-		$zam_js = json_decode($zam['json']);
-		$rooms = $zam_js->rooms;
-		$sum_mat = $zam_js->sum_mat;
+		// $idZamer = "(1,2,3)";
+
+		$res_db = $db->query("SELECT * FROM zamer WHERE id in $idZamer");
+		while($z = $res_db->fetchArray(SQLITE3_ASSOC)){
+			$js = json_decode($z['json']);
+			$polot = array_merge($polot, $js->rooms);
+			foreach($js->sum_mat as $k=>$v){
+				if(array_key_exists($k, $complect)){
+					$complect[$k] += $v;
+				}else{
+					$complect[$k] = $v;
+				}
+			}
+
+		}
 
 		$res = $db->query("SELECT * FROM products");
 		$prod = [];
@@ -39,11 +51,7 @@
 				echo "<tr>";
 					echo "<td>$n</td>";
 					$n++;
-					$name = null;
-					if($r->{'название комнаты'}){
-						$name = "({$r->{'название комнаты'}})";
-					}
-					echo "<td>полотно $name</td>";
+					echo "<td>полотно пвх</td>";
 					echo "<td>{$r->{'полотно'}}</td>";
 					$raz = '';
 					if(array_key_exists("стена А", $r)){
@@ -54,7 +62,7 @@
 					echo "<td>$raz</td>";
 					$f = null;
 					if(array_key_exists("фото", $r)){
-						$f = "<a style='margin-left: 20px;' target='_blank' href='https://auroom-nn.ru/admin/img_admin/img_zamer/{$r->{'фото'}}'><img style='width: 50px;' src='img_admin/img_zamer/{$r->{'фото'}}'></a>";
+						$f = "<a style='margin-left: 20px;' target='_blank' href='https://auroom-nn.ru/admin/img_admin/img_zamer/{$r->{'фото'}}'><img style='width: 50px;' src='https://auroom-nn.ru/admin/img_admin/img_zamer/{$r->{'фото'}}'></a>";
 					}
 					echo "<td>$f</td>";
 				echo "</tr>";
@@ -94,7 +102,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php  out_polotna($rooms)?>
+			<?php  out_polotna($polot)?>
 		</tbody>
 	</table>
 
@@ -110,7 +118,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php  out_comp($sum_mat)?>
+			<?php  out_comp($complect)?>
 		</tbody>
 	</table>
 

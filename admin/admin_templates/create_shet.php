@@ -1,11 +1,11 @@
 <script defer src='js/pdfmake_2.10.min.js'></script>
 <script defer src='js/vfs_fonts.min.js'></script>
 <script defer src='js/create_shet.js'></script>
+<script defer src="js/shet_and_dogovor_action.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="css/dogovor_shet_style.css">
 
 	
 <?php
-	include "../config_cms.php";
 
 	$dirs = [];
 	$db = new SQLite3("crm.db");
