@@ -248,7 +248,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 		// pdfMake.createPdf(docDefinition).download(`Счет_потолки№${numbPrice}.pdf`)
 	}
 	 
-	document.querySelector("button[name=total]").addEventListener('click', totalAction)
+	
 
 	document.querySelector("button[name=open]").addEventListener("click", openPdfAction) 
 	

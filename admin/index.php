@@ -14,7 +14,9 @@
 					"clientCRM"=>["admin_templates/clientCRM.php"],
 					"clients"=>["admin_templates/clients.php"],
 					"addReportZamer"=>["admin_templates/addReportZamer.php"],
-					"showZamer"=>["admin_templates/showZamer.php"]);
+					"showZamer"=>["admin_templates/showZamer.php"],
+					"edit_zamer"=>["admin_templates/edit_zamer.php"]
+				);
 	
 	$getPar = explode("?", $_SERVER['REQUEST_URI']);
 

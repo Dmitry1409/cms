@@ -1,15 +1,4 @@
 <style type="text/css">
-	/*.rooms-block{
-		display: flex; 
-		flex-wrap: wrap;
-		padding: 10px;
-	}
-	.rooms-block > span{
-		margin-right: 10px;
-		border: 1px solid grey;
-		margin-top: 10px;
-		padding: 3px;
-	}*/
 	.output_bold{
 		font-weight: bold;
 	}
@@ -75,6 +64,9 @@
 	})
 </script>
 
+<?php 
+	echo "<a href='edit_zamer?idZamer={$_GET['idZamer']}'>Рeдактировать замер</a>";
+?>
 
 <?php
 	function print_obj($obj, $head){

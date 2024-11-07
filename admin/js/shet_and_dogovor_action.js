@@ -239,7 +239,7 @@ function changeInpCount(){
 
 window.addEventListener("DOMContentLoaded",()=>{
 
-	
+
 	document.querySelector("button[name=total]").addEventListener('click', totalAction)
 	document.querySelector(".plus_png").addEventListener("click", plusAction)
 	document.querySelector(".close_png").addEventListener("click", delAction)
@@ -247,12 +247,6 @@ window.addEventListener("DOMContentLoaded",()=>{
 	for(let i=0; i<input_count.length; i++){
 		input_count[i].addEventListener("input", changeInpCount)
 	}
-
-	
-
-	
-
-	
 
 	function insertProd(el){
 		let id_pr = el.getAttribute("data_id")
@@ -319,14 +313,9 @@ window.addEventListener("DOMContentLoaded",()=>{
 		}
 	}
 
-
-
 	let li = document.querySelectorAll("li")
 	for(let i = 0; i<li.length; i++){
 		li[i].addEventListener('click', liAction)
 	}
-
-
-	
 
 })

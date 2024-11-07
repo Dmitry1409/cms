@@ -3,6 +3,7 @@
 async function checkRespondServer(res){
 	if(res.ok){	
 		let text = await res.text()
+		console.log(text)
 		if(text == "succes"){
 			showMsg()
 			return true

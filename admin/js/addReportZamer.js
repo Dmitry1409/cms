@@ -264,17 +264,27 @@ window.addEventListener('DOMContentLoaded',()=>{
 		let fd = new FormData()
 		fd.append('dict', JSON.stringify(allData))
 		let url = new URL(window.location.href)
-		fd.append('idEvent', url.searchParams.get('idEvent'))
+		let idEvent = url.searchParams.get('idEvent')
+		if(idEvent){
+			fd.append('idEvent', idEvent)
+		}else{
+			fd.append('idZamer', url.searchParams.get('idZamer'))
+		}
+
 		console.log("финишь стрингифай",Date.now() - timest1)
+
 		let res = await fetch(`postZamer.php`, {
 			method: "POST",
 			body: fd
 		})
+
 		console.log("получен ответ",Date.now() - timest1)
+
 		checkRespondServer(res)
+		
 		if(res.ok){
 			setTimeout(()=>{
-				window.location.href = './clientCRM'
+				// window.location.href = './clientCRM'
 			})
 		}
 	}
