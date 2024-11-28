@@ -315,19 +315,31 @@
 				echo "succes";
 			}
 		}
-	}
 
-	if($_SERVER["REQUEST_METHOD"] == "GET"){
-		if($_GET['comand'] == "addZakaz"){
-			$res = $db->query("SELECT * FROM zamer WHERE id = {$_GET['idZamer']}")->fetchArray(SQLITE3_ASSOC);
+		//из showZamer
+		if($_POST['comand'] == "createZakaz"){
+
+			$res = $db->query("SELECT * FROM zamer WHERE id = {$_POST['idZamer']}")->fetchArray(SQLITE3_ASSOC);
+			// var_dump($res['ref_client']);
 			$arr = ["status"=>"создан",
-					"ref_zamer"=>$_GET['idZamer'],
+					"ref_zamer"=>$_POST['idZamer'],
 					"ref_obj"=>$res['ref_obj'],
 					"ref_client"=>$res['ref_client']];
 
-			$idZak = insert_row("zakupki", $arr);
-			$arr = ["ref_zakupki"=>$idZak];
-			echo update_filds("zamer", $arr, $_GET['idZamer']);
+			$idZakupka = insert_row("zakupki", $arr);
+
+			$arr = ["status"=>"в работе",
+					"sum"=>$_POST['sum'],
+					"prepay"=>$_POST['prepay'],
+					"sum_zakupki"=>$_POST['sumZakupki'],
+					"deadline"=>$_POST['deadline'],
+					"ref_client"=>$res['ref_client'],
+					"ref_obj"=>$res['ref_obj'],
+					"ref_zamer"=>$_POST['idZamer'],
+					"ref_zakupka"=>$idZakupka];
+			insert_row("clientZakaz", $arr);
+
+			echo update_filds("zamer", ['ref_zakupki'=>$idZakupka], $_POST['idZamer']);
 		}
 	}
 

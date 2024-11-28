@@ -40,6 +40,9 @@
 		border: 1px solid grey;
 		padding: 3px;
 	}
+	.input-width{
+		width: 80px;
+	}
 </style>
 
 <?php
@@ -53,11 +56,23 @@
 
 <script type="text/javascript">
 	async function createZakaz(){
-		document.querySelector('.createZakaz_btn_id').remove()
 		let url = new URL(window.location.href)
 		let idZamer = url.searchParams.get('idZamer')
-		let res = await fetch(`handlerCRM.php?comand=addZakaz&idZamer=${idZamer}`);
+
+		let fd = new FormData()
+		fd.append("comand", "createZakaz")
+		fd.append("idZamer", idZamer)
+		fd.append('sum', document.querySelector("input[name=sum]").value)
+		fd.append('sumZakupki', document.querySelector('.sumZakupId').innerText)
+		fd.append('prepay', document.querySelector("input[name=prepay]").value)
+		fd.append('deadline', document.querySelector("input[name=deadline]").value)
+
+
+		let res = await fetch('handlerCRM.php', {method: 'POST',body: fd});
+
 		checkRespondServer(res)	
+		
+		document.querySelector('.createZakaz_btn_id').remove()
 	}
 	window.addEventListener("DOMContentLoaded", ()=>{
 		Fancybox.bind("[data-fancybox='gallary']",{})
@@ -68,7 +83,15 @@
 	echo "<a href='edit_zamer?idZamer={$_GET['idZamer']}'>Рeдактировать замер</a>";
 ?>
 
-<?php
+<?php 
+
+	function print_simple_value($val, $head){
+		echo "<span style='display: flex; flex-direction: column;'>";
+			echo "<span style='font-weight: bold;'>$head</span>";
+			echo "<span style='text-align: center;'>$val</span>";
+		echo "</span>";
+	}
+
 	function print_obj($obj, $head){
 		echo "<span style='display: flex; flex-direction: column;'>";
 			echo "<span style='font-weight: bold;'>$head</span>";
@@ -127,8 +150,9 @@
 
 
 	$keys_room = ["стена А","стена Б","площадь", "перим.","полотно", "доп. углы"];
-	$keys2 = ['стены',"люстры","обвод тр",'вент', "споты клиента","споты наши"];
+	$keys2 = ['стены',"люстры","обвод тр",'вент', "споты клиента","споты наши","имитация стены"];
 	$key3 = [ "гардина накладная", "гардина скрытая", "световые линии", "парящий", "теневой"];
+
 
 	for($i=0; $i<count($rooms); $i++){
 		echo "<div style='margin-top:10px; border: 1px solid grey;'>";
@@ -148,10 +172,12 @@
 						if(array_key_exists($kr, $rooms[$i]))
 							if(is_array($rooms[$i]->$kr)){
 								print_arr_obj($rooms[$i]->$kr, $kr);
-							}
-							if(is_object($rooms[$i]->$kr)){
+							}elseif(is_object($rooms[$i]->$kr)){
 								print_obj($rooms[$i]->$kr, $kr);
+							}else{
+								print_simple_value($rooms[$i]->$kr, $kr);
 							}
+
 					}
 				echo "</div>";
 				foreach ($key3 as $kr) {
@@ -280,15 +306,37 @@
 			<?php print_table_row($sum_mat)?>
 		</tdoby>
 	</table>
-	<h3>Заказ на сумму: <?php echo $sum_zakaz?></h3>
-	<?php
-		if(!$zamer['ref_zakupki']){
-			echo "<button class='createZakaz_btn_id' style='margin: 10px;' onclick='createZakaz()'>Создать заказ</button>";
-		}else{
+
+
+	<h3>Закупка на сумму: <span class="sumZakupId"><?php echo $sum_zakaz?></span></h3>
+
+	
+	<?php if(!$zamer['ref_zakupki']):?>
+		<div>
+			<div>
+				<span>Общая сумма договора</span>
+				<input class="input-width" type="number" name="sum">
+			</div>
+			<div>
+				<span>Предоплата</span>
+				<input class="input-width" type="number" name="prepay">
+			</div>
+			<div>
+				<span>Сроки</span>
+				<input class="input-width" type="number" name="deadline">
+			</div>
+		</div>
+		<button class='createZakaz_btn_id' style='margin: 10px;' onclick='createZakaz()'>Создать договор</button>
+	<?php else:?>
+		<?php
 			$zakup = $db->query("SELECT * FROM zakupki WHERE id = {$zamer['ref_zakupki']}")->fetchArray(SQLITE3_ASSOC);
 			echo "<h4>Закупка номер № {$zakup['id']} статус : {$zakup['status']}</h4>";
-		}
-	?>
+			$clientZakaz = $db->query("SELECT * FROM clientZakaz WHERE ref_zamer = {$_GET['idZamer']}")->fetchArray(SQLITE3_ASSOC);
+			echo "<h4>Сумма договора : {$clientZakaz['sum']}</h4>";
+			echo "<h4>Предоплата : {$clientZakaz['prepay']}</h4>";
+			echo "<h4>Сроки : {$clientZakaz['deadline']}</h4>";
+		?>
+	<?php endif?>
 </div>
 
 
