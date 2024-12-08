@@ -320,7 +320,7 @@
 		if($_POST['comand'] == "createZakaz"){
 
 			$res = $db->query("SELECT * FROM zamer WHERE id = {$_POST['idZamer']}")->fetchArray(SQLITE3_ASSOC);
-			// var_dump($res['ref_client']);
+
 			$arr = ["status"=>"создан",
 					"ref_zamer"=>$_POST['idZamer'],
 					"ref_obj"=>$res['ref_obj'],

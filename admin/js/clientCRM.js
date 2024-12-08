@@ -57,7 +57,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 				html += `<div class='cartClientMod'>`
 					if(chose == "заказать"||chose == "доставка"||chose=="монтаж"){
 						html += `<div class='zakaz_wrap_id'>`
-							html += `<div><span style='font-weight: bold;'>Заказ номер: </span><span id='zakaz_id'>${res[i]['id']}</span></div>`
+							html += `<div><span style='font-weight: bold;'>Закупка номер: </span><span id='zakaz_id'>${res[i]['id']}</span></div>`
 							html += `<div><span style='font-weight: bold;'>создан: </span>${timeConverter(res[i]['created'])}</div>`
 						html += `</div>`
 						html += this.client_Block_Html(res[i]['ref_client'])
@@ -290,6 +290,15 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 		}
 		async decorModalAndFetch(e){
+
+			let click_border = document.querySelector('.click_border')
+
+			if(click_border){
+				click_border.classList.remove("click_border")
+			}
+			
+			e.currentTarget.classList.add('click_border')
+
 			let month_par = e.currentTarget.parentNode.parentNode
 			let month = month_par.querySelector('h2').innerText
 			this.modalWrapp.querySelector("h3").innerText = month + " "+e.currentTarget.innerText

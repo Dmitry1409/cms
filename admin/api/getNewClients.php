@@ -12,7 +12,7 @@
 	}
 
 	if($_GET['metod']=="доставка" OR $_GET['metod']=="монтаж"){
-		$q = "SELECT * FROM zakupki WHERE status = 'ожидает отправки' OR status = 'отправлен' OR status='создан' ORDER BY created DESC";
+		$q = "SELECT * FROM zakupki WHERE status = 'ожидает отправки' OR status = 'отправлен' OR status = 'отправлен авто' OR status='создан' ORDER BY created DESC";
 		echo json_encode(client_obj($q));
 	}
 

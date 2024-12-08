@@ -147,7 +147,7 @@
 				<input class='status_client_checked' value='монтаж выполнен' type='checkbox'><span style='margin-left: 10px;'>монтаж выполнен</span>
 			</span>
 			<span>
-				<input class='status_client_checked' value='ушли к другим' type='checkbox'><span style='margin-left: 10px;'>ушли к другим</span>
+				<input class='status_client_checked' value='ушли' type='checkbox'><span style='margin-left: 10px;'>ушли</span>
 			</span>
 			<span>
 				<input class='status_client_checked' value='нет связи' type='checkbox'><span style='margin-left: 10px;'>нет связи</span>
