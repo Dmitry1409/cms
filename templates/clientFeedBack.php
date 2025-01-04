@@ -134,7 +134,7 @@
 						echo "</div>";
 						$date = $arr[$i]['timestamp'];
 						$date = date('d/m/y', $date)."г.";
-						echo "<span>$date</span>";
+						// echo "<span>$date</span>";
 					echo "</div>";
 
 				echo "</div>";

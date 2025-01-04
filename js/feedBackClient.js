@@ -619,7 +619,6 @@ window.addEventListener("DOMContentLoaded", ()=>{
 									<span>Оценка: </span>
 									<div>${html_svg}</div>
 								</div>
-								<span>${date_s}</span>
 							</div>
 						</div>`
 			cont.insertAdjacentHTML(where_insert, html)

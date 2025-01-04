@@ -41,6 +41,15 @@
 <?php
 	$db = new SQLite3("crm.db");
 
+	function getEmptyDiv($d){
+		$w = (int)date("w",strtotime($d));
+		if($w == 0){
+			return 6;
+		}else{
+			return $w - 1;
+		}
+	}
+
 	function isLiap($y){
 		if($y % 400 == 0){
 			return true;
@@ -53,15 +62,48 @@
 		}
 	}
 
-	$em = 0;
+
 	$f = 28;
 	$month = (int)date('m');
-	$day  = (int)date('d');
-	if(isLiap(20 + date('y'))) $f = 29;
-	$c = [["Январь",31],["Февраль",$f],["Март",31],["Апрель",30],
-			["Май",31],["Июнь",30],["Июль",31],["Август",31],["Сентябрь",30],
-			["Октябрь",31],["Ноябрь",30],["Декабрь",31]];
 
+	$cicle = 0;
+
+	$day  = (int)date('d');
+
+	if(isLiap(20 + date('y'))) $f = 29;
+
+	$c = [["Январь",31, "01"],["Февраль",$f, "02"],["Март",31, "03"],["Апрель",30, "04"],
+			["Май",31, "05"],["Июнь",30,"06"],["Июль",31,"07"],["Август",31,"08"],["Сентябрь",30,"09"],
+			["Октябрь",31,"10"],["Ноябрь",30, "11"],["Декабрь",31,"12"]];
+	$cout = [];
+
+	if($month == 1){
+		$cout = [$c[10],$c[11], $c[0], $c[1], $c[2]];
+	}
+	elseif($month == 2){
+		$cout = [$c[11],$c[0], $c[1], $c[2], $c[3]];
+	}
+	elseif($month == 12){
+		$cout = [$c[9],$c[10], $c[11], $c[0], $c[1]];
+	}
+	elseif($month == 11){
+		$cout = [$c[8],$c[9], $c[10], $c[11], $c[0]];
+	}
+	else{
+		$cout = array_slice($c, ($month-3), 5);
+	}
+
+
+	$tagY = date('y');
+	if($month <= 2){
+		$tagY = date('y') - 1;
+	}
+	$serchData = "20".$tagY."-".$cout[0][2]."-01";
+	echo $serchData;
+
+	$numEmty = getEmptyDiv($serchData);
+
+	
 	$res = $db->query("SELECT * FROM events");
 	$events = [];
 	while($r = $res->fetchArray(SQLITE3_ASSOC)){
@@ -69,53 +111,48 @@
 	}
 
 	echo "<div class='wrapp_m'>";
-	$cSm = 1;
-	for($i=0; $i<count($c); $i++){
-		$nmont;
-		if(($i + 1)>= 10){
-			$nmont = $i+1;
-		}else{
-			$nmont = '0'.($i+1);
-		}
-		echo "<div numbMonth='$nmont' class='month'>";
-		$nm = $c[$i][0];
-		echo "<h2>$nm</h2>";
-		for($j=1; $j<=$c[$i][1]; $j++){
+	$cSm = ceil(strtotime($serchData) / 86400)%4;
+
+
+	for($i=0; $i<count($cout); $i++){
+
+		echo "<div numbMonth='{$cout[$i][2]}' class='month'>";
+		echo "<h2>{$cout[$i][0]}</h2>";
+		for($j=1; $j<=$cout[$i][1]; $j++){
 			if($j == 1){
 				echo "<div class='week'>";
-				if($em > 0){
-					for($k=0; $k<$em; $k++){
-						echo "<div></div>";
-					}
+				for($k=0; $k<$numEmty; $k++){
+					echo "<div></div>";
 				}
 			}
 			$todayCl = null;
-			if($i == $month - 1){
+
+			if(date('m') == $cout[$i][2]){
 				if($j == $day){
 					$todayCl = "today";
 				}
 			}
+
 			$smClass = null;
-			if($cSm == 1){
-				$smClass = "sm1";
-				$cSm = 2;
-			}elseif($cSm == 2){
-				$smClass = "sm2";
-				$cSm = 3;
-			}elseif($cSm == 3){
-				$smClass = "sm2";
-				$cSm = 4;
-			}else{
+			if($cSm == 4){
 				$smClass = "sm2";
 				$cSm = 1;
+			}elseif($cSm == 3){
+				$smClass = "sm1";
+				$cSm++;
+			}else{
+				$smClass = "sm2";
+				$cSm++;
 			}
 			$evHtml = null;
 			$fl_e = false;
+
 			for($e = 0; $e < count($events); $e++){
+				$cicle += 1;
 				$start = $events[$e]['start'];
 				$finish = $events[$e]['finish'];
-				$e_m = (int)substr($start, 3, 2);
-				if($i == ($e_m -1)){
+				$e_m = substr($start, 3, 2);
+				if($cout[$i][2] == $e_m){
 					$e_d_s = (int)substr($start, 0, 2);
 					$e_d_f = (int)substr($finish, 0, 2);
 					if($e_d_s <= $j and $j <= $e_d_f){
@@ -154,12 +191,12 @@
 				$evHtml = $evHtml."</div>";
 			}
 			echo "<div class='no-empty $smClass $todayCl'>$j$evHtml</div>";
-			if(($j+$em) % 7 == 0){
+			if(($j+$numEmty) % 7 == 0){
 				echo "</div>";
 				echo "<div class='week'>";
 			}
-			if($j == $c[$i][1]){
-				$a = ($c[$i][1] - (7 - $em));
+			if($j == $cout[$i][1]){
+				$a = ($cout[$i][1] - (7 - $numEmty));
 				$r = $a / 7;
 				$r = (int)$r;
 				$r = 7 - ($a -($r*7));
@@ -168,11 +205,13 @@
 						echo "<div></div>";
 					}
 				}
-				$em = 7-$r;
+				$numEmty = 7-$r;
 				echo "</div>";
 			}
 		}
 		echo "</div>";
 	}
 	echo "</div>";
+
+	echo $cicle;
 ?>
