@@ -7,6 +7,23 @@
 
 	$time = time();
 
+	function parseDateToTime($s){
+		$d = substr($s, 0, 2);
+		$m = substr($s, 3, 2);
+		$y = substr($s, 6, 2);
+		$h = null;
+		$min = null;
+		if(strlen($s)> 9){
+			$h = substr($s, 9, 2);
+			$min = substr($s, 12, 2);
+		}
+		$outD = "20".$y."-".$m."-".$d;
+		if($h){
+			$outD .= " ".$h.":".$min.":00";
+		}
+		return strtotime($outD);
+	}
+
 	function exec_query($q, $fl_succes){
 		global $db;
 
@@ -58,6 +75,9 @@
 		foreach ($arr as $key => $value) {
 			$q .= $key.",";
 		}
+		if($table == "events"){
+			$q .= "time_start, time_finish,";
+		}
 		
 		$q .= " created) VALUES (";
 		foreach ($arr as $key => $value) {
@@ -66,6 +86,11 @@
 			}else{
 				$q .="'$value',";
 			}
+		}
+		if($table == "events"){
+			$st = parseDateToTime($arr['start']);
+			$ft = parseDateToTime($arr['finish']);
+			$q .= "$st, $ft,";
 		}
 		$q .= time().")";
 

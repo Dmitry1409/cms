@@ -99,7 +99,6 @@
 		$tagY = date('y') - 1;
 	}
 	$serchData = "20".$tagY."-".$cout[0][2]."-01";
-	echo $serchData;
 
 	$numEmty = getEmptyDiv($serchData);
 
