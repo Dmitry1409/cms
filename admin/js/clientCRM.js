@@ -379,12 +379,16 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			let tel = ``
 			let telAr = item['client']['tel_arr']
 			for(let j =0; j<telAr.length; j++){
-				tel += `<a href='tel:${telAr[j]}'>${telAr[j]}</a>`
+				tel += `<div>`
+				tel += `<div><a href='tel:${telAr[j]}'>${telAr[j]}</a></div>`
+				tel += `<a href='${"https://t.me/7"+telAr[j].slice(1)}'>телег</a>`
+				tel += `<a href='${"whatsapp://send?phone=7"+telAr[j].slice(1)}'>ватсапп</a>`
+				tel += `</div>`
 			}
 			let html = `<div class="block-flexy">`
 				html += `<div>
 							<div>Клиент: <span table='clients' tabCol='name' rowID='${item['client']['id']}' class='change_fild_id'>${item['client']['name']}</span></div>
-							<div class="evTelWr">Телефоны: ${tel}</div>
+							<div class="evTelWr" style='display: flex;'>Телефоны: ${tel}</div>
 						</div>`
 				html += `<div>
 							<div>Объект: ${item['obj']['type']}</div>
@@ -600,14 +604,27 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 			}, 500)
 		}
-
 	}
 	
+	class CalendarChange{
+		constructor(){
+			let d = document.querySelectorAll(".year_btn")
+			for(let i=0; i<d.length; i++){
+				d[i].addEventListener('click', this.year_btn_action.bind(this))
+			}
+		}
+		async year_btn_action(e){
+			let res = await fetch()
+			console.log(e.currentTarget.innerText)
+		}
+	}
 	scrollCalendar()
 
  	let add_event = new AddEvent()
 
  	let day_show = new DayShow()
+
+ 	let chan_calen = new CalendarChange()
 
 	let d = document.querySelectorAll(".week > div.no-empty")
 	for(let i=0; i<d.length; i++){

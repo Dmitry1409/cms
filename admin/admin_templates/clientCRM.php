@@ -38,6 +38,15 @@
 </div>
 	
 
+<div class="year_cont">
+	<div>		
+		<button class="year_btn">2024</button>
+		<button class="year_btn">2025</button>
+		<button class="year_btn">2026</button>
+	</div>
+	<input value="2025-01-01" type="text" name="search_day">
+</div>
+
 <?php
 	$db = new SQLite3("crm.db");
 
@@ -102,8 +111,9 @@
 
 	$numEmty = getEmptyDiv($serchData);
 
+	$time_start = strtotime($serchData);
 	
-	$res = $db->query("SELECT * FROM events");
+	$res = $db->query("SELECT * FROM events WHERE time_start >= $time_start");
 	$events = [];
 	while($r = $res->fetchArray(SQLITE3_ASSOC)){
 		$events[] = $r;

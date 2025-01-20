@@ -1,6 +1,19 @@
 body{
 	touch-action: none;
 }
+
+
+.year_cont{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.year_cont > input {
+	width: 100px;
+	margin-top: 10px;
+}
+
 .wrapp_m{
 	display: flex;
 	overflow: auto;
@@ -18,7 +31,6 @@ body{
 	padding: 20px;
 	width: 100vw;
 	height: 100vh;
-	/*overflow: auto;*/
 	z-index: 5;
 }
 .dayModalWrapp > div {
