@@ -155,6 +155,14 @@
 		if($_POST['comand'] == "change_fild"){
 			if($_POST['table'] == "events"){
 				if($_POST['tabcol'] == "status"){
+					if($_POST['newval']== 'отменен'){
+						if(!$db->exec("DELETE FROM events WHERE id = {$_POST['rowid']}")){
+							echo $db->lastErrorMsg();
+						}else{
+							echo "succes";
+						}
+						exit;
+					}
 					$events = $db->query("SELECT * FROM {$_POST['table']} WHERE id = {$_POST['rowid']}")->fetchArray(SQLITE3_ASSOC);
 					if($events['type'] == "монтаж"){
 						if($_POST['newval'] == 'выполнен'){
@@ -166,10 +174,8 @@
 						update_filds('zakupki', ['status'=>$_POST['newval']], $events['ref_zakupki']);
 					}
 				}
-				echo update_filds($_POST['table'], [$_POST['tabcol']=> $_POST['newval']],$_POST['rowid']);
-			}else{
-				echo update_filds($_POST['table'], [$_POST['tabcol']=> $_POST['newval']],$_POST['rowid']);
 			}
+			echo update_filds($_POST['table'], [$_POST['tabcol']=> $_POST['newval']],$_POST['rowid']);
 		}
 
 		//из страницы клиенты добавление объекта

@@ -26,7 +26,11 @@
 		$ev = [];
 		$js_ev = json_decode($cl['ref_event']);
 		for($i=0; $i<count($js_ev); $i++){
-			$ev[] = $db->query("SELECT * FROM events WHERE id = {$js_ev[$i]}")->fetchArray(SQLITE3_ASSOC);
+			$getEvent = $db->query("SELECT * FROM events WHERE id = {$js_ev[$i]}")->fetchArray(SQLITE3_ASSOC);
+			if(!$getEvent){
+				continue;
+			}
+			$ev[] = $getEvent;
 		}
 		$cl['events'] = $ev;
 		$cl['obj'] = $obj;
