@@ -216,10 +216,10 @@
 						</svg>
 					</div>
 				</div>
-				<div class="inputs_file_cont">				
+				<!-- <div class="inputs_file_cont">				
 					<label>Аватарка</label> 
 					<input type="file" accept="image/*" name="image_avatar">
-				</div>
+				</div> -->
 				<div class="inputs_file_cont">					
 					<label>Фотографии</label>
 					<input type="file" accept="image/*" multiple="multiple" name="image_review">

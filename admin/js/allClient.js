@@ -323,7 +323,8 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			}
 			let tel = document.querySelector("input[name=telehon]").value
 			if(tel.length > 2){
-				let res = await fetch(`api/searchInBasaTel.php?tel=${tel}`)
+				let cl_tel = clearCharTelehon(tel)
+				let res = await fetch(`api/searchInBasaTel.php?tel=${cl_tel}`)
 				this.insertFindedTel(await res.json())
 			}
 		}

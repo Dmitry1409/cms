@@ -119,23 +119,23 @@
 		}
 		
 	}
-	if(array_key_exists("avatar", $_POST)){
-		$js = json_decode($_POST['avatar']);
-		$n_name = md5(microtime() . rand(0, 9999)).".jpg";
-		$arrDB['avatarFileName'] = $n_name;
-		$o = fopen($avatarDirOrig.$n_name, "wb");
-		fwrite($o, base64_decode($js[0]));
-		fclose($o);
-		resize($n_name, $avatarDirOrig, 400, null, $avatarDir400);
-	}
+	// if(array_key_exists("avatar", $_POST)){
+	// 	$js = json_decode($_POST['avatar']);
+	// 	$n_name = md5(microtime() . rand(0, 9999)).".jpg";
+	// 	$arrDB['avatarFileName'] = $n_name;
+	// 	$o = fopen($avatarDirOrig.$n_name, "wb");
+	// 	fwrite($o, base64_decode($js[0]));
+	// 	fclose($o);
+	// 	resize($n_name, $avatarDirOrig, 400, null, $avatarDir400);
+	// }
 
 	$timestamp = time();
 	
 	$q = "INSERT INTO feedBackClient (name_client, text_review, scope, timestamp";
 
-	if(array_key_exists('avatarFileName', $arrDB)){
-		$q = $q.", avatar_file_name";
-	}
+	// if(array_key_exists('avatarFileName', $arrDB)){
+	// 	$q = $q.", avatar_file_name";
+	// }
 
 	if(array_key_exists("fotoRevArr", $arrDB)){	
 		$q = $q.", foto_file_name_arr)";
@@ -146,10 +146,10 @@
 
 	$q = $q."VALUES ('$clientName', '$text_review', '$scope', '$timestamp'";
 
-	if(array_key_exists('avatarFileName', $arrDB)){
-		$name = $arrDB['avatarFileName'];
-		$q = $q.", '$name'";
-	}
+	// if(array_key_exists('avatarFileName', $arrDB)){
+	// 	$name = $arrDB['avatarFileName'];
+	// 	$q = $q.", '$name'";
+	// }
 	if(array_key_exists("fotoRevArr", $arrDB)){
 		$arr = json_encode($arrDB['fotoRevArr']);
 		$q = $q.", '$arr')";

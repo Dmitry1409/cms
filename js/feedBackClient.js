@@ -199,18 +199,18 @@ window.addEventListener("DOMContentLoaded", ()=>{
 				formData.append('scope', scope)
 
 
-				let avatar_inp = document.querySelector('.add_feedback_section input[name="image_avatar"]')
+				// let avatar_inp = document.querySelector('.add_feedback_section input[name="image_avatar"]')
 				let foto_inp = document.querySelector('.add_feedback_section input[name="image_review"')
 				let fl_foto = false
-				if(avatar_inp.files.length == 1){
-					fl_foto = true
-					foto['length'] += avatar_inp.files.length
-					let reader = new FileReader()
-					reader.onload = function(e){
-						CompressImage(e.target.result, foto.avatar)
-					}
-					reader.readAsDataURL(avatar_inp.files[0])
-				}
+				// if(avatar_inp.files.length == 1){
+				// 	fl_foto = true
+				// 	foto['length'] += avatar_inp.files.length
+				// 	let reader = new FileReader()
+				// 	reader.onload = function(e){
+				// 		CompressImage(e.target.result, foto.avatar)
+				// 	}
+				// 	reader.readAsDataURL(avatar_inp.files[0])
+				// }
 
 				if(foto_inp.files.length > 0){
 					fl_foto = true
@@ -274,9 +274,9 @@ window.addEventListener("DOMContentLoaded", ()=>{
 		if(foto.arr.length > 0){
 			formData.append('fotoArr', JSON.stringify(foto.arr))
 		}
-		if(foto.avatar.length > 0){
-			formData.append('avatar', JSON.stringify(foto.avatar))
-		}
+		// if(foto.avatar.length > 0){
+		// 	formData.append('avatar', JSON.stringify(foto.avatar))
+		// }
 
 		let res = await fetch(`${root_dir}scripts_php/add_feedback.php`, {
 			method: "POST",
