@@ -156,6 +156,12 @@
 			if($_POST['table'] == "events"){
 				if($_POST['tabcol'] == "status"){
 					if($_POST['newval']== 'отменен'){
+
+						$e = $db->query("SELECT * FROM {$_POST['table']} WHERE id = {$_POST['rowid']}")->fetchArray(SQLITE3_ASSOC);
+						if($e['type'] == "заказать"){
+							update_filds('zakupki', ['status'=>"создан"], $e['ref_zakupki']);
+						}
+
 						if(!$db->exec("DELETE FROM events WHERE id = {$_POST['rowid']}")){
 							echo $db->lastErrorMsg();
 						}else{
@@ -171,6 +177,11 @@
 							update_filds("object", ["status"=>"монтаж выполнен"], $events['ref_obj']);
 						}						
 					}elseif($events['type'] == "заказать"){
+						if($_POST['newval']=="отправить"){
+							$idZamer = "(".$events['ref_zamer'].")";
+							include "admin_templates/send_zakup_by_status.php";
+							exit;
+						}
 						update_filds('zakupki', ['status'=>$_POST['newval']], $events['ref_zakupki']);
 					}
 				}
