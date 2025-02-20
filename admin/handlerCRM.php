@@ -178,6 +178,8 @@
 						}						
 					}elseif($events['type'] == "заказать"){
 						if($_POST['newval']=="отправить"){
+							$idZakup = [];
+							$idZakup[] = $events['ref_zakupki'];
 							$idZamer = "(".$events['ref_zamer'].")";
 							include "admin_templates/send_zakup_by_status.php";
 							exit;

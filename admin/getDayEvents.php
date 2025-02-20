@@ -19,6 +19,7 @@
 				}
 				if($r['type'] == "доставка" OR $r['type'] == "монтаж"){
 					$r['zakupki_status'] = $db->querySingle("SELECT status FROM zakupki WHERE id ={$r['ref_zakupki']}");
+					$r['zakupki_data_send'] = $db->querySingle("SELECT data_send FROM zakupki WHERE id ={$r['ref_zakupki']}");
 				}
 				$r['obj'] = $db->query("SELECT * FROM object WHERE id = {$r['ref_obj']}")->fetchArray(SQLITE3_ASSOC);
 				$r['client'] = $db->query("SELECT * FROM clients WHERE id = {$r['ref_client']}")->fetchArray(SQLITE3_ASSOC);

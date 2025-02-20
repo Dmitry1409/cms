@@ -421,9 +421,14 @@ window.addEventListener("DOMContentLoaded", ()=>{
 		deliv_html_put(item){
 			let html = `<div style='margin-bottom:10px; display: flex; justify-content: space-around;'>
 							<span style='width: 40%; font-size: 12px; border: 1px solid grey; display: flex; flex-direction: column;'>
-								<div style='font-weight:bold'>Заказ: №${item['ref_zakupki']}</div>
-								<div style='font-weight:bold'>Статус: ${item['zakupki_status']}</div>
-							</span>
+								<div style='font-weight:bold'>Заказ: №${item['ref_zakupki']}</div>`
+
+				if(item['zakupki_status'] == "ожидает отправки"){
+					html += `<div style='font-weight:bold'>Статус: ожидает отправки ${item['zakupki_data_send']}</div>`
+				}else{
+					html += `<div style='font-weight:bold'>Статус: ${item['zakupki_status']}</div>`
+				}
+				html +=	`</span>
 							<a style="max-height: 1em;" href='showZamer?idZamer=${item['ref_zamer']}''>Показать замер № ${item['ref_zamer']}</a>
 						</div>`
 			html += this.client_obj_html(item)
@@ -467,7 +472,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 				"монтаж": ["назначен","выполнен","перенесен", "отменен"],
 				"вх. звонок": ["было", "обработан"],
 				"ис. звонок": ["будет", "отменен","обработан","не дозвониться"],
-				"заказать": ["ожидает отправки", "отправить", "отменен"],
+				"заказать": ["ожидает отправки","отправлен", "отправить", "отменен"],
 				"доставка": ["будет","отменен","перенесено", "выполнено"],
 				"другое": ["не выполнено", "выполнено", "отменен"]
 			}

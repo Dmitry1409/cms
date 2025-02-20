@@ -18,8 +18,8 @@
     $mail->Password = 'FNMJyKUBCvyUsNeC9m8j';
     
     $mail->setFrom('89202929892@mail.ru', 'AuRoom');
-    $mail->addAddress('89202929892@mail.ru', 'Ольга');
-    // $mail->addAddress('style_elit@mail.ru', 'Ольга');
+    // $mail->addAddress('89202929892@mail.ru', 'Ольга');
+    $mail->addAddress('style_elit@mail.ru', 'Ольга');
     $mail->Subject = 'Заказ';
     
 
@@ -60,10 +60,10 @@
     	for($j=0; $j<count($events); $j++){
     		$type = $db->querySingle("SELECT type FROM events WHERE id = {$events[$j]}");
     		if($type == "заказать"){
-    			$db->exec("UPDATE events SET status = 'отправлен авто' WHERE id = {$events[$j]}");
+    			$db->exec("UPDATE events SET status = 'отправлен crm' WHERE id = {$events[$j]}");
     		}
     	}
-    	$db->exec("UPDATE zakupki SET status = 'отправлен авто' WHERE id = {$idZakup[$i]}");
+    	$db->exec("UPDATE zakupki SET status = 'отправлен crm' WHERE id = {$idZakup[$i]}");
     }
     echo "succes";  
 ?>
