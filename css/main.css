@@ -698,6 +698,29 @@ a.menu_item{
 	margin-left: 20px;
 	margin-right: 20px;
 }
+.messenger_layout{
+	position: fixed;
+	top: 60vh;
+	z-index: 100;
+	transition: 1s;
+	left: 0;
+}
+.messenger_layout a{
+	text-decoration-color: var(--main-col-2);
+}
+.m_l_row{
+	display: flex;
+	align-items: center;
+	padding: 4px;
+	margin-bottom: 5px;
+	background-color: #ffffff91;
+	border: 1px transparent;
+	border-radius: 3px;
+}
+.m_l_row > span{
+	margin-right: 5px;
+	color: var(--main-col-2);
+}
 .logo_header{
 	display: -webkit-box;
 	display: -ms-flexbox;

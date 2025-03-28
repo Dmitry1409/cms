@@ -51,7 +51,7 @@
 	   			'site.webmanifest'=>'site.webmanifest');
 
 	foreach ($fn as $k => $v) {
-		$fn[$k] = $fn[$k]."?v=0006";
+		$fn[$k] = $fn[$k]."?v=0009";
 	}
 
 ?>

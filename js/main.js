@@ -266,7 +266,20 @@ window.addEventListener('load', ()=>{
 
 	window.addEventListener('scroll', bannerScrollAction)
 
-	
+	messendger_lay_hide()
+
+
+
+	function messendger_lay_hide(){
+		document.querySelector('.messenger_layout')
+		let svg = document.querySelector('.messenger_layout svg')
+		let rsvg = svg.getBoundingClientRect()
+
+		setTimeout(()=>{
+			document.querySelector('.messenger_layout').style.left = "-"+rsvg.x+"px"
+			console.log(document.querySelector('.messenger_layout'))
+		}, 1000)
+	}
 
 	function bannerScrollAction(){
 		if(visibleElem(bannCont)){

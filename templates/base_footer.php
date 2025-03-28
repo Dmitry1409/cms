@@ -362,7 +362,7 @@
 		</div>
 	</div>
 	<div class="copy_cont">
-		<span>Copyright &copy; 2020 - 2024<br> <?php echo $GLOBALS['COMPANY_NAME']?></span>
+		<span>Copyright &copy; 2020 - 2025<br> <?php echo $GLOBALS['COMPANY_NAME']?></span>
 		<span>Поддержка.&nbsp; &nbsp;<a target="_blank" href="https://vk.com/dmmkv">Разработка сайтов</a></span>
 	</div>
 </div>
