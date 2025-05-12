@@ -276,7 +276,10 @@ window.addEventListener('load', ()=>{
 		let rsvg = svg.getBoundingClientRect()
 
 		setTimeout(()=>{
-			document.querySelector('.messenger_layout').style.left = "-"+rsvg.x+"px"
+			let mt = document.querySelector('.messenger_layout')
+			mt.style.left = "-"+rsvg.x+"px"
+			mt.style.filter = "opacity(60%)"
+
 			console.log(document.querySelector('.messenger_layout'))
 		}, 1000)
 	}

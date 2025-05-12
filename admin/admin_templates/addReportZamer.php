@@ -56,6 +56,10 @@
 		<span>Имитация стены</span>
 		<input class="inp_razmer" placeholder="м.п" type="number" name="м.п">
 	</div>
+	<div class="column-padd razdelitel_id">
+		<span>Разделитель</span>
+		<input class="inp_razmer" placeholder="м.п" type="number" name="м.п">
+	</div>
 	<div class="gard_nak_id flex_border">
 		<span>Накладная ПВХ гардина</span>
 		<div style="display: flex;">			
@@ -233,6 +237,7 @@
 	<span>Вент.</span>
 	<span>Доп. углы</span>
 	<span>Накладная гардина</span>
+	<span>Разделитель</span>
 	<span>Имитация стены</span>
 	<span>Скрытая гардина</span>
 	<span>Световые линии</span>

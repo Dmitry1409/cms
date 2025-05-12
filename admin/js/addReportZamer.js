@@ -29,6 +29,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 				"Вент.": "vent_id",
 				"Доп. углы": "dop_ugl",
 				"Накладная гардина": "gard_nak_id",
+				"Разделитель": "razdelitel_id",
 				"Скрытая гардина": "shad_gar_id",
 				"Световые линии": "svet_line_id",
 				"Парящий": "flying_id",
@@ -193,6 +194,13 @@ window.addEventListener('DOMContentLoaded',()=>{
 			if(dop_ugl){		
 				if(dop_ugl.value !=""){
 					obj['доп. углы'] = Number(dop_ugl.value)
+				}
+			}
+
+			let razdelitel = room_bl[i].querySelector('.razdelitel_id input')
+			if(razdelitel){		
+				if(razdelitel.value !=""){
+					obj['разделитель'] = Number(razdelitel.value)
 				}
 			}
 

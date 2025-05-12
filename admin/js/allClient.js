@@ -329,6 +329,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			}
 		}
 		insertFindedTel(obj_cl){
+			console.log(obj_cl)
 			
 			if(obj_cl['id']){
 				let before_elem = document.querySelector('.addClientId')
@@ -378,6 +379,9 @@ window.addEventListener("DOMContentLoaded", ()=>{
 							html += `<span class='flex-column obj_border'>`
 								html += `<span>${obj_cl['events'][i]['type']}:${obj_cl['events'][i]['status']}</span>`
 								html += `<span>${obj_cl['events'][i]['start']}</span>`
+								if(obj_cl['events'][i]['ref_zamer']){
+									html += `<span><a href='showZamer?idZamer=${obj_cl['events'][i]['ref_zamer']}'>Замер №${obj_cl['events'][i]['ref_zamer']}</a></span>`
+								}
 							html += `</span>`
 						}
 					html += `</div>`

@@ -20,8 +20,8 @@ DirectoryIndex index.php
     Satisfy All
 </Files>
 
-SetEnvIf GEOIP_COUNTRY_CODE FI BlockCountry
-Deny from env=BlockCountry
+#SetEnvIf GEOIP_COUNTRY_CODE FI BlockCountry
+#Deny from env=BlockCountry
 
 # Включаем перенаправление
 RewriteEngine On

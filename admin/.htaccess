@@ -11,3 +11,6 @@ RewriteCond %{REQUEST_URI} !\.(css|js|jpg|gif|png|webp|jpeg|ico|mp3|mp4|)$
 # L означает Last, нужен чтобы на этом этапе mod_rewrite сразу остановил работу.
 # Короче, небольшое увеличение производительности.
 RewriteRule .* index.php [L]
+
+
+SetEnv VARIABLE_NAME variable_value
