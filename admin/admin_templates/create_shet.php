@@ -7,6 +7,8 @@
 	
 <?php
 
+	include "admin_templates/view_choise_modal.php";
+
 	$dirs = [];
 	$db = new SQLite3("crm.db");
 	$res = $db->query("SELECT * FROM dir_catalog");
@@ -76,8 +78,8 @@
 
 <div class="wrapp_input_dogov flex-column">
 	<span class="flex-column" style="max-width: 200px;">
-		<span>Номер счета</span>
-		<input autocomplete="off" type="text">
+		<span>Дата</span>
+		<input class='data_shet' autocomplete="off" type="text">
 	</span>	
 </div>
 
@@ -95,17 +97,24 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td><img class="close_png" src='../img/close.png'></td>
-				<td><input name='name' style="width: 200px;" type="text"></td>
-				<td><input name='mert' style="width: 50px;" type="text"></td>
-				<td><input name="count" style="width: 50px;" type="text"></td>
-				<td><input name='price' style="width: 100px;" type="text"></td>
-				<td><input name='sum' style="width: 100px;" type="text"></td>
+			<tr class="itog_tr">
+				<td style="width: 15px;"></td>
+				<td class="name_tov_table"><input value="Итого" autocomplete="off" name='name' type="text"></td>
+				<td class="digit_inp_tabl"><input autocomplete="off" name='mert' type="text"></td>
+				<td class="digit_inp_tabl"><input autocomplete="off" name="count" type="text"></td>
+				<td class="price_row"><input autocomplete="off" name='price' type="text"></td>
+				<td class="sum_itog"><input autocomplete="off" name='sum_itog' type="text"></td>
 			</tr>
 		</tbody>
 	</table>
 	<img class="plus_png" src='../img/plus.png'>
 </div>
-<button name='total'>Итого</button>
-<button name='open'>открыть</button>
+<button name='open'>сгенерить</button>
+<div style='margin-top: 20px;'>
+	<button class="open_shet_bt_id">Открыть счет</button>
+</div>
+<div class="insert_cl_wrapp">
+	<button class="choise_modal_button_id" style="height: 40px;">выбрать клиента</button>
+	<div class="choised_cart_insert"></div>
+</div>
+<div style="margin-top: 20px;"><button class="save_shet_bt">сохранить</button></div>

@@ -14,6 +14,14 @@
 
 		flex-direction: column;
 	}
+	.obj_id_class{
+		position: relative;
+	}
+	.add_obj_id{
+		position: absolute;
+		top: -5px;
+		right: -5px;
+	}
 	.client_cont{
 		min-height: 100vh;
 	}
@@ -120,6 +128,8 @@
 			$r['obj_arr'] = getArrInDB($q);
 			$q = "SELECT * FROM events WHERE id in ".listToCupStr($r['ref_event']);
 			$r['event_arr'] = getArrInDB($q);
+			$q = "SELECT * FROM sheta WHERE id in ".listToCupStr($r['ref_shet']);
+			$r['sheta_arr'] = getArrInDB($q);
 			$out[] = $r;
 		}
 	?>
@@ -208,6 +218,15 @@
 						$e .= "</span>";
 					}
 					echo $e;
+					$sh = "";
+					for($j=0; $j<count($out[$i]['sheta_arr']); $j++){
+						$sh .= "<span class='block-column'>";
+							$sh .= "<span>Счет id:{$out[$i]['sheta_arr'][$j]['id']}</span>";
+							$sh .= "<span>Дата: {$out[$i]['sheta_arr'][$j]['data']}</span>";
+							$sh .= "<span>Объект id: {$out[$i]['sheta_arr'][$j]['ref_obj']}</span>";
+						$sh .= "</span>";
+					}
+					echo $sh;
 				echo "</div>";
 			}
 		echo "</div>";
@@ -235,12 +254,11 @@
 		$js = json_decode($js);
 		for($i=0; $i<count($js); $i++){
 			$s = $s.$js[$i];
-			if($i == count($js)-1){
-				$s = $s.")";
-			}else{
+			if($i != count($js)-1){
 				$s = $s.",";
 			}
 		}
+		$s .= ")";
 		return $s;
 	}
 ?>

@@ -1,10 +1,12 @@
+
+let ch_glob_var
 window.addEventListener("DOMContentLoaded", ()=>{
 
 	class AddEvent{
 		constructor(){
 			this.changeSelect = document.querySelector('.inp_wrap_modal select')
 			this.changeSelect.addEventListener('change', this.changeSelectModalAction.bind(this))
-			this.insClient = document.querySelector('.insertClients')
+			this.insClient = document.querySelector('.choised_cart_insert')
 			this.choiceBlock = document.querySelector('.inserChoiseBlock')
 			this.add_block = document.querySelector('.add_block_modal')
 			document.querySelector('.inp_wrap_modal button').addEventListener('click', this.addEventAct.bind(this))
@@ -14,27 +16,14 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			this.changeSelect.style.border =""
 			this.clearModalDay()
 			switch(this.changeSelect.value){
-				case "замер":
-					this.insItemModalAct(this.changeSelect.value);
-					break;
 				case "вх. звонок":
 					this.incommingCall()
-					break;
-				case "заказать":
-					this.insItemModalAct(this.changeSelect.value);
-					break;
-				case "доставка":
-					this.insItemModalAct(this.changeSelect.value);
-					break;
-				case "монтаж":
-					this.insItemModalAct(this.changeSelect.value);
-					break;
-				case "ис. звонок":
-					this.insItemModalAct(this.changeSelect.value);
 					break;
 				case "другое":
 					this.otherEventAct()
 					break;
+				default:
+					ch_glob_var = this.changeSelect.value
 			}
 		}
 		clearModalDay(){
@@ -44,43 +33,6 @@ window.addEventListener("DOMContentLoaded", ()=>{
 		otherEventAct(){
 			this.add_block.innerHTML = `<input placeholder="Заголовок" type="text" name="headerevent">
 										<textarea placeholder="Описание" ></textarea>`
-		}
-
-		async insItemModalAct(chose){
-			let cont_load_indicator = document.querySelector('.insertClients')
-			insert_load_indicator(cont_load_indicator)
-			let res = await fetch(`api/getNewClients.php?metod=${chose}`)
-			res = await res.json()
-			remove_load_indicator()
-			let html = ``
-			for(let i=0; i<res.length; i++){
-				html += `<div class='cartClientMod'>`
-					if(chose == "заказать"||chose == "доставка"||chose=="монтаж"){
-						html += `<div class='zakaz_wrap_id'>`
-							html += `<div><span style='font-weight: bold;'>Закупка номер: </span><span id='zakaz_id'>${res[i]['id']}</span></div>`
-							html += `<div><span style='font-weight: bold;'>создан: </span>${timeConverter(res[i]['created'])}</div>`
-						html += `</div>`
-						html += this.client_Block_Html(res[i]['ref_client'])
-					}else{
-						html += this.client_Block_Html(res[i])
-					}
-					if(chose == "замер" || chose == "ис. звонок"){
-						for(let j=0; j<res[i]['ref_obj'].length; j++){
-							html += this.object_block_Html(res[i]['ref_obj'][j])
-						}
-					}else{
-						html += this.object_block_Html(res[i]['ref_obj'])
-					}
-				html +="</div>"
-			}
-			html = "<div class='insert_remove_id'>"+html+"</div>"
-			this.insClient.insertAdjacentHTML('beforeend', html)
-
-			let cart = document.querySelectorAll('.obj-cont-modal')
-			for(let i=0; i<cart.length; i++){
-				cart[i].addEventListener('click', this.cartClientAct.bind(this))
-			}
-
 		}
 
 		incommingCall(){
@@ -120,23 +72,8 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			html += "</div>"
 			return html
 		}
-
-		cartClientAct(e){
-			this.chBlocResetWarn()
-			this.choiceBlock.innerHTML = ""
-			let html = ""
-			let zakaz = e.currentTarget.parentNode.querySelector(".zakaz_wrap_id")
-			if(zakaz){
-				html += zakaz.outerHTML
-			}
-			html += e.currentTarget.parentNode.querySelector(".name_phon_wrapp").outerHTML
-			html += e.currentTarget.outerHTML
-			this.choiceBlock.insertAdjacentHTML('beforeend', html)
-			this.insClient.innerHTML = ""
-		}
 		isChekedClient(){
-			let bloc = this.choiceBlock.querySelector('div:first-child')
-			if(bloc.innerText == "выбрать:"){
+			if(this.insClient.innerText == ""){
 				return false
 			}else{
 				return true
@@ -195,6 +132,8 @@ window.addEventListener("DOMContentLoaded", ()=>{
 				if(!this.isChekedClient()){
 					this.chBlocWarn()
 					return
+				}else{
+					this.chBlocResetWarn()
 				}
 			}
 
@@ -205,14 +144,15 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			fd.append("start", start.value)
 			fd.append('finish', finish.value)
 			fd.append('type', this.changeSelect.value)
+			let ins_ch_bl = document.querySelector('.choised_cart_insert')
 			if(this.changeSelect.value == "заказать" || this.changeSelect.value == "доставка"|| this.changeSelect.value == "монтаж"){
-				let zakaz_id = document.querySelector('.inserChoiseBlock').querySelector('#zakaz_id')
+				let zakaz_id = ins_ch_bl.querySelector('#zakaz_id')
 				fd.append('zakaz_id', zakaz_id.innerText)
 			}
 			if(this.changeSelect.value == "замер" || this.changeSelect.value == "монтаж" || this.changeSelect.value == "ис. звонок"){
-				let obj_id = document.querySelector('.inserChoiseBlock').querySelector('.obj-cont-modal').getAttribute("obj_id")
+				let obj_id = ins_ch_bl.querySelector('.obj-cont-modal').getAttribute("obj_id")
 				fd.append('obj_id', obj_id)
-				let client_id = document.querySelector('.inserChoiseBlock').querySelector('.name_phon_wrapp').getAttribute("client_id")
+				let client_id = ins_ch_bl.querySelector('.name_phon_wrapp').getAttribute("client_id")
 				fd.append('client_id', client_id)
 			}
 			if(this.changeSelect.value == "другое"){
@@ -599,10 +539,8 @@ window.addEventListener("DOMContentLoaded", ()=>{
 				if(cont){
 					cont.remove()
 				}
-				let insrt = document.querySelector('.insert_remove_id')
-				if(insrt){
-					insrt.remove()
-				}
+				document.querySelector('.choised_cart_insert').innerHTML = ""
+				
 				add_event.chBlockReset()
 				add_event.add_block.innerHTML = ""
 
@@ -653,21 +591,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 		}
 	}
 
-	function timeConverter(UNIX_timestamp){
-	  var a = new Date(UNIX_timestamp * 1000);
-	  var months = ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'];
-	  var year = a.getFullYear();
-	  var month = months[a.getMonth()];
-	  var date = a.getDate();
-	  var hour = a.getHours();
-	  var min = a.getMinutes();
-	  if(min < 10){
-	  	min = "0" + min
-	  }
-	  var sec = a.getSeconds();
-	  var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
-	  return time;
-	}
+	
 
 	function scrollCalendar(){
 		let cont = document.querySelector('.monthCont')

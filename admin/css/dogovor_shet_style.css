@@ -4,9 +4,19 @@
 
 .tableWrap{
 	overflow: auto;
+	width: 100%;
+}
+.tableWrap table{
+	width: 100%;
+}
+table input{
+	width: 100%;
+}
+td{
+	word-break: break-all;
 }
 .close_png{
-	width: 20px;
+	width: 15px;
 	opacity: 0;
 	transition: 0.3s;
 }
@@ -29,4 +39,41 @@ li{
 	display: flex; 
 	flex-direction: column;
 	margin-bottom: 10px;
+}
+.digit_inp_tabl{
+	width: 50px;
+}
+.price_row{
+	width: 100px;
+}
+.sum_row{
+	width: 100px;
+}
+.sum_itog{
+	width: 100px;
+}
+.insert_cl_wrapp{
+	margin-top: 20px;
+	display: flex;
+}
+
+.insertClients{
+	max-height: 300px;
+	overflow: auto;
+	width: 220px;
+}
+
+@media(max-width: 400px){
+	.digit_inp_tabl{
+		width: 30px;
+	}
+	.price_row{
+		width: 50px;
+	}
+	.sum_row{
+		width: 50px;
+	}
+	.sum_itog{
+		width: 50px;
+	}
 }

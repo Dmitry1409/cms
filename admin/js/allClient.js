@@ -31,9 +31,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 									<input autocomplete="off" placeholder='Опис' type='text'>
 									<input autocomplete="off" placeholder='Адр' type='text' >
 									<button id='add_obj_id'>отправить</button>
-								</span>`
-
-			
+								</span>`	
 		}
 		addEventList(){
 			let cl_blocks = document.querySelectorAll('.cl_block_id')
@@ -151,9 +149,10 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			}
 		}
 		add_obj_view(e){
-			e.currentTarget.insertAdjacentHTML('beforebegin', this.addObjHtml)
-			e.currentTarget.parentNode.querySelector('#add_obj_id').addEventListener('click', this.addObjFetch.bind(this))
-			e.currentTarget.parentNode.style.height = e.currentTarget.parentNode.scrollHeight + "px"
+
+			e.currentTarget.parentNode.insertAdjacentHTML('afterend', this.addObjHtml)
+			e.currentTarget.parentNode.parentNode.querySelector('#add_obj_id').addEventListener('click', this.addObjFetch.bind(this))
+			e.currentTarget.parentNode.parentNode.style.height = e.currentTarget.parentNode.parentNode.scrollHeight + "px"
 		}
 		addObjFetch(e){
 			let inpts = e.currentTarget.parentNode.querySelectorAll('input')
@@ -214,7 +213,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			d.insertAdjacentHTML('afterbegin', svg)
 			d.querySelector('.svg_up_client_row').addEventListener('click', this.client_row_up.bind(this))
 			let obj_list = d.querySelectorAll('.obj_id_class')
-			obj_list[obj_list.length -1].insertAdjacentHTML("afterend", `<img class='add_obj_id' style='width:15px;' src='../img/plus.png' >`)
+			obj_list[obj_list.length -1].insertAdjacentHTML("beforeend", `<img class='add_obj_id' style='width:15px;' src='../img/plus.png' >`)
 
 			d.querySelector('.add_obj_id').addEventListener('click', this.add_obj_view.bind(this))
 			for(let i=0; i<this.arr_handler_cl_row.length; i++){
@@ -328,9 +327,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 				this.insertFindedTel(await res.json())
 			}
 		}
-		insertFindedTel(obj_cl){
-			console.log(obj_cl)
-			
+		insertFindedTel(obj_cl){			
 			if(obj_cl['id']){
 				let before_elem = document.querySelector('.addClientId')
 				let html = `<div class='finded_cl_bl'>`
@@ -355,20 +352,20 @@ window.addEventListener("DOMContentLoaded", ()=>{
 							
 						html += `</span>`
 						html += `<span client_id=${obj_cl['id']} class='flex-column'>`
-							for(let i =0; i<obj_cl['tel'].length; i++){
-								html += `<span tel_id=${obj_cl['tel'][i]['id']}><a href='tel:${obj_cl['tel'][i]['val']}'>${obj_cl['tel'][i]['val']}</a>
+							for(let i =0; i<obj_cl['tel_val'].length; i++){
+								html += `<span tel_id=${obj_cl['tel_val'][i]['id']}><a href='tel:${obj_cl['tel_val'][i]['val']}'>${obj_cl['tel_val'][i]['val']}</a>
 									<img class='img_id_del' style='margin-left: 10px; width: 15px;' src='../img/close.png'></span>`
 							}
 							html += `<input style='width: 90px;' class='add_tel_id' type='number' placeholder='новый номер' >`
 						html += `</span>`
 					html += `</div>`
 					html += `<div class="flex-wrap">`
-						for(let i=0; i<obj_cl['obj'].length; i++){
-							html += `<span obj_id=${obj_cl['obj'][i]['id']} class='flex-column obj_border obj_view_id' >`
-								html += `<span>Объект id:${obj_cl['obj'][i]['id']}</span>`
-								html += `<span>Статус: ${obj_cl['obj'][i]['status']}</span>`
-								html += `<span>${obj_cl['obj'][i]['description']}</span>`
-								html += `<span>${obj_cl['obj'][i]['address']}</span>`
+						for(let i=0; i<obj_cl['obj_val'].length; i++){
+							html += `<span obj_id=${obj_cl['obj_val'][i]['id']} class='flex-column obj_border obj_view_id' >`
+								html += `<span>Объект id:${obj_cl['obj_val'][i]['id']}</span>`
+								html += `<span>Статус: ${obj_cl['obj_val'][i]['status']}</span>`
+								html += `<span>${obj_cl['obj_val'][i]['description']}</span>`
+								html += `<span>${obj_cl['obj_val'][i]['address']}</span>`
 							html += `</span>`
 						}
 						html += `<img id='add_obj_id' style='width: 15px; height: 15px;' src='../img/plus.png'>`
@@ -556,6 +553,14 @@ window.addEventListener("DOMContentLoaded", ()=>{
 						s += `<span>${arr[i]['event_arr'][j]['type']}</span>`
 						s += `<span>${arr[i]['event_arr'][j]['status']}</span>`
 						s += `<span>${arr[i]['event_arr'][j]['start']}</span>`
+					s += "</span>"
+				}
+
+				for(let j=0; j<arr[i]['sheta_arr'].length; j++){
+					s += "<span class='block-column'>"
+						s += `<span>Счет id:${arr[i]['sheta_arr'][j]['id']}</span>`
+						s += `<span>Дата: ${arr[i]['sheta_arr'][j]['data']}</span>`
+						s += `<span>Объект id: ${arr[i]['sheta_arr'][j]['ref_obj']}</span>`
 					s += "</span>"
 				}
 

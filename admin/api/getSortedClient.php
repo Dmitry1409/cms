@@ -46,6 +46,11 @@
 		}else{
 			$r['event_arr'] = [];
 		}
+		if($r['ref_shet']){
+			$r['sheta_arr'] = getArrRowById("sheta", $r['ref_shet']);
+		}else{
+			$r['sheta_arr'] = [];
+		}
 		$out[] = $r;
 	}
 

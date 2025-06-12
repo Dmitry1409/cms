@@ -99,6 +99,18 @@
 
 	if($_SERVER['REQUEST_METHOD']=="POST"){
 
+		if($_POST['comand']=="save_shet"){
+			$arr = [
+				"data"=>$_POST['data'],
+				"json"=>$_POST['json'],
+				"ref_client"=>$_POST['ref_client'],
+				"ref_obj"=>$_POST['ref_obj']
+			];
+
+			$sh = insert_row("sheta", $arr);
+			echo getAndAddinFild("clients", "ref_shet", $_POST['ref_client'], $sh);
+		}
+
 		if($_POST['comand'] == "deleteTel"){
 			$ref_cl = $db->querySingle("SELECT ref_client FROM phones WHERE id = {$_POST['tel_id']}");
 			$tel_arr = json_decode($db->querySingle("SELECT ref_tel FROM clients WHERE id = $ref_cl"));

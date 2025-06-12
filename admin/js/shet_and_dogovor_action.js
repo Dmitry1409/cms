@@ -1,4 +1,4 @@
-let totalAct_fl = false
+
 let dataProd = {}
 getAllProd()
 
@@ -11,23 +11,12 @@ async function getAllProd(){
 }
 
 function totalAction(){
-	if(!totalAct_fl){
-		plusAction()
-		let tr = document.querySelector("tbody").querySelector('tr:last-child')
-		tr.querySelector('input[name=name]').value = "Итого"
-		totalAct_fl = true
-	}
-	let tr = document.querySelectorAll(".tableWrap tbody tr")
 	let sum = 0
-	for(let i=0; i<tr.length; i++){
-		let inp = tr[i].querySelectorAll("input")
-		if(inp[0].value == "Итого"){
-			inp[4].value = sum
-			continue
-		}
-		sum += Number(inp[4].value)
+	let all_row = document.querySelectorAll('.sum_row input')
+	for(let i=0; i<all_row.length; i++){
+		sum += Number(all_row[i].value)
 	}
-	
+	document.querySelector('.sum_itog input').value = sum
 }
 
 function getTextSumm(sum){
@@ -196,15 +185,15 @@ function getTextSumm(sum){
 }
 
 function plusAction(){
-	html = `<tr>
-				<td><img class="close_png" src="/cms/img/close.png"></td>
-				<td><input name='name' style="width: 200px;" type="text"></td>
-				<td><input name='metr' style="width: 50px;" type="text"></td>
-				<td><input name='count' style="width: 50px;" type="text"></td>
-				<td><input name='price' style="width: 100px;" type="text"></td>
-				<td><input name='sum' style="width: 100px;" type="text"></td>
+	html = `<tr class='main_tr'>
+				<td style="width: 15px;"><img class="close_png" src="/cms/img/close.png"></td>
+				<td class="name_tov_table"><input autocomplete="off" name='name' type="text"></td>
+				<td class="digit_inp_tabl"><input autocomplete="off" name='metr' type="text"></td>
+				<td class="digit_inp_tabl"><input autocomplete="off" name='count' type="text"></td>
+				<td class="price_row"><input autocomplete="off" name='price' type="text"></td>
+				<td class="sum_row"><input autocomplete="off" name='sum' type="text"></td>
 			</tr>`
-	document.querySelector("tbody").insertAdjacentHTML("beforeend", html)
+	document.querySelector(".itog_tr").insertAdjacentHTML("beforebegin", html)
 	let c = document.querySelectorAll(".close_png")
 	for(let i =0; i<c.length; i++){
 		c[i].addEventListener("click", delAction)
@@ -217,6 +206,7 @@ function plusAction(){
 
 function delAction(){
 	this.parentNode.parentNode.remove()
+	totalAction()
 }
 
 function changeInpCount(){
@@ -231,33 +221,49 @@ function changeInpCount(){
 	let p = par.querySelector(`input[name=${td}]`)
 	if(p.value != ""){
 		if(this.value != ""){
-			par.querySelector('input[name=sum]').value = p.value * this.value
+			par.querySelector('input[name=sum]').value = Math.round(p.value * this.value)
+		}else{
+			par.querySelector('input[name=sum]').value = ""
 		}
 	}
+	totalAction()
 	
 }
+
+async function chose_client_fetch(){
+
+	insert_load_indicator(this)
+	let res = await fetch('api/getChoiseCart.php?metod=замер')
+	res = await res.json()
+	remove_load_indicator()
+	insert_client_block(res)
+}
+function cartClientAct(){
+	let all_cart = document.querySelectorAll('.cartClientMod')
+	for(let i=0; i<all_cart.length; i++){
+		if(all_cart[i]!= this.parentNode){
+			all_cart[i].remove()
+		}
+	}
+}
+
+
 
 window.addEventListener("DOMContentLoaded",()=>{
 
 
-	document.querySelector("button[name=total]").addEventListener('click', totalAction)
 	document.querySelector(".plus_png").addEventListener("click", plusAction)
-	document.querySelector(".close_png").addEventListener("click", delAction)
 	let input_count = document.querySelectorAll("input[name=count], input[name=price]")
 	for(let i=0; i<input_count.length; i++){
 		input_count[i].addEventListener("input", changeInpCount)
 	}
 
 	function insertProd(el){
+		plusAction()
 		let id_pr = el.getAttribute("data_id")
-		let lastRow = document.querySelector('tbody')
-		lastRow = lastRow.querySelector('tr:last-child')
+		let lastRow = document.querySelectorAll('.main_tr')[ document.querySelectorAll('.main_tr').length-1]
 		let f_inp = lastRow.querySelector('td:nth-child(2)')
 		f_inp = f_inp.querySelector('input')
-		if(f_inp.value !=""){
-			plusAction()
-			lastRow = document.querySelector('tbody').querySelector('tr:last-child')
-		}
 		lastRow.querySelector("td:nth-child(2)").querySelector('input').value = dataProd[id_pr]['name']
 		lastRow.querySelector("td:nth-child(3)").querySelector('input').value = dataProd[id_pr]['metric']
 		lastRow.querySelector("td:nth-child(5)").querySelector('input').value = dataProd[id_pr]['price']

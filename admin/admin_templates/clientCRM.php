@@ -1,6 +1,9 @@
 <link rel="stylesheet" type="text/css" href="css/calendar.css">
 <link rel="stylesheet" type="text/css" href="css/clientCRM.css">
 <script type="text/javascript" src="js/clientCRM.js"></script>
+<?php
+	include "admin_templates/view_choise_modal.php";
+?>
 
 
 <div class="dayModalWrapp">
@@ -28,9 +31,9 @@
 			</div>
 			<div class="insertwrappModal">
 				<div class="inserChoiseBlock">
-					<div>выбрать:</div>
+					<button class="choise_modal_button_id">выбрать:</button>
 				</div>
-				<div class="insertClients"></div>
+				<div class="choised_cart_insert"></div>
 			</div>
 		</div>
 		<div style="margin-top: 20px;" class="add_block_modal"></div>

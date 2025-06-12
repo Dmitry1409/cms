@@ -17,7 +17,7 @@
 				$tel[]= $db->query("SELECT * FROM phones WHERE id = {$ref_js_tel[$i]}")->fetchArray(SQLITE3_ASSOC);
 			}
 		} 
-		$cl['tel'] = $tel;
+		$cl['tel_val'] = $tel;
 		$obj = [];
 		$ref_obj = json_decode($cl['ref_obj']);
 		for($i =0; $i<count($ref_obj); $i++){
@@ -33,7 +33,7 @@
 			$ev[] = $getEvent;
 		}
 		$cl['events'] = $ev;
-		$cl['obj'] = $obj;
+		$cl['obj_val'] = $obj;
 		echo json_encode($cl);
 	}else{
 		echo "{}";

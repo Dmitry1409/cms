@@ -120,17 +120,16 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td><img class="close_png" src='../img/close.png'></td>
-					<td><input name='name' style="width: 200px;" type="text"></td>
-					<td><input name='mert' style="width: 50px;" type="text"></td>
-					<td><input name="count" style="width: 50px;" type="text"></td>
-					<td><input name='price' style="width: 100px;" type="text"></td>
-					<td><input name='sum' style="width: 100px;" type="text"></td>
+				<tr class="itog_tr">
+					<td style="width: 15px;"></td>
+					<td class="name_tov_table"><input value="Итого" autocomplete="off" name='name' type="text"></td>
+					<td class="digit_inp_tabl"><input autocomplete="off" name='mert' type="text"></td>
+					<td class="digit_inp_tabl"><input autocomplete="off" name="count" type="text"></td>
+					<td class="price_row"><input autocomplete="off" name='price' type="text"></td>
+					<td class="sum_itog"><input autocomplete="off" name='sum_itog' type="text"></td>
 				</tr>
 			</tbody>
 		</table>
 		<img class="plus_png" src='../img/plus.png'>
 	</div>
-	<button name='total'>Итого</button>
 	<button name='open'>открыть</button>
