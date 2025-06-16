@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			this.insClient = document.querySelector('.choised_cart_insert')
 			this.choiceBlock = document.querySelector('.inserChoiseBlock')
 			this.add_block = document.querySelector('.add_block_modal')
+			this.id_set_time
 			document.querySelector('.inp_wrap_modal button').addEventListener('click', this.addEventAct.bind(this))
 
 		}
@@ -39,12 +40,30 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			let html = `<div class="addClientWrap">
 							<input autocomplete="off" placeholder="Имя" type="text" name="clientName">
 							<input autocomplete="off" placeholder="Телефон" type="tel" name="telehon">
-							<input autocomplete="off" placeholder="Адрес объекта" type="text" name="address">
+							<input style="width: 80%;" autocomplete="off" placeholder="Адрес объекта" type="text" name="address">
 							<input autocomplete="off" placeholder="Тип объекта" type="text" name="typeObj">
-							<input autocomplete="off" name="desc" placeholder="Описание" name="desc">
+							<textarea style="width: 80%;" autocomplete="off" rows="2" name="desc" placeholder="Описание" name="desc"></textarea>
 							<input autocomplete="off" type="text" placeholder="Откуда нас нашел" name="from">
 						</div>`
 			this.add_block.insertAdjacentHTML('beforeend', html)
+			document.querySelector('input[name=telehon]').addEventListener('input', this.chekTel_in_basa.bind(this))
+		}
+		chekTel_in_basa(){
+			if(this.id_set_time){
+				clearTimeout(this.id_set_time)
+			}
+			this.id_set_time = setTimeout(this.chek_tel_in_basa_fetch.bind(this), 1000)
+		}
+		async chek_tel_in_basa_fetch(){
+			let tel = document.querySelector('input[name=telehon]').value
+			tel = clearCharTelehon(tel)
+			let res = await fetch(`api/searchInBasaTel.php?tel=${tel}`)
+			res = await res.json()
+			if(res.id){
+				showMsg('r', 'Клиент есть в базе')
+			}else{
+				showMsg('g', 'Клиент не найден')
+			}
 		}
 
 		client_Block_Html(item){
@@ -195,7 +214,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 				if(typeObj.value != ""){
 					fd.append('typeObj', typeObj.value)
 				}
-				let desc = document.querySelector('input[name=desc]')
+				let desc = document.querySelector('textarea[name=desc]')
 				if(desc.value == ""){
 					desc.style.border = "1px solid red"
 					return

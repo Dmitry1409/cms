@@ -48,6 +48,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 		}, 1000)
 	}
 	async function fetch_search_tel(num){
+		num = clearCharTelehon(num)
 		let res = await fetch(`api/searchInBasaTel.php?tel=${num}`)
 		if(res.ok){
 			remove_load_indicator()

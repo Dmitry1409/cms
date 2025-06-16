@@ -570,19 +570,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 		change_fild.addEventList()	
 	}
-	function clearCharTelehon(tel){
-		let clear = "8";
-		let indx = 1
-		if(tel.slice(0,2) == "+7"){
-			indx = 2
-		}
-		for(let i=indx; i<tel.length; i++){
-			if(tel[i]!= " " && tel[i] >= 0 && tel[i]<= 9){
-				clear += tel[i]
-			}
-		}
-		return clear
-	}
+	
 	async function addClient(){
 
 		let inputs = document.querySelectorAll('.addClientWrap input, .addClientWrap textarea')

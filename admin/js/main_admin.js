@@ -74,4 +74,17 @@ function insert_load_indicator(wrap_elem){
 }
 function remove_load_indicator(){
 	document.querySelector('.wrapp_load_indicator').remove()
+}
+function clearCharTelehon(tel){
+	let clear = "8";
+	let indx = 1
+	if(tel.slice(0,2) == "+7"){
+		indx = 2
+	}
+	for(let i=indx; i<tel.length; i++){
+		if(tel[i]!= " " && tel[i] >= 0 && tel[i]<= 9){
+			clear += tel[i]
+		}
+	}
+	return clear
 }	
