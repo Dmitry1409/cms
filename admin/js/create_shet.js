@@ -3,7 +3,6 @@ async function shet_click_action(){
 	document.querySelector(".choised_cart_insert").innerHTML = this.outerHTML
 	let res = await fetch(`api/getShetChoise.php?shet_id=${this.getAttribute('shet_id')}`)
 	res = await res.json()
-	console.log(res)
 	let arr_row = JSON.parse(res['json'])
 	document.querySelector('.data_shet').value = res['data']
 	let main_tr = document.querySelectorAll('.main_tr')
@@ -20,6 +19,9 @@ async function shet_click_action(){
 			inp[j].value = arr_row[i][j]
 		}
 	}
+
+	document.querySelector('#sale_inp').value = res.sale.slice(0, -1)
+
 	close_modal_cl_choise()
 	totalAction()
 }
@@ -35,7 +37,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 			{
 				columns:[
 					{image: "logo", width:70, height: 60},
-					{text:["Производство и установка натяжных потолков\n", {text:"auroom-nn.ru", link:"http://auroom-nn.ru",
+					{text:["Производство и установка натяжных потолков\n", {text:"www.auroom-nn.ru", link:"http://auroom-nn.ru",
 							decoration: "underline", color:"blue"}], fontSize:15,
 						width: "60%", alignment: "center", margin:[30, 0,30,0]},
 					{text:"8(831)200-34-98 \n +7 996 567 37 62\n auroom-nn@mail.ru",alignment: "right"}
@@ -56,13 +58,13 @@ window.addEventListener("DOMContentLoaded",()=>{
 			{
 				text:"13 Июля 2024г.",
 				alignment: "right",
-				margin: [0, 30, 20, 10]
+				margin: [0, 10, 20, 0]
 			},
 			{
-				text:"Коммерческое предложение",
+				text:"Счет на установку",
 				fontSize:18,
 				alignment: "center",
-				margin: [0,5,0,30],
+				margin: [0,0,0,20],
 				color:"blue"
 			},
 			{
@@ -73,7 +75,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 
 
         				body: [
-          					["#",{text:'Наименование', bold: true, alignment:"center"}, {text:'Ед.Изм', bold: true, alignment:"center"}, {text:'Кол.', bold: true, alignment:"center"},
+          					["#",{text:'Наименование', bold: true, alignment:"center"}, {text:'Ед.изм', bold: true, alignment:"center"}, {text:'Кол.', bold: true, alignment:"center"},
           					 {text:'Цена', bold: true, alignment:"center"},{text:'Сумма руб.', bold: true, alignment:"center"} ]     					
         				]
         				
@@ -83,6 +85,47 @@ window.addEventListener("DOMContentLoaded",()=>{
 				text: "* цены действительны в течении 5 рабочих дней",
 				margin: [0,10,0,0],
 			},
+
+			{canvas: [
+				{
+					type: 'line',
+					x1: 0,
+					y1: 10,
+					x2: 515,
+					y2: 10,
+					lineWidth: 1,
+					lineColor: '#6c99e7',
+				}]
+			},
+
+			{
+				text: "Почему нас выбирают?", marginTop: 20, fontSize: 15
+			},
+			{
+				text:[{text: "Высокое качество материалов: ", fontSize: 14, color: "blue"}, { text: "Мы используем только проверенные материалы произведенные по европейским стандартам качества. Имеем широкий ассортимент различных цветов и фактур полотен."} 
+				],
+				marginTop: 10
+			},
+			{
+				text:[{text: "Профессиональная установка: ", fontSize: 14, color: "blue"}, {text: "Наша команда состоит из опытных мастеров, которые гарантируют быструю и качественную установку без пыли и лишних хлопот."} 
+				],
+				marginTop: 10
+			},
+			{
+				text:[{text: "Гарантия: ", fontSize: 14, color: "blue"}, {text: "На все наши работы и материалы предоставляется гарантия, что позволяет нашим клиентам быть увереными в качестве выполненых работ и материалов."} 
+				],
+				marginTop: 10
+			},
+			{
+				text:[{text: "Индивидуальный подход: ", fontSize: 14, color: "blue"}, {text: "Мы готовы предложить вам решения, которые идеально впишутся в ваш интерьер и соответствуют вашим требованиям."} 
+				],
+				marginTop: 10
+			},
+			{
+				text:[{text: "Скидка : ", fontSize: 14, color: "blue"}, {text: "При заключении договора в день выставления счета предоставляем скидку в размере "},{text: "15%"}, {text: " от общей суммы счета."} 
+				],
+				marginTop: 10
+			}
 
 		],
 		images:{
@@ -105,6 +148,13 @@ window.addEventListener("DOMContentLoaded",()=>{
 		let obj = document.querySelector('.choised_cart_insert').querySelector('.obj-cont-modal').getAttribute('obj_id')
 
 		let data = document.querySelector('.data_shet').value
+
+		let sale = "15%"
+		let inp_sale = document.querySelector('#sale_inp')
+		if(inp_sale.value){
+			sale = inp_sale.value + "%"
+		}
+
 		let tr = document.querySelectorAll('.main_tr')
 		let out_arr = []
 		for(let i=0; i<tr.length; i++){
@@ -120,6 +170,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 		fd.append('comand', 'save_shet')
 		fd.append('data', data)
 		fd.append('json', JSON.stringify(out_arr))
+		fd.append('sale', sale)
 		fd.append('ref_client', cl)
 		fd.append('ref_obj', obj)
 
@@ -164,6 +215,11 @@ window.addEventListener("DOMContentLoaded",()=>{
 
 		let input = document.querySelector('.data_shet')
 		doc['content'][2]['text'] = input.value
+
+		let sale = document.querySelector('#sale_inp')
+		if(sale.value){
+			doc['content'][12]['text'][2]['text'] = sale.value +"%" 
+		}
 
 
 

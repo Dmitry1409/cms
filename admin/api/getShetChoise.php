@@ -3,7 +3,7 @@
 	$db = new SQLite3('../crm.db');
 
 	if(array_key_exists("shet_id", $_GET)){
-		$json = $db->query("SELECT json, data FROM sheta WHERE id = {$_GET['shet_id']}")->fetchArray(SQLITE3_ASSOC);
+		$json = $db->query("SELECT json, data, sale FROM sheta WHERE id = {$_GET['shet_id']}")->fetchArray(SQLITE3_ASSOC);
 		echo json_encode($json);
 		exit;
 	}

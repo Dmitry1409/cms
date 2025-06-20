@@ -103,6 +103,7 @@
 			$arr = [
 				"data"=>$_POST['data'],
 				"json"=>$_POST['json'],
+				"sale"=>$_POST['sale'],
 				"ref_client"=>$_POST['ref_client'],
 				"ref_obj"=>$_POST['ref_obj']
 			];

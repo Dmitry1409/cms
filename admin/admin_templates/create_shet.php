@@ -109,6 +109,12 @@
 	</table>
 	<img class="plus_png" src='../img/plus.png'>
 </div>
+
+<div class="flex-column"  style="margin-top: 15px; margin-bottom: 15px;">
+	<label for="sale_inp">Скидка % (по умолчанию 15%)</label>
+	<input autocomplete="off" style="width: 100px;" type="number" name="sale_inp" id="sale_inp">
+</div>
+
 <button name='open'>сгенерить</button>
 <div style='margin-top: 20px;'>
 	<button class="open_shet_bt_id">Открыть счет</button>
