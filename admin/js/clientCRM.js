@@ -361,6 +361,20 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			return html
 		}
 
+		out_going_call(item){
+			let com = "<input type='text'>"
+			if(item['comment']){
+				com = item['comment']
+			}
+			let html = "<div>"
+				html += `<span style='font-weight: bold;'>Результат звонка:</span><br>`
+				html += `<span class='change_fild_id'  table='events' tabcol='comment' rowid='${item['id']}'>${com}</span>`
+			html += "</div>"
+			console.log(item)
+			return html
+
+		}
+
 		zamer_html_put(item){
 			let html = ''
 			if(item['status'] == "выполнено"){
@@ -486,6 +500,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 							break;
 						case "ис. звонок":
 							html += this.client_obj_html(arr_e[i])
+							html += this.out_going_call(arr_e[i])
 							break;
 						case "другое":
 							html += this.other_html(arr_e[i])

@@ -212,8 +212,10 @@
 					for($j=0; $j<count($out[$i]['event_arr']); $j++){
 						$e .= "<span class='block-column'>";
 							$e .= "<span>id:{$out[$i]['event_arr'][$j]['id']}</span>";
-							$e .= "<span>{$out[$i]['event_arr'][$j]['type']}</span>";
-							$e .= "<span>{$out[$i]['event_arr'][$j]['status']}</span>";
+							$e .= "<span>{$out[$i]['event_arr'][$j]['type']}:{$out[$i]['event_arr'][$j]['status']}</span>";
+							if($out[$i]['event_arr'][$j]['type'] == "ис. звонок"){
+								$e .= "<span><span style='font-weight: bold;'>Результат: </span>{$out[$i]['event_arr'][$j]['comment']}</span>";
+							}
 							$e .= "<span>{$out[$i]['event_arr'][$j]['start']}</span>";
 						$e .= "</span>";
 					}

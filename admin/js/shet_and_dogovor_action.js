@@ -186,7 +186,7 @@ function getTextSumm(sum){
 
 function plusAction(){
 	html = `<tr class='main_tr'>
-				<td style="width: 15px;"><img class="close_png" src="/cms/img/close.png"></td>
+				<td style="width: 15px;"><img class="close_png" src="../img/close.png"></td>
 				<td class="name_tov_table"><input autocomplete="off" name='name' type="text"></td>
 				<td class="digit_inp_tabl"><input autocomplete="off" name='metr' type="text"></td>
 				<td class="digit_inp_tabl"><input autocomplete="off" name='count' type="text"></td>

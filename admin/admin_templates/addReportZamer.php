@@ -3,7 +3,7 @@
 <script type="text/javascript" src="js/addReportZamer.js"></script>
 
 <?php
-	include "admin_templates\add_edit_template_menu_zamer.php";
+	include "admin_templates/add_edit_template_menu_zamer.php";
 ?>
 
 <div style="padding-left: 10px;">

@@ -375,6 +375,9 @@ window.addEventListener("DOMContentLoaded", ()=>{
 						for(let i=0; i<obj_cl['events'].length; i++){
 							html += `<span class='flex-column obj_border'>`
 								html += `<span>${obj_cl['events'][i]['type']}:${obj_cl['events'][i]['status']}</span>`
+								if(obj_cl['events'][i]['type'] == "ис. звонок"){
+									html += `<span><span style='font-weight: bold;'>Результат: </span>${obj_cl['events'][i]['comment']}</span>`
+								}
 								html += `<span>${obj_cl['events'][i]['start']}</span>`
 								if(obj_cl['events'][i]['ref_zamer']){
 									html += `<span><a href='showZamer?idZamer=${obj_cl['events'][i]['ref_zamer']}'>Замер №${obj_cl['events'][i]['ref_zamer']}</a></span>`
@@ -551,6 +554,10 @@ window.addEventListener("DOMContentLoaded", ()=>{
 					s += "<span class='block-column'>"
 						s += `<span>id:${arr[i]['event_arr'][j]['id']}</span>`
 						s += `<span>${arr[i]['event_arr'][j]['type']}</span>`
+						s += `<span>${arr[i]['event_arr'][j]['type']}:${arr[i]['event_arr'][j]['status']}</span>`
+						if(arr[i]['event_arr'][j]['type'] == "ис. звонок"){
+							s += `<span><span style='font-weight: bold;'>Результат: </span>${arr[i]['event_arr'][j]['comment']}</span>`
+						}
 						s += `<span>${arr[i]['event_arr'][j]['status']}</span>`
 						s += `<span>${arr[i]['event_arr'][j]['start']}</span>`
 					s += "</span>"
