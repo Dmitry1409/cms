@@ -8,7 +8,9 @@ body{
 	flex-direction: column;
 	align-items: center;
 }
-
+.year_btn_action{
+	border: 2px solid red;
+}
 .year_cont > input {
 	width: 100px;
 	margin-top: 10px;

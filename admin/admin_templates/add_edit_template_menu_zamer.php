@@ -143,6 +143,7 @@
 			<option value="теплая">теплая</option>
 			<option value="дневная">дневная</option>
 			<option value="холодная">холодная</option>
+			<option value="RGB">RGB</option>
 		</select>		
 		<div class="flex-column-alig">
 			<label>перим.</label>

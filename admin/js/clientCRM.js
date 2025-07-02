@@ -249,7 +249,6 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 		}
 		async decorModalAndFetch(e){
-
 			let click_border = document.querySelector('.click_border')
 
 			if(click_border){
@@ -268,21 +267,20 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 			let start = document.querySelector('.inp_wrap_modal input[name=start]')
 			let nm = month_par.getAttribute("numbMonth")
-			let d = new Date()
-			d = d.getFullYear()%100
+			let year = document.querySelector('.year_btn_action').innerText
 			let nd = Number(e.currentTarget.innerText)
 			if(nd <= 9){
 				nd = "0"+nd
 			}
-			start.value = nd+"."+nm+"."+d+" "
+			start.value = nd+"."+nm+"."+year.slice(2,4)+" "
 			let finish = document.querySelector('.inp_wrap_modal input[name=finish]')
-			finish.value = nd+"."+nm+"."+d+" "
+			finish.value = nd+"."+nm+"."+year.slice(2,4)+" "
 
 			let cont_load_indicator = this.modalWrapp.querySelector('.add_block_modal')
 
 			insert_load_indicator(cont_load_indicator)
 
-			let events = await fetch(`getDayEvents.php?day=${nd}&month=${nm}`)
+			let events = await fetch(`getDayEvents.php?day=${nd}&month=${nm}&year=${year}`)
 
 			if(events.ok){
 				events = await events.json()
@@ -363,6 +361,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 		out_going_call(item){
 			let com = "<input type='text'>"
+
 			if(item['comment']){
 				com = item['comment']
 			}
@@ -589,10 +588,167 @@ window.addEventListener("DOMContentLoaded", ()=>{
 				d[i].addEventListener('click', this.year_btn_action.bind(this))
 			}
 		}
-		async year_btn_action(e){
-			let res = await fetch()
-			console.log(e.currentTarget.innerText)
+		isLiap(year){
+			return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)
 		}
+		async year_btn_action(e){
+			document.querySelector('.year_btn_action').classList.remove('year_btn_action')
+			e.currentTarget.classList.add('year_btn_action')
+			let wrap_m = document.querySelector('.wrapp_m')
+			wrap_m.innerHTML = ""
+			insert_load_indicator(document.querySelector('.year_cont'))
+			let res = await fetch(`api/changeCalendar.php?year=${e.currentTarget.innerText}`)
+			res = await res.json()
+			remove_load_indicator()
+			this.create_calendar(res)
+		}
+		create_calendar(res){
+			let cur_year = parseInt(document.querySelector('.year_btn_action').innerText)
+			let fev = 28
+			if(this.isLiap(cur_year)){
+				fev = 29
+			}
+			let months = [["Январь",31, "01"],["Февраль",fev, "02"],["Март",31, "03"],["Апрель",30, "04"],
+							["Май",31, "05"],["Июнь",30,"06"],["Июль",31,"07"],["Август",31,"08"],["Сентябрь",30,"09"],
+							["Октябрь",31,"10"],["Ноябрь",30, "11"],["Декабрь",31,"12"]]
+			
+			let num_empty_day
+			let cal_data = `${cur_year}.01.01`
+			let d = new Date(cal_data)
+			d = d.getDay()
+			if(d==0){
+				num_empty_day = 6
+			}else{
+				num_empty_day = d -1
+			}
+
+			let cSm = Math.ceil((new Date(cal_data).getTime()/1000) / 86400)%4
+
+			let real_toDay = new Date().toISOString().replace('T', ' ').slice(0, 10)
+			let html = ""
+			for(let i=0; i<months.length; i++){
+				html += `<div numbMonth='${months[i][2]}' class='month'>`
+					html += `<h2>${months[i][0]}</h2>`
+					for(let j=1; j<=months[i][1]; j++){
+						if(j==1){
+							html += "<div class='week'>"
+							for(let k=0; k<num_empty_day; k++){
+								html += "<div></div>"
+							}
+						}
+
+						let day_with_zero 
+						if(j< 10){
+							day_with_zero = "0"+ String(j) 
+						}
+
+						let cur_day = `${cur_year}-${months[i][2]}-${day_with_zero}`
+
+						let todayCl = null
+
+						if(cur_day == real_toDay){
+							todayCl = "today"
+						}
+
+						let smClass = null
+						if(cSm==4){
+							smClass = "sm2"
+							cSm = 1
+						}else if(cSm == 3){
+							smClass = "sm1"
+							cSm ++
+						}else{
+							smClass = "sm2"
+							cSm ++
+						}
+
+						let ev_html = null
+						let fl_e = false
+						for(let e=0; e<res.length; e++){
+							let start = res[e]['start']
+							let finish = res[e]['finish']
+							let e_m = start.slice(3,5)
+							if(months[i][2] == e_m){	
+								let e_d_s = Number(start.slice(0, 2))
+								let e_d_f = Number(finish.slice(0,2))
+								if(e_d_s<=j && j <= e_d_f){
+									let n_col = null
+									if(res[e]['type']=="замер"){
+										n_col = "zam_col"
+									}
+									if(res[e]['type']=="монтаж"){
+										n_col = "mount_col"
+									}
+									if(res[e]['type']=="вх. звонок"){
+										n_col = "in_colling_col"
+									}
+									if(res[e]['type']=="заказать"){
+										n_col = "zakazat_col"
+									}
+									if(res[e]['type']=="доставка"){
+										n_col = "deliv_col"
+									}
+									if(res[e]['type']=="ис. звонок"){
+										n_col = "out_coling_col"
+									}
+									if(res[e]['type']=="другое"){
+										n_col = "other_col"
+									}
+
+									if(fl_e){
+										ev_html += `<div class='n-point ${n_col}'></div>`
+									}else{
+										ev_html = `<div class='n_point_wrapp'><div class='n-point ${n_col}'></div>`
+										fl_e = true
+									}
+								}
+							}
+						}
+
+						if(fl_e){
+							ev_html += "</div>"
+						}
+
+						if(ev_html){
+							html += `<div class='no-empty ${smClass} ${todayCl}'>${j}${ev_html}</div>`
+						}else{
+							html += `<div class='no-empty ${smClass} ${todayCl}'>${j}</div>`
+						}
+
+
+						if((j+num_empty_day)%7 == 0){
+							html += "</div>"
+							html += "<div class='week'>"
+						}
+
+						if(j == months[i][1]){
+							let a = months[i][1] - (7 - num_empty_day)
+							let r = Math.floor(a/7)
+							r = 7 - (a - (r*7))
+							if(r >0){
+								for(let k =0; k<r; k++){
+									html += "<div></div>"
+								}
+							}
+							num_empty_day = 7 - r
+							html += "</div>"
+						}
+					}
+
+					html += "</div>"
+				html += "</div>"
+			}
+			let wrapp_m = document.querySelector('.wrapp_m')
+			wrapp_m.insertAdjacentHTML("afterbegin", html)
+
+			let day = document.querySelectorAll(".week > div.no-empty")
+			for(let i=0; i<day.length; i++){
+				day[i].addEventListener('click', day_show.decorModalAndFetch.bind(day_show))
+			}
+
+			scrollCalendar()
+		}
+
 	}
 	scrollCalendar()
 
@@ -629,7 +785,11 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 	function scrollCalendar(){
 		let cont = document.querySelector('.monthCont')
-		let todayMonth = document.querySelector('.today').parentNode.parentNode
+		let today = document.querySelector('.today')
+		if(!today){
+			return
+		}
+		let todayMonth = today.parentNode.parentNode
 		let allMonth = document.querySelectorAll('.month')
 		let mindex
 		for(let i=0; i<allMonth.length; i++){

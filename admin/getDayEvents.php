@@ -1,7 +1,13 @@
 <?php
 	$db = new SQLite3('crm.db');
+
+	$serchData = $_GET['year']."-".$_GET['month']."-".$_GET['day'];
+	$time_start = strtotime($serchData);
+
+	$time_finish = $time_start + 86400;
+
 	// $d = $_GET['day'].".".$_GET['month']."%";
-	$q = "SELECT * FROM events";
+	$q = "SELECT * FROM events WHERE time_start >= $time_start AND time_start < $time_finish";
 
 	$res = $db->query($q);
 	$out = [];

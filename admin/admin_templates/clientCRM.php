@@ -44,10 +44,9 @@
 <div class="year_cont">
 	<div>		
 		<button class="year_btn">2024</button>
-		<button class="year_btn">2025</button>
+		<button class="year_btn year_btn_action">2025</button>
 		<button class="year_btn">2026</button>
 	</div>
-	<input value="2025-01-01" type="text" name="search_day">
 </div>
 
 <?php
@@ -77,8 +76,6 @@
 
 	$f = 28;
 	$month = (int)date('m');
-
-	$cicle = 0;
 
 	$day  = (int)date('d');
 
@@ -114,8 +111,9 @@
 
 	$numEmty = getEmptyDiv($serchData);
 
+
 	$time_start = strtotime($serchData);
-	
+
 	$res = $db->query("SELECT * FROM events WHERE time_start >= $time_start");
 	$events = [];
 	while($r = $res->fetchArray(SQLITE3_ASSOC)){
@@ -160,7 +158,6 @@
 			$fl_e = false;
 
 			for($e = 0; $e < count($events); $e++){
-				$cicle += 1;
 				$start = $events[$e]['start'];
 				$finish = $events[$e]['finish'];
 				$e_m = substr($start, 3, 2);
@@ -224,6 +221,4 @@
 		echo "</div>";
 	}
 	echo "</div>";
-
-	echo $cicle;
 ?>

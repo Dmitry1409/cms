@@ -149,12 +149,13 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			}
 		}
 		add_obj_view(e){
-
+			console.log("eee")
 			e.currentTarget.parentNode.insertAdjacentHTML('afterend', this.addObjHtml)
 			e.currentTarget.parentNode.parentNode.querySelector('#add_obj_id').addEventListener('click', this.addObjFetch.bind(this))
 			e.currentTarget.parentNode.parentNode.style.height = e.currentTarget.parentNode.parentNode.scrollHeight + "px"
 		}
 		addObjFetch(e){
+			console.log('fetch')
 			let inpts = e.currentTarget.parentNode.querySelectorAll('input')
 			let sel = e.currentTarget.parentNode.querySelector('select')
 			if(sel.value == "статус"){
@@ -368,7 +369,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 								html += `<span>${obj_cl['obj_val'][i]['address']}</span>`
 							html += `</span>`
 						}
-						html += `<img id='add_obj_id' style='width: 15px; height: 15px;' src='../img/plus.png'>`
+						html += `<img id='add_obj_view_id' style='width: 15px; height: 15px;' src='../img/plus.png'>`
 					html += `</div>`
 
 					html += `<div class="flex-wrap">`
@@ -400,7 +401,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 				document.querySelector('.change_name_id').addEventListener('change', this.change_name_client.bind(this))
 				document.querySelector('.add_tel_id').addEventListener('change', this.addTelClient.bind(this))
-				document.querySelector('#add_obj_id').addEventListener('click', this.add_obj_view.bind(this))
+				document.querySelector('#add_obj_view_id').addEventListener('click', this.add_obj_view.bind(this))
 				document.querySelector('#sel_finded_cl_id').addEventListener('change', this.changeClientStatus.bind(this))
 			}else{
 				let inp = document.querySelector('input[name=telehon]')
@@ -553,12 +554,10 @@ window.addEventListener("DOMContentLoaded", ()=>{
 				for(let j=0; j<arr[i]['event_arr'].length; j++){
 					s += "<span class='block-column'>"
 						s += `<span>id:${arr[i]['event_arr'][j]['id']}</span>`
-						s += `<span>${arr[i]['event_arr'][j]['type']}</span>`
 						s += `<span>${arr[i]['event_arr'][j]['type']}:${arr[i]['event_arr'][j]['status']}</span>`
 						if(arr[i]['event_arr'][j]['type'] == "ис. звонок"){
 							s += `<span><span style='font-weight: bold;'>Результат: </span>${arr[i]['event_arr'][j]['comment']}</span>`
 						}
-						s += `<span>${arr[i]['event_arr'][j]['status']}</span>`
 						s += `<span>${arr[i]['event_arr'][j]['start']}</span>`
 					s += "</span>"
 				}

@@ -179,7 +179,7 @@ div.click_border{
 	margin-right: 1px;
 	width: 6px;
 	height: 6px;
-	background-color: red;
+	/*background-color: red;*/
 	border-radius: 6px;
 	margin-bottom: 1px;
 }
@@ -229,8 +229,7 @@ div.click_border{
 }
 
 .other_col{
-	background-color: #d264ef;
-	border-radius: 0px;
+	background-color: black;
 }
 
 .dis-none{

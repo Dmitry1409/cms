@@ -395,13 +395,15 @@
 								<?php
 									$a = ["теплая"=>null,
 										"дневная"=>null,
-										"холодная"=>null];
+										"холодная"=>null,
+										"RGB"=>null];
 									$a[$v2->{'тип ленты'}] = "selected";
 								?>
 								<option value="лента" >лента</option>
 								<option <?php echo $a['теплая']?> value="теплая">теплая</option>
 								<option <?php echo $a['дневная']?> value="дневная">дневная</option>
 								<option <?php echo $a['холодная']?> value="холодная">холодная</option>
+								<option <?php echo $a['RGB']?> value="RGB">RGB</option>
 							</select>		
 							<div class="flex-column-alig">
 								<label>перим.</label>
