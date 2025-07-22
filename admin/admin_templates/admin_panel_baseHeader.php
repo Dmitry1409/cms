@@ -7,58 +7,8 @@
 	<!-- <title>Админка</title> -->
 	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
 	<script defer src="js/main_admin.js"></script>
-	<style type="text/css">
-		.panelWrapp a{
-			padding: 10px;
-			border: 1px solid grey;
-		}
-		.panelWrapp{
-			display: flex;
-			margin-right: 60px;
-			flex-wrap: wrap;
-			margin-top: 30px;
-			margin-bottom: 20px;
-		}
-		.msg{
-			position: fixed;
-			right: -400px;
-			top: 50px;
-			border-radius: 10px;
-			padding: 20px;
-			color: white;
-			transition: right .7s;
-			z-index: 100;
-		}
-		.msg_succ{
-			background-color: hsl(152deg 100% 40%);
-		}
-		.msg_err{
-			background-color: hsl(0deg 100% 75%);
-		}
-		.msg_action{
-			right: 20px !important;
-		}
-		input::-webkit-outer-spin-button,
-		input::-webkit-inner-spin-button {
-		    /* display: none; <- Crashes Chrome on hover */
-		    -webkit-appearance: none;
-		    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-		}
 
-		.wrapp_load_indicator{
-			display: flex;
-			justify-content: center;
-		}
-
-		.load_indicator{
-			animation: loading 1s linear infinite;
-		}
-		@keyframes loading{
-			from {transform: rotateZ(0deg);}
-			to {transform: rotateZ(360deg);}
-		}
-
-	</style>
+	<link rel="stylesheet" type="text/css" href="css/share_style_admin.css">
 	
 </head>
 <body>

@@ -1,0 +1,94 @@
+.panelWrapp a{
+	padding: 10px;
+	border: 1px solid grey;
+}
+.panelWrapp{
+	display: flex;
+	margin-right: 60px;
+	flex-wrap: wrap;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+.msg{
+	position: fixed;
+	right: -400px;
+	top: 50px;
+	border-radius: 10px;
+	padding: 20px;
+	color: white;
+	transition: right .7s;
+	z-index: 100;
+}
+.msg_succ{
+	background-color: hsl(152deg 100% 40%);
+}
+.msg_err{
+	background-color: hsl(0deg 100% 75%);
+}
+.msg_action{
+	right: 20px !important;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.wrapp_load_indicator{
+	display: flex;
+	justify-content: center;
+}
+
+.load_indicator{
+	animation: loading 1s linear infinite;
+}
+@keyframes loading{
+	from {transform: rotateZ(0deg);}
+	to {transform: rotateZ(360deg);}
+}
+
+.wrapp_mic{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.mic-animation-container {
+  width: 100px;
+  height:  100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mic-animation-container svg {
+  width: 50px;
+  height: 50px;
+}
+.animation-outer {
+  display: none;
+  width: 50px;
+  height: 50px;
+  transform: scale(0);
+  border-radius: 100%;
+  position: absolute;
+  background-color: #e74c3c;
+  transition: 1.5s all ease;
+  animation: woong 1.5s infinite;
+}
+.mic_record{
+	display: block;
+}
+
+@keyframes woong {
+  0% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}

@@ -41,12 +41,25 @@ window.addEventListener("DOMContentLoaded", ()=>{
 							<input autocomplete="off" placeholder="Имя" type="text" name="clientName">
 							<input autocomplete="off" placeholder="Телефон" type="tel" name="telehon">
 							<input style="width: 80%;" autocomplete="off" placeholder="Адрес объекта" type="text" name="address">
-							<input autocomplete="off" placeholder="Тип объекта" type="text" name="typeObj">
-							<textarea style="width: 80%;" autocomplete="off" rows="2" name="desc" placeholder="Описание" name="desc"></textarea>
+							<input autocomplete="off" placeholder="Тип объекта" type="text" name="typeObj">					
+							<textarea class='voice_fild_insert_id' style="width: 80%;" autocomplete="off" rows="2" name="desc" placeholder="Описание" name="desc">
+							</textarea>
 							<input autocomplete="off" type="text" placeholder="Откуда нас нашел" name="from">
+							<div class='wrapp_mic'>
+								<div class="microhone_id mic-animation-container">
+								  <div class="animation-outer"></div>
+								  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+								  	<path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+								</div>
+							</div>
+
 						</div>`
 			this.add_block.insertAdjacentHTML('beforeend', html)
 			document.querySelector('input[name=telehon]').addEventListener('input', this.chekTel_in_basa.bind(this))
+			document.querySelector('.microhone_id').addEventListener("pointerdown", voice_down)
+			document.querySelector('.microhone_id').addEventListener("pointerup", voice_up)
+			document.querySelector('.microhone_id').addEventListener('pointerdown', media_rec_start)
+			document.querySelector('.microhone_id').addEventListener('pointerup', media_rec_stop)
 		}
 		chekTel_in_basa(){
 			if(this.id_set_time){
@@ -163,6 +176,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			fd.append("start", start.value)
 			fd.append('finish', finish.value)
 			fd.append('type', this.changeSelect.value)
+			
 			let ins_ch_bl = document.querySelector('.choised_cart_insert')
 			if(this.changeSelect.value == "заказать" || this.changeSelect.value == "доставка"|| this.changeSelect.value == "монтаж"){
 				let zakaz_id = ins_ch_bl.querySelector('#zakaz_id')
@@ -190,6 +204,9 @@ window.addEventListener("DOMContentLoaded", ()=>{
 				fd.append("disc", disc.value)
 			}
 			if(this.changeSelect.value == "вх. звонок"){
+				if(voiceBlob){
+					fd.append('voice', voiceBlob)
+				}
 				let clName = document.querySelector('input[name=clientName]')
 				if(clName.value != ""){
 					fd.append("name", clName.value)
@@ -354,7 +371,15 @@ window.addEventListener("DOMContentLoaded", ()=>{
 				html += `<div>
 							<div>Статус: ${item['obj']['status']}</div>
 							<div>Описание: <span table='object' tabcol='description' rowid='${item['obj']['id']}' class='change_fild_id'>${item['obj']['description']}</span></div>
-						</div>`
+						`
+					if(item['obj']['voice']){
+						let jsv = JSON.parse(item['obj']['voice'])
+						for(let k=0; k<jsv.length; k++){
+							html += `<div><audio style="height: 15px;" controls src="voice/${jsv[k]}"></audio></div>`
+						}
+					}
+
+				html+=  `</div>`
 			html += `</div>`
 			return html
 		}
@@ -640,6 +665,8 @@ window.addEventListener("DOMContentLoaded", ()=>{
 						let day_with_zero 
 						if(j< 10){
 							day_with_zero = "0"+ String(j) 
+						}else{
+							day_with_zero = String(j)
 						}
 
 						let cur_day = `${cur_year}-${months[i][2]}-${day_with_zero}`
@@ -762,9 +789,6 @@ window.addEventListener("DOMContentLoaded", ()=>{
 	for(let i=0; i<d.length; i++){
 		d[i].addEventListener('click', day_show.decorModalAndFetch.bind(day_show))
 	}
-
-	
-
 	
 	function checkDataTimeInput(str){
 		if(str.length>9){
@@ -780,8 +804,6 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			return /\d\d\.\d\d\.\d\d$/.test(str.trim())
 		}
 	}
-
-	
 
 	function scrollCalendar(){
 		let cont = document.querySelector('.monthCont')

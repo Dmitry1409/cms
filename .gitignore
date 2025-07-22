@@ -2,6 +2,7 @@ img/
 Roboto/
 upload_img/
 admin/img_admin/
+admin/voice
 *.db
 *.jpeg
 *.jpg

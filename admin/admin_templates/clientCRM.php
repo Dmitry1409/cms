@@ -1,6 +1,7 @@
 <link rel="stylesheet" type="text/css" href="css/calendar.css">
 <link rel="stylesheet" type="text/css" href="css/clientCRM.css">
 <script type="text/javascript" src="js/clientCRM.js"></script>
+<script type="text/javascript" src="js/speech.js"></script>
 <?php
 	include "admin_templates/view_choise_modal.php";
 ?>

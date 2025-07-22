@@ -44,10 +44,11 @@
 
 		$res = $db->querySingle("SELECT $col FROM $table WHERE id = $rowid");
 
-		$out = "";
+		$out = [];
 
 		if(!$res){
-			$out = "[$val]";
+			$out[] = $val;
+			$out = json_encode($out);
 		}else{
 			$js = json_decode($res);
 			$js[] = $val;
@@ -313,7 +314,21 @@
 
 				update_filds("object", ["ref_client"=>$clID], $objID);
 
-				echo update_filds("clients", ["ref_event"=>"[$evID]"], $clID);
+				update_filds("clients", ["ref_event"=>"[$evID]"], $clID);
+
+				if(array_key_exists('voice', $_FILES)){
+					$n = md5(microtime() . rand(0, 9999)).".mp3";
+					if (!move_uploaded_file($_FILES['voice']['tmp_name'], "voice/$n")) {
+					    echo "error voice move_upload ";
+						exit;
+					}
+					getAndAddinFild("object", 'voice', $objID, $n);
+
+				}
+
+				echo "succes";
+
+
 			}
 			if($_POST["type"] == "ис. звонок"){
 				$arr = ["start"=>$_POST['start'],

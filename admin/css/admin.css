@@ -140,8 +140,6 @@ tbody input{
 	text-decoration: underline;
 }
 
-
-
 @media(min-width: 500px){
 	.con_table{
 		/*justify-content: space-around;*/

@@ -4,7 +4,7 @@
 <title>Редактировать замер №<?php echo $_GET['idZamer']?></title>
 
 <?php
-	include "admin_templates\add_edit_template_menu_zamer.php";
+	include "admin_templates/add_edit_template_menu_zamer.php";
 ?>
 
 
