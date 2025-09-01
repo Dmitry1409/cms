@@ -58,8 +58,8 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			document.querySelector('input[name=telehon]').addEventListener('input', this.chekTel_in_basa.bind(this))
 			document.querySelector('.microhone_id').addEventListener("pointerdown", voice_down)
 			document.querySelector('.microhone_id').addEventListener("pointerup", voice_up)
-			document.querySelector('.microhone_id').addEventListener('pointerdown', media_rec_start)
-			document.querySelector('.microhone_id').addEventListener('pointerup', media_rec_stop)
+			// document.querySelector('.microhone_id').addEventListener('pointerdown', media_rec_start)
+			// document.querySelector('.microhone_id').addEventListener('pointerup', media_rec_stop)
 		}
 		chekTel_in_basa(){
 			if(this.id_set_time){
@@ -204,9 +204,9 @@ window.addEventListener("DOMContentLoaded", ()=>{
 				fd.append("disc", disc.value)
 			}
 			if(this.changeSelect.value == "вх. звонок"){
-				if(voiceBlob){
-					fd.append('voice', voiceBlob)
-				}
+				// if(voiceBlob){
+				// 	fd.append('voice', voiceBlob)
+				// }
 				let clName = document.querySelector('input[name=clientName]')
 				if(clName.value != ""){
 					fd.append("name", clName.value)

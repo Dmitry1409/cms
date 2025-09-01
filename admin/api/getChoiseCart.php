@@ -7,7 +7,7 @@
 
 
 	if($_GET['metod']=="замер" OR $_GET['metod']=="ис. звонок"){
-		getClient("SELECT * FROM clients WHERE status in ('новый','повторно') ORDER BY created DESC");
+		getClient("SELECT * FROM clients WHERE status in ('новый','повторно','замер назначен','замер выполнен') ORDER BY created DESC");
 	}
 	if($_GET['metod']=="заказать"){
 		getZakup("SELECT * FROM zakupki WHERE status = 'создан' ORDER BY created DESC");
