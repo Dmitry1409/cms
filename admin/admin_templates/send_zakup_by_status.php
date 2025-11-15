@@ -19,7 +19,7 @@
     
     $mail->setFrom('89202929892@mail.ru', 'AuRoom');
     // $mail->addAddress('89202929892@mail.ru', 'Ольга');
-    $mail->addAddress('style_elit@mail.ru', 'Ольга');
+    $mail->addAddress('diler.potolok@mail.ru', 'Анастасия');
     $mail->Subject = 'Заказ';
     
 

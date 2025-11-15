@@ -22,7 +22,7 @@
 	<div style="position: relative;">
 		<div class="padd_tech"></div>
 		<div class="tech_down_bt">
-			<span>+6</span>
+			<span>+7</span>
 			<div role="button" class="arrow-wrapp">	
 				<div class="arrow-8"></div>
 			</div>
@@ -41,17 +41,6 @@
 			</div>
 			<div class="tech_elem">				
 				<picture class="tech_picture">
-					<source srcset="img/mainPage/webp/svet_line.webp" type="image/webp">
-					<img class="img_skew" src="img/mainPage/jpg/svet_line.jpg" alt="Парящие теневые потолки">
-				</picture>	
-				<div class="tech_mask"></div>
-				<div class="skew_revers">
-					<h3 class="tech_header">Парящий<br>Подсветка</h3>
-					<a href='<?php echo $GLOBALS['listRout']["shadProf"]?>' class="btn_tech">Узнать подробнее</a>
-				</div>
-			</div>
-			<div class="tech_elem">				
-				<picture class="tech_picture">
 					<source srcset="img/mainPage/webp/diploma.webp" type="image/webp">
 					<img class="img_skew" src="img/mainPage/jpg/diploma.jpg" alt="Теневые потолки">
 				</picture>				
@@ -63,13 +52,24 @@
 			</div>
 			<div class="tech_elem">				
 				<picture class="tech_picture">
-					<source srcset="img/mainPage/webp/two_level.webp" type="image/webp">
-					<img class="img_skew" src="img/mainPage/jpg/two_level.jpg" alt="Многоуровневые конструкции">
-				</picture>
+					<source srcset="img/mainPage/webp/svet_line.webp" type="image/webp">
+					<img class="img_skew" src="img/mainPage/jpg/svet_line.jpg" alt="Парящие теневые потолки">
+				</picture>	
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
-					<h3 class="tech_header">Многоуровневый</h3>
-					<a href='<?php echo $GLOBALS['listRout']["multiLev"]?>' class="btn_tech">Узнать подробнее</a>
+					<h3 class="tech_header">Парящий<br>Подсветка</h3>
+					<a href='<?php echo $GLOBALS['listRout']["shadProf"]?>' class="btn_tech">Узнать подробнее</a>
+				</div>
+			</div>			
+			<div class="tech_elem">
+				<picture class="tech_picture">
+					<source srcset="img/mainPage/webp/efwfwwgw.webp" type="image/webp">
+					<img class="img_skew" src="img/mainPage/jpg/efwfwwgw.jpg" alt="Глянцевый вместе с матовым полотном">
+				</picture>				
+				<div class="tech_mask"></div>
+				<div class="skew_revers">
+					<h3 class="tech_header">Простой<br>потолок</h3>
+					<a href='<?php echo $GLOBALS['listRout']["simpleCeil"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">
@@ -83,17 +83,17 @@
 					<a href='<?php echo $GLOBALS['listRout']["hidCur"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
-			<div class="tech_elem">
+			<div class="tech_elem">				
 				<picture class="tech_picture">
-					<source srcset="img/mainPage/webp/efwfwwgw.webp" type="image/webp">
-					<img class="img_skew" src="img/mainPage/jpg/efwfwwgw.jpg" alt="Глянцевый вместе с матовым полотном">
-				</picture>				
+					<source srcset="img/svetovoyPotolokPage/svetovoyPotolok.webp" type="image/webp">
+					<img class="img_skew" src="img/svetovoyPotolokPage/svetovoyPotolok.jpg" alt="Световые потолки, световое окно">
+				</picture>
 				<div class="tech_mask"></div>
 				<div class="skew_revers">
-					<h3 class="tech_header">Простой<br>потолок</h3>
-					<a href='<?php echo $GLOBALS['listRout']["simpleCeil"]?>' class="btn_tech">Узнать подробнее</a>
+					<h3 class="tech_header">Световой потолок</h3>
+					<a href='<?php echo $GLOBALS['listRout']["svetovoyPotolok"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
-			</div>
+			</div>			
 			<div class="tech_elem">
 				<picture class="tech_picture">
 					<source srcset="img/mainPage/webp/glyanc2.webp" type="image/webp">
@@ -125,6 +125,17 @@
 				<div class="skew_revers">
 					<h3 class="tech_header">Резной</h3>
 					<a href='<?php echo $GLOBALS['listRout']["carCell"]?>' class="btn_tech">Узнать подробнее</a>
+				</div>
+			</div>
+			<div class="tech_elem">				
+				<picture class="tech_picture">
+					<source srcset="img/mainPage/webp/two_level.webp" type="image/webp">
+					<img class="img_skew" src="img/mainPage/jpg/two_level.jpg" alt="Многоуровневые конструкции">
+				</picture>
+				<div class="tech_mask"></div>
+				<div class="skew_revers">
+					<h3 class="tech_header">Многоуровневый</h3>
+					<a href='<?php echo $GLOBALS['listRout']["multiLev"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
 			<div class="tech_elem">

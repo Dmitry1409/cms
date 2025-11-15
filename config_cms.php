@@ -48,7 +48,7 @@
 	   			'hiddenCurtainStyle.css'=>'hiddenCurtainStyle.css','lightNichesStyle.css'=>'lightNichesStyle.css',
 	   			'lights.css'=>'lights.css', 'multiLevelStyle.css'=>'multiLevelStyle.css','shadow.css'=>'shadow.css',
 	   			'starsSkyStyle.css'=>'starsSkyStyle.css', 'textureColorStyle.css'=>'textureColorStyle.css',
-	   			'site.webmanifest'=>'site.webmanifest');
+	   			'site.webmanifest'=>'site.webmanifest', 'svetovoyPotolok.css'=>'svetovoyPotolok.css');
 
 	foreach ($fn as $k => $v) {
 		$fn[$k] = $fn[$k]."?v=0009";

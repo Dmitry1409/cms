@@ -6,7 +6,7 @@
 	$dirNameSource = 'test';
 	$dirNameSave = "processed";
 	
-	// convert_to_webp();
+	convert_to_webp();
 
 	function convert_to_webp($dir){
 		global $dirNameSource, $dirNameSave;
@@ -41,7 +41,7 @@
 	            return $source;
 	        }
 	        if ($isAlpha) {
-	            // imagepalettetotruecolor($image);ы
+	            // imagepalettetotruecolor($image);
 	            imagealphablending($image, true);
 	            imagesavealpha($image, true);
 	        }

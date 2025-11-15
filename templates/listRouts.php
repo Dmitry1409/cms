@@ -17,5 +17,6 @@
 					"Teqtum"=> "vendorsFoil/Teqtum",
 					"favourites" => "favourites",
 					"certificates" => "certificates",
-					"simpleCeil"=> "technology/simpleCeil");
+					"simpleCeil"=> "technology/simpleCeil",
+					"svetovoyPotolok"=>"technology/svetovoyPotolok");
 ?>

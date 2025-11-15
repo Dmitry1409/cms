@@ -1,0 +1,9 @@
+@media(min-width: 940px){
+	.lightsLines_flex{
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+	.row-reverse{
+		flex-direction: row-reverse;
+	}
+}

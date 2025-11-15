@@ -5,9 +5,14 @@
 
 	$db = new Sqlite3("../cms.db");
 
+	// echo var_dump($_SESSION['imgs']);
+	// $_SESSION['imgs'] = null;
+	return;
+
 	if($_SERVER["REQUEST_METHOD"] == "GET"){
 		if($_GET['comand'] == "scan_dir"){
 			$imgs = getImages($_GET['path']);
+			echo var_dump($imgs);
 			if(count($imgs) > 0){
 				echo count($imgs);
 				$_SESSION['imgs'] = $imgs;
@@ -17,7 +22,7 @@
 			
 		}
 		if($_GET['comand'] == "add_record"){
-			$nameFolder = "lightTransp";
+			$nameFolder = "svetovoy";
 			for($i = 0; $i< count($_SESSION['imgs']); $i++){
 				$source = $_SESSION['imgs'][$i];
 

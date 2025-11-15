@@ -23,7 +23,8 @@
 						"lighting"=>["headLighting.php", "lightingPage.php"],
 						"favourites"=>["headFavourites.php", "FavouritesPage.php"],
 						"certificates"=>["headCertificates.php", "certificatesPage.php"],
-						"technologysimpleCeil"=>["technology/headSimpleCeil.php", "technology/simpleCeilPage.php"]);
+						"technologysimpleCeil"=>["technology/headSimpleCeil.php", "technology/simpleCeilPage.php"],
+						"technologysvetovoyPotolok"=>["technology/headSvetovoyPotolok.php","technology/svetovoyPotolokPage.php"]);
 
 	
 	

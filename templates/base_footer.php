@@ -337,6 +337,7 @@
 				<li><a href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['textCol']?>><span>Свето-пропускные</span></a></li>
 				<li><a href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['hidCur']?>><span>Скрытая гардина</span></a></li>
 				<li><a href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['multiLev']?>><span>Двухуровные</span></a></li>
+				<li><a href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['svetovoyPotolok']?>><span>Световой потолок</span></a></li>
 				<li><a href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['shadProf']?>><span>Парящие</span></a></li>
 				<li><a href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['tenevoy']?>><span>Теневые</span></a></li>
 				<li><a href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['shadProf']?>><span>С подсветкой</span></a></li>
