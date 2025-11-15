@@ -27,7 +27,6 @@
 						"technologysvetovoyPotolok"=>["technology/headSvetovoyPotolok.php","technology/svetovoyPotolokPage.php"]);
 
 	
-	
 
 	$getPar = explode("?", $_SERVER['REQUEST_URI']);
 
