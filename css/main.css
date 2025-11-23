@@ -944,6 +944,27 @@ a.menu_item{
 .banner_active{
 	opacity: 1;
 }
+a.link_baner_activ{
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: unset;
+    width: 150px;
+    background-color: unset;
+    border: unset;
+    margin-left: 0;
+    overflow: hidden;
+    color: var(--main-col-blue);
+    font-size: 14px;
+}
+a.link_baner_activ:hover{
+	background-color: unset !important;
+}
+
+.textBanner:has(a.link_baner_activ){
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
 .headerControlCont{
 	position: absolute;
 	display: flex;

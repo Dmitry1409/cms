@@ -279,8 +279,6 @@ window.addEventListener('load', ()=>{
 			let mt = document.querySelector('.messenger_layout')
 			mt.style.left = "-"+rsvg.x+"px"
 			mt.style.filter = "opacity(60%)"
-
-			console.log(document.querySelector('.messenger_layout'))
 		}, 1000)
 	}
 
@@ -405,8 +403,26 @@ window.addEventListener('load', ()=>{
 			let span2 = document.querySelector('.header_title_wrapp > span:nth-child(2)').querySelectorAll("span")
 
 			chSpan(span1, p[next].getAttribute('mainText'))
+			let sp = document.querySelector('.header_title_wrapp > span:nth-child(2)').querySelector(".banner_active")
+			let so = document.querySelector('.header_title_wrapp > span:nth-child(2)').querySelector(".banner_opac_z")
+			sp.innerHTML = ""
+			if(p[next].getAttribute('idRow') == 10){
+				let link = `<a class='link_baner_activ' href='${root_dir}technology/lightLines'>подробнее</a>`
+				sp.insertAdjacentHTML("beforeend", link)
+			}else if(p[next].getAttribute('idRow') == 7){
+				let link = `<a class='link_baner_activ' href='${root_dir}technology/svetovoyPotolok'>подробнее</a>`
+				sp.insertAdjacentHTML("beforeend", link)
+				so.innerHTML = ""
+			}else if(p[next].getAttribute('idRow') == 11){
+				let link = `<a class='link_baner_activ' href='${root_dir}technology/shadowProfil'>подробнее</a>`
+				sp.insertAdjacentHTML("beforeend", link)
+				so.innerHTML = ""
+			}
+			else{
+				sp.innerHTML = ""
+				so.innerHTML = ""
+			}
 
-			chSpan(span2, p[next].getAttribute('secText'))
 	
 			bannerTimeProtect = Date.now() + 2000
 		}
@@ -431,17 +447,22 @@ window.addEventListener('load', ()=>{
 	function insertBanner(arr){
 		let p = document.querySelector(".header_lozung")
 		let imgIdRow = p.querySelector("picture").getAttribute('idRow')
-		for(let i = 0; i<arr.length; i++){
-			let w = arr[i]['imgSrc'].split(".")[0]
-			w = `${root_dir}img/rekHeader/webp/${w}.webp`
-			let h = `<picture class = 'headerPicture banner_dis_none banner_opac_z' idRow=${arr[i]['id']} maintext='${arr[i]["mainText"]}' sectext='${arr[i]["secText"]}'>
-						<source srcset='${w}' type='image/webp'/>
-						<img src=${root_dir}img/rekHeader/jpg/${arr[i]['imgSrc']}>
-					</picture>`
-
-				if(imgIdRow != arr[i]['id']){
+		let order  = [10, 7, 1, 4, 11, 3, 2, 5, 8, 9]
+		for(let i = 0; i<order.length; i++){
+			if(imgIdRow == order[i]){
+				continue 
+			}
+			for(let j =0; j<arr.length; j++){
+				if(arr[j]['id'] == order[i]){					
+					let w = arr[j]['imgSrc'].split(".")[0]
+					w = `${root_dir}img/rekHeader/webp/${w}.webp`
+					let h = `<picture class = 'headerPicture banner_dis_none banner_opac_z' idRow=${arr[j]['id']} maintext='${arr[j]["mainText"]}' sectext='${arr[j]["secText"]}'>
+								<source srcset='${w}' type='image/webp'/>
+								<img src=${root_dir}img/rekHeader/jpg/${arr[j]['imgSrc']}>
+							</picture>`
 					p.insertAdjacentHTML('beforeend', h)
-				}
+				}			
+			}
 		}
 	}
 })

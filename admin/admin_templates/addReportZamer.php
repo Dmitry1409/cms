@@ -14,6 +14,7 @@
 			<option value="бел.мат">бел.мат</option>
 			<option value="бел.глян">бел.глян</option>
 			<option value="бел.сатин">бел.сатин</option>
+			<option value="Bauf бел мат">Bauf бел мат</option>
 		</select>
 	</div>
 	<div class="room_block focus_room">
@@ -44,11 +45,12 @@
 					<option value="бел.мат">бел.мат</option>
 					<option value="бел.глянец">бел.глянец</option>
 					<option value="бел.сатин">бел.сатин</option>
+					<option value="Bauf бел мат">Bauf бел мат</option>
 				</select>
 			</div>
 			<div class="flex-column-alig">
 				<label>Др.фактура</label>
-				<input class="inp_razmer" type="text" name="alt_factur">
+				<input style="width: 80px;" class="inp_razmer" type="text" name="alt_factur">
 			</div>
 			<div style="border: 1px solid grey;" class="flex-column-alig">
 				<label>Мат. стены</label>

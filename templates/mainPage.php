@@ -230,8 +230,8 @@
 					<img src="img/mainPage/zamer.webp">
 				</div>
 				<div class="present_text_block">
-					<div class="pres_hed">Бесплатный замер</div>
-					<div class="pres_desc">по всей Нижегородской обл. кроме*</div>
+					<div class="pres_hed">Опытные специалисты</div>
+					<div class="pres_desc">выезжаем по всей Нижегородской обл.</div>
 				</div>
 			</div>
 			<div class="grid_item_pres">
