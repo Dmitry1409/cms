@@ -2779,6 +2779,9 @@ p.parag_color_text{
 }
 
 @media(min-width: 940px){
+	.messenger_layout{
+		display: none;
+	}
 	.huw_m_sales_wrapp > div{
 		width: 50%;
 	}

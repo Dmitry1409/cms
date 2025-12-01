@@ -1,33 +1,86 @@
 <?php
 	include "collectImage.php";
 
-	// resize_img_in_dir('img', 0, 50);
+	$dirNameSource = 'processed';
 
-	$dirNameSource = 'test';
-	$dirNameSave = "processed";
-	
-	convert_to_webp();
+
+	$paths = getImages($dirNameSource);
 
 	function convert_to_webp($dir){
-		global $dirNameSource, $dirNameSave;
-		$paths = getImages($dirNameSource);
-		echo var_dump($paths);
+		global $dirNameSource, $paths;
+	
 		for($i=0; $i<count($paths); $i++){
 			$full_parth = $dirNameSource."/".$paths[$i];
 			webpImage($full_parth);
 		}
 	}
+	
+	function copy_img(){
+		global $dirNameSource, $paths, $sel_dir;
 
 
+		for($i=0; $i<count($paths); $i++){
 
+			$nf = strpos($paths[$i], '.');
+			$nf = substr($paths[$i], 0, $nf);
+
+			$s = $dirNameSource."/".$paths[$i];
+			$d = "../img/imgObj/$sel_dir/jpg/".$paths[$i];
+
+			$ws = $dirNameSource."/".$nf.".webp";
+			$wd = "../img/imgObj/$sel_dir/webp/".$nf.".webp";
+
+			if (!copy($s, $d)) {
+			    echo "failed to copy $s...\n";
+			}else{
+				echo "Copy file $s";
+				echo "<br>";
+			}
+			if (!copy($ws, $wd)) {
+			    echo "failed to copy $s...\n";
+			}else{
+				echo "Copy file $ws";
+				echo "<br>";
+			}
+
+		}
+
+	}
+
+
+	function write_data_base(){
+		global $db, $paths, $sel_dir;
+
+		$db = new SQLite3('../cms.db');
+
+		for($i=0; $i<count($paths); $i++){
+			$nf = strpos($paths[$i], '.');
+			$nf = substr($paths[$i], 0, $nf);
+
+			$nw = $nf.".webp";
+			$nj = $paths[$i];
+
+			$query = "INSERT INTO imageObj (webp, jpg, hashTag_id) VALUES ('img/imgObj/$sel_dir/webp/$nw',";
+			$query = $query."'img/imgObj/$sel_dir/jpg/$nj', '[]')";
+
+			if(!$db->exec($query)){
+				echo $db->lastErrorMsg().". Не удалось записать в таблицу imgObj. Имя файла - $nj";
+				exit;
+			}else{
+				echo "Запись файла $nj в базу сделана";
+				echo "<br>";
+			}
+
+		}
+	}
 
 
 	function webpImage($source, $quality = 80)
 	    {
-	    	global $dirNameSource, $dirNameSave;
+	    	global $dirNameSource;
 	        $dir = pathinfo($source, PATHINFO_DIRNAME);
 	        $name = pathinfo($source, PATHINFO_FILENAME);
-	        $destination = $dirNameSave . DIRECTORY_SEPARATOR . $name . '.webp';
+	        $destination = $dirNameSource . DIRECTORY_SEPARATOR . $name . '.webp';
 	        $name = $name."webp";
 	        $info = getimagesize($source);
 	        $isAlpha = false;
@@ -45,13 +98,14 @@
 	            imagealphablending($image, true);
 	            imagesavealpha($image, true);
 	        }
-	        echo $destination;
 	        imagewebp($image, $destination, $quality);
 
 	        // костыль который лечит не правельный вывод функции в инете нашел
 	        $fpr = fopen($destination, "a+");
 	        fwrite($fpr, chr(0x00));
 	        fclose($fpr);
+	        echo "Файл $destination конвертирован";
+	        echo "<br>";
 
 	       
 	        // destroy($source);

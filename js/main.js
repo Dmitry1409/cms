@@ -104,7 +104,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	document.querySelector('.call_me_container').addEventListener('click', order_a_call)
 	document.querySelector('.close_modal').addEventListener('click', close_modal_action)
 	document.querySelector('.modal_backgraund').addEventListener('click', close_modal_action)
-	document.querySelector('.header_lozung a').addEventListener('click', call_me_action)
+	document.querySelector('.header_lozung a.header_padding').addEventListener('click', call_me_action)
 	document.querySelector('.call_me_send').addEventListener('click', sendMailWithData)
 	document.querySelector('.modal_report').addEventListener('click', close_report_modal)
 

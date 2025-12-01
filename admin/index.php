@@ -1,5 +1,4 @@
 <?php
-	
 
 	$db = new SQLite3("crm.db");
 
@@ -15,7 +14,8 @@
 					"clients"=>["admin_templates/clients.php"],
 					"addReportZamer"=>["admin_templates/addReportZamer.php"],
 					"showZamer"=>["admin_templates/showZamer.php"],
-					"edit_zamer"=>["admin_templates/edit_zamer.php"]
+					"edit_zamer"=>["admin_templates/edit_zamer.php"],
+					"add_img"=>["admin_templates/add_img.php"]
 				);
 	
 	$getPar = explode("?", $_SERVER['REQUEST_URI']);
