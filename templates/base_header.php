@@ -243,7 +243,6 @@
 				</g>
 			</svg>
 		</a>
-
 	</div>
 
 	<div role="main" id="main_section_id">
