@@ -58,6 +58,8 @@ def main():
 	os.chdir(nSite)
 	os.system('git clone https://github.com/Dmitry1409/cms.git .')
 	print('Репозиторий гит склонирован')
+	os.mkdir("admin/processed")
+	print("Папка processed создана")
 
 	for i in range(len(pathArr)):
 		changFile(pathArr[i], nRowArr[i],checkArr[i], nArr[i])

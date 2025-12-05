@@ -87,9 +87,11 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			}
 		}
 		addTelClient(e){
-			if(confirm(`Добавить новый телефон: ${e.currentTarget.value}`)){
+			console.log('goo')
+			let cl = clearCharTelehon(e.currentTarget.value)
+			if(confirm(`Добавить новый телефон: ${cl}`)){
 				let cl_id = e.currentTarget.parentNode.getAttribute('client_id')
-				let arr = {"comand": "addPhone", "client_id":cl_id, "tel": e.currentTarget.value}
+				let arr = {"comand": "addPhone", "client_id":cl_id, "tel": cl}
 				this.exec_fetch(arr)			
 			}
 		}
@@ -138,7 +140,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 				del[i].addEventListener('click', this.delTelFetch.bind(this))
 			}
 
-			e.currentTarget.insertAdjacentHTML('beforeend', `<input class='new_tel_id' style='width: 140px;' type='number' placeholder='Новый тел'>`)
+			e.currentTarget.insertAdjacentHTML('beforeend', `<input class='new_tel_id' style='width: 140px;' type='tel' placeholder='Новый тел'>`)
 
 			e.currentTarget.querySelector('.new_tel_id').addEventListener('change', this.addTelClient.bind(this))
 
@@ -357,7 +359,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 								html += `<span tel_id=${obj_cl['tel_val'][i]['id']}><a href='tel:${obj_cl['tel_val'][i]['val']}'>${obj_cl['tel_val'][i]['val']}</a>
 									<img class='img_id_del' style='margin-left: 10px; width: 15px;' src='../img/close.png'></span>`
 							}
-							html += `<input style='width: 90px;' class='add_tel_id' type='number' placeholder='новый номер' >`
+							html += `<input style='width: 90px;' class='add_tel_id' type='tel' placeholder='новый номер' >`
 						html += `</span>`
 					html += `</div>`
 					html += `<div class="flex-wrap">`
