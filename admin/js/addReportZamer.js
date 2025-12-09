@@ -286,14 +286,14 @@ window.addEventListener('DOMContentLoaded',()=>{
 			body: fd
 		})
 
-		console.log("получен ответ",Date.now() - timest1)
+		console.log("получен ответ",Date.now() - timest1)	
 
 		checkRespondServer(res)
 
 		if(res.ok){
 			setTimeout(()=>{
 				window.location.href = './clientCRM'
-			},1000)
+			},2000)
 		}
 	}
 

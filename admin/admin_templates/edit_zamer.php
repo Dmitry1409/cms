@@ -63,12 +63,16 @@
 						if($r->{"полотно"} == "бел.сатин"){
 							$f_sat = "selected";
 						}
+						if($r->{"полотно"} == "Bauf бел мат"){
+							$f_baf = "selected";
+						}
 					?>
 					<select name="factur_room" style="width: 70px;">
 						<option value="фактура">фактура</option>
 						<option <?php echo $f_mat ?> value="бел.мат">бел.мат</option>
 						<option <?php echo $f_glyn ?> value="бел.глянец">бел.глянец</option>
-						<option <?php echo $$f_sat ?> value="бел.сатин">бел.сатин</option>
+						<option <?php echo $f_sat ?> value="бел.сатин">бел.сатин</option>
+						<option <?php echo $f_baf ?> value="Bauf бел мат">Bauf бел мат</option>
 					</select>
 				</div>
 

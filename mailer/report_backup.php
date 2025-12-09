@@ -7,6 +7,9 @@
 
 	$mail = new PHPMailer;
 
+	$db_crm = new SQLite3("../admin/crm.db");
+	$smtp_tok = $db_crm->querySingle("SELECT value FROM keys WHERE name = 'smtp_mail_token'");
+
 	$mail->CharSet = 'UTF-8';
 
 	$mail->isSMTP();
@@ -16,7 +19,7 @@
 	$mail->Host = 'ssl://smtp.mail.ru';
 	$mail->Port = 465;
 	$mail->Username = '89202929892@mail.ru';
-	$mail->Password = 'ixB7Amwrk0qGx3eiNWw1';
+	$mail->Password = $smtp_tok;
 	$mail->setFrom('89202929892@mail.ru', 'Сайт Auroom');
 	$mail->addAddress('auroom-nn@mail.ru', 'Дмитрий');
 	$mail->Subject = 'Уведомления';

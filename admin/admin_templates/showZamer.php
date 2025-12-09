@@ -142,6 +142,7 @@
 
 	$zam_js = json_decode($zamer['json']);
 
+	$complect = $zam_js->complect;
 	$rooms = $zam_js->rooms;
 	$sum_data = $zam_js->sum_data;
 	$sum_wall = $zam_js->sum_wall;
@@ -202,6 +203,27 @@
 	}
 
 	$ob = 0;
+
+	function print_complect_row($arr){
+		global $sum_zakaz ,$ob;
+		$itog = 0;
+		$n =1;
+		foreach ($arr as $k => $v) {
+			echo "<tr>";
+				echo "<td>$n</td>";
+				$n++;
+				echo "<td>$k</td>";
+				echo "<td>{$v->{'кол.'}}</td>";
+				echo "<td>{$v->{'ед.'}}</td>";
+				echo "<td>{$v->{'цена'}}</td>";
+				echo "<td>{$v->{'сумма'}}</td>";
+				$itog += $v->{'сумма'};
+			echo "</tr>";
+		}
+		$sum_zakaz += $itog;
+		$ob += $itog;
+		echo "<tr><td></td><td>Итого</td><td></td><td></td><td></td><td style='font-weight:bold;'>$itog</td></tr>";
+	}
 
 	function print_table_row($arr){
 		global $prod, $ob, $sum_zakaz;
@@ -303,7 +325,13 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php print_table_row($sum_mat)?>
+			<?php
+				if(array_key_exists('complect', $zam_js)){
+					print_complect_row($zam_js->complect);
+				}else{
+			 		print_table_row($sum_mat);
+				}
+			?>
 		</tdoby>
 	</table>
 

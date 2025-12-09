@@ -22,28 +22,19 @@
 		$polot = [];
 		$complect = [];
 
-		// $idZamer = "(1,2,3)";
-
 		$res_db = $db->query("SELECT * FROM zamer WHERE id in $idZamer");
 		while($z = $res_db->fetchArray(SQLITE3_ASSOC)){
 			$js = json_decode($z['json']);
 			$polot = array_merge($polot, $js->rooms);
-			foreach($js->sum_mat as $k=>$v){
+			foreach($js->complect as $k=>$v){
 				if(array_key_exists($k, $complect)){
-					$complect[$k] += $v;
+					$complect[$k]->{'кол.'} += $v->{'кол.'};
 				}else{
 					$complect[$k] = $v;
 				}
 			}
 
 		}
-
-		$res = $db->query("SELECT * FROM products");
-		$prod = [];
-		while($r = $res->fetchArray(SQLITE3_ASSOC)){
-			$prod[] = $r;
-		}
-
 		
 		function out_polotna($arr){
 			$n = 1;
@@ -77,15 +68,8 @@
 					echo "<td>$n</td>";
 					$n++;
 					echo "<td>$key</td>";
-					echo "<td>$value</td>";
-					$ed = null;
-					foreach ($prod as $p) {
-						if($p["name"] == $key){
-							$ed = $p['metric'];
-							break;
-						}
-					}
-					echo "<td>$ed</td>";
+					echo "<td>{$value->{'кол.'}}</td>";
+					echo "<td>{$value->{'ед.'}}</td>";
 				echo "</tr>";
 
 			}
