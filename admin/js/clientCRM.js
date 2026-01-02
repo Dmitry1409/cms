@@ -265,6 +265,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			document.querySelector('.modalDayClose').addEventListener('click', this.closeModalDay.bind(this))
 
 		}
+
 		async decorModalAndFetch(e){
 			let click_border = document.querySelector('.click_border')
 
@@ -284,7 +285,14 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 			let start = document.querySelector('.inp_wrap_modal input[name=start]')
 			let nm = month_par.getAttribute("numbMonth")
-			let year = document.querySelector('.year_btn_action').innerText
+			let year
+			if(month_par.hasAttribute('last-year')){
+				year = String(Number(document.querySelector('.year_btn_action').innerText)-1)
+			}else if(month_par.hasAttribute('next-year')){
+				year = String(Number(document.querySelector('.year_btn_action').innerText)+1)
+			}else{
+				year = document.querySelector('.year_btn_action').innerText
+			}
 			let nd = Number(e.currentTarget.innerText)
 			if(nd <= 9){
 				nd = "0"+nd
@@ -296,7 +304,6 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			let cont_load_indicator = this.modalWrapp.querySelector('.add_block_modal')
 
 			insert_load_indicator(cont_load_indicator)
-
 			let events = await fetch(`getDayEvents.php?day=${nd}&month=${nm}&year=${year}`)
 
 			if(events.ok){
@@ -609,8 +616,14 @@ window.addEventListener("DOMContentLoaded", ()=>{
 	class CalendarChange{
 		constructor(){
 			let d = document.querySelectorAll(".year_btn")
+			let y = new Date()
+			// y = y.getFullYear()
+			y = "2026"
 			for(let i=0; i<d.length; i++){
 				d[i].addEventListener('click', this.year_btn_action.bind(this))
+				if(d[i].innerText == y){
+					d[i].classList.add("year_btn_action")
+				}
 			}
 		}
 		isLiap(year){

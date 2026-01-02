@@ -7,6 +7,8 @@ require_once 'SMTP.php';
 
 session_start();
 $db = new SQLite3('../cms.db');
+$db_crm = new SQLite3("../admin/crm.db");
+$smtp_tok = $db_crm->querySingle("SELECT value FROM keys WHERE name = 'smtp_mail_token'");
 
 require_once "../scripts_php/funcsDateBase.php";
 include "../config_cms.php";
@@ -91,7 +93,7 @@ if(array_key_exists('click_link', $_GET)){
 $mail->Host = 'ssl://smtp.mail.ru';
 $mail->Port = 465;
 $mail->Username = '89202929892@mail.ru';
-$mail->Password = 'ixB7Amwrk0qGx3eiNWw1';
+$mail->Password = $smtp_tok;
 $mail->setFrom('89202929892@mail.ru', 'Сайт Auroom');
 $mail->addAddress('auroom-nn@mail.ru', 'Дмитрий');
 $mail->Subject = 'Заказ';

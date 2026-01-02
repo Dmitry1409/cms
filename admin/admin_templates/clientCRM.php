@@ -45,8 +45,10 @@
 <div class="year_cont">
 	<div>		
 		<button class="year_btn">2024</button>
-		<button class="year_btn year_btn_action">2025</button>
+		<button class="year_btn">2025</button>
 		<button class="year_btn">2026</button>
+		<button class="year_btn">2027</button>
+		<button class="year_btn">2028</button>
 	</div>
 </div>
 
@@ -77,7 +79,6 @@
 
 	$f = 28;
 	$month = (int)date('m');
-
 	$day  = (int)date('d');
 
 	if(isLiap(20 + date('y'))) $f = 29;
@@ -126,8 +127,35 @@
 
 
 	for($i=0; $i<count($cout); $i++){
-
-		echo "<div numbMonth='{$cout[$i][2]}' class='month'>";
+		// добавляем теги к месяцам предыдущего и следующего года 
+		$tag_next_last_year = null;
+		if($i==0){
+			if($cout[$i][2]=="11"){
+				$tag_next_last_year = "last-year";
+			}
+			if($cout[$i][2]=="12"){
+				$tag_next_last_year = "last-year";
+			}
+		}
+		if($i==1){
+			if($cout[$i][2]=="12"){
+				$tag_next_last_year = "last-year";
+			}
+		}
+		if($i == 3){
+			if($cout[$i][2]=="01"){
+				$tag_next_last_year = "next-year";
+			}
+		}	
+		if($i == 4){
+			if($cout[$i][2]=="01"){
+				$tag_next_last_year = "next-year";
+			}
+			if($cout[$i][2]=="02"){
+				$tag_next_last_year = "next-year";
+			}
+		}
+		echo "<div $tag_next_last_year numbMonth='{$cout[$i][2]}' class='month'>";
 		echo "<h2>{$cout[$i][0]}</h2>";
 		for($j=1; $j<=$cout[$i][1]; $j++){
 			if($j == 1){

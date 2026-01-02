@@ -7,7 +7,7 @@
     
     $mail = new PHPMailer;
 
-    $db_crm = new SQLite3("../crm.db");
+    $db_crm = new SQLite3("crm.db");
     $smtp_tok = $db_crm->querySingle("SELECT value FROM keys WHERE name = 'smtp_mail_token'");
     $vendor = $db_crm->querySingle("SELECT value FROM keys WHERE name = 'поставщик'");
     $manager = $db_crm->querySingle("SELECT value FROM keys WHERE name = 'менеджер поставщика'");
