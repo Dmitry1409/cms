@@ -1,49 +1,3 @@
-<style type="text/css">
-	.output_bold{
-		font-weight: bold;
-	}
-	.zam_img{
-		width: 60px;
-		height: 60px;
-	}
-	.column-block{
-		display: flex;
-		flex-direction: column;
-		border: 1px solid gray;
-		margin-right: 5px;
-		margin-top: 5px;
-		padding: 3px;
-	}
-	.flex-wrap{
-		display: flex;
-		flex-wrap: wrap;
-	}
-	.flex-wrap > span{
-		margin-right: 10px;
-		border: 1px solid grey;
-		margin-top: 10px;
-		padding: 3px;
-	}
-	.row_obj{
-		display: flex; 
-		flex-wrap: wrap;
-	}
-	.row_obj span{
-		margin-right: 10px;
-		padding: 3px;
-	}
-	table {
-		border-collapse: collapse;
-		border: 1px solid grey;
-	}
-	td {
-		border: 1px solid grey;
-		padding: 3px;
-	}
-	.input-width{
-		width: 80px;
-	}
-</style>
 
 <?php
 	$db = new SQLite3('crm.db');
@@ -52,6 +6,8 @@
 <title>Замер № <?php echo $idZamer?></title>
 
 <script src="../js/fancybox.js" type="text/javascript"></script>
+
+<link rel="stylesheet" type="text/css" href="css/showZamer.css">
 <link rel="stylesheet" type="text/css" href="../css/fancybox.css">
 
 <script type="text/javascript">
@@ -80,20 +36,20 @@
 </script>
 
 <?php 
-	echo "<a href='edit_zamer?idZamer={$_GET['idZamer']}'>Рeдактировать замер</a>";
+	echo "<a href='edit_zamer?idZamer={$_GET['idZamer']}' class='red_zamer'>Рeдактировать замер</a>";
 ?>
 
 <?php 
 
 	function print_simple_value($val, $head){
-		echo "<span style='display: flex; flex-direction: column;'>";
+		echo "<span class='fild_in_room' style='display: flex; flex-direction: column;'>";
 			echo "<span style='font-weight: bold;'>$head</span>";
 			echo "<span style='text-align: center;'>$val</span>";
 		echo "</span>";
 	}
 
 	function print_obj($obj, $head){
-		echo "<span style='display: flex; flex-direction: column;'>";
+		echo "<span class='fild_in_room' style='display: flex; flex-direction: column;'>";
 			echo "<span style='font-weight: bold;'>$head</span>";
 			foreach ($obj as $key => $value) {
 				if(is_bool($value)){
@@ -117,7 +73,7 @@
 
 	function print_row_obj($arr, $head){
 		foreach ($arr as $obj) {
-			echo "<div style='margin-top: 3px; padding: 3px; border: 1px solid grey;'>";
+			echo "<div class='fild_in_room' style='margin-top: 3px; padding: 3px; border: 1px solid grey;'>";
 				echo "<div style='text-align: center; font-weight: bold;'>$head</div>";
 				echo "<div class='row_obj'>";
 				foreach ($obj as $key => $value) {
@@ -146,18 +102,19 @@
 	$rooms = $zam_js->rooms;
 	$sum_data = $zam_js->sum_data;
 	$sum_wall = $zam_js->sum_wall;
+	// сумм мат нужен для страрых версий рассчета
 	$sum_mat = $zam_js->sum_mat;
 	$sum_polotna = $zam_js->sum_polotna;
 
 
 	$keys_room = ["стена А","стена Б","площадь", "перим.","полотно", "доп. углы"];
 	$keys2 = ['стены',"люстры","обвод тр", 'разделитель','вент', "споты клиента","споты наши","имитация стены"];
-	$key3 = [ "гардина накладная", "гардина скрытая", "световые линии", "парящий", "теневой"];
+	$key3 = [ "гардина накладная", "гардина скрытая", "световые линии", "парящий", "теневой","дополнительно"];
 
 
 	for($i=0; $i<count($rooms); $i++){
-		echo "<div style='margin-top:10px; border: 1px solid grey;'>";
-			echo "<h3 style='margin-bottom:5px;'>Помещение: {$rooms[$i]->{'помещение'}}</h3>";
+		echo "<div class='wrapp_room'>";
+			echo "<h3>Помещение: {$rooms[$i]->{'помещение'}}</h3>";
 			echo "<div class='rooms-block'>";
 				if(array_key_exists("фото", $rooms[$i])){
 					echo "<img data-fancybox='gallary' class='zam_img' src='img_admin/img_zamer/{$rooms[$i]->{'фото'}}'>";
@@ -165,7 +122,7 @@
 				echo "<div class='flex-wrap'>";
 					foreach ($keys_room as $kr) {
 						if(array_key_exists($kr, $rooms[$i]))
-							echo "<span>$kr: {$rooms[$i]->$kr}</span>";
+							echo "<span class='fild_in_room'>$kr: {$rooms[$i]->$kr}</span>";
 					}
 				echo "</div>";
 				echo "<div class='flex-wrap'>";
@@ -329,6 +286,7 @@
 				if(array_key_exists('complect', $zam_js)){
 					print_complect_row($zam_js->complect);
 				}else{
+					// сумм мат нужен для страрых версий рассчета
 			 		print_table_row($sum_mat);
 				}
 			?>

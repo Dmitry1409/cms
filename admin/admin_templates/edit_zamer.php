@@ -54,6 +54,7 @@
 						$f_mat = null;
 						$f_glyn = null;
 						$f_sat = null;
+						$f_baf = null;
 						if($r->{"полотно"} == "бел.глянец"){
 							$f_glyn = "selected";
 						}
@@ -452,6 +453,18 @@
 								<label>перим.</label>
 								<input value="<?php echo $v2->{'м.п'}?>" class="inp_razmer" type="number" name="м.п">
 							</div>
+						</div>
+					<?php endforeach;?>
+				<?php endif; ?>
+
+				<?php if(array_key_exists("дополнительно", $r)):?>
+					<?php foreach ($r->{"дополнительно"} as $v2): ?>
+						<div class="other_prod_id flex_border">
+							<span>Дополнительно</span>
+							<input value='<?php echo $v2->{'наименование'}?>' autocomplete="off" type="text" width="150px" name='наименование' placeholder="Наименование">
+							<input value='<?php echo $v2->{'кол.'}?>' autocomplete="off" class="inp_razmer" placeholder="кол." name="кол." type="number">
+							<input value='<?php echo $v2->{'ед.'}?>' autocomplete="off" class="inp_razmer" placeholder="ед." type="text" name="ед.">
+							<input value='<?php echo $v2->{'цена'}?>' autocomplete="off" class="inp_razmer" type="number" placeholder="цена" name="цена">
 						</div>
 					<?php endforeach;?>
 				<?php endif; ?>

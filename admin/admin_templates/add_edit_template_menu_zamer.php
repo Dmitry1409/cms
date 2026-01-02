@@ -172,6 +172,13 @@
 			<input class="inp_razmer" type="number" name="м.п">
 		</div>
 	</div>
+	<div class="other_prod_id flex_border">
+		<span>Дополнительно</span><br>
+		<input type="text" autocomplete="off" width="150px" name='наименование' placeholder="Наименование">
+		<input class="inp_razmer" autocomplete="off" placeholder="кол." name="кол." type="number">
+		<input class="inp_razmer" autocomplete="off" placeholder="ед." type="text" name="ед.">
+		<input class="inp_razmer" autocomplete="off" type="number" placeholder="цена" name="цена">
+	</div>
 	<div class="room_id_templat">
 		<input style="width: 18px; height: 18px;" checked type="checkbox" name="focus_room_box">
 		<div>Помещение</div>
@@ -242,4 +249,5 @@
 	<span>Световые линии</span>
 	<span>Парящий</span>
 	<span>Теневой</span>
+	<span>Дополнительно</span>
 </div>

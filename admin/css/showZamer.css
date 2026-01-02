@@ -1,0 +1,58 @@
+.output_bold{
+	font-weight: bold;
+}
+.zam_img{
+	width: 60px;
+	height: 60px;
+}
+.column-block{
+	display: flex;
+	flex-direction: column;
+	border: 1px solid gray;
+	margin-right: 5px;
+	margin-top: 5px;
+	padding: 3px;
+}
+.flex-wrap{
+	display: flex;
+	flex-wrap: wrap;
+}
+.flex-wrap > span{
+	margin-right: 10px;
+	border: 1px solid grey;
+	margin-top: 10px;
+	padding: 3px;
+}
+.row_obj{
+	display: flex; 
+	flex-wrap: wrap;
+}
+.row_obj span{
+	margin-right: 10px;
+	padding: 3px;
+}
+table {
+	border-collapse: collapse;
+	border: 1px solid grey;
+}
+td {
+	border: 1px solid grey;
+	padding: 3px;
+}
+.input-width{
+	width: 80px;
+}
+.wrapp_room{
+	padding: 20px 10px;
+	border: 1px solid grey;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	background-color: #e3f1ed;
+}
+.red_zamer{
+	padding-bottom: 20px;
+}
+.fild_in_room{
+	background-color: white;
+	border-radius: 3px;
+}

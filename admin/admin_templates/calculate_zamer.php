@@ -115,7 +115,7 @@
 	$sum_wall = [];
 	
 
-	function add_tov($key_com, $val, $key_prod){
+	function add_tov($key_com, $val, $key_prod=false){
 		global $prod, $complect;
 
 		if(!$key_prod){
@@ -297,6 +297,20 @@
 					foreach ($value as $flv) {
 						$all_data['установка теневого профиля '.$flv->{"тип профиля"}] += $flv->{'м.п'};
 						add_tov("профиль теневой ".$flv->{"тип профиля"},$flv->{'м.п'});
+					}
+					break;
+				case "дополнительно":
+					foreach ($value as $dv) {
+						if(array_key_exists($dv->{'наименование'}, $complect)){
+							$complect[$dv->{'наименование'}]['кол.'] += $dv->{'кол.'};
+							$complect[$dv->{'наименование'}]['сумма'] += ceil($dv->{'кол.'} * $dv->{'цена'});
+						}else{
+							$complect[$dv->{'наименование'}] = [];
+							$complect[$dv->{'наименование'}]['ед.'] = $dv->{'ед.'};
+							$complect[$dv->{'наименование'}]['кол.'] = $dv->{'кол.'};
+							$complect[$dv->{'наименование'}]['цена'] = $dv->{'цена'};;
+							$complect[$dv->{'наименование'}]['сумма'] = ceil($dv->{'кол.'} * $dv->{'цена'});
+						}
 					}
 					break;
 			}

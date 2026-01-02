@@ -34,7 +34,8 @@ window.addEventListener('DOMContentLoaded',()=>{
 				"Световые линии": "svet_line_id",
 				"Парящий": "flying_id",
 				"Теневой": "shadov_id",
-				"Имитация стены": "imatation_wall_id"
+				"Имитация стены": "imatation_wall_id",
+				"Дополнительно": "other_prod_id"
 				}
 		let inst_block = document.querySelector('.focus_room').querySelector('.insert_dopy')
 		let html = document.querySelector("."+d[this.innerText])
@@ -216,6 +217,9 @@ window.addEventListener('DOMContentLoaded',()=>{
 			getArr(room_bl[i].querySelectorAll('.flying_id'), "input[name='м.п']",'парящий', obj)
 
 			getArr(room_bl[i].querySelectorAll('.shadov_id'), "input[name='м.п']", "теневой", obj)
+
+			getArr(room_bl[i].querySelectorAll('.other_prod_id'), "input[name='кол.']", "дополнительно", obj)
+
 			allData.rooms.push(obj)
 		}
 	
@@ -267,7 +271,6 @@ window.addEventListener('DOMContentLoaded',()=>{
 	}
 
 	async function sendZamer(){
-		console.log(allData)
 		console.log("старт стрингифай",Date.now() - timest1)
 		let fd = new FormData()
 		fd.append('dict', JSON.stringify(allData))

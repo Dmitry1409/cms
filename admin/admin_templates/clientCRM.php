@@ -166,8 +166,6 @@
 			$cur_year -= 1;
 		}
 
-		echo var_dump((string)$cur_year);
-		echo "<br>";
 		for($j=1; $j<=$cout[$i][1]; $j++){
 			if($j == 1){
 				echo "<div class='week'>";
@@ -206,7 +204,7 @@
 				if($e_y != (string)$cur_year){
 					continue;
 				}
-				
+
 				if($cout[$i][2] == $e_m){
 					$e_d_s = (int)substr($start, 0, 2);
 					$e_d_f = (int)substr($finish, 0, 2);
