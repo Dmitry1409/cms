@@ -185,7 +185,7 @@
 					<span class="banner_opac_z"></span>
 				</span>
 				<span class="textBanner">
-					<span class="banner_active"><a class='link_baner_activ' href='<?php echo $root_dir?>technology/lightLines'>подробнее</a></span>
+					<span class="banner_active"><a class='link_baner_activ' href='<?php echo $GLOBALS["root_dir"]?>technology/lightLines'>подробнее</a></span>
 					<span class="banner_dis_none banner_opac_z"></span>
 				</span>
 				<a class="header_padding" role="button"><div class="btn_animate"></div>Оставить заявку</a>

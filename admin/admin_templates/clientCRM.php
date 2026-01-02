@@ -157,6 +157,17 @@
 		}
 		echo "<div $tag_next_last_year numbMonth='{$cout[$i][2]}' class='month'>";
 		echo "<h2>{$cout[$i][0]}</h2>";
+
+		$cur_year = date('y');
+		if($tag_next_last_year == "next-year"){
+			$cur_year += 1;
+		}
+		if($tag_next_last_year == "last-year"){
+			$cur_year -= 1;
+		}
+
+		echo var_dump((string)$cur_year);
+		echo "<br>";
 		for($j=1; $j<=$cout[$i][1]; $j++){
 			if($j == 1){
 				echo "<div class='week'>";
@@ -190,6 +201,12 @@
 				$start = $events[$e]['start'];
 				$finish = $events[$e]['finish'];
 				$e_m = substr($start, 3, 2);
+				$e_y = substr($start, 6, 2);
+
+				if($e_y != (string)$cur_year){
+					continue;
+				}
+				
 				if($cout[$i][2] == $e_m){
 					$e_d_s = (int)substr($start, 0, 2);
 					$e_d_f = (int)substr($finish, 0, 2);
