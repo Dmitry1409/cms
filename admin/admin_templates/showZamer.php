@@ -234,9 +234,9 @@
 				echo "<td>{$v->{'м2'}}</td>";
 				echo "<td>{$v->{'фактура'}}</td>";
 				$sq += $v->{"м2"};
-				$s = ceil(180*$v->{'м2'});
+				$s = ceil(150*$v->{'м2'});
 				$loc += $s;
-				echo "<td>180</td>";
+				echo "<td>150</td>";
 				echo "<td>$s</td>";
 			echo "</tr>";
 
@@ -320,6 +320,8 @@
 			$clientZakaz = $db->query("SELECT * FROM clientZakaz WHERE ref_zamer = {$_GET['idZamer']}")->fetchArray(SQLITE3_ASSOC);
 			echo "<h4>Сумма договора : {$clientZakaz['sum']}</h4>";
 			echo "<h4>Предоплата : {$clientZakaz['prepay']}</h4>";
+			$ost = $clientZakaz['sum']-$clientZakaz['prepay']; 
+			echo "<h4>Остаток : $ost</h4>";
 			echo "<h4>Сроки : {$clientZakaz['deadline']}</h4>";
 		?>
 	<?php endif?>

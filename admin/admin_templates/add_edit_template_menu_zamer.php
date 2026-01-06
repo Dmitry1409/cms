@@ -74,6 +74,7 @@
 		<select name="тип" style="width: 70px; height: 30px;">
 			<option value="тип">тип</option>
 			<option value="Lumfer UK">Lumfer UK</option>
+			<option value="имитация стены">Имитация стены</option>
 			<option value="ПК-5">ПК-5</option>
 		</select>
 		<div class="flex-column-alig">
@@ -89,6 +90,21 @@
 			<label>обрыв</label>
 			<input class="inp_razmer" placeholder="колл." type="number" name="обрыв">
 		</div>
+		<span style="margin-right: 10px;"><input type="checkbox" name="подсветка">подсветка</span>
+		<select name="тип ленты" style="width: 70px; height: 30px;">
+			<option value="тип">тип ленты</option>
+			<option value="холодная" >холодная</option>
+			<option value="дневная">дневная</option>
+			<option value="теплая">теплая</option>
+			<option value="RGB">RGB</option>
+		</select>
+		<select name="мощность ленты" style="width: 70px; height: 30px;">
+			<option value ="мощность">мощность ленты</option>
+			<option value="6">6w</option>
+			<option value="12">12W</option>
+			<option value="22">22W</option>
+		</select>
+		<span style="margin-right: 10px;"><input type="checkbox" name="гардина клиента">гардина клиента</span>
 	</div>
 	<div class="svet_line_id flex_border">
 		<span>Световые линии</span>

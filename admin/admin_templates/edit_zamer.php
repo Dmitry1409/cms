@@ -282,12 +282,14 @@
 							<select name="тип" style="width: 70px; height: 30px;">
 								<?php
 									$a = ["Lumfer UK"=>null,
+											'имитация стены'=>null,
 											"ПК-5"=>null
 										];
 									$a[$v2->{"тип"}] = "selected"; 
 								?>
 								<option value="тип">тип</option>
 								<option <?php echo $a['Lumfer UK']?> value="Lumfer UK">Lumfer UK</option>
+								<option <?php echo $a['имитация стены']?> value="имитация стены">Имитация стены</option>
 								<option <?php echo $a['ПК-5']?> value="ПК-5">ПК-5</option>
 							</select>
 							<div class="flex-column-alig">
@@ -309,6 +311,48 @@
 								<label>обрыв</label>
 								<input value="<?php echo $v2->{'обрыв'}?>" class="inp_razmer" placeholder="колл." type="number" name="обрыв">
 							</div>
+							<?php
+								if($v2->{'подсветка'}){
+									echo "<span style='margin-right: 10px;'><input checked type='checkbox' name='подсветка'>подсветка</span>";
+								}else{
+									echo "<span style='margin-right: 10px;'><input type='checkbox' name='подсветка'>подсветка</span>";
+								}
+							?>
+							<?php
+								$a = ['холодная'=> null,
+									'дневная'=> null,
+									'теплая'=> null,
+									'RGB'=>null];
+								$a[$v2->{'тип ленты'}] = 'selected';
+							?>
+							<select name="тип ленты" style="width: 70px; height: 30px;">
+								<option value="тип">тип ленты</option>
+								<option <?php echo $a['холодная']?> value="холодная" >холодная</option>
+								<option <?php echo $a['дневная']?> value="дневная">дневная</option>
+								<option <?php echo $a['теплая']?> value="теплая">теплая</option>
+								<option <?php echo $a['RGB']?> value="RGB">RGB</option>
+							</select>
+
+							<?php
+								$a= ['6'=>null,
+									'12'=> null,
+									'22'=>null];
+								$a[$v2->{'мощность ленты'}]= "selected";
+							?>
+
+							<select name="мощность ленты" style="width: 70px; height: 30px;">
+								<option value ="мощность">мощность ленты</option>
+								<option <?php echo $a['6']?> value="6">6w</option>
+								<option <?php echo $a['12']?> value="12">12W</option>
+								<option <?php echo $a['22']?> value="22">22W</option>
+							</select>
+							<?php
+								if($v2->{'гардина клиента'}){
+									echo "<span style='margin-right: 10px;'><input checked type='checkbox' name='гардина клиента'>гардина клиента</span>";
+								}else{
+									echo "<span style='margin-right: 10px;'><input type='checkbox' name='гардина клиента'>гардина клиента</span>";
+								}
+							?>
 						</div>
 					<?php endforeach;?>
 				<?php endif; ?>
