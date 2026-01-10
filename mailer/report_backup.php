@@ -7,7 +7,7 @@
 
 	$mail = new PHPMailer;
 
-	$db_crm = new SQLite3("../admin/crm.db");
+	$db_crm = new SQLite3("cms/public_html/admin/crm.db");
 	$smtp_tok = $db_crm->querySingle("SELECT value FROM keys WHERE name = 'smtp_mail_token'");
 
 	$mail->CharSet = 'UTF-8';

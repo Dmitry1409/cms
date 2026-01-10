@@ -22,4 +22,5 @@
 		<a href="create_shet">Счет</a>
 		<a href="clients">Клиенты</a>
 		<a href="add_img">Добавить фото в примеры</a>
+		<a href="tovari">Товары</a>
 	</div>

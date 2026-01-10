@@ -15,7 +15,8 @@
 					"addReportZamer"=>["admin_templates/addReportZamer.php"],
 					"showZamer"=>["admin_templates/showZamer.php"],
 					"edit_zamer"=>["admin_templates/edit_zamer.php"],
-					"add_img"=>["admin_templates/add_img.php"]
+					"add_img"=>["admin_templates/add_img.php"],
+					"tovari"=>["admin_templates/tovari.php"]
 				);
 	
 	$getPar = explode("?", $_SERVER['REQUEST_URI']);

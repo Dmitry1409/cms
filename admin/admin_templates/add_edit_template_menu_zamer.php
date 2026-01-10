@@ -132,20 +132,17 @@
 			<option value="дневная">дневная</option>
 			<option value="теплая">теплая</option>
 		</select>
-		<div class="flex-column-alig">		
-			<label>питание</label>
-			<input class="inp_razmer" placeholder="кол." type="number" name="кол. блоков">
-			<select name="блок мощ." style="width: 70px; height: 30px;">
-				<option value ="мощность">мощность</option>
-				<option value="50W">50w</option>
-				<option value="100W">100W</option>
-				<option value="150W">150W</option>
-			</select>
-		</div>
+		<select name="мощность ленты" style="width: 70px; height: 30px;">
+			<option value="тип">мощность ленты</option>
+			<option value="6" >6W</option>
+			<option value="12">12W</option>
+			<option value="22">22W</option>
+		</select>
 		<div class="flex-column-alig">		
 			<label>обрыв</label>
 			<input class="inp_razmer" type="number" name="обрыв">
 		</div>
+		<span style="margin-right: 10px;"><input type="checkbox" name="Диммер">Диммер</span>
 	</div>
 	<div class="flying_id flex_border">
 		<span>парящий</span>
