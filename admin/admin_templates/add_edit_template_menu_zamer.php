@@ -249,18 +249,20 @@
 </div>
 <div class="add_dop_panel">
 	<img class="menu_img" src="../img/plus.png">
-	<span>Люстра</span>
-	<span>Споты наши</span>
-	<span>Споты клиента</span>
-	<span>Обвод тр</span>
-	<span>Вент.</span>
-	<span>Доп. углы</span>
-	<span>Накладная гардина</span>
-	<span>Разделитель</span>
-	<span>Имитация стены</span>
-	<span>Скрытая гардина</span>
-	<span>Световые линии</span>
-	<span>Парящий</span>
-	<span>Теневой</span>
-	<span>Дополнительно</span>
+	<div class="inner_block_dop">		
+		<span>Люстра</span>
+		<span>Споты наши</span>
+		<span>Споты клиента</span>
+		<span>Обвод тр</span>
+		<span>Вент.</span>
+		<span>Доп. углы</span>
+		<span>Накладная гардина</span>
+		<span>Разделитель</span>
+		<span>Имитация стены</span>
+		<span>Скрытая гардина</span>
+		<span>Световые линии</span>
+		<span>Парящий</span>
+		<span>Теневой</span>
+		<span>Дополнительно</span>
+	</div>
 </div>

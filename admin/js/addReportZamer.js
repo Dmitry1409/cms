@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 	document.querySelector('.calculate_btn_id').addEventListener('click', collectData)
 	document.querySelector('.menu_img').addEventListener('click', dopMenuAction)
 	document.querySelector('.add_room_id').addEventListener('click', add_room)
-	let but_dop = document.querySelectorAll('.add_dop_panel > span')
+	let but_dop = document.querySelectorAll('.inner_block_dop > span')
 	for(let i=0; i<but_dop.length; i++){
 		but_dop[i].addEventListener('click', add_dop_but_action)
 	}

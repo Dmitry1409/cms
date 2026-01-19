@@ -25,20 +25,24 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 	height: 25px;
 }
 .add_dop_panel{
+	position: fixed;
+	right: -160px;
+	transition: 0.5s;
+}
+.inner_block_dop{
+	height: 430px;
+	overflow: auto;
 	display: flex;
 	flex-direction: column;
-	position: fixed;
 	background-color: white;
-	right: -160px;
 	padding: 10px;
 	width: 160px;
 	box-shadow: -5px 7px 8px 0px rgba(34, 60, 80, 0.26);
-	transition: 0.5s;
 }
 .open_dop_menu{
 	right: 10px;
 }
-.add_dop_panel > span{
+.inner_block_dop > span{
 	padding: 3px;
 	margin-top: 3px;
 	border: 1px solid grey;
