@@ -36,44 +36,49 @@
 
 		}
 		
-		function out_polotna($arr){
-			$n = 1;
-			foreach ($arr as $r) {
-				echo "<tr>";
-					echo "<td>$n</td>";
-					$n++;
-					echo "<td>полотно пвх</td>";
-					echo "<td>{$r->{'полотно'}}</td>";
-					$raz = '';
-					if(array_key_exists("стена А", $r)){
-						$raz = $r->{'стена А'}." х ".$r->{'стена Б'};
-					}else{
-						$raz = "на фото";
-					}
-					echo "<td>$raz</td>";
-					$f = null;
-					if(array_key_exists("фото", $r)){
-						$f = "<a style='margin-left: 20px;' target='_blank' href='https://auroom-nn.ru/admin/img_admin/img_zamer/{$r->{'фото'}}'><img style='width: 50px;' src='https://auroom-nn.ru/admin/img_admin/img_zamer/{$r->{'фото'}}'></a>";
-					}
-					echo "<td>$f</td>";
-				echo "</tr>";
+		if(!function_exists('out_polotna')){
+			function out_polotna($arr){
+				$n = 1;
+				foreach ($arr as $r) {
+					echo "<tr>";
+						echo "<td>$n</td>";
+						$n++;
+						echo "<td>полотно пвх</td>";
+						echo "<td>{$r->{'полотно'}}</td>";
+						$raz = '';
+						if(array_key_exists("стена А", $r)){
+							$raz = $r->{'стена А'}." х ".$r->{'стена Б'};
+						}else{
+							$raz = "на фото";
+						}
+						echo "<td>$raz</td>";
+						$f = null;
+						if(array_key_exists("фото", $r)){
+							$f = "<a style='margin-left: 20px;' target='_blank' href='https://auroom-nn.ru/admin/img_admin/img_zamer/{$r->{'фото'}}'><img style='width: 50px;' src='https://auroom-nn.ru/admin/img_admin/img_zamer/{$r->{'фото'}}'></a>";
+						}
+						echo "<td>$f</td>";
+					echo "</tr>";
+				}
 			}
 		}
+		
+		if(!function_exists('out_comp')){
+			function out_comp($arr){
+				global $prod;
+				$n = 1;
+				foreach ($arr as $key => $value) {
+					echo "<tr>";
+						echo "<td>$n</td>";
+						$n++;
+						echo "<td>$key</td>";
+						echo "<td>{$value->{'кол.'}}</td>";
+						echo "<td>{$value->{'ед.'}}</td>";
+					echo "</tr>";
 
-		function out_comp($arr){
-			global $prod;
-			$n = 1;
-			foreach ($arr as $key => $value) {
-				echo "<tr>";
-					echo "<td>$n</td>";
-					$n++;
-					echo "<td>$key</td>";
-					echo "<td>{$value->{'кол.'}}</td>";
-					echo "<td>{$value->{'ед.'}}</td>";
-				echo "</tr>";
-
+				}
 			}
 		}
+		
 	?>
 	<table>
 		<thead>

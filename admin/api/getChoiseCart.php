@@ -33,7 +33,6 @@
 		exit;
 		
 	}
-
 	function getZakup($q){
 		global $db, $obj;
 

@@ -137,11 +137,19 @@ window.addEventListener("DOMContentLoaded",()=>{
 	}
 
 	function cart_action_insert(){
+		let d = this.parentNode.querySelector('.zakaz_wrap_id div:first-child')
+		d = `<div style='display: flex; justify-content: space-between;'>
+				${d.outerHTML}
+				<select class='zak_selec'>
+					<option selected value='5'>про-потолки</option>
+					<option value='6'>стайл-элит</option>
+				</select>
+			</div>`
 		let cl = this.parentNode.querySelector('.name_phon_wrapp')
 		let zakaz_bl = this.parentNode.querySelector('.zakaz_wrap_id')
 		let html = `<div class='cartClientMod'>`
 		if(zakaz_bl){
-			html += zakaz_bl.outerHTML
+			html += d
 		}
 		html += cl.outerHTML
 		html += this.outerHTML

@@ -182,6 +182,10 @@ window.addEventListener("DOMContentLoaded", ()=>{
 				let zakaz_id = ins_ch_bl.querySelector('#zakaz_id')
 				fd.append('zakaz_id', zakaz_id.innerText)
 			}
+			if(this.changeSelect.value == "заказать"){
+				let vendor_id = ins_ch_bl.querySelector('.zak_selec').value
+				fd.append('vendor_id', ins_ch_bl.querySelector('.zak_selec').value)
+			}
 			if(this.changeSelect.value == "замер" || this.changeSelect.value == "монтаж" || this.changeSelect.value == "ис. звонок"){
 				let obj_id = ins_ch_bl.querySelector('.obj-cont-modal').getAttribute("obj_id")
 				fd.append('obj_id', obj_id)
@@ -246,6 +250,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			}
 
 			insert_load_indicator(this.add_block)
+
 			
 			let res = await fetch('handlerCRM.php', {method: 'POST',body: fd});
 
@@ -368,7 +373,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			let html = `<div class="block-flexy">`
 				html += `<div>
 							<div>Клиент: <span table='clients' tabCol='name' rowID='${item['client']['id']}' class='change_fild_id'>${item['client']['name']}</span></div>
-							<div class="evTelWr" style='display: flex;'>Телефоны: ${tel}</div>
+							<div class="evTelWr" style='display: flex;'><span>Телефоны: </span><div style="display: flex; flex-wrap: wrap;">${tel}</div></div>
 						</div>`
 				html += `<div>
 							<div>Объект: ${item['obj']['type']}</div>
@@ -418,7 +423,23 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			return html
 		}
 		zakazat_html_put(item){
-			let html = `<a href='showZamer?idZamer=${item['ref_zamer']}''>Показать замер № ${item['ref_zamer']}</a>`
+			let sel5 = ''
+			let sel6 = ''
+			if(item['ref_worker']==5){
+				sel5 = 'selected'
+			}else{
+				sel6 = 'selected'
+			}
+			console.log(item)
+			let html = `<div style='display: flex; justify-content: space-between;'>
+							<a href='showZamer?idZamer=${item['ref_zamer']}''>Показать замер № ${item['ref_zamer']}</a>
+							<select class='change_vendor_id'>
+								<option ${sel5} value='5'>про-потолки</option>
+								<option ${sel6} value='6'>стайл-элит</option>
+							</select>
+						</div>
+						`
+
 			html += this.client_obj_html(item)
 			return html
 		}
@@ -468,6 +489,23 @@ window.addEventListener("DOMContentLoaded", ()=>{
 			let html = this.get_select_html(wrap_event.getAttribute('type_event'), e.currentTarget.innerText)
 			e.currentTarget.outerHTML = html
 			wrap_event.querySelector('.select_status_id').addEventListener('change', this.change_status_fetch.bind(this))
+		}
+
+		async change_vendor_fetch(e){
+			let event_id = e.currentTarget.parentNode.parentNode.getAttribute('event_id')
+			if(confirm(`Изменить статус на: ${e.currentTarget.value}`)){
+				insert_load_indicator(document.querySelector('.cont_eventDay'))
+				let fd = new FormData
+				fd.append('comand', "change_fild")
+				fd.append('table', "events")
+				fd.append('tabcol', "ref_worker")
+				fd.append('rowid', event_id)
+				fd.append('newval', e.currentTarget.value)
+				let res = await fetch('handlerCRM.php', {method: 'POST',body: fd})
+				if(await checkRespondServer(res)){
+					remove_load_indicator()
+				}
+			}
 		}
 
 		get_select_html(type, status){
@@ -560,6 +598,10 @@ window.addEventListener("DOMContentLoaded", ()=>{
 				let add_inp = document.querySelectorAll('.change_fild_id')
 				for(let i =0; i<add_inp.length; i++){
 					add_inp[i].addEventListener('click', this.change_fild_view.bind(this))
+				}
+				let vendor_id = document.querySelectorAll('.change_vendor_id')
+				for (let i = 0; i<vendor_id.length; i++){
+					vendor_id[i].addEventListener('change', this.change_vendor_fetch)
 				}
 
 			}

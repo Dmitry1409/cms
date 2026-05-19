@@ -8,9 +8,10 @@
     $mail = new PHPMailer;
 
     $db_crm = new SQLite3("crm.db");
+    $vendor = json_decode($db_crm->querySingle("SELECT value FROM keys WHERE id = $ref_vendor"));
     $smtp_tok = $db_crm->querySingle("SELECT value FROM keys WHERE name = 'smtp_mail_token'");
-    $vendor = $db_crm->querySingle("SELECT value FROM keys WHERE name = 'поставщик'");
-    $manager = $db_crm->querySingle("SELECT value FROM keys WHERE name = 'менеджер поставщика'");
+    // $vendor = $db_crm->querySingle("SELECT value FROM keys WHERE name = 'поставщик'");
+    // $manager = $db_crm->querySingle("SELECT value FROM keys WHERE name = 'менеджер поставщика'");
        
 
     $mail->CharSet = 'UTF-8';
@@ -25,7 +26,7 @@
     
     $mail->setFrom('89202929892@mail.ru', 'AuRoom');
     // $mail->addAddress('89202929892@mail.ru', 'Ольга');
-    $mail->addAddress($vendor, $manager);
+    $mail->addAddress($vendor->mail, $vendor->manag);
     $mail->Subject = 'Заказ';
     
 
@@ -57,7 +58,7 @@
     $mail->addAddress('auroom-nn@mail.ru', 'Дмитрий');
     $mail->Subject = 'Уведомления';
     
-    $mail->msgHTML("<h3>Заказ отправлен</h3>".$html);
+    $mail->msgHTML("<h3>Заказ отправлен {$vendor->mail}</h3>".$html);
      
     $mail->send();
     

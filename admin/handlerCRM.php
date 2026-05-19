@@ -192,6 +192,7 @@
 						}						
 					}elseif($events['type'] == "заказать"){
 						if($_POST['newval']=="отправить"){
+							$ref_vendor = $db->querySingle("SELECT ref_worker FROM events WHERE id = {$_POST['rowid']}");
 							$idZakup = [];
 							$idZakup[] = $events['ref_zakupki'];
 							$idZamer = "(".$events['ref_zamer'].")";
@@ -350,7 +351,8 @@
 						"ref_zakupki"=>$_POST['zakaz_id'], 
 						"ref_client"=>$sel['ref_client'],
 						"ref_obj"=>$sel['ref_obj'],
-						"ref_zamer"=>$sel['ref_zamer']];
+						"ref_zamer"=>$sel['ref_zamer'],
+						"ref_worker"=>$_POST['vendor_id']];
 				$idEv = insert_row("events", $arr);
 
 				$arr = ["status"=>'ожидает отправки',

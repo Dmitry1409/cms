@@ -1,5 +1,6 @@
 <?php
 	session_start();
+
 	$db = new SQLite3('cms.db');
 
 	require_once "config_cms.php";
@@ -89,4 +90,6 @@
 		include "templates/simple_ceil_offer_block.php";
 		include "templates/base_footer.php";
 	}
+
+
 ?>
