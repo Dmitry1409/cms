@@ -26,8 +26,8 @@
 					<option value="другое">другое</option>
 				</select>
 				<div style="display: flex; flex-direction: column;">
-					<input style="width: 150px;" placeholder="Начало" type="text" name="start">
-					<input style="width: 150px;" placeholder="Конец" type="text" name="finish">
+					<input style="width: 100%; max-width: 150px;" placeholder="Начало" type="text" name="start">
+					<input style="width: 100%; max-width: 150px;" placeholder="Конец" type="text" name="finish">
 				</div>
 			</div>
 			<div class="insertwrappModal">
