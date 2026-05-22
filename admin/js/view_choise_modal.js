@@ -139,15 +139,17 @@ window.addEventListener("DOMContentLoaded",()=>{
 	function cart_action_insert(){
 		let sel = document.querySelector('.inp_wrap_modal select')
 		let d
-		if(sel.value == "заказать"){			
-			d = this.parentNode.querySelector('.zakaz_wrap_id div:first-child')
-			d = `<div style='display: flex; justify-content: space-between; overflow:hidden;'>
-					${d.outerHTML}
-					<select style='height: 22px;' class='zak_selec'>
-						<option selected value='5'>про-потолки</option>
-						<option value='6'>стайл-элит</option>
-					</select>
-				</div>`
+		if(sel){		
+			if(sel.value == "заказать"){			
+				d = this.parentNode.querySelector('.zakaz_wrap_id div:first-child')
+				d = `<div style='display: flex; justify-content: space-between; overflow:hidden;'>
+						${d.outerHTML}
+						<select style='height: 22px;' class='zak_selec'>
+							<option selected value='5'>про-потолки</option>
+							<option value='6'>стайл-элит</option>
+						</select>
+					</div>`
+			}
 		}
 		let cl = this.parentNode.querySelector('.name_phon_wrapp')
 		let zakaz_bl = this.parentNode.querySelector('.zakaz_wrap_id')

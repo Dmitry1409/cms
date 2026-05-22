@@ -266,12 +266,11 @@ window.addEventListener('load', ()=>{
 
 	window.addEventListener('scroll', bannerScrollAction)
 
-	messendger_lay_hide()
+	//messendger_lay_hide()
 
 
 
 	function messendger_lay_hide(){
-		document.querySelector('.messenger_layout')
 		let svg = document.querySelector('.messenger_layout svg')
 		let rsvg = svg.getBoundingClientRect()
 
