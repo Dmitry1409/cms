@@ -59,15 +59,12 @@
 		float: left;
 		margin-right: 20px;
 	}
-	.row-reverse{
-		flex-direction: row-reverse;
-	}
+	
 	.row_quadr > div:first-child{
 		width: 45%;
 	}
 	.lightsLines_flex{
-		padding-left: 10%;
-		padding-right: 10%;
+		padding-left: 50px;
+		padding-right: 50px;
 	}
-
 }

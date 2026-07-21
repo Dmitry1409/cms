@@ -110,6 +110,7 @@
 							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['shadProf']?>>Парящий & Подсветка</a>
 							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['simpleCeil']?>>Простой потолок</a>
 							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['hidCur']?>>Ниши & Гардины</a>
+							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['track']?>>Трековое освещение</a>
 							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['svetovoyPotolok']?>>Световой потолок</a>
 							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['textCol']?>>Фактура & Цвет</a>
 							<a class="menu_item" href=<?php echo $GLOBALS['root_dir'].$GLOBALS['listRout']['dublVis']?>>Double Vision & Фотопечать</a>

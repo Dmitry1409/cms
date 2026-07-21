@@ -25,7 +25,8 @@
 						"favourites"=>["headFavourites.php", "FavouritesPage.php"],
 						"certificates"=>["headCertificates.php", "certificatesPage.php"],
 						"technologysimpleCeil"=>["technology/headSimpleCeil.php", "technology/simpleCeilPage.php"],
-						"technologysvetovoyPotolok"=>["technology/headSvetovoyPotolok.php","technology/svetovoyPotolokPage.php"]);
+						"technologysvetovoyPotolok"=>["technology/headSvetovoyPotolok.php","technology/svetovoyPotolokPage.php"],
+						"technologytrackLighting"=>["technology/headTrackLighting.php", "technology/trackLightingPage.php"]);
 
 	
 
@@ -51,7 +52,6 @@
 		}
 		$f = $f.$clearArr[$i];
 	}
-
 	if($f == 'cms'){
 		root();
 		exit;

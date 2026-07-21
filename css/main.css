@@ -2974,6 +2974,10 @@ p.parag_color_text{
 		padding-top: 0px;
 	}
 
+	.row-reverse{
+		flex-direction: row-reverse;
+	}
+
 	.example_img_cont picture{
 		width: calc(50% - 5px);
 	}

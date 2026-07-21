@@ -1,5 +1,6 @@
 <?php
 	include "collectImage.php";
+	$iwebp = 0;
 
 	$dirNameSource = 'processed';
 
@@ -33,18 +34,17 @@
 			if (!copy($s, $d)) {
 			    echo "failed to copy $s...\n";
 			}else{
-				echo "Copy file $s";
+				echo "$i- Copy file $s";
 				echo "<br>";
 			}
 			if (!copy($ws, $wd)) {
 			    echo "failed to copy $s...\n";
 			}else{
-				echo "Copy file $ws";
+				echo "$i- Copy file $ws";
 				echo "<br>";
 			}
 
 		}
-
 	}
 
 
@@ -67,7 +67,7 @@
 				echo $db->lastErrorMsg().". Не удалось записать в таблицу imgObj. Имя файла - $nj";
 				exit;
 			}else{
-				echo "Запись файла $nj в базу сделана";
+				echo "$i- Запись файла $nj в базу сделана";
 				echo "<br>";
 			}
 
@@ -77,7 +77,7 @@
 
 	function webpImage($source, $quality = 80)
 	    {
-	    	global $dirNameSource;
+	    	global $dirNameSource, $iwebp;
 	        $dir = pathinfo($source, PATHINFO_DIRNAME);
 	        $name = pathinfo($source, PATHINFO_FILENAME);
 	        $destination = $dirNameSource . DIRECTORY_SEPARATOR . $name . '.webp';
@@ -104,8 +104,10 @@
 	        $fpr = fopen($destination, "a+");
 	        fwrite($fpr, chr(0x00));
 	        fclose($fpr);
-	        echo "Файл $destination конвертирован";
+	        echo "$iwebp- Файл $destination конвертирован";
 	        echo "<br>";
+
+	        $iwebp ++;
 
 	       
 	        // destroy($source);

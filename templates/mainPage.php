@@ -22,7 +22,7 @@
 	<div style="position: relative;">
 		<div class="padd_tech"></div>
 		<div class="tech_down_bt">
-			<span>+7</span>
+			<span>+8</span>
 			<div role="button" class="arrow-wrapp">	
 				<div class="arrow-8"></div>
 			</div>
@@ -83,6 +83,17 @@
 					<a href='<?php echo $GLOBALS['listRout']["hidCur"]?>' class="btn_tech">Узнать подробнее</a>
 				</div>
 			</div>
+			<div class="tech_elem">				
+				<picture class="tech_picture">
+					<source srcset="img/mainPage/webp/vrvreghete.webp" type="image/webp">
+					<img class="img_skew" src="img/mainPage/jpg/vrvreghete.jpg" alt="Трековое освещение">
+				</picture>
+				<div class="tech_mask"></div>
+				<div class="skew_revers">
+					<h3 class="tech_header">Трековое освещение</h3>
+					<a href='<?php echo $GLOBALS['listRout']["track"]?>' class="btn_tech">Узнать подробнее</a>
+				</div>
+			</div>	
 			<div class="tech_elem">				
 				<picture class="tech_picture">
 					<source srcset="img/svetovoyPotolokPage/svetovoyPotolok.webp" type="image/webp">

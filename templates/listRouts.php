@@ -5,6 +5,7 @@
 					"shadProf"=> "technology/shadowProfil",
 					"multiLev" => "technology/multiLevel",
 					"hidCur"=> "technology/hiddenCurtain",
+					"track"=> "technology/trackLighting",
 					"textCol"=> "technology/textureColor",
 					"dublVis"=> "technology/dubleVisionPrint",
 					"carCell"=> "technology/carvedCelling",

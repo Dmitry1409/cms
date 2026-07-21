@@ -1,23 +1,25 @@
 
+<?php
+	$dir = scandir('../img/imgObj');
+?>
+
 <?php if($_SERVER["REQUEST_METHOD"] == "GET"){?>
-	<p>Добавь фотки в папку "processed" выбери категорию работ и нажми отправить. Все фото конвертируются и сопируются в нужные папки и сделаются записи в базе. Нужно будет перекинуть фотки и базу на продакшн или грузить фотки изначально на продакшн</p>
+	<p>Если создается новая категория нужно создать папку в imgObj с подпапками jpg и webp. Добавь фотки в папку "processed" выбери папку и нажми отправить. Все фото конвертируются и сопируются в нужные папки и сделаются записи в базе. Нужно будет перекинуть фотки и базу на продакшн или грузить фотки изначально на продакшн</p>
 	<form action="add_img" method="POST">
 		<select name="folder">
-			<option value="-">-</option>
-			<option value="carved">carved</option>
-			<option value="curtain">curtain</option>
-			<option value="curtainLight">curtainLight</option>
-			<option value="fotoPrint">fotoPrint</option>
-			<option value="hiddenCurtain">hiddenCurtain</option>
-			<option value="kitchen">kitchen</option>
-			<option value="lightNiches">lightNiches</option>
-			<option value="lightTransp">lightTransp</option>
-			<option value="multiLevel">multiLevel</option>
-			<option value="profilShadow">profilShadow</option>
-			<option value="sittingRoom">sittingRoom</option>
-			<option value="staryySky">staryySky</option>
-			<option value="svetLine">svetLine</option>
-			<option value="svetovoy">svetovoy</option>
+			<?php
+				$ind = 0;
+				foreach ($dir as $d) {
+					if($ind == 0){
+						echo "<option value='-'>-</option>";
+					}else{
+						if($d != "." AND $d != ".."){
+							echo "<option value='$d'>$d</option>";
+						}
+					}
+					$ind++;
+				}
+			?>
 		</select>
 		
 		<input type="submit">
