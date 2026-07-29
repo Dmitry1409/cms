@@ -164,7 +164,7 @@
 		</div>
 		<?php
 			$idRow = 10;
-			$pathArr = [["lighting", 2],["textureColor", 4], ["hiddenCurtain", 3], ['lightLines', 10]];
+			$pathArr = [["lighting", 2],["textureColor", 4], ["hiddenCurtain", 3], ['lightLines', 10], ['trackLighting', 12]];
 
 			// если в пути содержится один из трех ваиантов выбираем банер под него
 			$uri = $_SERVER['REQUEST_URI'];
@@ -176,6 +176,8 @@
 			}
 
 			$a = $GLOBALS['db']->query("SELECT * FROM headerBanner WHERE id = $idRow")->fetchArray(SQLITE3_ASSOC);
+			$bl = [10=>"/technology/lightLines",2=>"lighting", 4=>"/technology/textureColor",3=>"/technology/hiddenCurtain"];
+			$banner_link = $GLOBALS["root_dir"].$bl[$a['id']];
 
 		?>
 
@@ -186,7 +188,7 @@
 					<span class="banner_opac_z"></span>
 				</span>
 				<span class="textBanner">
-					<span class="banner_active"><a class='link_baner_activ' href='<?php echo $GLOBALS["root_dir"]?>technology/lightLines'>подробнее</a></span>
+					<span class="banner_active"><a class='link_baner_activ' href='<?php echo $banner_link ?>'>подробнее</a></span>
 					<span class="banner_dis_none banner_opac_z"></span>
 				</span>
 				<a class="header_padding" role="button"><div class="btn_animate"></div>Оставить заявку</a>

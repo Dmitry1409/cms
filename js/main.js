@@ -226,7 +226,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
 	function checkCurrentLocation(){
 		let dirs = ['lightLines',"tenevoy", 'multiLevel', 'dubleVisionPrint', 'carvedCelling', 'shadowProfil', 'ligthNiches', 'hiddenCurtain',
-					'textureColor', 'starsSky', 'lighting', 'MSD', 'BAUF', 'Pongs', 'Teqtum', 'favourites','simpleCeil']
+					'textureColor', 'starsSky', 'lighting', 'MSD', 'BAUF', 'Pongs', 'Teqtum', 'favourites','simpleCeil', 'svetovoyPotolok',
+					'trackLighting']
 		let href = window.location.href
 		let a = document.querySelectorAll('.menu_flex_wrap a')
 		for(let i = 0; i<dirs.length; i++){
@@ -416,6 +417,10 @@ window.addEventListener('load', ()=>{
 				let link = `<a class='link_baner_activ' href='${root_dir}technology/shadowProfil'>подробнее</a>`
 				sp.insertAdjacentHTML("beforeend", link)
 				so.innerHTML = ""
+			}else if(p[next].getAttribute('idRow')==12){
+				let link = `<a class='link_baner_activ' href='${root_dir}technology/trackLighting'>подробнее</a>`
+				sp.insertAdjacentHTML("beforeend", link)
+				so.innerHTML = ""
 			}
 			else{
 				sp.innerHTML = ""
@@ -430,6 +435,7 @@ window.addEventListener('load', ()=>{
 	async function getAllBanner(){
 		let r = await fetch(`${root_dir}scripts_php/getAllBanner.php`)
 		let a =  await r.json()
+		console.log(a)
 		insertBanner(a)
 		insertBannerPoint(a)
 	}
@@ -446,7 +452,7 @@ window.addEventListener('load', ()=>{
 	function insertBanner(arr){
 		let p = document.querySelector(".header_lozung")
 		let imgIdRow = p.querySelector("picture").getAttribute('idRow')
-		let order  = [10, 7, 1, 4, 11, 3, 2, 5, 8, 9]
+		let order  = [10,12, 7, 1, 4, 11, 3, 2, 5, 8, 9]
 		for(let i = 0; i<order.length; i++){
 			if(imgIdRow == order[i]){
 				continue 
