@@ -251,7 +251,7 @@
 				</div>
 				<div class="present_text_block">
 					<div class="pres_hed">48 часов</div>
-					<div class="pres_desc">от выезда замерщика до монтажа</div>
+					<div class="pres_desc">от выезда замерщика до монтажа<br><span style="font-size: 11px;">*сроки могут быть увеличены в зависимости от загрузки</span></div>
 				</div>
 			</div>	
 		</div>

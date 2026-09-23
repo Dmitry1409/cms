@@ -132,6 +132,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			rep_msg = encodeURI(rep_msg)
 			fetch(`${root_dir}mailer/report_in_mail.php?tema=Калькулятор_фотопечать&msg=${rep_msg}`)
 
+			call_me_view()
+
 			let rand_time = ((Math.random() * 2) + 1) * 1000
 
 			let animbtn = document.querySelector('.calcWrappFP .calc_btn')

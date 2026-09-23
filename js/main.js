@@ -667,7 +667,7 @@ async function sendMailWithData(){
 			delAnimCalcut(animateBtn)
 			if(res.ok){				
 				if(report == "success"){
-					reset_calcult()
+					// reset_calcult()
 					open_report_modal()
 					checkedAndSendYandexDirect()
 				}else{

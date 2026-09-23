@@ -119,6 +119,8 @@ window.addEventListener('DOMContentLoaded',()=>{
 			let anBtn = document.querySelector('.design .calc_btn')
 			showCalcultAnim(anBtn)
 
+			call_me_view()
+
 			setTimeout(()=>{
 				insertResultCalcult(price, "afterend", sum, discount)
 				clientData.click_link = "Страница многоуровневые потолки калькулятор"

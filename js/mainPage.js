@@ -170,7 +170,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 			rep_msg += `<h3>Скидка - ${discount}</h3>`
 			rep_msg = encodeURI(rep_msg)
 			fetch(`${root_dir}mailer/report_in_mail.php?tema=Калькулятор_главная&msg=${rep_msg}`) 
-
+			call_me_action()
 			let rand_time = ((Math.random() * 2) + 1) * 1000
 			let btnAnim = document.querySelector('.calculate_cont .calc_btn')
 			showCalcultAnim(btnAnim)
