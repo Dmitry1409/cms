@@ -205,8 +205,8 @@
 					<img src="img/mainPage/piggy.webp">
 				</div>
 				<div class="present_text_block">
-					<div class="pres_hed">Дешевле на 30%</div>
-					<div class="pres_desc">у нас дешевле чем у других</div>
+					<div class="pres_hed">У нас выгоднее</div>
+					<div class="pres_desc">работаем без посредников</div>
 				</div>
 			</div>
 			<div class="grid_item_pres">
@@ -251,7 +251,8 @@
 				</div>
 				<div class="present_text_block">
 					<div class="pres_hed">48 часов</div>
-					<div class="pres_desc">от выезда замерщика до монтажа<br><span style="font-size: 11px;">*сроки могут быть увеличены в зависимости от загрузки</span></div>
+					<div class="pres_desc">от выезда замерщика до монтажа</div>
+					<div style="margin-top: 5px; font-size: 11px; line-height: 1; color: rgba(0,0,0,0.6);">*сроки могут быть увеличены в зависимости от загрузки</div>
 				</div>
 			</div>	
 		</div>

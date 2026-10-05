@@ -23,6 +23,8 @@ window.addEventListener('DOMContentLoaded',()=>{
 		}
 	}
 
+	
+
 	howMuchDoneAction()
 	
 	techProceesing()
@@ -51,6 +53,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 		bt.addEventListener("click", tech_bt_act)
 
 	}
+
 
 	function howMuchDoneAction(){
 
@@ -191,7 +194,13 @@ window.addEventListener('DOMContentLoaded',()=>{
 		call_me_view()
 	}
 	function sales_btn_action(){
-		clientData.click_link = "Главная страница кнопка акция потолок за 8500"
+		let sale_mp = document.querySelectorAll('.zagolov_sale_mp')
+		for(let i=0; i<sale_mp.length; i++){
+			if(!sale_mp[i].classList.contains('zagol_opacity_sale')){
+				clientData.click_link = sale_mp[i].innerText
+				break
+			}
+		}
 		call_me_view()
 	}
 
@@ -210,6 +219,126 @@ window.addEventListener('DOMContentLoaded',()=>{
 			header.style.bottom = "40px"
 			this.querySelector(".btn_tech").style.top = "0"
 			this.querySelector("img").style.filter = "blur(7px)"
+		}
+	}
+})
+
+window.addEventListener('load', ()=>{
+
+	let id_intv_sale
+
+
+	let left_btn_sale = document.querySelector('.left_btn_sale')
+	let right_btn_sale = document.querySelector('.right_btn_sale')
+
+	left_btn_sale.addEventListener('click', go_left)
+	right_btn_sale.addEventListener('click', go_right)
+
+	many_sale_act_load_act()
+
+	document.addEventListener('scroll', sale_set_interv)
+
+	function sale_set_interv(){
+		let cont = document.querySelector('.sales_block')
+		if(visibleElem(cont)){
+			if(!id_intv_sale){
+				id_intv_sale = setInterval(go_right, 4000)
+			}
+		}else{
+			clearInterval(id_intv_sale)
+			id_intv_sale = null
+		}
+	}
+
+	async function many_sale_act_load_act(){
+		let res = await fetch("scripts_php/get_many_sale.php")
+		let js = await res.json()
+		insert_sale(js)
+	}
+
+	function insert_sale(js){
+		let txt = document.querySelector('.zagolov_sale_mp')
+		let img = document.querySelector('.img_absol_sale_mp')
+		let p = document.querySelector('.sale_point_id')
+		for(let i=0; i<js.length; i++){
+			let h_img  = `<img class="img_absol_sale_mp sale_img_hidden" style="border-radius: 4px;" src="img/sales/${js[i]['img_src']}">`
+			img.insertAdjacentHTML('beforebegin', h_img)
+			let t = `<h2 class="zagolov_sale_mp zagol_opacity_sale">${js[i]['text']}</h2>`
+			txt.insertAdjacentHTML('beforebegin', t)
+			p.insertAdjacentHTML('beforeend', "<div></div>")
+		}
+	}
+
+	function go_right(e){
+		if(e){
+			clearInterval(id_intv_sale)
+			id_intv_sale = null
+		}
+		let img = document.querySelectorAll('.img_absol_sale_mp')
+		let zag = document.querySelectorAll('.zagolov_sale_mp')
+		let point = document.querySelectorAll('.sale_point_id > div')
+
+		for(let i=0; i<img.length; i++){
+			if(!img[i].classList.contains('sale_img_hidden')){
+				img[i].classList.add('sale_img_hidden')
+				zag[i].classList.add('zagol_opacity_sale')
+				if((i+1)>=img.length){
+					img[0].classList.remove('sale_img_hidden')
+					zag[0].classList.remove('zagol_opacity_sale')
+				}else{						
+					img[i+1].classList.remove('sale_img_hidden')
+					zag[i+1].classList.remove('zagol_opacity_sale')
+				}
+				break
+			}
+		}
+		for(let i=0; i<point.length; i++){
+			if(point[i].classList.contains('banPointAct_sale')){
+				point[i].classList.remove('banPointAct_sale')
+				if((i+1) >= point.length){
+					point[0].classList.add('banPointAct_sale')
+				}else{
+					point[i+1].classList.add('banPointAct_sale')
+				}
+				break
+			}
+		}
+	}
+
+	function go_left(e){
+		if(e){
+			clearInterval(id_intv_sale)
+			id_intv_sale = null
+		}		
+		let img = document.querySelectorAll('.img_absol_sale_mp')
+		let zag = document.querySelectorAll('.zagolov_sale_mp')
+		let point = document.querySelectorAll('.sale_point_id > div')
+
+		for(let i=0; i<img.length; i++){
+			if(!img[i].classList.contains('sale_img_hidden')){
+				img[i].classList.add('sale_img_hidden')
+				zag[i].classList.add('zagol_opacity_sale')
+				if((i-1) < 0){
+					img[img.length-1].classList.remove('sale_img_hidden')
+					zag[img.length-1].classList.remove('zagol_opacity_sale')
+				}else{						
+					img[i-1].classList.remove('sale_img_hidden')
+					zag[i-1].classList.remove('zagol_opacity_sale')
+				}
+				break
+			}
+		}
+
+		for(let i=0; i<point.length; i++){
+			if(point[i].classList.contains('banPointAct_sale')){
+				point[i].classList.remove('banPointAct_sale')
+				if((i-1) < 0){
+					point[point.length-1].classList.add('banPointAct_sale')
+				}else{
+					point[i-1].classList.add('banPointAct_sale')
+				}
+				break
+			}
 		}
 	}
 })

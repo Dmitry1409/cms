@@ -435,7 +435,6 @@ window.addEventListener('load', ()=>{
 	async function getAllBanner(){
 		let r = await fetch(`${root_dir}scripts_php/getAllBanner.php`)
 		let a =  await r.json()
-		console.log(a)
 		insertBanner(a)
 		insertBannerPoint(a)
 	}
@@ -452,7 +451,7 @@ window.addEventListener('load', ()=>{
 	function insertBanner(arr){
 		let p = document.querySelector(".header_lozung")
 		let imgIdRow = p.querySelector("picture").getAttribute('idRow')
-		let order  = [10,12, 7, 1, 4, 11, 3, 2, 5, 8, 9]
+		let order  = [10,12, 7, 1,13, 11, 5, 8, 9]
 		for(let i = 0; i<order.length; i++){
 			if(imgIdRow == order[i]){
 				continue 

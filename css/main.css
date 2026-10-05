@@ -169,12 +169,71 @@ body{
 	animation: sale_scale 1000ms infinite;
 }
 .cont_img_sales{
+	position: relative;
 	width: 100%;
 }
-.cont_img_sales img{
+.img_hiden_sale_mp{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	visibility: hidden;
+}
+
+.contr_sale_mp{
+	margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 	width: 100%;
+    z-index: 15;
+}
+
+.right_btn_sale{
+    transform: translateX(-3px) rotateZ(225deg);
+}
+.left_btn_sale{
+	transform: translateX(3px) rotateZ(45deg);
+}
+.sale_ContrlItem > div{
+	width: 15px;
+    height: 15px;
+    border-left: 3px solid rgba(0 0 0 / 0.4);
+    border-bottom: 3px solid rgba(0 0 0 / 0.4);
+}
+.sale_ContrlItem{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: rgba(255 255 255 / 0.35);
+    z-index: 15;
+    cursor: pointer;
+}
+
+.img_absol_sale_mp{
+	transition: 2s;
+	opacity: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
+}
+.sale_img_hidden{
+	opacity: 0;
+}
+.zagolov_sale_mp{
+	font-size: 28px;
+	transition: 2s;
+	margin-bottom: 20px;
+	opacity: 1;
+	position: absolute;
+}
+.zagol_opacity_sale{
+	opacity: 0;
 }
 .sales_block{
 	margin: 0 20px;
@@ -1007,6 +1066,27 @@ a.link_baner_activ:hover{
 	margin-right: 5px;
 	margin-left: 5px;
 }
+
+.bannPoint_sale{
+	display: flex;
+	padding: 10px;
+	background-color: rgba(0 0 0 / 20%);
+	border-radius: 5px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.bannPoint_sale div{
+	width: 7px;
+	height: 7px;
+	border-radius: 7px;
+	background-color: rgba(255 255 255/ 30%);
+	margin-right: 5px;
+	transition: 3s;
+}
+div.banPointAct_sale{
+	background-color: rgb(255 255 255);
+}
 .bannPoint div{
 	width: 7px;
 	height: 7px;
@@ -1702,6 +1782,7 @@ div.banPointAct{
 	border-radius: 4px;
 	padding: 30px;
 	color: white;
+	padding-top: 10px;
 }
 .aferta_block h4{
 	font-size: 20px;
